@@ -14,11 +14,10 @@ export default function Writer() {
     birthday: "",
     address: "",
     phoneNum: "",
+    image: null,
   });
 
-  const [imageFile, setImageFile] = useState(null); // File object to send to backend
-  const [imagePreview, setImagePreview] = useState(""); // data URL or backend URL for display
-
+  const [imagePreview, setImagePreview] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState("");
@@ -33,14 +32,12 @@ export default function Writer() {
       document.body.classList.remove("dark-mode");
     }
   }, [darkMode]);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoadingPage(false);
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
@@ -49,7 +46,6 @@ export default function Writer() {
   };
 
   const calculateAge = (birthday) => {
-    if (!birthday) return "";
     const birthDate = new Date(birthday);
     const difference = Date.now() - birthDate.getTime();
     const ageDate = new Date(difference);
@@ -71,18 +67,16 @@ export default function Writer() {
 
         const data = res.data.data;
         const imageUrl = data.image
-          ? `https://digitopia-project-backend.vercel.app/${data.image.path.replace(
-              "\\",
-              "/"
-            )}`
+          ? `${data.image.path.replace("\\", "/")}`
           : "";
 
         setFormData((prevData) => ({
           ...prevData,
-          name: data.name || "",
-          birthday: data.birthday || "",
-          address: data.address || "",
-          phoneNum: data.phoneNum || "",
+          name: data.name,
+          birthday: data.birthday,
+          address: data.address,
+          phoneNum: data.phoneNum,
+          image: imageUrl,
         }));
 
         setImagePreview(imageUrl);
@@ -112,12 +106,14 @@ export default function Writer() {
   };
 
   const handleImageChange = (e) => {
-    const file = e.target.files && e.target.files[0];
+    const file = e.target.files[0];
     if (file) {
-      setImageFile(file);
-
       const reader = new FileReader();
       reader.onloadend = () => {
+        setFormData((prevData) => ({
+          ...prevData,
+          image: file,
+        }));
         setImagePreview(reader.result);
       };
       reader.readAsDataURL(file);
@@ -130,72 +126,29 @@ export default function Writer() {
     setErr("");
     setSuccess("");
 
-    // Basic client-side checks (optional, safe)
-    if (!token) {
-      setLoading(false);
-      setErr("Not authenticated. Token missing.");
-      return;
-    }
-
-    // Example: limit file size to 5MB
-    if (imageFile && imageFile.size > 5 * 1024 * 1024) {
-      setLoading(false);
-      setErr("Image too large. Max 5MB.");
-      return;
-    }
-
-    // Optional: validate MIME type
-    if (imageFile && !imageFile.type.match(/^image\/(png|jpeg|jpg|webp)$/)) {
-      setLoading(false);
-      setErr("Unsupported image format. Use PNG, JPG, or WEBP.");
-      return;
-    }
-
     const submissionData = new FormData();
     submissionData.append("name", formData.name);
     submissionData.append("birthday", formData.birthday);
     submissionData.append("address", formData.address);
     submissionData.append("phoneNum", formData.phoneNum);
 
-    if (imageFile) {
-      submissionData.append("image", imageFile);
-    }
-
-    for (const pair of submissionData.entries()) {
-      console.log("FormData:", pair[0], pair[1]);
+    if (formData.image) {
+      submissionData.append("image", formData.image);
     }
 
     try {
-      const res = await axios.post(
-        "https://digitopia-project-backend.vercel.app/api/dataUser",
-        submissionData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            // DON'T set "Content-Type" here — axios/Browser will set correct boundary
-          },
-        }
-      );
+      await axios.post("http://127.0.0.1:8080/api/dataUser", submissionData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
-      console.log("Server response:", res.data);
       setLoading(false);
       setSuccess("Data submitted successfully!");
-
-      // Reset imageFile after successful upload (keeps preview from server if you want)
-      setImageFile(null);
     } catch (error) {
       setLoading(false);
-
-      console.error("Axios error:", error);
-      console.error("error.response:", error.response);
-
-      const serverMessage =
-        error.response?.data?.message ||
-        error.response?.data ||
-        error.message ||
-        "Error submitting data";
-
-      setErr(`Server error: ${serverMessage}`);
+      setErr("Error submitting data");
     }
   };
 
@@ -275,10 +228,8 @@ export default function Writer() {
               className="input-type-writer"
               type="file"
               name="image"
-              accept="image/*"
               onChange={handleImageChange}
             />
-            {imageFile && <p>Selected file: {imageFile.name}</p>}
           </div>
           <button className="button-writer" type="submit">
             Submit
