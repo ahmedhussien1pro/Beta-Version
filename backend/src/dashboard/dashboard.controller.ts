@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import jwt from 'jsonwebtoken';
-import multer from 'multer';
+import multer from "multer";
+import fs from "fs";
+import path from "path";
 import prisma from "../utilities/db";
 import { hashPassword, comparePasswords } from "../utilities/auth";
 
@@ -292,80 +294,83 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
 
 // for user photo
 export const upload = multer({
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, 'uploads/'); // Directory where files will be stored
-        },
-        filename: (req, file, cb) => {
-            cb(null, `${Date.now()}-${file.originalname}`); // Unique filename
-        },
-    }),
-    fileFilter: (req, file, cb) => {
-        // Check the file type
-        const allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
-        if (allowedMimeTypes.includes(file.mimetype)) {
-            cb(null, true); // Accept the file
-        } else {
-            cb(new Error('Only image files are allowed!'), false); // Reject the file
-        }
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      const uploadDir = path.join(__dirname, "..", "uploads");
+      try {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      } catch (err) {
+        console.error("Failed to create uploads dir:", err);
+      }
+      cb(null, uploadDir);
     },
+    filename: (req, file, cb) => {
+      cb(null, `${Date.now()}-${file.originalname}`);
+    },
+  }),
+  fileFilter: (req, file, cb) => {
+    const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/jpg'];
+    if (allowedMimeTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  },
 });
 
 // Save the file details to the database
-export async function saveImage(req, res: Response, next) {
-    const fs = require('fs').promises; // Use promises for asynchronous file operations
+const fsPromises = require("fs").promises;
+export async function saveImage(req, res, next) {
+  try {
+    const file = req.file;
 
-    try {
-        const file = req.file; // File sent with the request
-        const userId = req.params.id; // User ID from the request parameters
-
-        if (!userId) {
-            return res.status(400).json({ error: 'User ID is missing' });
-        }
-
-        if (!file) {
-            return next(); // No image provided, proceed to the next middleware
-        }
-
-        // Check if the user already has an associated image
-        const existingImage = await prisma.image.findFirst({
-            where: { userId },
-        });
-
-        if (existingImage) {
-            // Delete the existing image file from the file system
-            try {
-                await fs.unlink(existingImage.path);
-                console.log(`Old image deleted: ${existingImage.path}`);
-            } catch (err) {
-                console.warn(`Failed to delete old image: ${existingImage.path}. Error: ${err.message}`);
-            }
-
-            // Remove the existing image record from the database
-            await prisma.image.delete({
-                where: { id: existingImage.id },
-            });
-        }
-
-        // Save the new image in the database
-        const savedFile = await prisma.image.create({
-            data: {
-                name: file.originalname,
-                mimetype: file.mimetype,
-                path: file.path,
-                user: { connect: { id: userId } },
-            },
-        });
-
-        // Attach the new image ID to the request body for further processing
-        req.body.imageId = savedFile.id;
-
-        // Proceed to the next middleware
-        next();
-    } catch (error) {
-        console.error('Error handling image upload:', error);
-        res.status(500).json({ error: error.message || 'Error uploading file.' });
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ error: "Authorization token is required" });
     }
+
+    let decoded: any;
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET as string) as { id: string };
+    } catch (err) {
+      return res.status(401).json({ error: "Invalid or expired token" });
+    }
+
+    const userId = decoded?.id;
+    if (!userId) {
+      return res.status(400).json({ error: "User ID is missing from token" });
+    }
+
+    if (!file) {
+      return next();
+    }
+
+    const existingImage = await prisma.image.findFirst({ where: { userId } });
+    if (existingImage) {
+      try {
+        await fsPromises.unlink(existingImage.path);
+        console.log(`Old image deleted: ${existingImage.path}`);
+      } catch (err) {
+        console.warn(`Failed to delete old image: ${existingImage.path}. Error: ${err.message}`);
+      }
+      await prisma.image.delete({ where: { id: existingImage.id } });
+    }
+
+    const savedFile = await prisma.image.create({
+      data: {
+        name: file.originalname,
+        mimetype: file.mimetype,
+        path: file.path,
+        user: { connect: { id: userId } },
+      },
+    });
+
+    req.body.imageId = savedFile.id;
+    next();
+  } catch (error) {
+    console.error("Error handling image upload:", error);
+    return res.status(500).json({ error: error.message || "Error uploading file." });
+  }
 }
 
 export async function contactUs(req: Request, res: Response): Promise<Response> {

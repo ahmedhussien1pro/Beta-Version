@@ -55,7 +55,7 @@ import lab1SSRF from "./labs/SSRF/lab1/lab1.router";
 import lab2SSRF from "./labs/SSRF/lab2/lab2.router";
 
 const app = express();
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
 app.use(
   cors({
@@ -72,7 +72,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.disable("etag");
 app.set("view engine", "ejs");
-
 app.set("views", path.join(__dirname, "../views"));
 
 app.use("/api", registerRouter);
