@@ -265,7 +265,7 @@ export async function personalInfo(req: Request, res: Response): Promise<Respons
     try {
         const user = await prisma.user.findUnique({
             where: { id },
-            select: { email: true, name: true, role: true, birthday: true, phoneNum: true, address: true },
+            select: { email: true, name: true, role: true, birthday: true, phoneNum: true, address: true, image: true },
 
         });
 
