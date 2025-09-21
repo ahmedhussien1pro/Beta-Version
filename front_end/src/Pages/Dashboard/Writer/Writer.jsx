@@ -137,12 +137,16 @@ export default function Writer() {
     }
 
     try {
-      await axios.post("http://127.0.0.1:8080/api/dataUser", submissionData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://digitopia-project-backend.vercel.app/api/dataUser",
+        submissionData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setLoading(false);
       setSuccess("Data submitted successfully!");

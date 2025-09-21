@@ -35,10 +35,7 @@ const Header = () => {
         );
         const data = res.data.data;
         const imageUrl = data.image
-          ? `https://digitopia-project-backend.vercel.app/${data.image.path.replace(
-              "\\",
-              "/"
-            )}`
+          ? `${data.image.path.replace("\\", "/")}`
           : "";
         setUserImage(imageUrl);
       } catch (error) {
