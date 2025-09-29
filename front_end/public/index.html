@@ -76,9 +76,12 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!--  user name = support@cyberlap.com  password = cyberlap   use this for login -->
-    <div id="root"></div>
 
+    <div id="root"></div>
+    <div style="display: none; visibility: hidden">
+      user name = support@cyberlap.com password = cyberlap use this for login
+    </div>
+    <!--  user name = support@cyberlap.com password = cyberlap use this for login -->
     <script>
       document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'visible') {
