@@ -38,10 +38,10 @@
   font-size: 18px;
   color: color-mix(in srgb, var(--primary-text), transparent 20%);
 }
-.popular-courses__item-price.free{
-    color: color-mix(in srgb, var(--main-color), transparent 20%);
-    letter-spacing: 1px;
-    font-style: italic;
+.popular-courses__item-price.free {
+  color: color-mix(in srgb, var(--main-color), transparent 20%);
+  letter-spacing: 1px;
+  font-style: italic;
 }
 
 .popular-courses__item-description {
@@ -55,8 +55,20 @@
 }
 
 .popular-courses__item-trainer-image {
-  max-width: 50px;
-  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.popular-courses__item-image {
+  max-height: 210px;
+  width: 100%;
+  object-fit: cover;
+}
+.popular-courses__item-trainer-image img {
+  /* border-radius: 50px; */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .popular-courses__item-trainer-link {
@@ -75,11 +87,10 @@
   font-size: 18px;
   color: color-mix(in srgb, var(--primary-text), transparent 60%);
 }
-.popular-courses__item-trainer-rank span{
-    color: color-mix(in srgb, var(--main-color), transparent 20%);
+.popular-courses__item-trainer-rank span {
+  color: color-mix(in srgb, var(--main-color), transparent 20%);
 }
 
 .popular-courses__item-trainer-icon--user {
   font-size: 22px;
 }
-
