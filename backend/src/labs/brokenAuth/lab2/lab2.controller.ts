@@ -1,19 +1,18 @@
-import {Request, Response} from "express";
+import { Request, Response } from 'express';
 
 export const login = async (req: Request, res: Response) => {
-    try {
-        const username = "superuser";
-        const password = "Cyberlab";
+  try {
+    const username = 'lifehack';
+    const password = 'Cyberlab';
 
-        if (!req.body.username || !req.body.password) {
-            return res.status(400).send("Username and password are required");
-        }
-        if (req.body.username === username && req.body.password === password) {
-            return res.status(200).json({message:"success"})
-        }
+    if (!req.body.username || !req.body.password) {
+      return res.status(400).send('Username and password are required');
     }
-    catch (e) {
-        console.error(e);
+    if (req.body.username === username && req.body.password === password) {
+      return res.status(200).json({ message: 'success' });
     }
-    return res.status(401).send("Invalid username or password");
+  } catch (e) {
+    console.error(e);
+  }
+  return res.status(401).send('Invalid username or password');
 };

@@ -5,7 +5,7 @@
   --faq-header: #3a3c40a3;
   --faq-body-bg: #282626;
   --faq-header-hover: #3a3c40;
-  --hacker-bg:#222;
+  --hacker-bg: #222;
   --neon-red: #ff073a;
   --crimson-red: #dc143c;
   --burnt-orange: #ff7034;
@@ -93,7 +93,9 @@
   --transition-3: 1000ms ease;
   --main-transition: all 0.3s ease-in-out;
 }
-
+.banner-power-icons {
+  color: var(--crimson-red);
+}
 * {
   margin: 0;
   padding: 0;
@@ -112,7 +114,8 @@ ul li {
 body {
   overflow-x: hidden;
 }
-html,body{
+html,
+body {
   color: var(--primary-text);
   background-color: var(--primary-bg);
 }
@@ -189,7 +192,7 @@ section,
 }
 
 .courses__title::after {
-  content: "";
+  content: '';
   width: 120px;
   height: 1px;
   display: inline-block;
@@ -235,8 +238,8 @@ section,
   background-color: transparent !important;
   color: var(--primary-text) !important;
 }
-.focus-bg-transparent::placeholder{
-  color: var(--secondary-text)!important;
+.focus-bg-transparent::placeholder {
+  color: var(--secondary-text) !important;
 }
 .scrollbar::-webkit-scrollbar {
   width: 0.5rem;
@@ -249,7 +252,7 @@ section,
 
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--main-color) !important;
-  border-radius: 0.25rem; 
+  border-radius: 0.25rem;
   cursor: pointer;
 }
 
@@ -263,30 +266,30 @@ section,
   border: 1px solid var(--main-color);
   outline: none;
   cursor: pointer;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   margin-right: 12px;
   transition: all 0.3s ease-in-out;
   font-size: 1rem;
-margin-block:1rem;
-width: fit-content;
+  margin-block: 1rem;
+  width: fit-content;
 }
-.btn-main-color{
-    background:transparent;
-  color: var(--main-color);
-}
-.btn-main-color2{
-  background: var(--main-color);
-  color: var(--primary-text);
-}
-.btn-main-color:hover{
-  background: var(--main-color);
-  color: var(--primary-text);
-}
-.btn-main-color2:hover{
+.btn-main-color {
   background: transparent;
   color: var(--main-color);
 }
-.toast-notification{
+.btn-main-color2 {
+  background: var(--main-color);
+  color: var(--primary-text);
+}
+.btn-main-color:hover {
+  background: var(--main-color);
+  color: var(--primary-text);
+}
+.btn-main-color2:hover {
+  background: transparent;
+  color: var(--main-color);
+}
+.toast-notification {
   animation: slideIn 0.6s forwards;
 }
 
