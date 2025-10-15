@@ -13,10 +13,10 @@ const darkTheme = {
 };
 
 const lightTheme = {
-  // "--primary-bg": "#ffffff",
-  // "--secondary-bg": "#c4c2c2",
-  '--primary-bg': '#c4c2c2',
-  '--secondary-bg': '#ffffff',
+  '--primary-bg': '#ffffff',
+  '--secondary-bg': '#c4c2c2',
+  // '--primary-bg': '#c4c2c2',
+  // '--secondary-bg': '#ffffff',
   '--primary-text': '#0f0f0f',
   '--secondary-text': '#1b1b1b',
   '--main-color': '#048a4e',
