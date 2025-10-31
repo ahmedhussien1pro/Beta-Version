@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const itemsPerPage = 9;
@@ -6,7 +6,17 @@ const itemsPerPage = 9;
 const PaginatedCourses = ({ filteredCourses }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [favorites, setFavorites] = useState({});
+  const [isArabic, setIsArabic] = useState(
+    () => localStorage.getItem("lang") === "ar"
+  );
 
+  useEffect(() => {
+    const handleLangChange = () => {
+      setIsArabic(localStorage.getItem("lang") === "ar");
+    };
+    window.addEventListener("langChange", handleLangChange);
+    return () => window.removeEventListener("langChange", handleLangChange);
+  }, []);
   const totalPages = Math.ceil(filteredCourses.length / itemsPerPage);
 
   const handlePageChange = (page) => {
@@ -145,8 +155,14 @@ const PaginatedCourses = ({ filteredCourses }) => {
             </div>
 
             <div className="card-content">
-              <h3 className="card-title">{course.title}</h3>
-              <p className="card-description">{course.description}</p>
+              <h3 className="card-title"
+              ar_title= {course.ar_title}
+              en_title= {course.en_title}
+              >
+              </h3>
+              <p className="card-description">
+                {isArabic  ? course.ar_description : course.description}
+              </p>
             </div>
           </a>
         </div>

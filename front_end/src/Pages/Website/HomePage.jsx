@@ -10,6 +10,7 @@ import HomeLanding from "./HomeLanding/HomeLanding";
 import TestimonialsSection from "./TestimonialsSection/TestimonialsSection";
 import Go2TopBtn from "./UserHome/Components/Go2Top_Btn/Go2Top_Btn";
 import ThemeSwitcher from "./UserHome/Components/ThemeSwitcher/ThemeSwitcher";
+import LangSwitcher from "./UserHome/Components/LangSwitcher/LangSwitcher";
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
   
@@ -26,6 +27,7 @@ export default function HomePage() {
     >
       <Go2TopBtn />
       <ThemeSwitcher />
+      <LangSwitcher />
       <Preloader  loading={loading}/>
       <Header />
       <HomeLanding />

@@ -9,18 +9,21 @@ import MenuContext from "./Context/MenuContext";
 import { GlobalSearchProvider } from "./Context/GlobalSearchContext";
 import WindowContext from "./Context/WindowContext";
 
+let lang = localStorage.getItem("lang") || "en";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// set dir attribute for localization
+document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
 root.render(
   <GlobalSearchProvider>
-  <React.StrictMode>
-    <WindowContext>
-      <MenuContext>
-        <Router>
-          <App />
-        </Router>
-      </MenuContext>
-    </WindowContext>
+    <React.StrictMode>
+      <WindowContext>
+        <MenuContext>
+          <Router>
+            <App />
+          </Router>
+        </MenuContext>
+      </WindowContext>
     </React.StrictMode>
   </GlobalSearchProvider>
-    
 );

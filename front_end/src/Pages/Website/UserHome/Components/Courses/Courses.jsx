@@ -60,7 +60,7 @@ const Courses = () => {
                     onClick={() => handleCategorySelect(category.name)}
                   >
                     <span className="category-icon">{category.icon}</span>
-                    <span className="category-text ms-2">{category.name}</span>
+                    <span className="category-text mx-2">{category.name}</span>
                   </button>
                 </li>
               ))}

@@ -96,7 +96,7 @@ const Header = () => {
             }`}
             id="main-navbar"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
               <li className="nav-item">
                 <a className="nav-link" href="/">
                   Home

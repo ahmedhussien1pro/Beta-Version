@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import Landing from "./Components/LearnLanding/LearnLanding";
 import ThemeSwitcher from "./Components/ThemeSwitcher/ThemeSwitcher";
 import Preloader from "../Preloader/Preloader";
+import LangSwitcher from "./Components/LangSwitcher/LangSwitcher";
 export default function UserHome() {
   const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -17,6 +18,7 @@ export default function UserHome() {
     <div style={{position: "relative"}}>
       <Header />
       <ThemeSwitcher />
+      <LangSwitcher />
       <Preloader  loading={loading}/>
       <Landing />
       <Courses />
