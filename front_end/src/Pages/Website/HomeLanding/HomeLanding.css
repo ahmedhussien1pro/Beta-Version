@@ -28,7 +28,7 @@
   font-weight: 500;
 }
 
-.landing-text__header::before {
+/* .landing-text__header::before {
   content: "";
   position: absolute;
   width: 25px;
@@ -37,7 +37,7 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 
 .landing-text__headline {

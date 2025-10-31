@@ -103,7 +103,18 @@
 }
 html {
   scroll-behavior: smooth;
+  transition: all 0.4s ease;
 }
+html.lang-switching {
+  transform: translateX(var(--lang-slide));
+  filter: blur(3px);
+  /* transform: translateY(10px); */
+  /* opacity: 0; */
+  /* transform: scale(.98); */
+}
+/* html[dir="rtl"].lang-switching {
+  transform: translateX(-20px);
+} */
 a {
   text-decoration: none !important;
   color: inherit;
@@ -192,7 +203,7 @@ section,
 }
 
 .courses__title::after {
-  content: '';
+  content: "";
   width: 120px;
   height: 1px;
   display: inline-block;

@@ -10,15 +10,21 @@ import Aos from 'aos';
 const coursesData = [
   {
     id: 1,
-    category: 'Web Vulnerability',
-    price: 'free',
-    title: 'Business Logic Vulnerability',
-    description:
+    ar_category: 'ثغرات الويب',
+    en_category: 'Web Vulnerability',
+    ar_price: 'مجاني',
+    en_price: 'Free',
+    ar_title: 'ثغرة منطق الأعمال',
+    en_title: 'Business Logic Vulnerability',
+    ar_description:
+      'تحليل ثغرات منطق الأعمال، طرق الاستغلال، واستراتيجيات التخفيف.',
+    en_description:
       'Analyze business logic flaws, exploitation methods, and strategies for mitigation.',
     image: courseImage1,
     detailsLink: '/BL_Vuln',
     trainer: {
-      name: 'Eng. Ahmed Radwan ',
+      ar_name: 'م. أحمد رضوان',
+      en_name: 'Eng. Ahmed Radwan',
       image: teamImage,
       userCount: 50,
       heartCount: 65,
@@ -27,15 +33,21 @@ const coursesData = [
   },
   {
     id: 2,
-    category: 'Fundamentals',
-    price: 'free',
-    title: 'Bash Scripting',
-    description:
+    ar_category: 'أساسيات',
+    en_category: 'Fundamentals',
+    ar_price: 'مجاني',
+    en_price: 'free',
+    ar_title: 'برمجة الباش',
+    en_title: 'Bash Scripting',
+    ar_description:
+      'تعلم برمجة سكريبتات باش فعالة لأتمتة المهام وإدارة النظام.',
+    en_description:
       'Develop efficient Bash scripts to automate tasks and system management.',
     image: courseImage2,
     detailsLink: '/bash-scripting',
     trainer: {
-      name: 'Eng. Ebrahim Nasar',
+      ar_name: 'م. إبراهيم نصار',
+      en_name: 'Eng. Ebrahim Nasar',
       image: teamImage1,
       userCount: 35,
       heartCount: 42,
@@ -44,15 +56,21 @@ const coursesData = [
   },
   {
     id: 3,
-    category: 'Web Security',
-    price: '$180',
-    title: 'Cross Site Scripting',
-    description:
+    ar_category: 'أمن الويب',
+    en_category: 'Web Security',
+    ar_price: '$180',
+    en_price: '$180',
+    ar_title: 'ثغرة XSS',
+    en_title: 'Cross Site Scripting',
+    ar_description:
+      'فهم أساليب هجوم CSRF، تقنيات التخفيف، وأفضل ممارسات الوقاية.',
+    en_description:
       'Understand CSRF attack vectors, mitigation techniques, and prevention best practices.',
     image: courseImage3,
     detailsLink: '/xss',
     trainer: {
-      name: 'Eng. Mohamed Emad',
+      ar_name: 'م. محمد عماد',
+      en_name: 'Eng. Mohamed Emad',
       image: teamImage2,
       userCount: 20,
       heartCount: 85,
@@ -69,8 +87,14 @@ const PopularCoursesSection = () => {
     <section id='courses' className='popular-courses'>
       {/* Section Header */}
       <div className='courses__header container' data-aos='fade-up'>
-        <h2 className='courses__title'>Courses</h2>
-        <p className='courses__subtitle'>Popular Courses</p>
+        <h2 className='courses__title'
+        ar_title="الدورات"
+        en_title="Courses"
+        >{""}</h2>
+        <p className='courses__subtitle'
+        ar_title="الدورات الشائعة"
+        en_title="Popular Courses"
+        >{""}</p>
       </div>
 
       <div className='container'>
@@ -84,30 +108,40 @@ const PopularCoursesSection = () => {
               <div className='popular-courses__item'>
                 <img
                   src={course.image}
-                  alt={course.title}
+                  alt={course.en_title}
                   className='popular-courses__item-image img-fluid '
                 />
                 <div className='popular-courses__item-content'>
                   <div className='popular-courses__item-header d-flex justify-content-between align-items-center mb-3'>
-                    <p className='popular-courses__item-category'>
-                      {course.category}
+                    <p className='popular-courses__item-category'
+                    ar_title={course.ar_category}
+                    en_title={course.en_category}>
+                      {""}
                     </p>
                     <p
                       className={`popular-courses__item-price ${
                         course.price === 'free' ? 'free' : ''
-                      }`}>
-                      {course.price}
+                      }`}
+                      ar_title={course.ar_price}
+                      en_title={course.en_price}>
+                      {""}
                     </p>
                   </div>
                   <h3 className='popular-courses__item-title'>
                     <a
                       href={course.detailsLink}
-                      className='popular-courses__item-link'>
-                      {course.title}
+                      className='popular-courses__item-link'
+                      ar_title={course.ar_title}
+                      en_title={course.en_title}
+                      >
+                      {""}
                     </a>
                   </h3>
-                  <p className='popular-courses__item-description'>
-                    {course.description}
+                  <p className='popular-courses__item-description'
+                  ar_title={course.ar_description}
+                  en_title={course.en_description}
+                  >
+                    {""}
                   </p>
                   <div className='popular-courses__item-trainer d-flex justify-content-between align-items-center'>
                     <div className='popular-courses__item-trainer-profile d-flex align-items-center'>
@@ -118,8 +152,11 @@ const PopularCoursesSection = () => {
                       />
                       <a
                         href='/'
-                        className='popular-courses__item-trainer-link'>
-                        {course.trainer.name}
+                        className='popular-courses__item-trainer-link'
+                        ar_title={course.trainer.ar_name}
+                        en_title={course.trainer.en_name}
+                        >
+                        {""}
                       </a>
                     </div>
                     <div className='popular-courses__item-trainer-rank d-flex align-items-center'>

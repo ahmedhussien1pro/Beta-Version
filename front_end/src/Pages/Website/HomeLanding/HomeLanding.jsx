@@ -89,25 +89,41 @@ const ParticlesComponent = () => {
       <div className="container py-5">
         <div className="row align-items-center">
           <div className="col-lg-6 col-12 landing-text mb-4 mb-lg-0">
-            <h3 className="landing-text__header">
-              Elevate Your Cybersecurity Skills
+            <h3
+              className="landing-text__header"
+              ar_title="ارتقِ بمهاراتك في الأمن السيبراني"
+              en_title="Elevate Your Cybersecurity Skills"
+            >
+              {""}
             </h3>
 
-            <h1 className="landing-text__headline">
-              Comprehensive Cybersecurity Training for All Levels
+            <h1
+              className="landing-text__headline"
+              ar_title="تدريب شامل في الأمن السيبراني لجميع المستويات"
+              en_title="Comprehensive Cybersecurity Training for All Levels"
+            >
+              {""}
             </h1>
 
-            <p>
-              Join our academy to gain practical skills and knowledge to protect
-              against cyber threats and secure your future in the digital world.
-            </p>
+            <p
+              ar_title="انضم إلى أكاديميتنا لاكتساب المهارات والمعرفة العملية لحماية نفسك من التهديدات السيبرانية وتأمين مستقبلك في العالم الرقمي."
+              en_title="Join our academy to gain practical skills and knowledge to protect against cyber threats and secure your future in the digital world."
+            ></p>
 
             <div className="mt-4">
-              <Link to="/home" className="btn btn-custom me-3 mb-2">
-                Discover Our Popular Courses
-              </Link>
-              <Link to="#" className="text-white fw-bold mb-2 d-inline-block">
-                <i className="fas fa-play me-2"></i>Watch Demo
+              <Link
+                to="/home"
+                className="btn btn-custom mx-3 mb-2"
+                ar_title="اكتشف دوراتنا الشائعة"
+                en_title="Discover Our Popular Courses"
+              ></Link>
+              <Link
+                to="#"
+                className="text-white fw-bold mb-2 d-inline-block"
+                ar_title="شاهد العرض التوضيحي"
+                en_title="Watch Demo"
+              >
+                <i className="fas fa-play mx-2"></i>
               </Link>
             </div>
           </div>

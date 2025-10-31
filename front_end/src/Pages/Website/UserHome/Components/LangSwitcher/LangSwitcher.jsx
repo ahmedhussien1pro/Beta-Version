@@ -12,11 +12,20 @@ const LangSwitcher = () => {
     document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
     localStorage.setItem("lang", isArabic ? "ar" : "en");
 
-    // ✅ Update all elements with ar_title / en_title attributes
     document.querySelectorAll("[ar_title]").forEach((el) => {
       const ar = el.getAttribute("ar_title");
       const en = el.getAttribute("en_title");
-      el.textContent = isArabic ? ar : en;
+
+      // ✅ if element has an icon, change only the text node
+      const textNode = Array.from(el.childNodes).find(
+        (node) => node.nodeType === Node.TEXT_NODE
+      );
+
+      if (textNode) {
+        textNode.textContent = isArabic ? ar : en;
+      } else {
+        el.appendChild(document.createTextNode(isArabic ? ar : en));
+      }
     });
 
     // ✅ Dispatch event for any components that depend on lang
@@ -30,7 +39,30 @@ const LangSwitcher = () => {
     };
   }, [isArabic]);
 
-  const toggleLang = () => setIsArabic((prev) => !prev);
+  // const toggleLang = () => {
+  //   // Add transition class
+  //   document.documentElement.classList.add("lang-switching");
+
+  //   setTimeout(() => {
+  //     setIsArabic((prev) => !prev);
+  //     document.documentElement.classList.remove("lang-switching");
+  //   }, 300);
+  // };
+  const toggleLang = () => {
+    const isArabicNow = document.documentElement.getAttribute("dir") === "rtl";
+    // Slide opposite direction
+    document.documentElement.style.setProperty(
+      "--lang-slide",
+      isArabicNow ? "30px" : "-30px"
+    );
+
+    document.documentElement.classList.add("lang-switching");
+
+    setTimeout(() => {
+      setIsArabic((prev) => !prev);
+      document.documentElement.classList.remove("lang-switching");
+    }, 400);
+  };
 
   return (
     <div className="lang-switch-box">
