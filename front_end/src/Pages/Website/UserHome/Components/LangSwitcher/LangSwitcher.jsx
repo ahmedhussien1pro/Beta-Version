@@ -2,55 +2,80 @@ import React, { useState, useEffect } from "react";
 import "./LangSwitcher.css";
 
 const LangSwitcher = () => {
-  // Initialize state from local storage or default to false (light lang)
   const [isArabic, setIsArabic] = useState(() => {
     return localStorage.getItem("lang") === "ar";
   });
 
   useEffect(() => {
-    // Set direction + save to localStorage
-    document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
-    localStorage.setItem("lang", isArabic ? "ar" : "en");
+    const lang = isArabic ? "ar" : "en";
 
+    // ✅ Set global HTML attributes
+    document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
+    document.documentElement.setAttribute("lang", lang);
+    localStorage.setItem("lang", lang);
+
+    // ✅ Update elements with [ar_title] / [en_title]
     document.querySelectorAll("[ar_title]").forEach((el) => {
       const ar = el.getAttribute("ar_title");
       const en = el.getAttribute("en_title");
 
-      // ✅ if element has an icon, change only the text node
+      // fallback priority: correct lang > opposite lang > existing text
+      const fallbacks = [
+        isArabic ? ar : en,
+        !isArabic ? ar : en,
+        el.textContent,
+      ].filter(Boolean);
+
+      const newText = fallbacks[0];
       const textNode = Array.from(el.childNodes).find(
         (node) => node.nodeType === Node.TEXT_NODE
       );
 
       if (textNode) {
-        textNode.textContent = isArabic ? ar : en;
+        textNode.textContent = newText;
       } else {
-        el.appendChild(document.createTextNode(isArabic ? ar : en));
+        el.appendChild(document.createTextNode(newText));
       }
     });
 
-    // ✅ Dispatch event for any components that depend on lang
+    // ✅ Dispatch event for components that depend on language
     window.dispatchEvent(new Event("langChange"));
 
-    // ✅ Optional global helper function
+    // ✅ Global helper to get correct title/description
     window.getLangTitle = (item) => {
       if (!item) return "";
       const lang = localStorage.getItem("lang") || "en";
-      return lang === "ar" && item.ar_title ? item.ar_title : item.title;
+
+      const arKeys = [
+        "ar_title",
+        "ar_name",
+        "ar_description",
+      ];
+      const enKeys = [
+        "en_title",
+        "en_name",
+        "en_description",
+      ];
+
+      const keys = lang === "ar" ? arKeys : enKeys;
+
+      // Pick the first available value
+      for (const key of keys) {
+        if (item[key]) return item[key];
+      }
+
+      // Final fallback (neutral fields)
+      return item.title || item.name || item.description || "";
     };
+
+    // ✅ Global function to check if Arabic
+    window.isArabic = () => (localStorage.getItem("lang") || "en") === "ar";
   }, [isArabic]);
 
-  // const toggleLang = () => {
-  //   // Add transition class
-  //   document.documentElement.classList.add("lang-switching");
-
-  //   setTimeout(() => {
-  //     setIsArabic((prev) => !prev);
-  //     document.documentElement.classList.remove("lang-switching");
-  //   }, 300);
-  // };
+  // ✅ Toggle language with smooth animation
   const toggleLang = () => {
     const isArabicNow = document.documentElement.getAttribute("dir") === "rtl";
-    // Slide opposite direction
+
     document.documentElement.style.setProperty(
       "--lang-slide",
       isArabicNow ? "30px" : "-30px"

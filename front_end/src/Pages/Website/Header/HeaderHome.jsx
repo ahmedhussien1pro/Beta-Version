@@ -93,17 +93,23 @@ const HeaderHome = () => {
           >
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/"
+                ar_title="الرئيسة"
+                en_title="Home">
                   Home
                 </NavLink>
               </li>
               <li className="nav-item">
                 {token ? (
-                  <NavLink className="nav-link" to="/home">
+                  <NavLink className="nav-link" to="/home"
+                  ar_title="مسار التعلم"
+                  en_title="Learning">
                     Learning
                   </NavLink>
                 ) : (
-                  <NavLink className="nav-link" to="/home">
+                  <NavLink className="nav-link" to="/home"
+                  ar_title="مسار التعلم"
+                  en_title="Learning">
                     Learning
                   </NavLink>
                 )}
@@ -112,17 +118,23 @@ const HeaderHome = () => {
                 {/* <a className="nav-link" href="/about-us">
                   About Us
                 </a> */}
-                <NavLink className="nav-link" to="/about-us">
+                <NavLink className="nav-link" to="/about-us"
+                ar_title="من نحن"
+                en_title="About Us">
                   About Us
                 </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#allLabs">
+                <a className="nav-link" href="#allLabs"
+                ar_title="جميع المختبرات"
+                en_title="All Labs">
                   All Labs
                 </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact"
+                ar_title="اتصل بنا"
+                en_title="Contact">
                   Contact
                 </NavLink>
               </li>

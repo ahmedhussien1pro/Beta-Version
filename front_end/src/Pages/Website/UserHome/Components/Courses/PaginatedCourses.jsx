@@ -62,11 +62,17 @@ const PaginatedCourses = ({ filteredCourses }) => {
     e.preventDefault();
     e.stopPropagation();
     Swal.fire({
-      title: course.title,
-      html: `<p>${course.description}</p>
-             <ul>
+      title: isArabic ? course.ar_title : course.en_title,
+      html: `<p>${isArabic ? course.ar_description : course.en_description}</p>
+              ${
+                isArabic
+                  ? `<ul>
+               ${course.ar_topics.map((topic) => `<li>${topic}</li>`).join("")}
+             </ul>`
+                  : `<ul>
                ${course.topics.map((topic) => `<li>${topic}</li>`).join("")}
-             </ul>`,
+             </ul>`
+              }`,
       icon: "info",
     });
   };
@@ -119,7 +125,7 @@ const PaginatedCourses = ({ filteredCourses }) => {
             <div className="card-image-container">
               <img
                 src={course.image}
-                alt={course.title}
+                alt={course.en_title}
                 className="card-image"
               />
 
@@ -155,13 +161,11 @@ const PaginatedCourses = ({ filteredCourses }) => {
             </div>
 
             <div className="card-content">
-              <h3 className="card-title"
-              ar_title= {course.ar_title}
-              en_title= {course.en_title}
-              >
+              <h3 className="card-title">
+                {isArabic ? course.ar_title : course.en_title}
               </h3>
               <p className="card-description">
-                {isArabic  ? course.ar_description : course.description}
+                {isArabic ? course.ar_description : course.en_description}
               </p>
             </div>
           </a>

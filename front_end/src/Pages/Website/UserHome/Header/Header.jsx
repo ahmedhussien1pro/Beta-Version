@@ -98,33 +98,46 @@ const Header = () => {
           >
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/"
+                ar_title="الرئيسة"
+                en_title="Home">
                   Home
                 </a>
               </li>
               <li className="nav-item">
                 {token ? (
-                  <NavLink className="nav-link " to="/home">
+                  <NavLink className="nav-link " to="/home"
+                  ar_title="مسار التعلم"
+                  en_title="Learning">
                     Learning
                   </NavLink>
                 ) : (
-                  <NavLink className="nav-link" to="/">
+                  <NavLink className="nav-link" to="/"
+                  ar_title="مسار التعلم"
+                  en_title="Learning"
+                  >
                     Learning
                   </NavLink>
                 )}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about-us">
+                <a className="nav-link" href="/about-us"
+                ar_title="من نحن"
+                en_title="About Us">
                   About Us
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#learningPath">
+                <a className="nav-link" href="#learningPath"
+                ar_title="مسار التعلم"
+                en_title="Learning Path">
                   Learning Path
                 </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
+                <NavLink className="nav-link" to="/contact"
+                ar_title="اتصل بنا"
+                en_title="Contact">
                   Contact
                 </NavLink>
               </li>

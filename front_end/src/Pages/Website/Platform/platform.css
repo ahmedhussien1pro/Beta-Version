@@ -83,6 +83,7 @@
 .faq-accordion .accordion-button::after {
   content: "\f107";
   font-family: "FontAwesome";
+  margin-left: 0;
   font-size: 1.5rem;
   font-weight: 900;
   color: var(--primary-color);

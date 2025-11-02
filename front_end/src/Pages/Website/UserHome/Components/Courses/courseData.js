@@ -2,9 +2,9 @@ const courseData = [
   {
     id: 1,
     category: "Career & Industry",
-    title: "Careers in Cyber",
+    en_title: "Careers in Cyber",
     ar_title: "المهن في الأمن السيبراني",
-    description:
+    en_description:
       "Discover diverse cybersecurity careers, essential skills, and industry opportunities today.",
     ar_description:
       "اكتشف مسارات مهنية متنوعة في الأمن السيبراني، والمهارات الأساسية، وفرص الصناعة اليوم.",
@@ -30,9 +30,9 @@ const courseData = [
   {
     id: 2,
     category: "Tools & Techniques",
-    title: "Burp Suite",
+    en_title: "Burp Suite",
     ar_title: "Burp Suite",
-    description:
+    en_description:
       "Master Burp Suite fundamentals, empowering cybersecurity testing and vulnerability assessment.",
     ar_description:
       "إتقان أساسيات Burp Suite، مما يمكّن اختبار الأمن السيبراني وتقييم الثغرات.",
@@ -58,9 +58,9 @@ const courseData = [
   {
     id: 3,
     category: "Fundamentals",
-    title: "Cookies",
+    en_title: "Cookies",
     ar_title: "الكوكيز",
-    description:
+    en_description:
       "Understand cookies’ roles, security implications, storage methods, and manipulation techniques.",
     ar_description:
       "فهم أدوار الكوكيز، والآثار الأمنية، وطرق التخزين، وتقنيات التلاعب.",
@@ -86,9 +86,9 @@ const courseData = [
   {
     id: 4,
     category: "Vulnerabilities",
-    title: "SQL Injection",
+    en_title: "SQL Injection",
     ar_title: "حقن SQL",
-    description:
+    en_description:
       "Identify SQL injection flaws, extract hidden data, and secure applications.",
     ar_description:
       "تحديد عيوب حقن SQL، واستخراج البيانات المخفية، وتأمين التطبيقات.",
@@ -114,9 +114,9 @@ const courseData = [
   {
     id: 5,
     category: "Vulnerabilities",
-    title: "Unrestricted File Upload",
+    en_title: "Unrestricted File Upload",
     ar_title: "تحميل الملفات غير المقيد",
-    description:
+    en_description:
       "Explore file upload risks, techniques, and methods to safeguard applications.",
     ar_description:
       "استكشاف مخاطر تحميل الملفات، والتقنيات، وطرق حماية التطبيقات.",
@@ -142,9 +142,9 @@ const courseData = [
   {
     id: 6,
     category: "Fundamentals",
-    title: "Linux Fundamentals",
+    en_title: "Linux Fundamentals",
     ar_title: "أساسيات لينكس",
-    description:
+    en_description:
       "Build essential Linux skills, mastering commands, filesystem navigation and operations.",
     ar_description:
       "بناء مهارات لينكس الأساسية، وإتقان الأوامر، والتنقل في نظام الملفات والعمليات.",
@@ -170,9 +170,9 @@ const courseData = [
   {
     id: 7,
     category: "Vulnerabilities",
-    title: "Access Control Vulnerabilities",
+    en_title: "Access Control Vulnerabilities",
     ar_title: "ثغرات التحكم في الوصول",
-    description:
+    en_description:
       "Learn to detect and mitigate access control vulnerabilities in applications.",
     ar_description:
       "تعلم كيفية اكتشاف وتخفيف ثغرات التحكم في الوصول في التطبيقات.",
@@ -198,9 +198,9 @@ const courseData = [
   {
     id: 8,
     category: "Vulnerabilities",
-    title: "Broken Authentication",
+    en_title: "Broken Authentication",
     ar_title: "المصادقة المحطمة",
-    description:
+    en_description:
       "Secure authentication mechanisms to prevent account takeovers and data breaches.",
     ar_description:
       "تأمين آليات المصادقة لمنع استيلاء الحسابات وانتهاكات البيانات.",
@@ -226,9 +226,9 @@ const courseData = [
   {
     id: 9,
     category: "Fundamentals",
-    title: "Bash Scripting",
+    en_title: "Bash Scripting",
     ar_title: "برمجة باش",
-    description:
+    en_description:
       "Develop efficient Bash scripts to automate tasks and system management.",
     ar_description: "تطوير سكريبتات باش فعالة لأتمتة المهام وإدارة النظام.",
     topics: ["simple bash scripts", "Variables", "Parameters", "Arrays"],
@@ -243,9 +243,9 @@ const courseData = [
   {
     id: 10,
     category: "Vulnerabilities",
-    title: "Business Logic Vulnerabilities",
+    en_title: "Business Logic Vulnerabilities",
     ar_title: "ثغرات منطق الأعمال",
-    description:
+    en_description:
       "Analyze business logic flaws, exploitation methods, and strategies for mitigation.",
     ar_description:
       "تحليل عيوب منطق الأعمال، وطرق الاستغلال، واستراتيجيات التخفيف.",
@@ -271,9 +271,9 @@ const courseData = [
   {
     id: 11,
     category: "Vulnerabilities",
-    title: "Insecure Direct Object Reference(IDOR)",
+    en_title: "Insecure Direct Object Reference(IDOR)",
     ar_title: "الإشارة غير الآمنة إلى الكائن المباشر (IDOR)",
-    description:
+    en_description:
       "Explore IDOR vulnerabilities, unauthorized access, common examples, and mitigation strategies.",
     ar_description:
       "استكشاف ثغرات IDOR، والوصول غير المصرح به، والأمثلة الشائعة، واستراتيجيات التخفيف.",
@@ -301,9 +301,9 @@ const courseData = [
   {
     id: 12,
     category: "Tools & Techniques",
-    title: "Obfuscation",
+    en_title: "Obfuscation",
     ar_title: "التشويش",
-    description:
+    en_description:
       "Learn code obfuscation techniques to protect intellectual property and security.",
     ar_description: "تعلم تقنيات تشويش الشفرة لحماية الملكية الفكرية والأمان.",
     topics: [
@@ -328,9 +328,9 @@ const courseData = [
   {
     id: 13,
     category: "Vulnerabilities",
-    title: "Cross Site Request Forgery (CSRF)",
+    en_title: "Cross Site Request Forgery (CSRF)",
     ar_title: "تزوير طلبات المواقع المتقاطعة (CSRF)",
-    description:
+    en_description:
       "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
     ar_description:
       "فهم متجهات هجوم CSRF، وتقنيات التخفيف، وأفضل ممارسات الوقاية.",
@@ -356,9 +356,9 @@ const courseData = [
   {
     id: 14,
     category: "Vulnerabilities",
-    title: "Path Traversal",
+    en_title: "Path Traversal",
     ar_title: "تجاوز المسار",
-    description:
+    en_description:
       "Discover path traversal techniques and prevention measures for secure files.",
     ar_description: "اكتشف تقنيات تجاوز المسار وتدابير الوقاية للملفات الآمنة.",
     topics: [
@@ -383,9 +383,9 @@ const courseData = [
   {
     id: 15,
     category: "Fundamentals",
-    title: "Cryptography",
+    en_title: "Cryptography",
     ar_title: "علم التشفير",
-    description:
+    en_description:
       "Master cryptography principles, encryption types, and techniques for secure communications.",
     ar_description:
       "إتقان مبادئ علم التشفير، وأنواع التشفير، وتقنيات الاتصالات الآمنة.",
@@ -411,9 +411,9 @@ const courseData = [
   {
     id: 16,
     category: "Fundamentals",
-    title: "Regular expressions",
+    en_title: "Regular expressions",
     ar_title: "التعبيرات النمطية",
-    description:
+    en_description:
       "Craft effective regular expressions for text matching, searching, and parsing.",
     ar_description:
       "صياغة تعبيرات نمطية فعالة لمطابقة النصوص والبحث عنها وتحليلها.",
@@ -439,9 +439,9 @@ const courseData = [
   {
     id: 17,
     category: "Vulnerabilities",
-    title: "Cross-Site Scripting",
+    en_title: "Cross-Site Scripting",
     ar_title: "برمجة النصوص عبر المواقع",
-    description:
+    en_description:
       "Identify and mitigate cross-site scripting risks in modern web applications.",
     ar_description:
       "تحديد وتخفيف مخاطر برمجة النصوص عبر المواقع في تطبيقات الويب الحديثة.",
@@ -467,9 +467,9 @@ const courseData = [
   {
     id: 18,
     category: "Tools & Techniques",
-    title: "wireshark",
+    en_title: "wireshark",
     ar_title: "وايرشارك",
-    description:
+    en_description:
       "Utilize Wireshark for deep network traffic analysis and security monitoring.",
     ar_description:
       "استخدام وايرشارك لتحليل حركة مرور الشبكة العميقة ومراقبة الأمان.",
@@ -495,9 +495,9 @@ const courseData = [
   {
     id: 19,
     category: "Fundamentals",
-    title: "Hashing",
+    en_title: "Hashing",
     ar_title: "التشفير التجزئي",
-    description:
+    en_description:
       "Understand hashing concepts, algorithms, security implications, and best practices thoroughly.",
     ar_description:
       "فهم مفاهيم التشفير التجزئي، والخوارزميات، والآثار الأمنية، وأفضل الممارسات بشكل شامل.",
@@ -523,9 +523,9 @@ const courseData = [
   {
     id: 20,
     category: "Vulnerabilities",
-    title: "Command Injection",
+    en_title: "Command Injection",
     ar_title: "حقن الأوامر",
-    description:
+    en_description:
       "Learn command injection techniques, exploitation risks, and secure coding practices.",
     ar_description:
       "تعلم تقنيات حقن الأوامر، ومخاطر الاستغلال، وممارسات الترميز الآمن.",
@@ -551,9 +551,9 @@ const courseData = [
   {
     id: 21,
     category: "Vulnerabilities",
-    title: "File Inclusion",
+    en_title: "File Inclusion",
     ar_title: "تضمين الملفات",
-    description:
+    en_description:
       "Examine file inclusion flaws, exploit methods, and robust remediation strategies.",
     ar_description:
       "افحص عيوب إدراج الملفات وطرق الاستغلال واستراتيجيات الإصلاح القوية.",
@@ -579,9 +579,9 @@ const courseData = [
   {
     id: 22,
     category: "Fundamentals",
-    title: "Digital Forensics",
+    en_title: "Digital Forensics",
     ar_title: "الطب الشرعي الرقمي",
-    description:
+    en_description:
       "Investigate digital evidence using forensic techniques for accurate cyber investigations.",
     ar_description:
       "تحقيق الأدلة الرقمية باستخدام تقنيات الطب الشرعي لتحقيقات سيبرانية دقيقة.",
@@ -607,9 +607,9 @@ const courseData = [
   {
     id: 23,
     category: "Vulnerabilities",
-    title: "Insecure Deserialization",
+    en_title: "Insecure Deserialization",
     ar_title: "إلغاء التسلسل غير الآمن",
-    description:
+    en_description:
       "Detect insecure deserialization risks, prevent code execution, and secure data.",
     ar_description:
       "كشف مخاطر إلغاء التسلسل غير الآمن، ومنع تنفيذ التعليمات البرمجية، وتأمين البيانات.",
@@ -635,9 +635,9 @@ const courseData = [
   {
     id: 24,
     category: "Vulnerabilities",
-    title: "Server Side Template Injection (SSTI)",
+    en_title: "Server Side Template Injection (SSTI)",
     ar_title: "حقن القالب من جانب الخادم (SSTI)",
-    description:
+    en_description:
       "Understand SSTI risks, exploit techniques, and prevention strategies for templates.",
     ar_description:
       "فهم مخاطر SSTI وتقنيات الاستغلال واستراتيجيات الوقاية للقوالب.",
@@ -658,9 +658,9 @@ const courseData = [
   {
     id: 25,
     category: "Tools & Techniques",
-    title: "API Hacking & Testing",
+    en_title: "API Hacking & Testing",
     ar_title: "اختراق واختبار API",
-    description:
+    en_description:
       "Master API hacking techniques, testing methodologies, and security assessment procedures.",
     ar_description:
       "إتقان تقنيات اختراق API، منهجيات الاختبار، وإجراءات تقييم الأمان.",
@@ -687,9 +687,9 @@ const courseData = [
   {
     id: 26,
     category: "Fundamentals",
-    title: "Race Condition",
+    en_title: "Race Condition",
     ar_title: "شرط التسابق",
-    description:
+    en_description:
       "A race condition occurs when multiple processes access shared resources simultaneously in an uncontrolled manner, leading to unexpected errors or security vulnerabilities.",
     ar_description:
       "تحدث حالة التسابق عندما تصل عدة عمليات إلى الموارد المشتركة في وقت واحد بطريقة غير منضبطة، مما يؤدي إلى أخطاء غير متوقعة أو ثغرات أمنية.",
@@ -705,9 +705,9 @@ const courseData = [
   {
     id: 27,
     category: "Vulnerabilities",
-    title: "Captcha Bypass",
+    en_title: "Captcha Bypass",
     ar_title: "تخطي الكابتشا",
-    description:
+    en_description:
       "Examine captcha bypass methods, security flaws, and advanced prevention techniques.",
       ar_description:
       "افحص طرق تخطي الكابتشا، وثغرات الأمان، وتقنيات الوقاية المتقدمة.",
@@ -733,9 +733,9 @@ const courseData = [
   {
     id: 28,
     category: "Vulnerabilities",
-    title: "click jacking",
+    en_title: "click jacking",
     ar_title: "النقر الاحتيالي",
-    description:
+    en_description:
       "Investigate click jacking strategies, analyze attack mechanisms, and implement countermeasures.",
       ar_description: "تحقيق استراتيجيات النقر الاحتيالي، تحليل آليات الهجوم، وتنفيذ التدابير المضادة.",
     topics: [
@@ -760,8 +760,8 @@ const courseData = [
   {
     id: 29,
     category: "Fundamentals",
-    title: "Server Side Request Forgery (SSRF)",
-    description:
+    en_title: "Server Side Request Forgery (SSRF)",
+    en_description:
       "Placeholder course offering preliminary topics, soon updated with comprehensive content.",
     topics: ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
     difficulty: "Hard",
@@ -774,9 +774,9 @@ const courseData = [
   {
     id: 30,
     category: "Vulnerabilities",
-    title: "JWT attacks",
+    en_title: "JWT attacks",
     ar_title: "هجمات JWT",
-    description:
+    en_description:
       "Examine JWT attack vectors, token vulnerabilities, and secure handling methods.",
     ar_description: "افحص متجهات هجوم JWT، وثغرات الرموز، وطرق المعالجة الآمنة.",
     topics: [
@@ -801,9 +801,9 @@ const courseData = [
   {
     id: 31,
     category: "Fav Topics",
-    title: "Regular expressions",
+    en_title: "Regular expressions",
     ar_title:"التعبيرات العادية",
-    description:
+    en_description:
       "Craft effective regular expressions for text matching, searching, and parsing.",
       ar_description: "اصنع تعبيرات عادية فعالة لمطابقة النصوص، والبحث، والتحليل.",
     topics: [
@@ -828,9 +828,9 @@ const courseData = [
   {
     id: 32,
     category: "My Courses",
-    title: "Cross Site Request Forgery (CSRF)",
+    en_title: "Cross Site Request Forgery (CSRF)",
     ar_title: "تزوير طلبات المواقع المتقاطعة (CSRF)",
-    description:
+    en_description:
       "Understand CSRF attack vectors, mitigation techniques, and prevention best practices.",
     ar_description:
       "فهم متجهات هجوم CSRF، وتقنيات التخفيف، وأفضل ممارسات الوقاية.",
@@ -856,9 +856,9 @@ const courseData = [
   {
     id: 33,
     category: "My Courses",
-    title: "Burp Suite",
+    en_title: "Burp Suite",
     ar_title: "Burp Suite",
-    description:
+    en_description:
       "Master Burp Suite fundamentals, empowering cybersecurity testing and vulnerability assessment.",
     ar_description:
       "إتقان أساسيات Burp Suite، مما يمكّن اختبار الأمن السيبراني وتقييم الثغرات.",
@@ -884,9 +884,9 @@ const courseData = [
   {
     id: 34,
     category: "My Courses",
-    title: "Cookies",
+    en_title: "Cookies",
     ar_title: "الكوكيز",
-    description:
+    en_description:
       "Understand cookies’ roles, security implications, storage methods, and manipulation techniques.",
     ar_description:
       "فهم أدوار الكوكيز، والآثار الأمنية، وطرق التخزين، وتقنيات التلاعب.",
