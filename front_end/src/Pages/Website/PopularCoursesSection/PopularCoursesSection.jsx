@@ -90,11 +90,11 @@ const PopularCoursesSection = () => {
         <h2 className='courses__title'
         ar_title="الدورات"
         en_title="Courses"
-        >{""}</h2>
+        >Courses</h2>
         <p className='courses__subtitle'
         ar_title="الدورات الشائعة"
         en_title="Popular Courses"
-        >{""}</p>
+        >Popular Courses</p>
       </div>
 
       <div className='container'>
@@ -116,7 +116,7 @@ const PopularCoursesSection = () => {
                     <p className='popular-courses__item-category'
                     ar_title={course.ar_category}
                     en_title={course.en_category}>
-                      {""}
+                      {course.en_category}
                     </p>
                     <p
                       className={`popular-courses__item-price ${
@@ -124,7 +124,7 @@ const PopularCoursesSection = () => {
                       }`}
                       ar_title={course.ar_price}
                       en_title={course.en_price}>
-                      {""}
+                      {course.en_price}
                     </p>
                   </div>
                   <h3 className='popular-courses__item-title'>
@@ -134,14 +134,14 @@ const PopularCoursesSection = () => {
                       ar_title={course.ar_title}
                       en_title={course.en_title}
                       >
-                      {""}
+                      {course.en_title}
                     </a>
                   </h3>
                   <p className='popular-courses__item-description'
                   ar_title={course.ar_description}
                   en_title={course.en_description}
                   >
-                    {""}
+                    {course.en_description}
                   </p>
                   <div className='popular-courses__item-trainer d-flex justify-content-between align-items-center'>
                     <div className='popular-courses__item-trainer-profile d-flex align-items-center'>
@@ -156,7 +156,7 @@ const PopularCoursesSection = () => {
                         ar_title={course.trainer.ar_name}
                         en_title={course.trainer.en_name}
                         >
-                        {""}
+                        {course.trainer.en_name}
                       </a>
                     </div>
                     <div className='popular-courses__item-trainer-rank d-flex align-items-center'>

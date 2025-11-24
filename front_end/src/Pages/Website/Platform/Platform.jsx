@@ -75,14 +75,14 @@ export default function Platform() {
             ar_title="أسئلة شائعة حول المنصة"
             en_title="Platform FAQ"
           >
-            {""}
+            Platform FAQ
           </h2>
           <p
             className="courses__subtitle"
             ar_title="أسئلة تم الإجابة عليها بوضوح"
             en_title="Questions answered clearly"
           >
-            {""}
+            Questions answered clearly
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export default function Platform() {
                         ar_title={faq.ar_question}
                         en_title={faq.en_question}
                       >
-                        {""}
+                        {faq.en_question}
                       </button>
                     </h2>
                     <div
@@ -126,7 +126,7 @@ export default function Platform() {
                         <p
                           ar_title={faq.ar_answer}
                           en_title={faq.en_answer}
-                        >{""}</p>
+                      >{faq.en_answer}</p>
                       </div>
                     </div>
                   </div>

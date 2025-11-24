@@ -30,7 +30,7 @@ const CountsSection = () => {
                 className="custom-counter"
               />
               <p ar_title="الطلاب" en_title="Students">
-                {""}
+                Students
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const CountsSection = () => {
                 className="custom-counter"
               />
               <p ar_title="الدورات" en_title="Courses">
-                {""}
+                Courses
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const CountsSection = () => {
                 className="custom-counter"
               />
               <p ar_title="الفعاليات" en_title="Events">
-                {""}
+                Events
               </p>
             </div>
           </div>
@@ -72,7 +72,7 @@ const CountsSection = () => {
                 className="custom-counter"
               />
               <p ar_title="المدربون" en_title="Trainers">
-                {""}
+                Trainers
               </p>
             </div>
           </div>

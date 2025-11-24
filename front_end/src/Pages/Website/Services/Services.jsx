@@ -32,17 +32,17 @@ const ServiceCard = ({
               ar_title={ar_title}
               en_title={en_title}
             >
-              {""}
+              {en_title}
             </h3>
             <p className="services__card__description"
             ar_title={ar_description}
             en_title={en_description}
-            >{""}</p>
+            >{en_description}</p>
             <a href="/home" className="services__card__link"
             ar_title="اقرأ المزيد"
             en_title="Read More"
             >
-              {""}
+              Read More
             </a>
           </div>
         </div>
@@ -120,14 +120,14 @@ const ServicesSection = () => {
             ar_title="مسارات التعلم"
             en_title="Learning Pathways"
           >
-            {""}
+            Learning Pathways
           </h2>
           <p
             className="courses__subtitle"
             ar_title="مسارات التعلم لدينا"
             en_title="Our Learning Pathways"
           >
-            {""}
+            Our Learning Pathways
           </p>
         </div>
         <div className="row justify-content-center">

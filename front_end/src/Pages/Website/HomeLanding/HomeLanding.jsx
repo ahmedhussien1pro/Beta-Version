@@ -94,7 +94,7 @@ const ParticlesComponent = () => {
               ar_title="ارتقِ بمهاراتك في الأمن السيبراني"
               en_title="Elevate Your Cybersecurity Skills"
             >
-              {""}
+              Elevate Your Cybersecurity Skills
             </h3>
 
             <h1
@@ -102,13 +102,15 @@ const ParticlesComponent = () => {
               ar_title="تدريب شامل في الأمن السيبراني لجميع المستويات"
               en_title="Comprehensive Cybersecurity Training for All Levels"
             >
-              {""}
+              Comprehensive Cybersecurity Training for All Levels
             </h1>
 
             <p
               ar_title="انضم إلى أكاديميتنا لاكتساب المهارات والمعرفة العملية لحماية نفسك من التهديدات السيبرانية وتأمين مستقبلك في العالم الرقمي."
               en_title="Join our academy to gain practical skills and knowledge to protect against cyber threats and secure your future in the digital world."
-            ></p>
+            >
+              Join our academy to gain practical skills and knowledge to protect against cyber threats and secure your future in the digital world.
+            </p>
 
             <div className="mt-4">
               <Link
@@ -116,14 +118,14 @@ const ParticlesComponent = () => {
                 className="btn btn-custom mx-3 mb-2"
                 ar_title="اكتشف دوراتنا الشائعة"
                 en_title="Discover Our Popular Courses"
-              ></Link>
+              >Discover Our Popular Courses</Link>
               <Link
                 to="#"
                 className="text-white fw-bold mb-2 d-inline-block"
                 ar_title="شاهد العرض التوضيحي"
                 en_title="Watch Demo"
               >
-                <i className="fas fa-play mx-2"></i>
+                <i className="fas fa-play mx-2"></i>Watch Demo
               </Link>
             </div>
           </div>
