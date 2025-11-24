@@ -18,7 +18,7 @@ export default function UserHome() {
     <div style={{position: "relative"}}>
       <Header />
       <ThemeSwitcher />
-      <LangSwitcher />
+      {/* <LangSwitcher /> */}
       <Preloader  loading={loading}/>
       <Landing />
       <Courses />

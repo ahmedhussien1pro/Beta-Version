@@ -27,7 +27,7 @@ export default function HomePage() {
     >
       <Go2TopBtn />
       <ThemeSwitcher />
-      <LangSwitcher />
+      {/* <LangSwitcher /> */}
       <Preloader  loading={loading}/>
       <Header />
       <HomeLanding />
