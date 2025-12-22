@@ -1,76 +1,74 @@
-import React from "react";
-import "../../Components/Topics CSS/topics.css";
-import Header from "../../Header/Header";
-import background from "../../assets/img/wireshark/baner_lap.png";
-import courseImage from "../../assets/img/wireshark/course_image.png";
-import Footer from "../../Footer/Footer";
-import exampleImage1 from "../../assets/img/wireshark/course_image.png";
-import exampleImage2 from "../../assets/img/wireshark/1.png";
-import exampleImage3 from "../../assets/img/wireshark/3.png";
-import exampleImage4 from "../../assets/img/wireshark/4.png";
-import exampleImage5 from "../../assets/img/wireshark/5.png";
-import exampleImage6 from "../../assets/img/wireshark/6.png";
-import exampleImage7 from "../../assets/img/wireshark/7.png";
-import exampleImage8 from "../../assets/img/wireshark/8.png";
-import exampleImage9 from "../../assets/img/wireshark/9.png";
-import exampleImage10 from "../../assets/img/wireshark/10.png";
-import exampleImage11 from "../../assets/img/wireshark/11.png";
-import exampleImage12 from "../../assets/img/wireshark/12.png";
-import exampleImage13 from "../../assets/img/wireshark/13.png";
-import exampleImage14 from "../../assets/img/wireshark/14.png";
-import exampleImage15 from "../../assets/img/wireshark/15.png";
-import exampleImage16 from "../../assets/img/wireshark/16.png";
-import exampleImage17 from "../../assets/img/wireshark/17.png";
-import exampleImage18 from "../../assets/img/wireshark/18.png";
-import exampleImage19 from "../../assets/img/wireshark/19.png";
-import exampleImage20 from "../../assets/img/wireshark/20.png";
-import exampleImage21 from "../../assets/img/wireshark/21.png";
-import exampleImage22 from "../../assets/img/wireshark/22.png";
-import exampleImage23 from "../../assets/img/wireshark/23.png";
-import exampleImage24 from "../../assets/img/wireshark/24.png";
-import exampleImage25 from "../../assets/img/wireshark/25.png";
-import exampleImage26 from "../../assets/img/wireshark/26.png";
-import exampleImage27 from "../../assets/img/wireshark/27.png";
-import exampleImage28 from "../../assets/img/wireshark/28.png";
-import exampleImage29 from "../../assets/img/wireshark/29.png";
-import exampleImage30 from "../../assets/img/wireshark/30.png";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import '../../Components/Topics CSS/topics.css';
+import Header from '../../Header/Header';
+import background from '../../assets/img/wireshark/baner_lap.png';
+import courseImage from '../../assets/img/wireshark/course_image.png';
+import Footer from '../../Footer/Footer';
+import exampleImage1 from '../../assets/img/wireshark/course_image.png';
+import exampleImage2 from '../../assets/img/wireshark/1.png';
+import exampleImage3 from '../../assets/img/wireshark/3.png';
+import exampleImage4 from '../../assets/img/wireshark/4.png';
+import exampleImage5 from '../../assets/img/wireshark/5.png';
+import exampleImage6 from '../../assets/img/wireshark/6.png';
+import exampleImage7 from '../../assets/img/wireshark/7.png';
+import exampleImage8 from '../../assets/img/wireshark/8.png';
+import exampleImage9 from '../../assets/img/wireshark/9.png';
+import exampleImage10 from '../../assets/img/wireshark/10.png';
+import exampleImage11 from '../../assets/img/wireshark/11.png';
+import exampleImage12 from '../../assets/img/wireshark/12.png';
+import exampleImage13 from '../../assets/img/wireshark/13.png';
+import exampleImage14 from '../../assets/img/wireshark/14.png';
+import exampleImage15 from '../../assets/img/wireshark/15.png';
+import exampleImage16 from '../../assets/img/wireshark/16.png';
+import exampleImage17 from '../../assets/img/wireshark/17.png';
+import exampleImage18 from '../../assets/img/wireshark/18.png';
+import exampleImage19 from '../../assets/img/wireshark/19.png';
+import exampleImage20 from '../../assets/img/wireshark/20.png';
+import exampleImage21 from '../../assets/img/wireshark/21.png';
+import exampleImage22 from '../../assets/img/wireshark/22.png';
+import exampleImage23 from '../../assets/img/wireshark/23.png';
+import exampleImage24 from '../../assets/img/wireshark/24.png';
+import exampleImage25 from '../../assets/img/wireshark/25.png';
+import exampleImage26 from '../../assets/img/wireshark/26.png';
+import exampleImage27 from '../../assets/img/wireshark/27.png';
+import exampleImage28 from '../../assets/img/wireshark/28.png';
+import exampleImage29 from '../../assets/img/wireshark/29.png';
+import exampleImage30 from '../../assets/img/wireshark/30.png';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 
 export default function WireShark() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Wire Shark"
-        courseDescription="Master the basics of Wire Shark, a powerful technique for
+        courseTitle='Wire Shark'
+        courseDescription='Master the basics of Wire Shark, a powerful technique for
                 securing code and protecting intellectual property in
-                cybersecurity environments."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+                cybersecurity environments.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>step 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h2 className="content__title">Wireshark Fundamentals</h2>
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h2 className='content__title'>Wireshark Fundamentals</h2>
                   <br />
                   <p>
                     Wireshark, a tool used for creating and analyzing PCAPs
@@ -81,9 +79,9 @@ export default function WireShark() {
                     common networking protocol.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage1} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage1} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -94,7 +92,7 @@ export default function WireShark() {
                     respective owners.
                   </p>
                   <br />
-                  <h2 className="content__title">Installation :</h2>
+                  <h2 className='content__title'>Installation :</h2>
                   <br />
                   <p>
                     The installation for Wireshark is very easy and typically
@@ -111,9 +109,9 @@ export default function WireShark() {
                     install wireshark or a similar package manager.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage2} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage2} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -124,11 +122,11 @@ export default function WireShark() {
                   </p>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>step 2</span> Wireshark Overview
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h2 className="content__title">Wireshark Overview :</h2>
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h2 className='content__title'>Wireshark Overview :</h2>
                   <br />
                   <p>
                     The first screen that we are greeted by when opening
@@ -137,9 +135,9 @@ export default function WireShark() {
                     that we are capturing.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage3} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage3} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -165,9 +163,9 @@ export default function WireShark() {
                     available filters.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage4} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage4} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -194,9 +192,9 @@ export default function WireShark() {
                     begin your analysis.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage5} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage5} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -228,9 +226,9 @@ export default function WireShark() {
                     captures.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage6} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage6} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -246,10 +244,10 @@ export default function WireShark() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span> step 3</span>Collection Methods
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     Before going into detail about how to analyze each protocol
                     in a PCAP we need to understand the ways to gather a PCAP
@@ -346,10 +344,10 @@ export default function WireShark() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> step 4</span> Filtering Captures{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> step 4</span> Filtering Captures{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
                   <h3>Filtering Captures :</h3>
                   <p>
@@ -373,7 +371,7 @@ export default function WireShark() {
                   </p>
                   <p>
                     Wireshark only has a few that you will need to be familiar
-                    with :{" "}
+                    with :{' '}
                   </p>
                   <ol>
                     <li>and - operator: and / &&</li>
@@ -419,9 +417,9 @@ export default function WireShark() {
                   </p>
                   <span>Syntax: ip.addr == &lt;IP Address&gt;</span>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage7} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage7} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -438,16 +436,16 @@ export default function WireShark() {
                     and destination from which the traffic is coming from.
                   </p>
                   <p>
-                    Syntax:{" "}
+                    Syntax:{' '}
                     <span>
                       ip.src == &lt;SRC IP Address&gt; and ip.dst == &lt;DST IP
                       Address&gt;
                     </span>
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage8} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage8} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -467,15 +465,15 @@ export default function WireShark() {
                     both port numbers as well as protocol names.
                   </p>
                   <p>
-                    Syntax:{" "}
+                    Syntax:{' '}
                     <span>
                       tcp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;
                     </span>
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage9} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage9} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -484,7 +482,7 @@ export default function WireShark() {
                     by changing the prefix from tcp to udp
                   </p>
                   <p>
-                    Syntax:{" "}
+                    Syntax:{' '}
                     <span>
                       udp.port eq &lt;Port #&gt; or &lt;Protocol Name&gt;
                     </span>
@@ -496,10 +494,10 @@ export default function WireShark() {
                   </p>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span> Step 6 </span> Packet Dissection
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
                   <p>
                     This section covers how Wireshark uses OSI layers to break
@@ -508,9 +506,9 @@ export default function WireShark() {
                     the OSI model is and how it works.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage10} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage10} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -522,9 +520,9 @@ export default function WireShark() {
                     sample capture.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage11} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage11} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -543,9 +541,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage12} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage12} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -557,9 +555,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage13} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage13} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -571,9 +569,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage14} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage14} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -585,9 +583,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage15} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage15} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -599,9 +597,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage16} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage16} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -613,9 +611,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage17} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage17} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -626,9 +624,9 @@ export default function WireShark() {
                     </li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage18} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage18} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -640,10 +638,10 @@ export default function WireShark() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span> Step 7</span>ARP Traffic
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
                   <h4>ARP Overview </h4>
                   <p>
@@ -663,9 +661,9 @@ export default function WireShark() {
                     and replies.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage19} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage19} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -686,22 +684,22 @@ export default function WireShark() {
                     the side of caution when analyzing packets.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage20} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage20} alt='Example' />
                     </div>
                   </div>
                   <br />
-                  <h2 className="content__title">ARP Traffic Overview </h2>
+                  <h2 className='content__title'>ARP Traffic Overview </h2>
                   <h4>ARP Request Packets : </h4>
                   <p>
                     We can begin analyzing packets by looking at the first ARP
                     Request packet and looking at the packet details.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage21} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage21} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -716,9 +714,9 @@ export default function WireShark() {
                   <br />
                   <h4>ARP Reply Packets:</h4>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage22} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage22} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -737,12 +735,12 @@ export default function WireShark() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> Step 8 </span> ICMP & TCP Traffic{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> Step 8 </span> ICMP & TCP Traffic{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h2 className="content__title">ICMP Overview</h2>
+                  <h2 className='content__title'>ICMP Overview</h2>
                   <p>
                     ICMP or Internet Control Message Protocol is used to analyze
                     various nodes on a network. This is most commonly used with
@@ -756,9 +754,9 @@ export default function WireShark() {
                     from the server.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage23} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage23} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -784,9 +782,9 @@ export default function WireShark() {
                     typically just be a random data string.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage24} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage24} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -803,14 +801,14 @@ export default function WireShark() {
                     as well, again the main difference will be the packet type
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage25} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage25} alt='Example' />
                     </div>
                   </div>
                   <br />
                   <br />
-                  <h2 className="content__title">TCP Overview</h2>
+                  <h2 className='content__title'>TCP Overview</h2>
                   <br />
                   <p>
                     TCP or Transmission Control Protocol handles the delivery of
@@ -824,9 +822,9 @@ export default function WireShark() {
                     ACK packet in red.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage26} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage26} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -853,9 +851,9 @@ export default function WireShark() {
                     ack; That allows devices to establish a connection.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage27} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage27} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -877,9 +875,9 @@ export default function WireShark() {
                     is the sequence number and acknowledgment number.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage28} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage28} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -893,16 +891,16 @@ export default function WireShark() {
                     &gt; TCP &gt; relative sequence numbers (uncheck boxes).
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage29} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage29} alt='Example' />
                     </div>
                   </div>
                   <br />
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage30} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage30} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -914,11 +912,10 @@ export default function WireShark() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/wireshark/wireshark_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/wireshark/wireshark_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

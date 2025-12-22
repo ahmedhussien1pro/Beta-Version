@@ -1,18 +1,17 @@
-import React from "react";
-import "./InsecureDirectObjectReference.css";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import "./InsecureDirectObjectReference.css";
-import "../../Components/Topics CSS/topics.css";
-import courseImage from "../../assets/img/IDOR/idorIcon.jpg";
-import background from "../../assets/img/IDOR/IDOR.jpg";
-import IDOR_Vulerability from "../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import './InsecureDirectObjectReference.css';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
+import './InsecureDirectObjectReference.css';
+import '../../Components/Topics CSS/topics.css';
+import courseImage from '../../assets/img/IDOR/idorIcon.jpg';
+import background from '../../assets/img/IDOR/IDOR.jpg';
+import IDOR_Vulerability from '../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function InsecureDirectObjectReference() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
@@ -20,42 +19,41 @@ export default function InsecureDirectObjectReference() {
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Insecure Direct Object Reference (IDOR)"
-        courseDescription="Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Insecure Direct Object Reference (IDOR)'
+        courseDescription='Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing */}
       {/* Start Content */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> What does insecure direct object
                   reference mean?
                 </dt>
-                <dd className="fadeInUp faq-body">
-                  <ul className="secure-list">
+                <dd className='fadeInUp faq-body'>
+                  <ul className='secure-list'>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      The term{" "}
-                      <span className="secure-highlight">
+                      The term{' '}
+                      <span className='secure-highlight'>
                         insecure direct object reference
-                      </span>{" "}
+                      </span>{' '}
                       means that a web application is directly referring to a
                       certain internal object, such as a transaction number or
                       user ID, but this reference is publicly visible, open to
@@ -65,21 +63,21 @@ export default function InsecureDirectObjectReference() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       The term was introduced by the Open Web Application
                       Security Project (OWASP) in the
-                      <span className="secure-highlight">
-                        {" "}
+                      <span className='secure-highlight'>
+                        {' '}
                         OWASP Top 10 for 2007
-                      </span>{" "}
+                      </span>{' '}
                       as a separate category A4 Insecure Direct Object
                       Reference.
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       In 2017, it was merged into A5 Broken Access Control along
                       with other access control issues, and later carried over
@@ -88,20 +86,20 @@ export default function InsecureDirectObjectReference() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> How do IDOR vulnerabilities happen?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <img
                     src={IDOR_Vulerability}
-                    alt="IDOR Vulnerability"
-                    className="secure-image"
+                    alt='IDOR Vulnerability'
+                    className='secure-image'
                   />
-                  <ul className="secure-list">
+                  <ul className='secure-list'>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Most web applications use simple unique identifiers to
                       reference server-side objects. For example, a user in a
@@ -117,7 +115,7 @@ export default function InsecureDirectObjectReference() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Such IDs often see client-side use by web applications and
                       APIs. When sent in URLs via regular HTTP requests using
@@ -135,23 +133,23 @@ export default function InsecureDirectObjectReference() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       For example, let’s say that a web application displays
                       transaction details using the following URL:
-                      <span className="secure-link">
+                      <span className='secure-link'>
                         https://www.example.com/transaction.php?id=74656
                       </span>
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       A malicious hacker could try tampering with the id
                       parameter value and substituting other, similar values for
                       74656, for example:
-                      <span className="secure-link">
+                      <span className='secure-link'>
                         https://www.example.com/transaction.php?id=74657
                       </span>
                       Depending on the application, transaction 74657 could be a
@@ -161,22 +159,22 @@ export default function InsecureDirectObjectReference() {
                       authorization checks before granting access to the
                       transaction, the attacker may be able to see it. In that
                       case, we would have an
-                      <span className="secure-highlight">
+                      <span className='secure-highlight'>
                         insecure direct object reference (IDOR)
-                      </span>{" "}
+                      </span>{' '}
                       vulnerability.
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      Examples of common{" "}
-                      <span className="secure-highlight">IDOR</span>{" "}
+                      Examples of common{' '}
+                      <span className='secure-highlight'>IDOR</span>{' '}
                       vulnerabilities: IDOR vulnerabilities often appear in
                       password change forms. A badly designed password change
                       form URL might be:
-                      <span className="secure-link">
+                      <span className='secure-link'>
                         https://www.example.com/change_password.php?userid=1
                       </span>
                       You might get this URL in a confirmation email after first
@@ -189,49 +187,49 @@ export default function InsecureDirectObjectReference() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      <span className="secure-highlight">IDOR</span>{" "}
+                      <span className='secure-highlight'>IDOR</span>{' '}
                       vulnerabilities might also involve filenames, not object
                       IDs. For example, directory traversal (path traversal) is
-                      often considered to be a type of{" "}
-                      <span className="secure-highlight">IDOR</span>
-                      vulnerability. In this special case of{" "}
-                      <span className="secure-highlight">IDOR</span>, the user
+                      often considered to be a type of{' '}
+                      <span className='secure-highlight'>IDOR</span>
+                      vulnerability. In this special case of{' '}
+                      <span className='secure-highlight'>IDOR</span>, the user
                       is able to display files without authorization. For
                       example:
-                      <span className="secure-link">
+                      <span className='secure-link'>
                         https://www.example.com/display_file.php?file.txt
                       </span>
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      If there is an{" "}
-                      <span className="secure-highlight">IDOR</span>{" "}
+                      If there is an{' '}
+                      <span className='secure-highlight'>IDOR</span>{' '}
                       vulnerability associated with the display_file.php script,
                       a malicious hacker could gain access to sensitive file
                       system resources such as the /etc/passwd file by
                       manipulating user input (in this case, simply changing the
                       URL) to navigate to that resource instead of file.txt:
-                      <span className="secure-link">
+                      <span className='secure-link'>
                         https://www.example.com/display_file.php?../../../etc/passwd
                       </span>
                     </li>
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span> How to detect IDOR vulnerabilities?
                 </dt>
-                <dd className="fadeInUp faq-body">
-                  <ul className="secure-list">
+                <dd className='fadeInUp faq-body'>
+                  <ul className='secure-list'>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Insecure direct object references are a type of access
                       control vulnerability that cannot be directly detected
@@ -244,15 +242,15 @@ export default function InsecureDirectObjectReference() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span> How to prevent IDOR attacks?
                 </dt>
-                <dd className="fadeInUp faq-body">
-                  <div className="secure-faq-content">
+                <dd className='fadeInUp faq-body'>
+                  <div className='secure-faq-content'>
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       The only way to protect against IDORs is to implement
                       strict access control checks for all sensitive objects.
@@ -271,7 +269,7 @@ export default function InsecureDirectObjectReference() {
                     <p>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       You may see some sources saying that to prevent IDOR
                       vulnerabilities, you should use long, hard-to-guess object
@@ -283,7 +281,7 @@ export default function InsecureDirectObjectReference() {
                       while only making attacks harder but not impossible.
                     </p>
                   </div>
-                  <div className="secure-faq-actions">
+                  <div className='secure-faq-actions'>
                     <p>
                       <strong>Key Takeaways:</strong>
                     </p>
@@ -291,9 +289,9 @@ export default function InsecureDirectObjectReference() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
+                        <b className='content__subtitle'>
                           Implement strict access control checks for sensitive
                           objects.
                         </b>
@@ -301,9 +299,9 @@ export default function InsecureDirectObjectReference() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
+                        <b className='content__subtitle'>
                           Use reputable frameworks like Ruby on Rails or Django
                           for secure object access control.
                         </b>
@@ -311,9 +309,9 @@ export default function InsecureDirectObjectReference() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
+                        <b className='content__subtitle'>
                           Avoid using long, hard-to-guess identifiers or UUIDs
                           alone for security.
                         </b>
@@ -321,9 +319,9 @@ export default function InsecureDirectObjectReference() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
+                        <b className='content__subtitle'>
                           Secure cryptographic hashes should be used instead of
                           direct identifiers.
                         </b>
@@ -334,15 +332,14 @@ export default function InsecureDirectObjectReference() {
               </dl>
             </div>
 
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
                   handleGoToLab(
-                    "/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs"
+                    '/Insecure_Direct_Object_Reference(IDOR)/Insecure_Direct_Object_Reference(IDOR)Labs'
                   )
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

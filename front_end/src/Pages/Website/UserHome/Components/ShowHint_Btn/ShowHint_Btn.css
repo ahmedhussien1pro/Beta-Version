@@ -5,8 +5,8 @@
   outline: none;
   padding: 12px 25px;
   border-radius: 50px;
-  background-color: #ff6347;
-  color: #fff;
+  background-color: var(--main-color);
+  color: var(--primary-text);
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -26,20 +26,20 @@
 }
 
 .show-hint-btn::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  background-color: rgba(255, 99, 71, 0.2);
+  background-color: var(--hover-highlight-color);
   left: 0;
   transition: all 0.3s ease-in-out;
 }
 
 .show-hint-btn:hover {
-  background-color: #e5533d;
+  background-color: var(--hover-main-color);
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px var(--text-shadow);
 }
 
 .show-hint-btn:hover::after {
@@ -48,9 +48,9 @@
 
 .show-hint-btn:hover .show-hint-btn-icon {
   transform: scale(1.2) rotate(-45deg);
-  color: #6b291f;
+  color: yellow;
 }
 
 .show-hint-btn:focus {
-  box-shadow: 0 0 10px rgba(255, 99, 71, 0.8);
+  box-shadow: 0 0 10px var(--main-highlight-color);
 }

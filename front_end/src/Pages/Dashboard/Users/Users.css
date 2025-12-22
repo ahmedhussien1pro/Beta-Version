@@ -42,14 +42,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.d-flex {
-  display: flex;
-}
-
-.justify-content-start {
-  justify-content: flex-start;
-}
-
 .use-btn,
 .btn-add {
   background-color: var(--main-color);
@@ -93,10 +85,6 @@
 .delete-btn:hover {
   color: var(--neon-red);
   text-decoration: underline;
-}
-
-.text-center {
-  text-align: center;
 }
 
 .loading,

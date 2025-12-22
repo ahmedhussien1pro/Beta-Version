@@ -6,6 +6,7 @@ export default function Logout() {
   const cookie = Cookie();
   const token = cookie.get("CuberWeb");
   const navigate = useNavigate();
+
   async function handleLogout() {
     try {
       const res = await axios.get(

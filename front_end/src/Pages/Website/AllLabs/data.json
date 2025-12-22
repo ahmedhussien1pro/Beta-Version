@@ -1,0 +1,1110 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Burp Suite",
+      "labs": [
+        {
+          "id": 101,
+          "title": "Intercepting HTTP Requests",
+          "description": "Use Burp Proxy to intercept and modify HTTP traffic.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 102,
+          "title": "Repeater Deep Dive",
+          "description": "Manipulate and replay requests using Burp Repeater.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 103,
+          "title": "Intruder Automation",
+          "description": "Automate attacks with Burp Intruder.",
+          "difficulty": "Practitioner",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 104,
+          "title": "Burp Extensions Setup",
+          "description": "Install and configure Burp Suite extensions.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Cookies",
+      "labs": [
+        {
+          "id": 201,
+          "title": "Cookie Inspection",
+          "description": "Analyze cookies using browser developer tools.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 202,
+          "title": "Cookie Manipulation",
+          "description": "Modify cookies to change user behavior.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 203,
+          "title": "Session Hijacking",
+          "description": "Steal and reuse active session cookies.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 204,
+          "title": "Secure Cookie Flags",
+          "description": "Test HttpOnly and Secure cookie flags.",
+          "difficulty": "Practitioner",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "SQL Injection",
+      "labs": [
+        {
+          "id": 301,
+          "title": "Basic SQL Injection",
+          "description": "Exploit vulnerable SQL queries.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 302,
+          "title": "Union Based Injection",
+          "description": "Use UNION to extract data.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 303,
+          "title": "Blind SQL Injection",
+          "description": "Exploit blind SQL injection scenarios.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 304,
+          "title": "Time Based Injection",
+          "description": "Use timing attacks to extract information.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "title": "Unrestricted File Upload",
+      "labs": [
+        {
+          "id": 401,
+          "title": "Bypass File Type Validation",
+          "description": "Upload malicious files through weak validation.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 402,
+          "title": "Double Extensions Attack",
+          "description": "Exploit double file extensions.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 403,
+          "title": "Magic Bytes Injection",
+          "description": "Bypass filters using fake file headers.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 404,
+          "title": "Content-Type Manipulation",
+          "description": "Change content-type to bypass restrictions.",
+          "difficulty": "Practitioner",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "title": "Linux Fundamentals",
+      "labs": [
+        {
+          "id": 501,
+          "title": "Linux File System",
+          "description": "Navigate Linux directories and files.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 502,
+          "title": "User and Permissions",
+          "description": "Manage users, groups, and permissions.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 503,
+          "title": "Process Management",
+          "description": "Monitor and manage Linux processes.",
+          "difficulty": "Practitioner",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 504,
+          "title": "Networking Basics",
+          "description": "Work with basic Linux networking tools.",
+          "difficulty": "Practitioner",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "title": "Access Control Vulnerabilities",
+      "labs": [
+        {
+          "id": 601,
+          "title": "Vertical Privilege Escalation",
+          "description": "Access admin features as normal user.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 602,
+          "title": "Horizontal Privilege Escalation",
+          "description": "Access other users’ data.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 603,
+          "title": "Missing Authorization Checks",
+          "description": "Exploit missing backend access control.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 604,
+          "title": "Force Browsing",
+          "description": "Access restricted URLs directly.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "title": "Broken Authentication",
+      "labs": [
+        {
+          "id": 701,
+          "title": "Weak Password Policy",
+          "description": "Exploit weak password rules.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 702,
+          "title": "Brute Force Attack",
+          "description": "Perform brute force login bypass.",
+          "difficulty": "Practitioner",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 703,
+          "title": "Credential Stuffing",
+          "description": "Use leaked credentials to gain access.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 704,
+          "title": "2FA Bypass",
+          "description": "Bypass two-factor authentication.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Bash Scripting",
+      "labs": [
+        {
+          "id": 801,
+          "title": "Basic Bash Scripts",
+          "description": "Create and execute simple bash scripts.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 802,
+          "title": "Conditional Logic in Bash",
+          "description": "Use if-else and test statements.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 803,
+          "title": "Looping and Automation",
+          "description": "Automate tasks using loops.",
+          "difficulty": "Practitioner",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 804,
+          "title": "Cron Job Automation",
+          "description": "Schedule scripts using cron jobs.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Business Logic Vulnerabilities",
+      "labs": [
+        {
+          "id": 901,
+          "title": "Price Manipulation",
+          "description": "Exploit price calculation logic flaws.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 902,
+          "title": "Workflow Bypass",
+          "description": "Bypass intended application workflow.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 903,
+          "title": "Race Logic Exploit",
+          "description": "Abuse logic flaws using race conditions.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 904,
+          "title": "Cart Manipulation",
+          "description": "Manipulate shopping cart logic.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Insecure Direct Object Reference (IDOR)",
+      "labs": [
+        {
+          "id": 1001,
+          "title": "User ID Enumeration",
+          "description": "Enumerate user IDs through predictable patterns.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1002,
+          "title": "Horizontal Data Access",
+          "description": "Access other users’ resources.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1003,
+          "title": "Vertical Privilege Data Access",
+          "description": "Access admin-only objects.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1004,
+          "title": "Predictable File Access",
+          "description": "Access files using predictable references.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Obfuscation",
+      "labs": [
+        {
+          "id": 1101,
+          "title": "JavaScript Code Obfuscation",
+          "description": "Understand and reverse obfuscated JS code.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1102,
+          "title": "String Encoding",
+          "description": "Decode Base64 and hex encoded strings.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1103,
+          "title": "Packed Code Analysis",
+          "description": "Analyze packed and compressed code.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1104,
+          "title": "Anti-Debug Techniques",
+          "description": "Bypass simple anti-debugging techniques.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Cross Site Request Forgery (CSRF)",
+      "labs": [
+        {
+          "id": 1201,
+          "title": "Basic CSRF Attack",
+          "description": "Perform CSRF against vulnerable forms.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1202,
+          "title": "Token Bypass",
+          "description": "Bypass weak CSRF token protection.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1203,
+          "title": "SameSite Cookie Abuse",
+          "description": "Exploit weak SameSite cookie settings.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1204,
+          "title": "Multi-Step CSRF",
+          "description": "Attack multi-step sensitive actions.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Path Traversal",
+      "labs": [
+        {
+          "id": 1301,
+          "title": "Basic Path Traversal",
+          "description": "Access sensitive files using ../ traversal.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1302,
+          "title": "Encoded Traversal Payloads",
+          "description": "Use URL encoding to bypass filters.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1303,
+          "title": "Null Byte Bypass",
+          "description": "Use null byte injection techniques.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1304,
+          "title": "Filter Evasion Techniques",
+          "description": "Bypass blacklist based protections.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Cryptography",
+      "labs": [
+        {
+          "id": 1401,
+          "title": "Symmetric Encryption Basics",
+          "description": "Understand AES and symmetric encryption.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1402,
+          "title": "Asymmetric Encryption",
+          "description": "Work with RSA and key pairs.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1403,
+          "title": "Weak Cipher Exploitation",
+          "description": "Exploit weak cryptographic implementations.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1404,
+          "title": "Padding Oracle Attack",
+          "description": "Perform padding oracle attacks.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Regular Expressions",
+      "labs": [
+        {
+          "id": 1501,
+          "title": "Regex Basics",
+          "description": "Create and test basic regex patterns.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1502,
+          "title": "Input Validation with Regex",
+          "description": "Validate user input using regex.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1503,
+          "title": "Regex Denial of Service (ReDoS)",
+          "description": "Exploit catastrophic backtracking.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1504,
+          "title": "Advanced Pattern Crafting",
+          "description": "Build optimized and complex patterns.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Cross-Site Scripting (XSS)",
+      "labs": [
+        {
+          "id": 1601,
+          "title": "Reflected XSS",
+          "description": "Exploit reflected XSS vulnerabilities.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1602,
+          "title": "Stored XSS",
+          "description": "Exploit stored XSS in persistent fields.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1603,
+          "title": "DOM-Based XSS",
+          "description": "Exploit client-side DOM-based XSS.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1604,
+          "title": "Filter Evasion",
+          "description": "Bypass XSS filters and WAFs.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Wireshark",
+      "labs": [
+        {
+          "id": 1701,
+          "title": "Packet Capture Basics",
+          "description": "Capture and analyze network packets.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1702,
+          "title": "HTTP Traffic Analysis",
+          "description": "Inspect HTTP packets in Wireshark.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1703,
+          "title": "Credentials Sniffing",
+          "description": "Extract login data from traffic.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1704,
+          "title": "Encrypted Traffic Analysis",
+          "description": "Analyze TLS/SSL encrypted traffic.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Hashing",
+      "labs": [
+        {
+          "id": 1801,
+          "title": "Hashing Basics",
+          "description": "Understand MD5, SHA1, SHA256.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1802,
+          "title": "Cracking Hashes",
+          "description": "Crack password hashes using tools.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1803,
+          "title": "Salted Hash Attacks",
+          "description": "Bypass weak salting techniques.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1804,
+          "title": "Rainbow Tables",
+          "description": "Use rainbow tables for hash cracking.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Command Injection",
+      "labs": [
+        {
+          "id": 1901,
+          "title": "Basic Command Injection",
+          "description": "Inject system commands in parameters.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1902,
+          "title": "Blind Command Injection",
+          "description": "Exploit blind command injection flaws.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1903,
+          "title": "Filter Bypass Techniques",
+          "description": "Bypass blacklists and sanitization.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 1904,
+          "title": "Chained Commands",
+          "description": "Execute multiple payloads via chaining.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "File Inclusion",
+      "labs": [
+        {
+          "id": 2001,
+          "title": "Local File Inclusion (LFI)",
+          "description": "Exploit vulnerable file includes.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2002,
+          "title": "Remote File Inclusion (RFI)",
+          "description": "Exploit remote file loading.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2003,
+          "title": "Log Poisoning",
+          "description": "Achieve code execution via log files.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2004,
+          "title": "Wrapper Abuse",
+          "description": "Abuse PHP wrappers for exploitation.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Digital Forensics",
+      "labs": [
+        {
+          "id": 2101,
+          "title": "Disk Image Analysis",
+          "description": "Analyze forensic disk images.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2102,
+          "title": "Memory Forensics",
+          "description": "Analyze RAM dumps.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2103,
+          "title": "Log File Investigation",
+          "description": "Investigate system and server logs.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2104,
+          "title": "Malware Artifact Analysis",
+          "description": "Extract malware traces from systems.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Insecure Deserialization",
+      "labs": [
+        {
+          "id": 2201,
+          "title": "Serialization Basics",
+          "description": "Understand object serialization risks.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2202,
+          "title": "PHP Object Injection",
+          "description": "Exploit PHP unserialize vulnerabilities.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2203,
+          "title": "Java Deserialization Attack",
+          "description": "Exploit Java deserialization flaws.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2204,
+          "title": "Gadget Chain Exploitation",
+          "description": "Build gadget chains for RCE.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Server Side Template Injection (SSTI)",
+      "labs": [
+        {
+          "id": 2301,
+          "title": "SSTI Detection",
+          "description": "Identify server-side template injection.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2302,
+          "title": "Payload Crafting",
+          "description": "Craft payloads for popular engines.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2303,
+          "title": "Sandbox Escape",
+          "description": "Bypass template sandbox restrictions.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2304,
+          "title": "Remote Code Execution",
+          "description": "Achieve RCE via SSTI.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "API Hacking & Testing",
+      "labs": [
+        {
+          "id": 2401,
+          "title": "API Recon",
+          "description": "Discover and enumerate API endpoints.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2402,
+          "title": "Broken Object Level Auth",
+          "description": "Exploit BOLA vulnerabilities.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2403,
+          "title": "Rate Limit Bypass",
+          "description": "Bypass API rate limiting.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2404,
+          "title": "GraphQL Attacks",
+          "description": "Exploit GraphQL weaknesses.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Race Condition",
+      "labs": [
+        {
+          "id": 2501,
+          "title": "Basic Race Condition",
+          "description": "Exploit timing issues in logic.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2502,
+          "title": "Double Spend Attack",
+          "description": "Trigger multiple transactions at once.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2503,
+          "title": "Thread Abuse",
+          "description": "Exploit concurrency flaws.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2504,
+          "title": "Queue Manipulation",
+          "description": "Manipulate backend job queues.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Captcha Bypass",
+      "labs": [
+        {
+          "id": 2601,
+          "title": "Weak Captcha Analysis",
+          "description": "Analyze simple captcha weaknesses.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2602,
+          "title": "OCR Based Bypass",
+          "description": "Use OCR to solve captchas.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2603,
+          "title": "Logic Flaws in Captcha",
+          "description": "Exploit verification logic flaws.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2604,
+          "title": "Token Reuse Attack",
+          "description": "Reuse captcha tokens for bypass.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Click Jacking",
+      "labs": [
+        {
+          "id": 2701,
+          "title": "Basic Clickjacking",
+          "description": "Perform UI redressing attacks.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2702,
+          "title": "Frame Overlay Attacks",
+          "description": "Abuse iframe overlays.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2703,
+          "title": "Bypass X-Frame-Options",
+          "description": "Evade frame protection headers.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2704,
+          "title": "Advanced UI Redress",
+          "description": "Craft multi-layer clickjacking pages.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Server Side Request Forgery (SSRF)",
+      "labs": [
+        {
+          "id": 2801,
+          "title": "Basic SSRF",
+          "description": "Trigger server-side HTTP requests.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2802,
+          "title": "Internal Network Scan",
+          "description": "Scan internal services via SSRF.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2803,
+          "title": "Metadata Service Attack",
+          "description": "Access cloud metadata endpoints.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2804,
+          "title": "Protocol Smuggling",
+          "description": "Use alternate protocols in SSRF.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "JWT Attacks",
+      "labs": [
+        {
+          "id": 2901,
+          "title": "JWT Structure Analysis",
+          "description": "Understand JWT header, payload and signature.",
+          "difficulty": "Apprentice",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2902,
+          "title": "Weak Secret Brute Force",
+          "description": "Crack weak JWT signing keys.",
+          "difficulty": "Practitioner",
+          "status": "free",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2903,
+          "title": "Algorithm Confusion",
+          "description": "Exploit alg=none and confusion flaws.",
+          "difficulty": "Expert",
+          "status": "paid",
+          "link": "/coming-soon"
+        },
+        {
+          "id": 2904,
+          "title": "Key Injection Attack",
+          "description": "Abuse key injection in token validation.",
+          "difficulty": "Expert",
+          "status": "coming_soon",
+          "link": "/coming-soon"
+        }
+      ]
+    }
+  ]
+}

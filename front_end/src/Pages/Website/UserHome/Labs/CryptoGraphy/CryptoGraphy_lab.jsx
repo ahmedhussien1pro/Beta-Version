@@ -1,61 +1,59 @@
-import React from "react";
-import "../Page_Styles/Lab.css";
-import Header from "../../Header/Header";
-import image from "../../assets/img/Cryptography/card_image.png";
-import Footer from "../../Footer/Footer";
-import { Card } from "../../Components/Card/Card";
-import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
+import React from 'react';
+import '../Page_Styles/Lab.css';
+import Header from '../../Header/Header';
+import image from '../../assets/img/Cryptography/card_image.png';
+import Footer from '../../Footer/Footer';
+import { Card } from '../../Components/Card/Card';
+import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function CryptoGraphy_lab() {
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
-      <LandingPractice/>
+      <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course">
-        <div className="container">
-          <PracticeTitle title={"CryptoGraphy"} />
-          <div className="row">
+      <div className='course'>
+        <div className='container'>
+          <PracticeTitle title={'CryptoGraphy'} />
+          <div className='row'>
             <Card
-              link={"/cryptography/cryptography_lab/top-secret"}
+              link={'/cryptography/cryptography_lab/top-secret'}
               image={image}
-              title={"Top Secret"}
+              title={'Top Secret'}
               brief={
-                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             <Card
-              link={"/cryptography/cryptography_lab/decode-the-image"}
+              link={'/cryptography/cryptography_lab/decode-the-image'}
               image={image}
-              title={"Decode the Image"}
+              title={'Decode the Image'}
               brief={
-                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             <Card
-              link={"/cryptography/cryptography_lab/corrupted"}
+              link={'/cryptography/cryptography_lab/corrupted'}
               image={image}
-              title={"Corrupted"}
+              title={'Corrupted'}
               brief={
-                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             <Card
-              link={"/cryptography/cryptography_lab/hash-crack"}
+              link={'/cryptography/cryptography_lab/hash-crack'}
               image={image}
-              title={"Hash Crack"}
+              title={'Hash Crack'}
               brief={
-                "cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀"
+                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
           </div>
         </div>

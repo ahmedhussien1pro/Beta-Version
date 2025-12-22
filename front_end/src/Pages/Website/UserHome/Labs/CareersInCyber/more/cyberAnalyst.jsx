@@ -9,15 +9,12 @@ import CourseLanding from "../../../Components/CourseLanding/CourseLanding.jsx";
 import Go2TopBtn from "../../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import ThemeSwitcher from "../../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Banner />
       <Header />
-      <ThemeSwitcher />
-      {/* <Landing /> */}
       {/* Start Landing */}
       <CourseLanding
         background={background}

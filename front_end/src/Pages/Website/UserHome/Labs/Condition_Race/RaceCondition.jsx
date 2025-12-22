@@ -1,51 +1,49 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Condition_Race/background-race-condition.jpg";
-import courseImage from "../../assets/img/Condition_Race/race condition icon.jpg";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
-import exampleImage1 from "../../assets/img/Condition_Race/1.png";
-import exampleImage2 from "../../assets/img/Condition_Race/2.png";
-import exampleImage3 from "../../assets/img/Condition_Race/3.png";
-import exampleImage4 from "../../assets/img/Condition_Race/4.png";
-import exampleImage5 from "../../assets/img/Condition_Race/5.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Condition_Race/background-race-condition.jpg';
+import courseImage from '../../assets/img/Condition_Race/race condition icon.jpg';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
+import exampleImage1 from '../../assets/img/Condition_Race/1.png';
+import exampleImage2 from '../../assets/img/Condition_Race/2.png';
+import exampleImage3 from '../../assets/img/Condition_Race/3.png';
+import exampleImage4 from '../../assets/img/Condition_Race/4.png';
+import exampleImage5 from '../../assets/img/Condition_Race/5.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function RaceCondition() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Race Condition"
-        courseDescription="In this course, you’ll learn about race condition vulnerabilities, which occur when the behavior of a system depends on the sequence or timing of events, allowing attackers to manipulate execution order for malicious purposes. The course covers causes, exploitation techniques, impacts, and best practices for mitigation."
-        difficulty="Intermediate"
-        duration="45 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Race Condition'
+        courseDescription='In this course, you’ll learn about race condition vulnerabilities, which occur when the behavior of a system depends on the sequence or timing of events, allowing attackers to manipulate execution order for malicious purposes. The course covers causes, exploitation techniques, impacts, and best practices for mitigation.'
+        difficulty='Intermediate'
+        duration='45 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span>Definition and Causes
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
-                    <strong className="content__subtitle">
+                    <strong className='content__subtitle'>
                       Race conditions
                     </strong>
                     are a common type of vulnerability closely related to
@@ -59,9 +57,9 @@ export default function RaceCondition() {
                     for malicious purposes.
                   </p>
                   <img
-                    className="img-fluid w-50 mx-auto d-block"
+                    className='img-fluid w-50 mx-auto d-block'
                     src={exampleImage1}
-                    alt="Example"
+                    alt='Example'
                   />
                   <br></br>
                   <br></br>
@@ -89,10 +87,10 @@ export default function RaceCondition() {
                 </dd>
 
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span>Limit overrun race conditions
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     The most well-known type of race condition enables you to
                     exceed some kind of limit imposed by the business logic of
@@ -106,32 +104,32 @@ export default function RaceCondition() {
                   </p>
                   <ul>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      <b className="content__subtitle">
-                        {" "}
+                      <b className='content__subtitle'>
+                        {' '}
                         Check that you haven't already used this code.
                       </b>
                     </li>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      <b className="content__subtitle">
+                      <b className='content__subtitle'>
                         Apply the discount to the order total.
                       </b>
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
-                      <b className="content__subtitle">
+                      <b className='content__subtitle'>
                         Update the record in the database to reflect the fact
                         that you've now used this code.
                       </b>
@@ -143,9 +141,9 @@ export default function RaceCondition() {
                     from doing this:
                   </p>
                   <img
-                    className="img-fluid w-50 mx-auto d-block"
+                    className='img-fluid w-50 mx-auto d-block'
                     src={exampleImage2}
-                    alt="Example"
+                    alt='Example'
                   />
                   <br></br>
                   <br></br>
@@ -155,9 +153,9 @@ export default function RaceCondition() {
                     almost exactly the same time:
                   </p>
                   <img
-                    className="img-fluid w-50 mx-auto d-block"
+                    className='img-fluid w-50 mx-auto d-block'
                     src={exampleImage3}
-                    alt="Example"
+                    alt='Example'
                   />
                   <br></br>
                   <br></br>
@@ -176,42 +174,42 @@ export default function RaceCondition() {
                   </p>
                   <ul>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Redeeming a gift card multiple times
                     </li>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Rating a product multiple times
                     </li>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Withdrawing or transferring cash in excess of your account
                       balance
                     </li>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Reusing a single CAPTCHA solution
                     </li>
                     <li>
-                      {" "}
+                      {' '}
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Bypassing an anti-brute-force rate limit
                     </li>
@@ -225,11 +223,11 @@ export default function RaceCondition() {
                 </dd>
 
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span>Detecting and exploiting limit overrun
                   race conditions with Burp Repeater
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     The process of detecting and exploiting limit overrun race
                     conditions is relatively simple. In high-level terms, all
@@ -239,7 +237,7 @@ export default function RaceCondition() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Identify a single-use or rate-limited endpoint that has
                       some kind of security impact or other useful purpose.
@@ -247,7 +245,7 @@ export default function RaceCondition() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Issue multiple requests to this endpoint in quick
                       succession to see if you can overrun this limit.
@@ -265,16 +263,16 @@ export default function RaceCondition() {
                     processes each request and in which order.
                   </p>
                   <img
-                    className="img-fluid w-50 mx-auto d-block"
+                    className='img-fluid w-50 mx-auto d-block'
                     src={exampleImage4}
-                    alt="Example"
+                    alt='Example'
                   />
                   <br></br>
                   <br></br>
                   <p>
-                    <strong className="content__subtitle">
+                    <strong className='content__subtitle'>
                       Burp Suite 2023.9
-                    </strong>{" "}
+                    </strong>{' '}
                     adds powerful new capabilities to Burp Repeater that enable
                     you to easily send a group of parallel requests in a way
                     that greatly reduces the impact of one of these factors,
@@ -286,7 +284,7 @@ export default function RaceCondition() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       For HTTP/1.x servers, Burp sends all requests in parallel
                       over a single connection, which reduces the impact of
@@ -295,7 +293,7 @@ export default function RaceCondition() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       For HTTP/2 servers, Burp sends all requests in parallel
                       over multiple connections, which is more efficient and
@@ -308,9 +306,9 @@ export default function RaceCondition() {
                     single TCP packet to complete 20-30 requests simultaneously.
                   </p>
                   <img
-                    className="img-fluid w-50 mx-auto d-block"
+                    className='img-fluid w-50 mx-auto d-block'
                     src={exampleImage5}
-                    alt="Example"
+                    alt='Example'
                   />
                   <br></br>
                   <br></br>
@@ -325,10 +323,10 @@ export default function RaceCondition() {
                 </dd>
 
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span>Hidden multi-step sequences
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     In practice, a single request may initiate an entire
                     multi-step sequence behind the scenes, transitioning the
@@ -345,11 +343,11 @@ export default function RaceCondition() {
                     beyond limit overruns.
                   </p>
                   <p>
-                    For example, you may be familiar with flawed{" "}
-                    <strong className="content__subtitle">
-                      {" "}
+                    For example, you may be familiar with flawed{' '}
+                    <strong className='content__subtitle'>
+                      {' '}
                       multi-factor authentication (MFA)
-                    </strong>{" "}
+                    </strong>{' '}
                     workflows that let you perform the first part of the login
                     using known credentials, then navigate straight to the
                     application via forced browsing, effectively bypassing MFA
@@ -359,24 +357,24 @@ export default function RaceCondition() {
                     The following pseudo-code demonstrates how a website could
                     be vulnerable to a race variation of this attack:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     session['userid'] = user.userid
                   </code>
                   <br></br>
-                  <code className="content__code">if user.mfa_enabled:</code>
+                  <code className='content__code'>if user.mfa_enabled:</code>
                   <br></br>
 
-                  <code className="content__code">
+                  <code className='content__code'>
                     session['enforce_mfa'] = True
                   </code>
                   <br></br>
 
-                  <code className="content__code">
+                  <code className='content__code'>
                     # generate and send MFA code to user
                   </code>
                   <br></br>
 
-                  <code className="content__code">
+                  <code className='content__code'>
                     # redirect browser to MFA code entry form
                   </code>
                   <br></br>
@@ -402,13 +400,12 @@ export default function RaceCondition() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
-                  handleGoToLab("/Race_Condition/Race_Condition_Labs")
+                  handleGoToLab('/Race_Condition/Race_Condition_Labs')
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

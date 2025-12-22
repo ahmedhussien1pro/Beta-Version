@@ -1,0 +1,339 @@
+/* =========================================================
+   Block: all-labs
+========================================================= */
+
+.all-labs {
+  background: var(--primary-bg);
+  min-height: 100vh;
+  padding: 24px 0px;
+  color: var(--primary-text);
+}
+
+/* =========================================================
+   Toolbar
+========================================================= */
+
+.all-labs__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.all-labs__search {
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+}
+
+.all-labs__search input {
+  background: var(--primary-bg);
+  border: 1px solid transparent;
+  color: var(--primary-text);
+  padding: 10px 42px 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: var(--box-shadow);
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+.all-labs__search input:focus {
+  outline: none;
+  border-color: var(--main-color);
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+.all-labs__search input::placeholder {
+  color: var(--secondary-text);
+}
+.all-labs__search input:placeholder-shown {
+  color: var(--main-color);
+}
+.all-labs__search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--main-color);
+  pointer-events: none;
+}
+
+.all-labs__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.all-labs__btn {
+  background: var(--secondary-bg);
+  color: var(--primary-text);
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.all-labs__btn:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   Sidebar
+========================================================= */
+
+.all-labs__sidebar {
+  position: sticky;
+  left: 0;
+  top: 70px;
+  height: 100vh;
+  transition: all 0.25s ease;
+  overflow-y: scroll;
+}
+
+.all-labs__filter-card {
+  border: none;
+  background: var(--primary-bg);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: var(--box-shadow);
+}
+
+.all-labs__filter-card h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.all-labs__filter-card .form-check {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.all-labs__filter-card .form-check-input {
+  cursor: pointer;
+}
+
+.all-labs__filter-card .form-check-label {
+  cursor: pointer;
+  flex-grow: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.all-labs__filter-card input[type='checkbox'] {
+  border: 1px solid var(--main-color);
+}
+.all-labs__filter-card input[type='checkbox']:checked {
+  background-color: var(--main-color);
+}
+/* =========================================================
+   Content Wrapper
+========================================================= */
+
+.all-labs__content {
+  transition: all 0.2s ease;
+}
+
+/* =========================================================
+   List/Grid Layout Modes
+========================================================= */
+
+.all-labs__content--list .all-labs__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 1rem;
+}
+
+.all-labs__content--grid .all-labs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+  padding: 1rem;
+}
+
+/* =========================================================
+   Lab Card
+========================================================= */
+
+.all-labs__item {
+  background: var(--primary-bg);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-labs__item:hover {
+  transform: translateY(-2px);
+}
+
+/* Header */
+.all-labs__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.all-labs__lab-link {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.all-labs__lab-link:hover {
+  color: var(--main-color4);
+}
+
+.all-labs__item small {
+  font-size: 12px;
+  color: var(--secondary-text);
+}
+
+/* Description */
+.all-labs__description {
+  flex-grow: 1;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+/* Meta Info */
+.all-labs__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--secondary-text);
+  align-items: center;
+}
+
+/* Difficulty Badge */
+.all-labs__difficulty {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--primary-text) !important;
+  border-radius: 999px;
+  padding: 6px 12px !important;
+  font-size: 11px;
+}
+
+/* Status Badges */
+.all-labs__status {
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.all-labs__status--free {
+  background: rgba(46, 204, 113, 0.15) !important;
+  color: #2ecc71 !important;
+}
+
+.all-labs__status--paid {
+  background: rgba(231, 76, 60, 0.15) !important;
+  color: #e74c3c !important;
+}
+
+.all-labs__status--soon {
+  background: rgba(241, 196, 15, 0.15) !important;
+  color: #f1c40f !important;
+}
+
+/* =========================================================
+   Animations
+========================================================= */
+
+.motion-fade {
+  animation: fadeInUp 0.25s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   Bootstrap Overrides (Soft)
+========================================================= */
+
+.list-group-item {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* =========================================================
+   Mobile & Tablet
+========================================================= */
+
+@media (max-width: 992px) {
+  .all-labs {
+    padding: 16px;
+  }
+
+  .all-labs__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .all-labs__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .all-labs__btn {
+    flex: 1;
+  }
+
+  .all-labs__search {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .all-labs__content--grid .all-labs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all-labs__item {
+    padding: 16px;
+  }
+
+  .all-labs__lab-link {
+    font-size: 14px;
+  }
+
+  .all-labs__description {
+    font-size: 13px;
+  }
+}
+
+.offcanvas-header .btn-close {
+  margin-inline: 0;
+}

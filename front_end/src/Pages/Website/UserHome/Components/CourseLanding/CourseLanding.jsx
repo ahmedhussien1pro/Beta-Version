@@ -1,157 +1,230 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "../../assets/css/Landing.css";
-import defaultBg from "../../assets/css/bg.jpg";
-import defaultImage from "../../assets/css/defaultImage.png";
-const CourseLanding = ({
-  background,
-  backgroundStyle = {},
-  courseImage,
-  courseTitle = "Course Title",
-  courseDescription = "Course Description",
-  difficulty = "Course Difficulty",
-  duration = "Course Duration",
-  onSaveRoom = () => {},
-  onLike = () => {},
-  onDislike = () => {},
-}) => {
-  const [isSaved, setIsSaved] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isDisliked, setIsDisliked] = useState(false);
-  const [isStarted, setIsStarted] = useState(false);
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import {
+  FaClock,
+  FaSignal,
+  FaBookmark,
+  FaThumbsUp,
+  FaThumbsDown,
+  FaPlay,
+  FaStar,
+} from 'react-icons/fa';
+import './CourseLanding.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import defaultImage from '../../assets/css/defaultImage.png';
+
+/* ================= OPTIMIZED MATRIX BACKGROUND ================= */
+const MatrixRain = ({ opacity = 0.08 }) => {
+  const canvasRef = useRef(null);
 
   useEffect(() => {
-    const savedState = JSON.parse(localStorage.getItem("buttonStates")) || {};
-    setIsSaved(savedState.isSaved || false);
-    setIsLiked(savedState.isLiked || false);
-    setIsDisliked(savedState.isDisliked || false);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const startedCourseTitle = localStorage.getItem("startedCourse");
-    if (startedCourseTitle === courseTitle) {
-      setIsStarted(true);
-    }
-  }, [courseTitle]);
+    const ctx = canvas.getContext('2d');
 
-  useEffect(() => {
-    const buttonStates = { isSaved, isLiked, isDisliked };
-    localStorage.setItem("buttonStates", JSON.stringify(buttonStates));
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight * 0.7;
+    };
+    resize();
 
-    if (isStarted) {
-      localStorage.setItem("startedCourse", courseTitle);
-    } else {
-      const startedCourseTitle = localStorage.getItem("startedCourse");
-      if (startedCourseTitle === courseTitle) {
-        localStorage.removeItem("startedCourse");
+    const resizeObserver = window.addEventListener('resize', resize);
+
+    const chars = '01█▓▒░';
+    const fontSize = 20;
+    const columns = Math.ceil(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    let animationId;
+    let frameCount = 0;
+
+    const draw = () => {
+      frameCount++;
+      if (frameCount % 3 !== 0) {
+        animationId = requestAnimationFrame(draw);
+        return;
       }
-    }
-  }, [isStarted, isSaved, isLiked, isDisliked, courseTitle]);
 
-  const toggleSaveRoom = () => {
-    setIsSaved((prev) => !prev);
-    onSaveRoom();
-  };
+      ctx.fillStyle = `rgba(2, 6, 23, ${opacity})`;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  const toggleLike = () => {
-    setIsLiked((prev) => !prev);
-    if (isDisliked) setIsDisliked(false);
-    onLike();
-  };
+      ctx.fillStyle = 'rgba(34, 197, 94, 0.6)';
+      ctx.font = `bold ${fontSize}px monospace`;
 
-  const toggleDislike = () => {
-    setIsDisliked((prev) => !prev);
-    if (isLiked) setIsLiked(false);
-    onDislike();
-  };
+      for (let i = 0; i < columns; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-  const handleStartCourse = () => {
-    setIsStarted(true);
-  };
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+
+      animationId = requestAnimationFrame(draw);
+    };
+
+    animationId = requestAnimationFrame(draw);
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', resizeObserver);
+    };
+  }, [opacity]);
+
+  return <canvas ref={canvasRef} className='course-landing__matrix' />;
+};
+
+/* ================= MAIN COMPONENT ================= */
+const CourseLanding = ({
+  courseTitle = 'Red Team Fundamentals',
+  courseDescription = 'Learn the foundations of red teaming, adversary tactics, and real-world attack simulations.',
+  difficulty = 'Intermediate',
+  duration = '20 min',
+  courseImage,
+  instructor = 'Security Expert',
+  rating = 4.8,
+  students = 2543,
+}) => {
+  const [saved, setSaved] = useState(false);
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div
-      className="my-landing"
-      style={
-        backgroundStyle
-          ? {
-              background: `url(${background || defaultBg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }
-          : {}
-      }
-    >
-      {/* Background overlay */}
-      <div className="landing__overlay"></div>
+    <div className='course-landing'>
+      <MatrixRain opacity={0.1} />
 
-      {/* Main content container */}
-      <div className="landing__content">
-        {/* Left side (breadcrumb, title, description, etc.) */}
-        <div className="landing__text">
-          <div className="landing__breadcrumb">
-            <ul>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="">{courseTitle}</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="landing__course--info">
-            <img src={courseImage || defaultImage} alt="Course" />
-            <div className="course-text">
-              <h1>{courseTitle}</h1>
-              <p>{courseDescription}</p>
-              <div className="course-icons">
-                <div className="diff">
-                  <div className="easy">
-                    <i className="fa-solid fa-signal"></i>
-                    <p>{difficulty}</p>
-                  </div>
+      <div className='course-landing__overlay' />
+
+      <div className='container-fluid course-landing__container'>
+        <div className='row align-items-center g-5 py-5'>
+          {/* LEFT CONTENT */}
+          <div className='col-lg-6 col-md-12 course-landing__content'>
+            {/* Breadcrumb */}
+            <nav className='course-landing__breadcrumb'>
+              <Link to='/home'>Home</Link>
+              <span className='mx-2'>/</span>
+              <span className='course-landing__breadcrumb-current'>
+                {courseTitle}
+              </span>
+            </nav>
+
+            {/* Title with Gradient */}
+            <h1 className='course-landing__title'>{courseTitle}</h1>
+
+            {/* Description */}
+            <p className='course-landing__description'>{courseDescription}</p>
+
+            {/* Stats Row */}
+            <div className='course-landing__stats'>
+              <div className='course-landing__stat-item'>
+                <div className='stat-icon'>
+                  <FaStar />
                 </div>
-                <div className="duration">
-                  <i className="fa-solid fa-clock"></i>
-                  <p className="time">{duration}</p>
+                <div>
+                  <p className='stat-label'>Rating</p>
+                  <p className='stat-value'>{rating} / 5.0</p>
+                </div>
+              </div>
+
+              <div className='course-landing__stat-item'>
+                <div className='stat-icon'>
+                  <FaSignal />
+                </div>
+                <div>
+                  <p className='stat-label'>Level</p>
+                  <p className='stat-value'>{difficulty}</p>
+                </div>
+              </div>
+
+              <div className='course-landing__stat-item'>
+                <div className='stat-icon'>
+                  <FaClock />
+                </div>
+                <div>
+                  <p className='stat-label'>Duration</p>
+                  <p className='stat-value'>{duration}</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="landing__options">
-            <button
-              onClick={toggleSaveRoom}
-              className={isSaved ? "active" : ""}
-            >
-              <i className="far fa-bookmark"></i>
-              <p>{isSaved ? "Remove from Favorite" : "Add to Favorite"}</p>
-            </button>
-            <div className="like">
-              <button onClick={toggleLike} className={isLiked ? "active" : ""}>
-                <i className="fas fa-thumbs-up"></i>
-              </button>
+
+            {/* Instructor Info */}
+            <div className='course-landing__instructor'>
+              <img
+                src={defaultImage}
+                alt='instructor'
+                className='instructor-avatar'
+              />
+              <div>
+                <p className='instructor-label'>Taught by</p>
+                <p className='instructor-name'>{instructor}</p>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className='course-landing__actions'>
               <button
-                onClick={toggleDislike}
-                className={isDisliked ? "active" : ""}
-              >
-                <i className="fas fa-thumbs-down"></i>
+                className='course-landing__btn course-landing__btn--primary'
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}>
+                <FaPlay className={isHovering ? 'play-icon-animate' : ''} />
+                Start Learning
               </button>
+
+              <button
+                className={`course-landing__btn course-landing__btn--icon ${
+                  saved ? 'is-active' : ''
+                }`}
+                onClick={() => setSaved(!saved)}
+                title={saved ? 'Remove from favorites' : 'Add to favorites'}>
+                <FaBookmark />
+              </button>
+
+              <div className='course-landing__reaction-btns'>
+                <button
+                  className={`course-landing__btn course-landing__btn--reaction ${
+                    liked ? 'is-active' : ''
+                  }`}
+                  onClick={() => {
+                    setLiked(!liked);
+                    if (disliked) setDisliked(false);
+                  }}
+                  title='Like this course'>
+                  <FaThumbsUp />
+                </button>
+
+                <button
+                  className={`course-landing__btn course-landing__btn--reaction ${
+                    disliked ? 'is-active' : ''
+                  }`}
+                  onClick={() => {
+                    setDisliked(!disliked);
+                    if (liked) setLiked(false);
+                  }}
+                  title='Dislike this course'>
+                  <FaThumbsDown />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        {/* Right side (icon border, optional) */}
-        <div className="landing__icon">
-          <div className="landing__icon-border">
-            {/* Edge Icons */}
-            <div className="landing__edge-icon landing__edge-icon--top ">
-              <i className="fas fa-user-secret"></i>
+
+          {/* RIGHT IMAGE */}
+          <div className='col-lg-6 col-md-12 d-flex justify-content-center'>
+            <div className='course-landing__image-container'>
+              <div className='course-landing__image-wrapper'>
+                <div className='image-glow'></div>
+                <img
+                  src={courseImage || defaultImage}
+                  alt={courseTitle}
+                  className='course-landing__image'
+                />
+              </div>
+              <div className='course-landing__badge-count'>
+                +{students} students enrolled
+              </div>
             </div>
-            <div className="landing__edge-icon landing__edge-icon--right landing__edge-icon--active ">
-              <i className="fas fa-book-open"></i>
-            </div>
-            <div className="landing__edge-icon landing__edge-icon--left">
-              <i className="fas fa-lightbulb"></i>
-            </div>
-            {/* Center Circle */}
-            <div className="landing__icon-circle">Course</div>
           </div>
         </div>
       </div>

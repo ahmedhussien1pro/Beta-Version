@@ -1,59 +1,57 @@
-import React from "react";
-import "../../Components/Topics CSS/topics.css";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Cryptography/baner_lap.png";
-import courseImage from "../../assets/img/Cryptography/course_image.png";
-import Footer from "../../Footer/Footer";
-import exampleImage1 from "../../assets/img/Cryptography/1.png";
-import exampleImage2 from "../../assets/img/Cryptography/2.png";
-import exampleImage3 from "../../assets/img/Cryptography/3.svg";
-import exampleImage4 from "../../assets/img/Cryptography/4.svg";
-import exampleImage5 from "../../assets/img/Cryptography/5.svg";
-import exampleImage6 from "../../assets/img/Cryptography/6.svg";
-import exampleImage7 from "../../assets/img/Cryptography/7.svg";
-import exampleImage8 from "../../assets/img/Cryptography/8.svg";
-import exampleImage9 from "../../assets/img/Cryptography/9.svg";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import '../../Components/Topics CSS/topics.css';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Cryptography/baner_lap.png';
+import courseImage from '../../assets/img/Cryptography/course_image.png';
+import Footer from '../../Footer/Footer';
+import exampleImage1 from '../../assets/img/Cryptography/1.png';
+import exampleImage2 from '../../assets/img/Cryptography/2.png';
+import exampleImage3 from '../../assets/img/Cryptography/3.svg';
+import exampleImage4 from '../../assets/img/Cryptography/4.svg';
+import exampleImage5 from '../../assets/img/Cryptography/5.svg';
+import exampleImage6 from '../../assets/img/Cryptography/6.svg';
+import exampleImage7 from '../../assets/img/Cryptography/7.svg';
+import exampleImage8 from '../../assets/img/Cryptography/8.svg';
+import exampleImage9 from '../../assets/img/Cryptography/9.svg';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 export default function CryptoGraphy() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="CryptoGraphy"
-        courseDescription="  Master the basics of CryptoGraphy, a powerful technique for
+        courseTitle='CryptoGraphy'
+        courseDescription='  Master the basics of CryptoGraphy, a powerful technique for
                 securing code and protecting intellectual property in
-                cybersecurity environments."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+                cybersecurity environments.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>step 1</span> Introduction to Cryptography
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h1 className="content__title">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h1 className='content__title'>
                     Welcome to Introduction to Cryptography
                   </h1>
                   <br />
-                  <h2 className="content__title">What will you learn?</h2>
+                  <h2 className='content__title'>What will you learn?</h2>
                   <ol>
                     <li>What is Cryptography?</li>
                     <li>The Role of Cryptography in Information Security </li>
@@ -64,14 +62,14 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span> step 2</span> What is Cryptography?
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">What is Cryptography?</h1>
+                  <h1 className='content__title'>What is Cryptography?</h1>
                   <h4>Cryptography? </h4>
                   <p>
                     Cryptography refers almost exclusively to encryption, the
@@ -80,9 +78,9 @@ export default function CryptoGraphy() {
                     unintelligible ciphertext to plaintext.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage1} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage1} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -112,12 +110,12 @@ export default function CryptoGraphy() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> step 3</span> What is Steganography?{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> step 3</span> What is Steganography?{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h1 className="content__title">What is Steganography?</h1>
+                  <h1 className='content__title'>What is Steganography?</h1>
                   <p>
                     Steganography is the art and science of embedding secret
                     messages in a cover message in such a way that, no one apart
@@ -125,12 +123,12 @@ export default function CryptoGraphy() {
                     existence of the message.
                   </p>
                   <p>
-                    The diagram below represents a basic steganographic model.{" "}
+                    The diagram below represents a basic steganographic model.{' '}
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage2} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage2} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -144,7 +142,7 @@ export default function CryptoGraphy() {
                     Cryptography changes the ciphertext information which can
                     not be understood without a decryption key. And if someone
                     intercepted this encrypted message they could easily see
-                    that some sort of encryption had been applied.{" "}
+                    that some sort of encryption had been applied.{' '}
                   </p>
                   <p>
                     Steganography, on the other hand, does not alter the
@@ -227,10 +225,10 @@ export default function CryptoGraphy() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span> step 4</span> Plaintext to Ciphertext
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
                   <p>
                     Let’s start with an illustration before introducing the key
@@ -246,9 +244,9 @@ export default function CryptoGraphy() {
                     ciphertext and vice versa.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage3} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage3} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -259,9 +257,9 @@ export default function CryptoGraphy() {
                     illustration below.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage4} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage4} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -310,10 +308,10 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> step 5</span> Historical Ciphers{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> step 5</span> Historical Ciphers{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
@@ -339,9 +337,9 @@ export default function CryptoGraphy() {
                     we get the ciphertext of <code>fbehu ode</code>.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage5} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage5} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -354,9 +352,9 @@ export default function CryptoGraphy() {
                     <li>Cipher: Caesar Cipher</li>
                   </ol>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage6} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage6} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -372,8 +370,8 @@ export default function CryptoGraphy() {
                     valid keys for encryption with Caesar Cipher. The figure
                     below shows how decryption will succeed by attempting all
                     the possible keys; in this case, we recovered the original
-                    message with{" "}
-                    <span class="math inline">
+                    message with{' '}
+                    <span class='math inline'>
                       <em>K</em>
                       <em>e</em>
                       <em>y</em> = 5
@@ -382,9 +380,9 @@ export default function CryptoGraphy() {
                     publicly known, Caesar Cipher is considered insecure.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage7} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage7} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -399,25 +397,25 @@ export default function CryptoGraphy() {
                   </ol>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> step 6</span> Types of Encryption{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> step 6</span> Types of Encryption{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
                   <h3>
-                    The two main categories of encryption are{" "}
+                    The two main categories of encryption are{' '}
                     <strong>symmetric</strong> and <strong>asymmetric</strong>.
                   </h3>
                   <br />
                   <h3>Symmetric Encryption : </h3>
                   <br />
                   <p>
-                    <strong>Symmetric encryption</strong>, also known as{" "}
+                    <strong>Symmetric encryption</strong>, also known as{' '}
                     <strong>symmetric cryptography</strong>, uses the same key
                     to encrypt and decrypt the data, as shown in the figure
-                    below. Keeping the key secret is a must; it is also called{" "}
+                    below. Keeping the key secret is a must; it is also called{' '}
                     <strong>private key cryptography</strong>. Furthermore,
                     communicating the key to the intended parties can be
                     challenging as it requires a secure communication channel.
@@ -427,9 +425,9 @@ export default function CryptoGraphy() {
                     adversary; consider the threat of industrial espionage, for
                     instance.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage8} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage8} alt='Example' />
                     </div>
                   </div>
                   <p>
@@ -446,8 +444,8 @@ export default function CryptoGraphy() {
                     them.
                   </p>
                   <p>
-                    Examples of symmetric encryption are <strong>DES</strong>{" "}
-                    (Data Encryption Standard), 3DES (Triple{" "}
+                    Examples of symmetric encryption are <strong>DES</strong>{' '}
+                    (Data Encryption Standard), 3DES (Triple{' '}
                     <strong>DES</strong>) and <strong>AES</strong> (Advanced
                     Encryption Standard).
                   </p>
@@ -464,8 +462,8 @@ export default function CryptoGraphy() {
                     <li>
                       <strong>3DES</strong> is DES applied three times;
                       consequently, the key size is 168 bits, though the
-                      effective security is 112 bits. 3DES was more of an{" "}
-                      <strong>ad</strong>-hoc solution when <strong>DES</strong>{" "}
+                      effective security is 112 bits. 3DES was more of an{' '}
+                      <strong>ad</strong>-hoc solution when <strong>DES</strong>{' '}
                       was no longer considered secure. 3DES was deprecated in
                       2019 and should be replaced by <strong>AES</strong>;
                       however, it may still be found in some legacy systems.
@@ -482,29 +480,29 @@ export default function CryptoGraphy() {
                     standards.
                   </p>
                   <br />
-                  <h2 className="content__title">Asymmetric Encryption</h2>
+                  <h2 className='content__title'>Asymmetric Encryption</h2>
                   <br />
                   <p>
                     Unlike symmetric encryption, which uses the same key for
-                    encryption and decryption,{" "}
+                    encryption and decryption,{' '}
                     <strong>asymmetric encryption</strong> uses a pair of keys,
                     one to encrypt and the other to decrypt, as shown in the
                     illustration below. To protect confidentiality, asymmetric
-                    encryption or <strong>asymmetric cryptography</strong>{" "}
+                    encryption or <strong>asymmetric cryptography</strong>{' '}
                     encrypts the data using the public key; hence, it is also
                     called <strong>public key cryptography</strong>.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage9} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage9} alt='Example' />
                     </div>
                   </div>
                   <br />
                   <p>
                     Examples are RSA , Diffie-Hellman, and Elliptic Curve
                     cryptography (<span>ECC</span>). The two keys involved in
-                    the process are referred to as a <b>public key</b> and a{" "}
+                    the process are referred to as a <b>public key</b> and a{' '}
                     <b>private key</b>. Data encrypted with the public key can
                     be decrypted with the private key. Your private key needs to
                     be kept private, hence the name.
@@ -516,9 +514,9 @@ export default function CryptoGraphy() {
                     3072-bit, and 4096-bit keys; 2048-bit is the recommended
                     minimum key size. Diffie-Hellman also has a recommended
                     minimum key size of 2048 bits but uses 3072-bit and 4096-bit
-                    keys for enhanced security. On the other hand,{" "}
+                    keys for enhanced security. On the other hand,{' '}
                     <span>ECC</span> can achieve equivalent security with
-                    shorter keys. For example, with a 256-bit key,{" "}
+                    shorter keys. For example, with a 256-bit key,{' '}
                     <span>ECC</span> provides a level of security comparable to
                     a 3072-bit <span>RSA</span> key.
                   </p>
@@ -539,7 +537,7 @@ export default function CryptoGraphy() {
                     guarded and secret.
                   </p>
                   <br />
-                  <h2 className="content__title">Summary of New Terms :</h2>
+                  <h2 className='content__title'>Summary of New Terms :</h2>
                   <br />
                   <ol>
                     <li>
@@ -562,11 +560,10 @@ export default function CryptoGraphy() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/cryptography/cryptography_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/cryptography/cryptography_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

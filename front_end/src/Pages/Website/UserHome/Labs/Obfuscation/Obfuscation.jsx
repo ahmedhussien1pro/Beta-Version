@@ -1,52 +1,50 @@
-import React from "react";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import background from "../../assets/img/Obfuscation/baner_lap.png";
-import courseImage from "../../assets/img/Obfuscation/course_image.png";
-import exampleImage1 from "../../assets/img/Obfuscation/1.png";
-import exampleImage2 from "../../assets/img/Obfuscation/2.png";
-import exampleImage3 from "../../assets/img/Obfuscation/3.png";
-import exampleImage4 from "../../assets/img/Obfuscation/4.png";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import background from '../../assets/img/Obfuscation/baner_lap.png';
+import courseImage from '../../assets/img/Obfuscation/course_image.png';
+import exampleImage1 from '../../assets/img/Obfuscation/1.png';
+import exampleImage2 from '../../assets/img/Obfuscation/2.png';
+import exampleImage3 from '../../assets/img/Obfuscation/3.png';
+import exampleImage4 from '../../assets/img/Obfuscation/4.png';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 
 export default function Obfuscation() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Obfuscation"
-        courseDescription="Master the basics of obfuscation, a powerful technique for
+        courseTitle='Obfuscation'
+        courseDescription='Master the basics of obfuscation, a powerful technique for
                 securing code and protecting intellectual property in
-                cybersecurity environments."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+                cybersecurity environments.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h1 className="content__title">Welcome to Obfuscation</h1>
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h1 className='content__title'>Welcome to Obfuscation</h1>
 
-                  <h2 className="content__title">What will you learn?</h2>
+                  <h2 className='content__title'>What will you learn?</h2>
                   <ol>
                     <li>What are Obfuscation & Deobfuscation?</li>
                     <li>Why do we use Obfuscation?</li>
@@ -55,14 +53,14 @@ export default function Obfuscation() {
                   </ol>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> What are Obfuscation & Deobfuscation ?
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     What are Obfuscation & Deobfuscation?
                   </h1>
                   <h4>Obfuscation </h4>
@@ -80,12 +78,12 @@ export default function Obfuscation() {
                     understandable one. This can be done with many tools.
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage1} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage1} alt='Example' />
                     </div>
                   </div>
-                  <h2 className="content__title">Why do we use Obfuscation?</h2>
+                  <h2 className='content__title'>Why do we use Obfuscation?</h2>
                   <br />
                   <p>
                     There are many reasons why you may use obfuscation, here are
@@ -99,11 +97,11 @@ export default function Obfuscation() {
                     </li>
                     <li>
                       Bypassing WAFs and security detection systems from
-                      filtering or detecting your payloads.{" "}
+                      filtering or detecting your payloads.{' '}
                     </li>
                   </ol>
                   <br />
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     Common Techniques of Obfuscation
                   </h2>
                   <br />
@@ -142,20 +140,20 @@ export default function Obfuscation() {
                   </p>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
-                  <span> Topic 3</span>Javascript Obfuscation{" "}
+                <dt className='fadeInUp faq-header'>
+                  <span> Topic 3</span>Javascript Obfuscation{' '}
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h1 className="content__title">Javascript Obfuscation </h1>
+                  <h1 className='content__title'>Javascript Obfuscation </h1>
                   <p>
                     There are several methods in JS obfuscation, one of them is
                     to remove spaces, this method is called code minify, usually
                     developers use this method as it reduces script file size.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage2} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage2} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -168,11 +166,11 @@ export default function Obfuscation() {
                   </p>
                   <p>
                     You can try it online from this link:
-                    <a href="http://www.jsfuck.com">JSFuck</a>
+                    <a href='http://www.jsfuck.com'>JSFuck</a>
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage3} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage3} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -184,13 +182,13 @@ export default function Obfuscation() {
                   </p>
                   <p>
                     You can try it online from this link:
-                    <a href="https://www.cleancss.com/javascript-obfuscate/index.php">
+                    <a href='https://www.cleancss.com/javascript-obfuscate/index.php'>
                       Packer Obfuscation
                     </a>
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage4} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage4} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -203,30 +201,29 @@ export default function Obfuscation() {
                   <h3>Here are some examples:</h3>
                   <ol>
                     <li>
-                      <a href="https://mindedsecurity.github.io/jstillery/">
+                      <a href='https://mindedsecurity.github.io/jstillery/'>
                         JStillery :
                       </a>
                       This tool performs advanced JS deobfuscation via partial
                       evaluation.
                     </li>
                     <li>
-                      <a href="http://deobfuscatejavascript.com/">
-                        deobfuscate javascript{" "}
+                      <a href='http://deobfuscatejavascript.com/'>
+                        deobfuscate javascript{' '}
                       </a>
                     </li>
                     <li>
-                      <a href="https://beautifier.io/">Beautifier.io</a>
+                      <a href='https://beautifier.io/'>Beautifier.io</a>
                     </li>
                   </ol>
                 </dd>
               </dl>
             </div>
 
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/obfuscation/obfuscation_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/obfuscation/obfuscation_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

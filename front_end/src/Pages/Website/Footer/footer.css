@@ -7,8 +7,7 @@
   background-position: center;
   position: relative;
   z-index: 1;
-    color: var(--whiteColor);
-
+  color: var(--whiteColor);
 }
 
 .footer::before {
@@ -30,7 +29,7 @@
 .footer__top--item {
   font-size: 1.1rem;
   padding: 10px;
-    color: var(--whiteColor);
+  color: var(--whiteColor);
 
   transition: all 0.3s ease-in-out;
 }
@@ -47,7 +46,7 @@
 
 .footer__top--item h3::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 45px;
   height: 2px;
   top: 50%;
@@ -76,14 +75,14 @@
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
   display: inline-block;
-    color: var(--whiteColor);
+  color: var(--whiteColor);
 
   text-decoration: none;
 }
 
 .footer__links li a::before {
-  content: "\f105";
-  font-family: "Font Awesome 6 Free";
+  content: '\f105';
+  font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   margin-right: 10px;
 }
@@ -92,7 +91,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  content: "";
+  content: '';
   width: 100%;
   height: 2px;
   background-color: var(--main-color);
@@ -124,7 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-    color: var(--whiteColor);
+  color: var(--whiteColor);
 
   border: 1px solid var(--greyText);
   border-radius: 50%;
@@ -150,14 +149,17 @@
 }
 
 /* Footer Bottom Menu */
+.footer__bottom--menu {
+  display: flex;
+  padding: 0;
+}
 .footer__bottom--menu a {
   margin-right: 15px;
   padding-right: 15px;
   border-right: 1px solid var(--greyText);
   transition: all 0.3s ease-in-out;
   text-decoration: none;
-    color: var(--whiteColor);
-
+  color: var(--whiteColor);
 }
 
 .footer__bottom--menu a:last-child {
@@ -176,7 +178,7 @@
   /* font-size: 1.3rem;
   font-weight: 500; */
   transition: all 0.3s ease-in-out;
-    color: var(--whiteColor);
+  color: var(--whiteColor);
 
   text-decoration: none;
 }

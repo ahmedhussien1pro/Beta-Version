@@ -1,49 +1,47 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/JWT attacks/baner_lap.png";
-import courseImage from "../../assets/img/JWT attacks/course_image.png";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import exampleImage1 from "../../assets/img/JWT attacks/image_1.webp";
-import exampleImage2 from "../../assets/img/JWT attacks/image_2.webp";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/JWT attacks/baner_lap.png';
+import courseImage from '../../assets/img/JWT attacks/course_image.png';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import exampleImage1 from '../../assets/img/JWT attacks/image_1.webp';
+import exampleImage2 from '../../assets/img/JWT attacks/image_2.webp';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 export default function JWTAttacks() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="JWT Attacks"
-        courseDescription="Master the basics of JWT Attacks, a powerful technique for
+        courseTitle='JWT Attacks'
+        courseDescription='Master the basics of JWT Attacks, a powerful technique for
                 securing code and protecting intellectual property in
-                cybersecurity environments."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+                cybersecurity environments.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h1 className="content__title">Welcome to JWT Attacks</h1>
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h1 className='content__title'>Welcome to JWT Attacks</h1>
 
-                  <h2 className="content__title">What will you learn?</h2>
+                  <h2 className='content__title'>What will you learn?</h2>
                   <ol>
                     <li>What are Obfuscation & Deobfuscation?</li>
                     <li>Why do we use Obfuscation?</li>
@@ -52,11 +50,11 @@ export default function JWTAttacks() {
                   </ol>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> Token-Based Authentication
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
                     <p>
                       <b>APIs</b> — those behind-the-scenes heroes of modern
                       tech — are like your favorite universal remote control.
@@ -64,7 +62,7 @@ export default function JWTAttacks() {
                       everyone from the chaos of having 10 different remotes (or
                       in this case, interfaces). Want a web app and a mobile app
                       talking to the same backend? <b>APIs</b> got you covered.
-                      Want server-side security neatly wrapped up in one spot?{" "}
+                      Want server-side security neatly wrapped up in one spot?{' '}
                       <b>APIs</b> again. They’re like the Swiss Army knives of
                       the digital world.
                     </p>
@@ -73,56 +71,55 @@ export default function JWTAttacks() {
                       Why? Because
                       <b>APIs</b> aren’t picky eaters like browsers. They don’t
                       naturally gobble <b>cookies</b>, which made developers
-                      scratch their heads and invent{" "}
+                      scratch their heads and invent{' '}
                       <span>token-based session management</span>.
                     </p>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>Tokens: The Shiny New Coins of the API Realm</h4>
                     <p>
                       <b>Tokens</b> are like those VIP wristbands you get at
                       exclusive events — proof you’re authenticated and ready to
-                      access the cool stuff. Unlike <b>cookies</b>,{" "}
+                      access the cool stuff. Unlike <b>cookies</b>,{' '}
                       <b>tokens</b> don’t depend on browsers to manage them.
                       Instead, they chill in your LocalStorage until it’s time
                       to flash them at the gates (or, you know, the <b>APIs</b>
-                      ). One of the fanciest <b>tokens</b> is the{" "}
-                      <span>JSON Web Token (JWT)</span>, the Beyoncé of{" "}
-                      <span>session management</span>, carried proudly in the{" "}
+                      ). One of the fanciest <b>tokens</b> is the{' '}
+                      <span>JSON Web Token (JWT)</span>, the Beyoncé of{' '}
+                      <span>session management</span>, carried proudly in the{' '}
                       <code>Authorization: Bearer</code>
                       <span>header</span>.
                     </p>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>The API Playground</h4>
                     <p>
-                      Enter the <b>API</b> room, a sandbox where you’ll exploit{" "}
+                      Enter the <b>API</b> room, a sandbox where you’ll exploit{' '}
                       <b>APIs</b>
                       like a pro. No accounts or fancy tools needed — just a
-                      <b>Python Flask API</b>, your wits, and a lot of{" "}
-                      <b>cURL</b> commands. The mission? Crack open those{" "}
+                      <b>Python Flask API</b>, your wits, and a lot of{' '}
+                      <b>cURL</b> commands. The mission? Crack open those{' '}
                       <b>API</b> endpoints, swipe some
                       <b>JWTs</b>, escalate privileges, and snatch those Topic
                       flags like a cybersecurity Indiana Jones.
                     </p>
-                    <h2 className="content__title">Here's the Cheat Sheet:</h2>
+                    <h2 className='content__title'>Here's the Cheat Sheet:</h2>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               <b>POST to Authenticate:</b>Send your credentials
                               (username: user, password: passwordX) to get a
                               shiny <b>JWT</b>.
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 curl -H 'Content-Type: application/json'
                                 <br />
-                                -X POST -d{" "}
+                                -X POST -d{' '}
                                 {
                                   '{ "username" : "user", "password" : "passwordX" }'
                                 }
@@ -134,19 +131,18 @@ export default function JWTAttacks() {
                         </div>
                       </li>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               <b>GET to Verify:</b>Use the<b>JWT</b> to prove
                               your admin chops and grab that flag.
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 curl -H 'Authorization: Bearer [JWT token]'
-                                <br />{" "}
+                                <br />{' '}
                                 http://10.10.242.49/api/v1.0/example2?username=Y
                               </code>
                             </pre>
@@ -159,9 +155,9 @@ export default function JWTAttacks() {
                           (and also gets you more flags).
                         </p>
                       </li>
-                      <p className="note__new--note">
+                      <p className='note__new--note'>
                         <b>Pro Tip:</b>Keep an eye on those permissions, and
-                        don’t forget to replace placeholders like passwordX and{" "}
+                        don’t forget to replace placeholders like passwordX and{' '}
                         <code>[JWT token]</code>. <span>APIs</span> don’t
                         respond well to “close enough.”
                       </p>
@@ -173,14 +169,14 @@ export default function JWTAttacks() {
                   </div>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span>JSON Web Tokens
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
-                    <div className="Content__img--box">
-                      <div className="Content__img__box__over--hidden">
-                        <img src={exampleImage1} alt="Example" />
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
+                    <div className='Content__img--box'>
+                      <div className='Content__img__box__over--hidden'>
+                        <img src={exampleImage1} alt='Example' />
                       </div>
                     </div>
                     <p>
@@ -191,8 +187,8 @@ export default function JWTAttacks() {
                       scream, “I’m authenticated, let me in!”
                     </p>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">What is inside a JWT?</h2>
+                  <div className=''>
+                    <h2 className='content__title'>What is inside a JWT?</h2>
                     <p>
                       A <b>JWT</b> is like a digital sandwich, neatly split into
                       three layers (and yes, they’re <b>Base64Url</b> encoded
@@ -221,8 +217,8 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Signing Algorithms: The Sauce Varieties
                     </h2>
                     <p>
@@ -250,8 +246,8 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Why JWTs Are Awesome</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Why JWTs Are Awesome</h2>
                     <p>
                       The real power of <b>JWTs</b> lies in their signature.
                       Once signed, they can travel around freely — like a VIP
@@ -273,11 +269,11 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span>Sensitive Information Disclosure
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
                     <p>
                       JWTs are great for securely transmitting information, but
                       when developers get careless, these tokens can turn into a
@@ -285,13 +281,13 @@ export default function JWTAttacks() {
                       of “oops, did I just expose a password in the token?”
                     </p>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       The Problem: JWTs Aren’t Diaries
                     </h2>
                     <p>
                       In traditional <span>cookie-based</span> sessions, data
-                      stays server-side, tucked away from prying eyes. But{" "}
+                      stays server-side, tucked away from prying eyes. But{' '}
                       <b>JWTs</b> send everything client-side, like a loud
                       friend who can’t keep secrets. If developers cram
                       sensitive data into the token’s payload, it’s like mailing
@@ -316,25 +312,24 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Practical Oops Moment: An Example
                     </h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Imagine this <b>cURL</b> request to authenticate a
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
-                            curl -H 'Content-Type: application/json' -X POST -d{" "}
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
+                            curl -H 'Content-Type: application/json' -X POST -d{' '}
                             {
                               '{ "username" : "user", "password" : "password1" }'
-                            }{" "}
+                            }{' '}
                             http://MACHINE_IP/api/v1.0/example1
                           </code>
                         </pre>
@@ -342,35 +337,33 @@ export default function JWTAttacks() {
                     </div>
                     <p>
                       You get a JWT token in return. Great, right? Until you
-                      decode it on{" "}
+                      decode it on{' '}
                       <a
-                        href="https://jwt.io/"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
+                        href='https://jwt.io/'
+                        rel='noreferrer'
+                        target='_blank'>
                         JWT.io
-                      </a>{" "}
+                      </a>{' '}
                       and see something like this:
                     </p>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Imagine this <b>cURL</b> request to authenticate a
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
-                            {"{"}
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
+                            {'{'}
                             <br />
                             "username": "user" ,
                             <br /> "password": "password1" ,
                             <br /> "admin": 0,
                             <br /> "flag": "secret_flag" ,
                             <br />
-                            {"}"}
+                            {'}'}
                           </code>
                         </pre>
                       </div>
@@ -380,8 +373,8 @@ export default function JWTAttacks() {
                       your password and the system’s internal workings.
                     </p>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Why This Happens: Developer Shortcut Syndrome
                     </h2>
                     <p>
@@ -389,12 +382,12 @@ export default function JWTAttacks() {
                       server-side, some developers toss it all into the token
                       payload, thinking, “Eh, it’s encoded; no one will look.”
                       Bad move. <b>JWTs</b> are encoded, not encrypted, and
-                      decoding them is as easy as pie (or{" "}
+                      decoding them is as easy as pie (or{' '}
                       <span>Base64 decoding</span>).
                     </p>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       The Fix: Keep Secrets, Well, Secret
                     </h2>
                     <p>
@@ -417,17 +410,16 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                     <p>Here’s a cleaner, safer implementation:</p>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Imagine this <b>cURL</b> request to authenticate a
                           user:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             payload = jwt.decode(token, self.secret, algorithms=
                             "HS256" )
                             <br /> username = payload[ 'username' ]
@@ -438,8 +430,8 @@ export default function JWTAttacks() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Takeaway</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Takeaway</h2>
                     <p>
                       <b>JWTs</b> are powerful, but with great power comes great
                       responsibility. Treat them like postcards everyone can
@@ -451,13 +443,13 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 5</span>Signature Validation Mistakes
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
                     <h4> Not Verifying the Signature</h4>
-                    <h2 className="content__title">Problem</h2>
+                    <h2 className='content__title'>Problem</h2>
                     <p>
                       When a server skips signature validation, claims within a
                       <b>JWT</b> can be modified arbitrarily. Attackers can
@@ -465,22 +457,21 @@ export default function JWTAttacks() {
                       server won’t notice.
                     </p>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Practical Example</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Practical Example</h2>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               <b>Authenticate using::</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 curl -H 'Content-Type: application/json' -X POST
-                                -d{" "}
+                                -d{' '}
                                 {
                                   '{ "username" : "user", "password" : "password2" }'
                                 }
@@ -497,17 +488,16 @@ export default function JWTAttacks() {
                         </p>
                       </li>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Remove the signature portion (everything after the
                               second dot .).
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 curl -H 'Authorization: Bearer [JWT Token]'
                                 <br />
                                 http://10.10.94.61/api/v1.0/example2?username=user
@@ -522,19 +512,18 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Fix</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                  <div className=''>
+                    <h2 className='content__title'>Fix</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Always validate the<b>JWT</b> signature before
                           trusting claims:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             payload = jwt.decode(token, self.secret,
                             algorithms="HS256")
                           </code>
@@ -542,31 +531,30 @@ export default function JWTAttacks() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>Algorithm Downgrade to None</h4>
-                    <h2 className="content__title">Problem</h2>
+                    <h2 className='content__title'>Problem</h2>
                     <p>
                       <b>JWTs</b>signed using weak symmetric keys can be cracked
                       offline, allowing attackers to forge valid tokens.
                     </p>
-                    <h2 className="content__title">Pratical Example</h2>
+                    <h2 className='content__title'>Pratical Example</h2>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Edit the JWT header:
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
-                                {"{"}
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
+                                {'{'}
                                 <br />
                                 "alg": "None" ,
                                 <br /> "typ": "JWT"
-                                <br /> {"}"}
+                                <br /> {'}'}
                               </code>
                             </pre>
                           </div>
@@ -578,18 +566,17 @@ export default function JWTAttacks() {
                         if signature verification is improperly configured.
                       </li>
                     </ol>
-                    <h2 className="content__title">Fix</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <h2 className='content__title'>Fix</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Explicitly deny the None algorithm and restrict
                           supported algorithms:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             payload = jwt.decode(token, self.secret,
                             algorithms=["HS256", "HS384", "HS512"])
                           </code>
@@ -597,9 +584,9 @@ export default function JWTAttacks() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>Weak Symmetric Secrets</h4>
-                    <h2 className="content__title">Problem</h2>
+                    <h2 className='content__title'>Problem</h2>
                     <p>
                       <b>JWTs</b> support the None algorithm, which skips
                       signature verification. Attackers can change the alg claim
@@ -607,23 +594,22 @@ export default function JWTAttacks() {
                       checks entirely if developers haven’t restricted
                       algorithms.
                     </p>
-                    <h2 className="content__title">Pratical Example</h2>
+                    <h2 className='content__title'>Pratical Example</h2>
                     <ol>
                       <li>
                         Save the <b>JWT</b> in a file (jwt.txt).
                       </li>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Use a tool like Hashcat to brute-force the secret
                               key:
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 hashcat -m 16500 -a 0 jwt.txt jwt.secrets.list
                               </code>
                             </pre>
@@ -635,27 +621,26 @@ export default function JWTAttacks() {
                         altered claims.
                       </li>
                     </ol>
-                    <h2 className="content__title">Fix</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <h2 className='content__title'>Fix</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Use a secure, randomly generated secret with high
                           entropy:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             secret = secrets.token_urlsafe(64)
                           </code>
                         </pre>
                       </div>
                     </div>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>Signature Algorithm Confusion</h4>
-                    <h2 className="content__title">Problem</h2>
+                    <h2 className='content__title'>Problem</h2>
                     <p>
                       When mixing <b>symmetric</b> (e.g., <span>HS256</span>)
                       and <b>asymmetric</b> (e.g.,
@@ -665,35 +650,34 @@ export default function JWTAttacks() {
                       secret for a<b>symmetric</b> algorithm, enabling token
                       forgery.
                     </p>
-                    <h2 className="content__title">Pratical Example</h2>
+                    <h2 className='content__title'>Pratical Example</h2>
                     <ol>
                       <li>
-                        Use the <b>public key</b> to sign a JWT with the{" "}
-                        <span>HS256</span> algorithm instead of{" "}
+                        Use the <b>public key</b> to sign a JWT with the{' '}
+                        <span>HS256</span> algorithm instead of{' '}
                         <span>RS256</span>.
                       </li>
                       <li>
                         Submit the <b>token</b> to the server, which
-                        misinterprets the <b>public key</b> as the{" "}
+                        misinterprets the <b>public key</b> as the{' '}
                         <b>symmetric </b> secret.
                       </li>
                     </ol>
-                    <h2 className="content__title">Fix</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <h2 className='content__title'>Fix</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Ensure the algorithm is explicitly validated and
                           process keys appropriately:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             header = jwt.get_unverified_header(token)
                             <br />
                             algorithm = header[
-                            <span className="token class-name">'alg'</span>
+                            <span className='token class-name'>'alg'</span>
                             ]
                             <br />
                             if "RS" in algorithm:
@@ -708,37 +692,36 @@ export default function JWTAttacks() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
+                  <div className=''>
                     <h4>
                       Omitting Additional Authentication Layers for
                       Server-to-Server APIs
                     </h4>
-                    <h2 className="content__title">Problem</h2>
+                    <h2 className='content__title'>Problem</h2>
                     <p>
-                      Server-to-server <b>APIs</b> may not properly verify{" "}
+                      Server-to-server <b>APIs</b> may not properly verify{' '}
                       <b>JWTs</b> under the assumption that upstream systems
                       have already authenticated the token. This assumption is
                       risky in complex distributed systems.
                     </p>
-                    <h2 className="content__title">Fix</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <h2 className='content__title'>Fix</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Use certificates for added authentication and verify
                           JWTs explicitly:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             payload = jwt.decode(token, self.public_key,
                             algorithms=[ "RS256" ])
                           </code>
                         </pre>
                       </div>
                     </div>
-                    <h2 className="content__title">
+                    <h2 className='content__title'>
                       Key Takeaways for Developers
                     </h2>
                     <ol>
@@ -750,7 +733,7 @@ export default function JWTAttacks() {
                         Use secure, random secrets for <b>symmetric</b> signing.
                       </li>
                       <li>
-                        Avoid mixing <b>symmetric</b> and <b>asymmetric</b>{" "}
+                        Avoid mixing <b>symmetric</b> and <b>asymmetric</b>{' '}
                         algorithms carelessly.
                       </li>
                       <li>
@@ -766,11 +749,11 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 6</span>JWT Lifetimes
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
                     <p>
                       The lifetime of a <b>JWT</b> is a critical security
                       consideration. Proper management of the exp (expiration)
@@ -778,7 +761,7 @@ export default function JWTAttacks() {
                       indefinitely. Below, we explore the key issues and
                       solutions regarding token expiration.
                     </p>
-                    <h2 className="content__title">
+                    <h2 className='content__title'>
                       The Problem: Tokens Without Expiry
                     </h2>
                     <p>
@@ -791,18 +774,17 @@ export default function JWTAttacks() {
                       mechanisms, making them vulnerable to misuse if they are
                       stolen or compromised.
                     </p>
-                    <h2 className="content__title">Practical Example</h2>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <h2 className='content__title'>Practical Example</h2>
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           The <b>JWT</b> below does not contain an exp claim,
                           making it permanently valid:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.ko7EQiATQQzrQPwRO8ZTY37pQWGLPZWEvdWH0tVDNPU
                           </code>
                         </pre>
@@ -813,7 +795,7 @@ export default function JWTAttacks() {
                       external mechanisms like token blocklists are in place to
                       revoke it.
                     </p>
-                    <h2 className="content__title">
+                    <h2 className='content__title'>
                       The Fix: Setting an exp Claim
                     </h2>
                     <p>
@@ -821,29 +803,28 @@ export default function JWTAttacks() {
                     </p>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Ensure that every <b>JWT</b> contains an
                               <b> exp</b> claim to define its expiration time.
                               For example:
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 import datetime
                                 <br /> import jwt
                                 <br /> lifetime = datetime.datetime.now() +
                                 datetime.timedelta(minutes=5)
-                                <br /> payload = {"{"}
+                                <br /> payload = {'{'}
                                 <br /> 'username' : 'user' ,
                                 <br />
                                 'admin' : 0 ,
                                 <br /> 'exp' : lifetime
                                 <br />
-                                {"}"}
+                                {'}'}
                                 <br />
                                 access_token = jwt.encode(payload, self.secret,
                                 algorithm= "HS256" )
@@ -857,15 +838,15 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Enforce Expiration Checks
                     </h2>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               <b>
                                 Most <b>JWT</b> libraries automatically validate
                                 the exp claim. If a token is expired, they will
@@ -873,10 +854,9 @@ export default function JWTAttacks() {
                               </b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
                                 try:
                                 <br />
                                 payload = jwt.decode(token, self.secret,
@@ -890,8 +870,8 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Challenges with Token Expiry
                     </h2>
                     <p>
@@ -923,15 +903,15 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Refresh Tokens</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Refresh Tokens</h2>
                     <p>
                       Use refresh <b>tokens</b> to renew short-lived <b>JWTs</b>
                       . This involves issuing two tokens:
                     </p>
                     <ol>
                       <li>
-                        <b>Access Token: </b>Short-lived and used for <b>API</b>{" "}
+                        <b>Access Token: </b>Short-lived and used for <b>API</b>{' '}
                         requests.
                       </li>
                       <li>
@@ -939,32 +919,31 @@ export default function JWTAttacks() {
                         obtain new access tokens when needed.
                       </li>
                     </ol>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           <b>Example of issuing both tokens:</b>
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             access_lifetime = datetime.datetime.now() +
                             datetime.timedelta(minutes= 5)
                             <br /> refresh_lifetime = datetime.datetime.now() +
                             datetime.timedelta(days= 30)
                             <br />
-                            access_payload = {"{"}
+                            access_payload = {'{'}
                             <br /> 'username' : 'user' ,
                             <br /> 'admin': 0 ,
                             <br />
                             'exp' : access_lifetime
                             <br />
-                            {"}"}
-                            <br /> refresh_payload = {"{"}
+                            {'}'}
+                            <br /> refresh_payload = {'{'}
                             <br /> 'username' : 'user' ,
                             <br /> 'exp' : refresh_lifetime
-                            <br /> {"}"}
+                            <br /> {'}'}
                             <br /> access_token = jwt.encode(access_payload,
                             self.secret, algorithm= "HS256" )
                             <br /> refresh_token = jwt.encode(refresh_payload,
@@ -974,8 +953,8 @@ export default function JWTAttacks() {
                       </div>
                     </div>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Key Takeaways</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Key Takeaways</h2>
                     <p>
                       <b>Always Set exp</b>
                     </p>
@@ -1013,14 +992,14 @@ export default function JWTAttacks() {
                     </p>
                   </div>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 7</span>Cross-Service Relay Attacks
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
-                    <div className="Content__img--box">
-                      <div className="Content__img__box__over--hidden">
-                        <img src={exampleImage2} alt="Example" />
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
+                    <div className='Content__img--box'>
+                      <div className='Content__img__box__over--hidden'>
+                        <img src={exampleImage2} alt='Example' />
                       </div>
                     </div>
                     <p>
@@ -1033,8 +1012,8 @@ export default function JWTAttacks() {
                     </p>
                   </div>
 
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       The Problem: Cross-Service Misconfiguration
                     </h2>
                     <p>
@@ -1050,15 +1029,15 @@ export default function JWTAttacks() {
                         unauthorized access.
                       </li>
                       <li>
-                        Example: A user is an admin on <b>appB</b> but not on{" "}
-                        <b>appA</b>. If appA does not verify the aud claim, the{" "}
+                        Example: A user is an admin on <b>appB</b> but not on{' '}
+                        <b>appA</b>. If appA does not verify the aud claim, the{' '}
                         <b>JWT</b> for appB could be used to gain admin
                         privileges on appA.
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Practical Example</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Practical Example</h2>
                     <p>
                       <b>Steps:</b>
                     </p>
@@ -1067,24 +1046,23 @@ export default function JWTAttacks() {
                     </p>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Send a login request to the centralized
                               authentication server for <b>appA:</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
-                                {"{"}
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
+                                {'{'}
                                 <br />
                                 'username' : 'user' ,
                                 <br /> 'password' : "password7" ,
                                 <br /> 'application' : "appA"
                                 <br />
-                                {"}"}
+                                {'}'}
                               </code>
                             </pre>
                           </div>
@@ -1112,23 +1090,22 @@ export default function JWTAttacks() {
                     </p>
                     <ol>
                       <li>
-                        <div className="terminal-container">
-                          <div className="terminal-content">
-                            <div className="terminal-top">
+                        <div className='terminal-container'>
+                          <div className='terminal-content'>
+                            <div className='terminal-top'>
                               Send a login request for <b>appB:</b>
                             </div>
                             <pre
-                              className="terminal-codelanguage-bash"
-                              tabIndex="0"
-                            >
-                              <code className="language-bash">
-                                {"{"}
+                              className='terminal-codelanguage-bash'
+                              tabIndex='0'>
+                              <code className='language-bash'>
+                                {'{'}
                                 <br />
                                 'username' : 'user' ,
                                 <br /> 'password' : "password7" ,
                                 <br /> 'application' : "appB"
                                 <br />
-                                {"}"}
+                                {'}'}
                               </code>
                             </pre>
                           </div>
@@ -1153,8 +1130,8 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">The Development Mistake</h2>
+                  <div className=''>
+                    <h2 className='content__title'>The Development Mistake</h2>
                     <p>
                       <b>Missing Audience Verification</b>
                     </p>
@@ -1178,30 +1155,29 @@ export default function JWTAttacks() {
                         the intended purpose.
                       </li>
                     </ol>
-                    <h2 className="content__title">The Fix</h2>
+                    <h2 className='content__title'>The Fix</h2>
                     <p>
                       <b>Enforce Audience Claim Verification</b>
                     </p>
                     <p>
-                      The application must validate the aud claim during{" "}
+                      The application must validate the aud claim during{' '}
                       <b>token</b>
                       decoding to ensure the <b>JWT</b> is intended for that
                       specific application. Here’s an example in Python using
                       the <b>PyJWT</b>
                       library:
                     </p>
-                    <div className="terminal-container">
-                      <div className="terminal-content">
-                        <div className="terminal-top">
+                    <div className='terminal-container'>
+                      <div className='terminal-content'>
+                        <div className='terminal-top'>
                           Ensure that every <b>JWT</b> contains an
                           <b> exp</b> claim to define its expiration time. For
                           example:
                         </div>
                         <pre
-                          className="terminal-codelanguage-bash"
-                          tabIndex="0"
-                        >
-                          <code className="language-bash">
+                          className='terminal-codelanguage-bash'
+                          tabIndex='0'>
+                          <code className='language-bash'>
                             import jwt
                             <br /> # Secret key and audience list
                             <br /> secret = "your_secret_key"
@@ -1217,14 +1193,14 @@ export default function JWTAttacks() {
                             <br /> print( "Invalid audience claim. Token not
                             accepted." )
                             <br /> except Exception as e:
-                            <br /> print( f"Token verification failed: {"{e}"})
+                            <br /> print( f"Token verification failed: {'{e}'})
                           </code>
                         </pre>
                       </div>
                     </div>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">
+                  <div className=''>
+                    <h2 className='content__title'>
                       Best Practices for Fixing Audience Issues
                     </h2>
                     <p>
@@ -1256,8 +1232,8 @@ export default function JWTAttacks() {
                       </li>
                     </ol>
                   </div>
-                  <div className="">
-                    <h2 className="content__title">Key Takeaways</h2>
+                  <div className=''>
+                    <h2 className='content__title'>Key Takeaways</h2>
                     <ol>
                       <li>
                         <p>
@@ -1276,7 +1252,7 @@ export default function JWTAttacks() {
                       <li>
                         <p>
                           <b>Implement Proper Token Validation: </b>Use robust
-                          libraries to ensure the aud claim is part of the{" "}
+                          libraries to ensure the aud claim is part of the{' '}
                           <b>token</b>
                           verification processes.
                         </p>
@@ -1284,19 +1260,19 @@ export default function JWTAttacks() {
                     </ol>
                     <p>
                       By addressing audience misconfigurations, you can protect
-                      your systems from{" "}
+                      your systems from{' '}
                       <b>
                         Cross-Service Relay attacks and privilege escalation.
                       </b>
                     </p>
                   </div>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 8</span>Conclusion: JWTs — Not Just a Fancy
                   Acronym for “Just Wait, Trouble!”
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <div className="">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <div className=''>
                     <p>
                       This room was a rollercoaster ride through the world of
                       <b>JWT (JSON Web Token)</b> misconfigurations and
@@ -1373,11 +1349,10 @@ export default function JWTAttacks() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/jwtattacks/jwtattacks_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/jwtattacks/jwtattacks_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

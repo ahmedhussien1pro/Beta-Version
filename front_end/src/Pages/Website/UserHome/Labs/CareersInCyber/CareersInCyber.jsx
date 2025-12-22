@@ -18,7 +18,6 @@ import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
 export default function CareersInCyber() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -26,7 +25,6 @@ export default function CareersInCyber() {
     <>
       <Banner />
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}

@@ -1,36 +1,32 @@
-import React from "react";
-import Header from "../../Header/Header";
-import mcqData from "./MCQCards";
-import labImg from "../../assets/img/DigitalForensics/Email.jpg";
-import Footer from "../../Footer/Footer";
-import Banner from "../../Components/Banner/Banner";
-import { Card } from "../../Components/Card/Card";
-import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn";
-import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
+import React from 'react';
+import Header from '../../Header/Header';
+import mcqData from './MCQCards';
+import labImg from '../../assets/img/DigitalForensics/Email.jpg';
+import Footer from '../../Footer/Footer';
+import Banner from '../../Components/Banner/Banner';
+import { Card } from '../../Components/Card/Card';
+import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn';
+import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function Digital_Forensics_labs() {
   const Labs = [
     {
-      title: "Audio Forensics",
-      link: "/Digital_Forensics/Digital_Forensics_labs/lab1",
+      title: 'Audio Forensics',
+      link: '/Digital_Forensics/Digital_Forensics_labs/lab1',
       image: labImg,
-      brief: [
-        "Analyze audio files to extract information and solve the case.",
-      ],
-      difficulty: "Easy",
+      brief: ['Analyze audio files to extract information and solve the case.'],
+      difficulty: 'Easy',
     },
   ];
   return (
     <>
       <Banner />
       <Header />
-      <ThemeSwitcher />
       <LandingPractice />
-      <div className="course">
-        <div className="container">
-          <PracticeTitle title={"Digital Forensics"} />
-          <div className="row">
+      <div className='course'>
+        <div className='container'>
+          <PracticeTitle title={'Digital Forensics'} />
+          <div className='row'>
             {Labs.map((lab, index) => {
               return (
                 <Card
@@ -42,9 +38,7 @@ export default function Digital_Forensics_labs() {
                   key={index}
                 />
               );
-            }
-
-            )}
+            })}
             {mcqData.map((mcq) => (
               <Card
                 link={mcq.link}

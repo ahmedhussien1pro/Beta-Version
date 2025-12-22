@@ -1,61 +1,59 @@
-import React from "react";
-import "./UnrestrictedFileUpload.css";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import photo2 from "../../assets/img/Unrestricted File Upload/Post&GetImage.png";
-import code1 from "../../assets/img/Unrestricted File Upload/code1FileUpload.png";
-import code2 from "../../assets/img/Unrestricted File Upload/code2FileUpload.png";
-import code3 from "../../assets/img/Unrestricted File Upload/code3FileUpload.png";
-import courseImage from "../../assets/img/Unrestricted File Upload/FileUploadIcon.png";
-import background from "../../assets/img/Unrestricted File Upload/background_File_Upload.jpg";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import './UnrestrictedFileUpload.css';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import photo2 from '../../assets/img/Unrestricted File Upload/Post&GetImage.png';
+import code1 from '../../assets/img/Unrestricted File Upload/code1FileUpload.png';
+import code2 from '../../assets/img/Unrestricted File Upload/code2FileUpload.png';
+import code3 from '../../assets/img/Unrestricted File Upload/code3FileUpload.png';
+import courseImage from '../../assets/img/Unrestricted File Upload/FileUploadIcon.png';
+import background from '../../assets/img/Unrestricted File Upload/background_File_Upload.jpg';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function UnrestrictedFileUpload() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Unrestricted File Upload"
-        courseDescription="In this course, you will explore the security risks associated with unrestricted file uploads in web applications. We will cover how attackers can exploit vulnerabilities in file upload mechanisms and the potential consequences, including unauthorized access and data breaches. You will learn about the best practices to mitigate such risks, ensuring safe file handling and improving the overall security posture of web applications."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Unrestricted File Upload'
+        courseDescription='In this course, you will explore the security risks associated with unrestricted file uploads in web applications. We will cover how attackers can exploit vulnerabilities in file upload mechanisms and the potential consequences, including unauthorized access and data breaches. You will learn about the best practices to mitigate such risks, ensuring safe file handling and improving the overall security posture of web applications.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing */}
       {/* Start Content */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> Description
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <img
-                    className="faq-File-image"
+                    className='faq-File-image'
                     src={photo2}
-                    alt="unrestricted"
+                    alt='unrestricted'
                   />
                   <ul>
-                    <li className="style">
+                    <li className='style'>
                       <p>
-                        <div class="content__subtitle">
-                          Unrestricted File Upload{" "}
+                        <div class='content__subtitle'>
+                          Unrestricted File Upload{' '}
                         </div>
-                        <div className="Files-first">
+                        <div className='Files-first'>
                           vulnerability occurs due to insufficient or improper
                           file-type validation controls being implemented prior
                           to files being uploaded to the web application.
@@ -67,15 +65,15 @@ export default function UnrestrictedFileUpload() {
                       </p>
                     </li>
                     <li>
-                      <p className="parag-un">
-                        The OWASP Top 10 refers to{" "}
+                      <p className='parag-un'>
+                        The OWASP Top 10 refers to{' '}
                         <p>
-                          <span class="highlight-UnRestrict">
+                          <span class='highlight-UnRestrict'>
                             Unrestricted File Uploads
-                          </span>{" "}
+                          </span>{' '}
                           as a significant risk
                         </p>
-                        <div className="Files-first">
+                        <div className='Files-first'>
                           , and for good reason. Unrestricted File Uploads are
                           an excellent primary entry point for an attacker,
                           offering a foothold into the system for further
@@ -86,12 +84,12 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span>Impact
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
-                    <li className="style-modern-fileUpload">
+                    <li className='style-modern-fileUpload'>
                       The impact of an Unrestricted File Upload vulnerability is
                       usually high given that it facilitates code execution on
                       target systems and web applications. Malicious actors
@@ -100,12 +98,12 @@ export default function UnrestrictedFileUpload() {
                       attack other servers, and be used as a staging point to
                       pivot to other clients in the network.
                     </li>
-                    <li className="style-modern-fileUpload">
+                    <li className='style-modern-fileUpload'>
                       In 2017, a security researcher participating in a bug
-                      bounty run by PayPal was able to{" "}
-                      <span class="highlight-UnRestrict">
+                      bounty run by PayPal was able to{' '}
+                      <span class='highlight-UnRestrict'>
                         leverage an Unrestricted File Upload
-                      </span>{" "}
+                      </span>{' '}
                       vulnerability to execute remote code on the application.
                       Companies of this size regularly run bug bounties to
                       continually test their defenses for weaknesses,
@@ -115,7 +113,7 @@ export default function UnrestrictedFileUpload() {
                       systemic problem that arises far earlier in the
                       development cycle at the implementation stage.
                     </li>
-                    <li className="style-modern-fileUpload">
+                    <li className='style-modern-fileUpload'>
                       Elaborating on the impacts, Unrestricted File Uploads can
                       lead to Command Injection, XSS attacks, Denial of Service
                       attacks, the creation of phishing pages, and other kinds
@@ -125,12 +123,12 @@ export default function UnrestrictedFileUpload() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span>Scenarios
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
-                    <li className="scnarios-fileUplode">
+                    <li className='scnarios-fileUplode'>
                       Unrestricted File Upload vulnerabilities can be exploited
                       in a variety of ways depending on the language used and
                       the specific flaw exposed. Countermeasures and validation
@@ -141,105 +139,105 @@ export default function UnrestrictedFileUpload() {
                     </li>
                     <ol>
                       <li>
-                        {" "}
+                        {' '}
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
+                        <b className='content__subtitle'>
                           • MIME-type validation
                         </b>
                       </li>
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
-                          • Checking the file extension against a deny list{" "}
+                        <b className='content__subtitle'>
+                          • Checking the file extension against a deny list{' '}
                         </b>
                       </li>
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
-                        <b className="content__subtitle">
-                          • Image header checks{" "}
+                        <b className='content__subtitle'>
+                          • Image header checks{' '}
                         </b>
                       </li>
                     </ol>
-                    <li className="scnarios-fileUplode">
+                    <li className='scnarios-fileUplode'>
                       The following elaborates on Unrestricted File Upload
                       manipulation as a result of non-existent validations in a
                       PHP script.
                     </li>
-                    <li className="scnarios-fileUplode">
+                    <li className='scnarios-fileUplode'>
                       A user is authorized by the following code to upload a
-                      picture of a flag{" "}
-                      <span class="highlight-UnRestrict">
-                        {" "}
+                      picture of a flag{' '}
+                      <span class='highlight-UnRestrict'>
+                        {' '}
                         (a SecureFlag picture even!)
                       </span>
                       to the web server. The HTML code that facilitates the user
                       end form has a file type input field.
                     </li>
-                    <img src={code1} alt="code1" className="code1" />
+                    <img src={code1} alt='code1' className='code1' />
                     <li>
-                      <p className="parag-un">
+                      <p className='parag-un'>
                         Upon submission, the form then sends the file to
-                        <div className="upload-location">
+                        <div className='upload-location'>
                           upload_flagpics.php
-                        </div>{" "}
+                        </div>{' '}
                         on the web server. The file is stored in a temporary
                         location by PHP until it is either retrieved or
                         discarded on the server side. The file is then sent to a
                         more permanent directory called
-                        <div className="upload-location">flagpics/.</div>
+                        <div className='upload-location'>flagpics/.</div>
                       </p>
                     </li>
-                    <img src={code2} alt="code2" className="code1" />
-                    <li className="scnarios-fileUplode">
+                    <img src={code2} alt='code2' className='code1' />
+                    <li className='scnarios-fileUplode'>
                       Unfortunately, the above code does not validate the file
-                      type being uploaded, and if the{" "}
-                      <div className="upload-location">flagpics/</div> directory
+                      type being uploaded, and if the{' '}
+                      <div className='upload-location'>flagpics/</div> directory
                       is accessible in the web document root, a malicious actor
                       would be able to upload a file with the name
-                      <div className="upload-location">malicious.php.</div>
+                      <div className='upload-location'>malicious.php.</div>
                       This filename, ending in .php,can then be executed by the
                       web server. Thus, a malicious actor could additionally
                       send:
                     </li>
-                    <img src={code3} alt="code3" className="code1" />
-                    <li className="scnarios-fileUplode">
+                    <img src={code3} alt='code3' className='code1' />
+                    <li className='scnarios-fileUplode'>
                       If this file is successfully installed by the attacker,
                       they will be able to run arbitrary commands using a URL to
                       execute, such as:
-                      <div className="command-url">
+                      <div className='command-url'>
                         http://www.vulnerableapp.com/upload_dir/malicious.php?cmd=ls%20-l
                       </div>
-                      Thus, running the <div className="command">ls -al</div>{" "}
+                      Thus, running the <div className='command'>ls -al</div>{' '}
                       command
                     </li>
                   </ul>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span> Prevention
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
-                    <li className="preventing-fileUplode">
+                    <li className='preventing-fileUplode'>
                       Developers must review upload functionality to determine
                       if uploaded content is ever returned to other application
                       users and whether that is due to normal application usage
                       or attack manipulation. As a part of this revision,
                       developers should consider:
                     </li>
-                    <ul className="styled-list">
+                    <ul className='styled-list'>
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         If the application filters file extensions and the MIME
                         type of the uploaded file.
@@ -247,7 +245,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         If placing executable JavaScript or HTML into the file
                         is possible.
@@ -255,7 +253,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         If the header information is returned after the contents
                         of a file are downloaded.
@@ -263,22 +261,22 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         If the storage location for uploaded content is
                         escapable with a crafted filename.
                       </li>
                     </ul>
-                    <li className="preventing-fileUplode">
+                    <li className='preventing-fileUplode'>
                       There are numerous steps toward a more robust upload code
                       architecture that developers must consider in their
                       design:
                     </li>
-                    <ul className="security-measures-list">
+                    <ul className='security-measures-list'>
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Developers must use an allow list, enforcing acceptance
                         of only listed, non-executable file extensions.
@@ -286,7 +284,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Developers should ensure file names do not contain
                         directory traversal characters such as ../ that are used
@@ -296,7 +294,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Developers should alter permissions on the upload folder
                         to ensure the files can’t be executed.
@@ -304,7 +302,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Uploads must not be placed in directories that are
                         accessible from the web.
@@ -312,7 +310,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Developers should ensure that if uploaded files are
                         downloaded by users, they contain
@@ -323,7 +321,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Uploaded files should be subject to immediate virus
                         scanning.
@@ -331,7 +329,7 @@ export default function UnrestrictedFileUpload() {
                       <li>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Developers must enforce size limits on uploaded files
                         and reject archive formats (like ZIP) from being
@@ -343,15 +341,14 @@ export default function UnrestrictedFileUpload() {
                 {/* Single FAQ Area  */}
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
                   handleGoToLab(
-                    "/Unrestricted File Upload/lab_Unrestricted_File_Uplode"
+                    '/Unrestricted File Upload/lab_Unrestricted_File_Uplode'
                   )
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

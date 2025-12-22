@@ -5,9 +5,8 @@
 }
 
 .services__card {
-
   position: relative;
-  background: var(--secondary-bg);
+  background: var(--primary-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +14,13 @@
   height: 350px;
   max-width: 360px;
   margin: 0 auto;
-  border-radius: 6px; 
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
   transition: transform 0.3s ease;
 }
 
 .services__card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
 .services__card::before {
@@ -84,8 +84,8 @@
 
 .services__card:hover .services__card__icon {
   background: var(--clr);
-  color: var(--primary-text);
-  box-shadow: 0 0 0 4px var(--primary-text), 0 0 0 300px var(--clr);
+  color: var(--whiteColor);
+  box-shadow: 0 0 0 4px var(--whiteColor), 0 0 0 300px var(--clr);
 }
 
 .services__card__title {
@@ -96,7 +96,7 @@
 }
 
 .services__card:hover .services__card__title {
-  color: var(--primary-text);
+  color: var(--whiteColor);
 }
 
 .services__card__description {
@@ -109,13 +109,13 @@
 }
 
 .services__card:hover .services__card__description {
-  color: var(--primary-text);
+  color: var(--whiteColor);
 }
 
 .services__card__link {
   position: relative;
   background: var(--clr);
- color: var(--primary-text);
+  color: var(--primary-text);
   padding: 8px 15px;
   display: inline-block;
   text-decoration: none;
@@ -126,6 +126,6 @@
 }
 
 .services__card:hover .services__card__link {
-  background: var(--primary-text);
+  background: var(--whiteColor);
   color: var(--clr);
 }

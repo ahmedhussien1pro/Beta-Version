@@ -1,18 +1,17 @@
-import React from "react";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import background from "../../assets/img/SQL_Injection/New/background.png";
-import courseImage from "../../assets/img/SQL_Injection/New/courseImage.png";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import Banner from "../../Components/Banner/Banner.jsx";
-import "../Page_Styles/Content_sec.css";
-import Go2TopBtn from "../../Components/Go2Top_Btn/Go2Top_Btn.jsx";
-import DBServer from "../../assets/img/SQL_Injection/DBServer.png";
-import OutOfBand from "../../assets/img/SQL_Injection/Out-of-Band SQLi.png";
-import table from "../../assets/img/SQL_Injection/table.png";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import background from '../../assets/img/SQL_Injection/New/background.png';
+import courseImage from '../../assets/img/SQL_Injection/New/courseImage.png';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import Banner from '../../Components/Banner/Banner.jsx';
+import '../Page_Styles/Content_sec.css';
+import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
+import DBServer from '../../assets/img/SQL_Injection/DBServer.png';
+import OutOfBand from '../../assets/img/SQL_Injection/Out-of-Band SQLi.png';
+import table from '../../assets/img/SQL_Injection/table.png';
 export default function Sql_Injection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
 
@@ -20,37 +19,36 @@ export default function Sql_Injection() {
     <>
       <Banner />
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing */}
       <CourseLanding
         background={background}
-        backgroundStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
+        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
         courseImage={courseImage}
-        courseTitle="SQL Injection"
-        courseDescription="Learn how attackers exploit vulnerabilities in web applications
+        courseTitle='SQL Injection'
+        courseDescription='Learn how attackers exploit vulnerabilities in web applications
                 using SQL injection and understand the techniques to detect and
-                prevent them."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+                prevent them.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing */}
 
       {/* Start Course */}
-      <div className="Content ">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text ">
+      <div className='Content '>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text '>
                 {/* Intro */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Intro </span> Brief
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
-                    <b className="content__subtitle">
+                    <b className='content__subtitle'>
                       SQL (Structured Query Language) Injection
                     </b>
                     : mostly referred to as SQLi, is an attack on a web
@@ -64,7 +62,7 @@ export default function Sql_Injection() {
                     oldest web application vulnerabilities, and it can also be
                     the most damaging.
                   </p>
-                  <p className="note">
+                  <p className='note'>
                     In this room, you'll learn what databases are, what SQL is
                     with some basic SQL commands, how to detect SQL
                     vulnerabilities, how to exploit SQLi vulnerabilities and, as
@@ -73,10 +71,10 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 1 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> What is a Database?
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
                     If you're not used to working with databases or exploiting
                     them, there's probably some new terminology to get used to,
@@ -84,7 +82,7 @@ export default function Sql_Injection() {
                     structured and how they work.
                   </p>
                   <p>
-                    <h3 className="content__title">What is a database?</h3> A
+                    <h3 className='content__title'>What is a database?</h3> A
                     database is a way of electronically storing collections of
                     data in an organised manner. A database is controlled by a
                     DBMS, which is an acronym for Database Management System.
@@ -101,9 +99,9 @@ export default function Sql_Injection() {
                     containing its own set of related data. For example, you may
                     have a database called <strong>"shop"</strong>. Within this
                     database, you want to store information about products
-                    available to <strong>purchase</strong>,{" "}
+                    available to <strong>purchase</strong>,{' '}
                     <strong>users</strong> who have signed up to your online
-                    shop, and information about the <strong>orders</strong>{" "}
+                    shop, and information about the <strong>orders</strong>{' '}
                     you've received. You'd store this information separately in
                     the database using something called tables. The tables are
                     identified with a unique name for each one. You can see this
@@ -111,16 +109,16 @@ export default function Sql_Injection() {
                     business might have other separate databases to store staff
                     information or the accounts team.
                   </p>
-                  <div className="bg-light p-3 w-75  mx-auto">
+                  <div className='bg-light p-3 w-75  mx-auto'>
                     <img
                       src={DBServer}
-                      alt=""
-                      className="img-fluid  d-block "
+                      alt=''
+                      className='img-fluid  d-block '
                     />
                   </div>
                   <hr />
-                  <p className="mt-3">
-                    <h3 className="content__title">What are tables?</h3> A table
+                  <p className='mt-3'>
+                    <h3 className='content__title'>What are tables?</h3> A table
                     is made up of columns and rows; a useful way to imagine a
                     table is like a grid with the columns going across the top
                     from left to right containing the name of the cell and the
@@ -129,12 +127,12 @@ export default function Sql_Injection() {
                   </p>
                   <img
                     src={table}
-                    alt=""
-                    className="img-fluid w-50 mx-auto d-block "
+                    alt=''
+                    className='img-fluid w-50 mx-auto d-block '
                   />
                   <hr />
                   <p>
-                    <h3 className="content__title">Columns:</h3> Each column,
+                    <h3 className='content__title'>Columns:</h3> Each column,
                     better referred to as a field, has a unique name per table.
                     When creating a column, you also set the type of data it
                     will contain, common ones being integers (numbers), strings
@@ -152,22 +150,22 @@ export default function Sql_Injection() {
                     can be used to find that exact row in SQL queries.
                   </p>
                   <p>
-                    <h3 className="content__title">Rows:</h3> Rows or records
+                    <h3 className='content__title'>Rows:</h3> Rows or records
                     contain individual lines of data. When you add data to the
                     table, a new row/record is created; when you delete data, a
                     row/record is removed.
                   </p>
                   <p>
-                    <h3 className="content__title">
+                    <h3 className='content__title'>
                       Relational Vs Non-Relational Databases:
-                    </h3>{" "}
+                    </h3>{' '}
                     A relational database stores information in tables, and
                     often, the tables share information between them; they use
                     columns to specify and define the data being stored and rows
                     actually to store the data. The tables will often contain a
                     column that has a unique ID (primary key), which will then
                     be used in other tables to reference it and cause a
-                    relationship between the tables, hence the name{" "}
+                    relationship between the tables, hence the name{' '}
                     <strong>relational</strong> database.
                   </p>
                   <p>
@@ -182,10 +180,10 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 2 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> What is SQL?
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
                     SQL (Structured Query Language) is a feature-rich language
                     used for querying databases. These SQL queries are better
@@ -202,16 +200,16 @@ export default function Sql_Injection() {
                     worth noting that SQL syntax is not case-sensitive.
                   </p>
                   <p>
-                    <h3 className="content__title">SELECT</h3>
+                    <h3 className='content__title'>SELECT</h3>
                     The first query type we'll learn is the SELECT query used to
-                    retrieve data from the database.{" "}
+                    retrieve data from the database.{' '}
                   </p>
                   <p>
-                    <code className="content__code">select * from users;</code>
+                    <code className='content__code'>select * from users;</code>
                   </p>
                   <hr />
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -243,7 +241,7 @@ export default function Sql_Injection() {
                     table may contain three columns (id, username and password).
                     "from users" tells the database we want to retrieve the data
                     from the table named users. Finally, the semicolon at the
-                    end tells the database that this is the end of the query.{" "}
+                    end tells the database that this is the end of the query.{' '}
                   </p>
                   <p>
                     The next query is similar to the above, but this time,
@@ -252,12 +250,12 @@ export default function Sql_Injection() {
                     field.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select username,password from users;
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>Username</th>
                         <th>Password</th>
@@ -289,12 +287,12 @@ export default function Sql_Injection() {
                     number tells the database how many rows to return.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users LIMIT 1;
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -315,12 +313,12 @@ export default function Sql_Injection() {
                     returning data that matches our specific clauses:
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username='admin';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -340,12 +338,12 @@ export default function Sql_Injection() {
                     to admin.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username != 'admin';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -370,13 +368,13 @@ export default function Sql_Injection() {
                     equal to admin.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username='admin' or
                       username='jon';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -398,16 +396,16 @@ export default function Sql_Injection() {
                   </table>
                   <p>
                     This will only return the rows where the username is either
-                    equal to admin or jon.{" "}
+                    equal to admin or jon.{' '}
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username='admin' and
                       password='p4ssword';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -433,12 +431,12 @@ export default function Sql_Injection() {
                     wildcard character represented by a percentage sign %.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username like 'a%';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -458,12 +456,12 @@ export default function Sql_Injection() {
                     letter a.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username like '%n';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -493,12 +491,12 @@ export default function Sql_Injection() {
                     n.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       select * from users where username like '%mi%';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -519,7 +517,7 @@ export default function Sql_Injection() {
                     characters mi within them.
                   </p>
                   <p>
-                    <h3 className="content__title">UNION</h3>The UNION statement
+                    <h3 className='content__title'>UNION</h3>The UNION statement
                     combines the results of two or more SELECT statements to
                     retrieve data from either single or multiple tables; the
                     rules to this query are that the UNION statement must
@@ -531,8 +529,8 @@ export default function Sql_Injection() {
                     customers and suppliers to post a new catalogue. We have one
                     table called customers with the following contents:
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -568,8 +566,8 @@ export default function Sql_Injection() {
                   <p>
                     And another called suppliers with the following contents:
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Company</th>
@@ -607,13 +605,13 @@ export default function Sql_Injection() {
                     from the two tables and put them into one result set:
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       SELECT name,address,city,postcode from customers UNION
                       SELECT company,address,city,postcode from suppliers;
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>Name</th>
                         <th>Address</th>
@@ -661,7 +659,7 @@ export default function Sql_Injection() {
                     </tbody>
                   </table>
                   <p>
-                    <h3 className="content__title">insert</h3>The INSERT
+                    <h3 className='content__title'>insert</h3>The INSERT
                     statement tells the database we wish to insert a new row of
                     data into the table. "into users" tells the database which
                     table we wish to insert the data into, "
@@ -672,13 +670,13 @@ export default function Sql_Injection() {
                     data for the previously specified columns.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       insert into users (username,password) values
                       ('bob','password123');
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -709,7 +707,7 @@ export default function Sql_Injection() {
                     </tbody>
                   </table>
                   <p>
-                    <h3 className="content__title">UPDATE</h3>The UPDATE
+                    <h3 className='content__title'>UPDATE</h3>The UPDATE
                     statement tells the database we wish to update one or more
                     rows of data within a table. You specify the table you wish
                     to update using "update %tablename% SET" and then select the
@@ -720,13 +718,13 @@ export default function Sql_Injection() {
                     username='admin;".
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       update users SET username='root',password='pass123' where
                       username='admin';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -757,7 +755,7 @@ export default function Sql_Injection() {
                     </tbody>
                   </table>
                   <p>
-                    <h3 className="content__title">DELETE</h3>The DELETE
+                    <h3 className='content__title'>DELETE</h3>The DELETE
                     statement tells the database we wish to delete one or more
                     rows of data. Apart from missing the columns you wish to
                     return, the format of this query is very similar to the
@@ -766,12 +764,12 @@ export default function Sql_Injection() {
                     the LIMIT clause.
                   </p>
                   <p>
-                    <code className="content__code">
+                    <code className='content__code'>
                       delete from users where username='martin';
                     </code>
                   </p>
-                  <table class="table table-bordered table-striped text-center mx-auto">
-                    <thead class="table-dark">
+                  <table class='table table-bordered table-striped text-center mx-auto'>
+                    <thead class='table-dark'>
                       <tr>
                         <th>ID</th>
                         <th>Username</th>
@@ -797,29 +795,29 @@ export default function Sql_Injection() {
                     </tbody>
                   </table>
                   <p>
-                    <code className="content__code">delete from users;</code>
+                    <code className='content__code'>delete from users;</code>
                   </p>
                 </dd>
                 {/* Topic 3 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span> What is SQL Injection?
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
-                    <h3 className="content__title">What is SQL Injection?</h3>
+                    <h3 className='content__title'>What is SQL Injection?</h3>
                     The point wherein a web application using SQL can turn into
                     SQL Injection is when user-provided data gets included in
                     the SQL query.
                   </p>
                   <p>
-                    <h3 className="content__title">What does it look like?</h3>
+                    <h3 className='content__title'>What does it look like?</h3>
                     Take the following scenario where you've come across an
                     online blog, and each blog entry has a unique ID number. The
                     blog entries may be either set to public or private,
                     depending on whether they're ready for public release. The
                     URL for each blog entry may look something like this:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     https://website.thm/blog?id=1
                   </code>
                   <p>
@@ -829,34 +827,34 @@ export default function Sql_Injection() {
                     and may use an SQL statement that looks something like the
                     following:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     SELECT * from blog where id=1 and private=0 LIMIT 1;
                   </code>
                   <p>
-                    From what you've learned in the previous Topic, you should be
-                    able to work out that the SQL statement above is looking in
-                    the blog table for an article with the id number of 1 and
+                    From what you've learned in the previous Topic, you should
+                    be able to work out that the SQL statement above is looking
+                    in the blog table for an article with the id number of 1 and
                     the private column set to 0, which means it's able to be
                     viewed by the public and limits the results to only one
                     match.
                   </p>
                   <p>
-                    As was mentioned at the start of this Topic, SQL Injection is
-                    introduced when user input is introduced into the database
-                    query. In this instance, the id parameter from the query
-                    string is used directly in the SQL query.
+                    As was mentioned at the start of this Topic, SQL Injection
+                    is introduced when user input is introduced into the
+                    database query. In this instance, the id parameter from the
+                    query string is used directly in the SQL query.
                   </p>
                   <p>
                     Let's pretend article ID 2 is still locked as private, so it
                     cannot be viewed on the website. We could now instead call
                     the URL:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     https://website.thm/blog?id=2;--
                   </code>
                   <p>Which would then, in turn, produce the SQL statement:</p>
-                  <code className="content__code">
-                    {" "}
+                  <code className='content__code'>
+                    {' '}
                     SELECT * from blog where id=2;-- and private=0 LIMIT 1
                   </code>
                   <p>
@@ -865,7 +863,7 @@ export default function Sql_Injection() {
                     be treated as a comment. By doing this, you're just, in
                     fact, running the query:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     SELECT * from blog where id=2;--
                   </code>
                   <p>
@@ -874,12 +872,12 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 4 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span> In-Band SQLi
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
-                    <h3 className="content__title">In-Band SQL Injection</h3>
+                    <h3 className='content__title'>In-Band SQL Injection</h3>
                     In-Band SQL Injection is the easiest type to detect and
                     exploit; In-Band just refers to the same method of
                     communication being used to exploit the vulnerability and
@@ -888,7 +886,7 @@ export default function Sql_Injection() {
                     able to extract data from the database to the same page.
                   </p>
                   <p>
-                    <h3 className="content__title">
+                    <h3 className='content__title'>
                       Error-Based SQL Injection
                     </h3>
                     This type of SQL Injection is the most useful for easily
@@ -898,7 +896,7 @@ export default function Sql_Injection() {
                     database.
                   </p>
                   <p>
-                    <h3 className="content__title">
+                    <h3 className='content__title'>
                       Union-Based SQL Injection
                     </h3>
                     This type of Injection utilises the SQL UNION operator
@@ -907,7 +905,7 @@ export default function Sql_Injection() {
                     large amounts of data via an SQL Injection vulnerability.
                   </p>
                   <p>
-                    <h3 className="content__title">Practical:</h3>
+                    <h3 className='content__title'>Practical:</h3>
                     Click the green "Start Machine" button to use the SQL
                     Injection Example practice lab. Each level contains a mock
                     browser and also SQL Query and Error boxes to assist in
@@ -931,7 +929,7 @@ export default function Sql_Injection() {
                     received this error message confirms the existence of an SQL
                     Injection vulnerability. We can now exploit this
                     vulnerability and use the error messages to learn more about
-                    the database structure.{" "}
+                    the database structure.{' '}
                   </p>
                   <p>
                     The first thing we need to do is return data to the browser
@@ -939,18 +937,18 @@ export default function Sql_Injection() {
                     UNION operator so we can receive an extra result if we
                     choose it. Try setting the mock browsers id parameter to:
                   </p>
-                  <code className="content__code">1 UNION SELECT 1</code>{" "}
+                  <code className='content__code'>1 UNION SELECT 1</code>{' '}
                   <p>
                     This statement should produce an error message informing you
                     that the UNION SELECT statement has a different number of
                     columns than the original SELECT query. So let's try again
                     but add another column:
                   </p>
-                  <code className="content__code">1 UNION SELECT 1,2</code>{" "}
+                  <code className='content__code'>1 UNION SELECT 1,2</code>{' '}
                   <p>
                     Same error again, so let's repeat by adding another column:
                   </p>
-                  <code className="content__code">1 UNION SELECT 1,2,3</code>{" "}
+                  <code className='content__code'>1 UNION SELECT 1,2,3</code>{' '}
                   <p>
                     Success, the error message has gone, and the article is
                     being displayed, but now we want to display our data instead
@@ -960,7 +958,7 @@ export default function Sql_Injection() {
                     to produce no results. This can simply be done by changing
                     the article ID from 1 to 0.
                   </p>
-                  <code className="content__code">0 UNION SELECT 1,2,3</code>
+                  <code className='content__code'>0 UNION SELECT 1,2,3</code>
                   <p>
                     You'll now see the article is just made up of the result
                     from the UNION select, returning the column values 1, 2, and
@@ -968,7 +966,7 @@ export default function Sql_Injection() {
                     useful information. First, we'll get the database name that
                     we have access to:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     0 UNION SELECT 1,2,database()
                   </code>
                   <p>
@@ -979,7 +977,7 @@ export default function Sql_Injection() {
                     Our next query will gather a list of tables that are in this
                     database.
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     0 UNION SELECT 1,2,group_concat(table_name) FROM
                     information_schema.tables WHERE table_schema = 'sqli_one'
                   </code>
@@ -1001,10 +999,10 @@ export default function Sql_Injection() {
                     information_schema database again to find the structure of
                     this table using the below query.
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     0 UNION SELECT 1,2,group_concat(column_name) FROM
                     information_schema.columns WHERE table_name = 'staff_users'
-                  </code>{" "}
+                  </code>{' '}
                   <p>
                     This is similar to the previous SQL query. However, the
                     information we want to retrieve has changed from table_name
@@ -1019,7 +1017,7 @@ export default function Sql_Injection() {
                     and password columns for our following query to retrieve the
                     user's information.
                   </p>
-                  <code className="content__subtitle">
+                  <code className='content__subtitle'>
                     0 UNION SELECT 1,2,group_concat(username,':',password
                     SEPARATOR ) FROM staff_users
                   </code>
@@ -1033,12 +1031,12 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 5 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 5</span> Blind SQLi - Authentication Bypass
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
-                    <h3 className="content__title">Blind SQLi</h3>Unlike In-Band
+                    <h3 className='content__title'>Blind SQLi</h3>Unlike In-Band
                     SQL injection, where we can see the results of our attack
                     directly on the screen, blind SQLi is when we get little to
                     no feedback to confirm whether our injected queries were, in
@@ -1049,12 +1047,12 @@ export default function Sql_Injection() {
                     database.
                   </p>
                   <p>
-                    <h3 className="content__title">Authentication Bypass</h3>One
+                    <h3 className='content__title'>Authentication Bypass</h3>One
                     of the most straightforward Blind SQL Injection techniques
                     is when bypassing authentication methods such as login
                     forms. In this instance, we aren't that interested in
                     retrieving data from the database; We just want to get past
-                    the login.{" "}
+                    the login.{' '}
                   </p>
                   <p>
                     Login forms that are connected to a database of users are
@@ -1065,7 +1063,7 @@ export default function Sql_Injection() {
                     database, "Do you have a user with the username bob and the
                     password bob123?" the database replies with either yes or no
                     (true/false) and, depending on that answer, dictates whether
-                    the web application lets you proceed or not.{" "}
+                    the web application lets you proceed or not.{' '}
                   </p>
                   <p>
                     Taking the above information into account, it's unnecessary
@@ -1073,15 +1071,15 @@ export default function Sql_Injection() {
                     create a database query that replies with a yes/true.
                   </p>
                   <p>
-                    <h3 className="content__title">Practical:</h3>Level Two of
+                    <h3 className='content__title'>Practical:</h3>Level Two of
                     the SQL Injection examples shows this exact example. We can
                     see in the box labelled "SQL Query" that the query to the
                     database is the following:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     select * from users where username='%username%' and
                     password='%password%' LIMIT 1;
-                  </code>{" "}
+                  </code>{' '}
                   <p>
                     N.B The %username% and %password% values are taken from the
                     login form fields. The initial values in the SQL Query box
@@ -1091,12 +1089,12 @@ export default function Sql_Injection() {
                     To make this into a query that always returns as true, we
                     can enter the following into the password field:
                   </p>
-                  <code className="content__code">' OR 1=1;--</code>{" "}
+                  <code className='content__code'>' OR 1=1;--</code>{' '}
                   <p>Which turns the SQL query into the following:</p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     select * from users where username='' and password='' OR
                     1=1;
-                  </code>{" "}
+                  </code>{' '}
                   <p>
                     Because 1=1 is a true statement and we've used an OR
                     operator, this will always cause the query to return as
@@ -1106,11 +1104,11 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 6 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 6</span> Blind SQLi - Boolean Based
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
-                  <h3 className="content__title">Boolean Based</h3>
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
+                  <h3 className='content__title'>Boolean Based</h3>
                   <p>
                     Boolean-based SQL Injection refers to the response we
                     receive from our injection attempts, which could be a
@@ -1122,23 +1120,23 @@ export default function Sql_Injection() {
                     responses, it's possible to enumerate a whole database
                     structure and contents.
                   </p>
-                  <h3 className="content__title">Practical:</h3>
+                  <h3 className='content__title'>Practical:</h3>
                   <p>
                     On level three of the SQL Injection Examples Machine, you're
                     presented with a mock browser with the following URL:
                   </p>
-                  <b className="content__subtitle">
+                  <b className='content__subtitle'>
                     https://website.thm/checkuser?username=admin
                   </b>
                   <p>
-                    The browser body contains <strong>"taken":true.</strong>{" "}
+                    The browser body contains <strong>"taken":true.</strong>{' '}
                     This API endpoint replicates a common feature found on many
                     signup forms, which checks whether a username has already
                     been registered to prompt the user to choose a different
-                    username. Because the <strong>taken</strong> value is set to{" "}
+                    username. Because the <strong>taken</strong> value is set to{' '}
                     <strong>true</strong>, we can assume the username admin is
                     already registered. We can confirm this by changing the
-                    username in the mock browser's address bar from{" "}
+                    username in the mock browser's address bar from{' '}
                     <strong>admin</strong> to <strong>admin123</strong>, and
                     upon pressing enter, you'll see the value taken has now
                     changed to false.
@@ -1146,7 +1144,7 @@ export default function Sql_Injection() {
                   <p>
                     The SQL query that is processed looks like the following:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     select * from users where username = '%username%' LIMIT 1;
                   </code>
                   <p>
@@ -1163,7 +1161,7 @@ export default function Sql_Injection() {
                     by using the UNION statement. Change the username value to
                     the following:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1;-- :
                   </code>
                   <p>
@@ -1171,9 +1169,9 @@ export default function Sql_Injection() {
                     false, we can confirm this is the incorrect value of
                     columns. Keep on adding more columns until we have a taken
                     value of true. You can confirm that the answer is three
-                    columns by setting the username to the below value:{" "}
+                    columns by setting the username to the below value:{' '}
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3;-- :
                   </code>
                   <p>
@@ -1184,11 +1182,11 @@ export default function Sql_Injection() {
                     to try and find results that will return a true status.Try
                     the below username value and see what happens:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 where database() like '%';--
                   </code>
                   <p>
-                    {" "}
+                    {' '}
                     We get a true response because, in the like operator, we
                     just have the value of %, which will match anything as it's
                     the wildcard value. If we change the wildcard operator to
@@ -1200,9 +1198,9 @@ export default function Sql_Injection() {
                     response that confirms the database name begins with the
                     letter s.
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 where database() like 's%';--
-                  </code>{" "}
+                  </code>{' '}
                   <p>
                     Now you move on to the next character of the database name
                     until you find another true response, for example, 'sa%',
@@ -1216,7 +1214,7 @@ export default function Sql_Injection() {
                     the information_schema database. Try setting the username to
                     the following value:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 FROM information_schema.tables
                     WHERE table_schema = 'sqli_three' and table_name like
                     'a%';--
@@ -1236,7 +1234,7 @@ export default function Sql_Injection() {
                     database named users, which you can confirm by running the
                     following username payload:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 FROM information_schema.tables
                     WHERE table_schema = 'sqli_three' and table_name='users';--
                   </code>
@@ -1250,7 +1248,7 @@ export default function Sql_Injection() {
                     table name is users, and the column name begins with the
                     letter a.
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS
                     WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and
                     COLUMN_NAME like 'a%';
@@ -1264,7 +1262,7 @@ export default function Sql_Injection() {
                     named id, you'll append that to your original payload (as
                     seen below).
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS
                     WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and
                     COLUMN_NAME like 'a%' and COLUMN_NAME !='id';
@@ -1276,19 +1274,19 @@ export default function Sql_Injection() {
                     First, you'll need to discover a valid username, which you
                     can use the payload below:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 from users where username like
                     'a%
                   </code>
                   <p>
-                    {" "}
+                    {' '}
                     Once you've cycled through all the characters, you will
                     confirm the existence of the username admin. Now you've got
                     the username. You can concentrate on discovering the
                     password. The payload below shows you how to find the
                     password:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT 1,2,3 from users where
                     username='admin' and password like 'a%
                   </code>
@@ -1298,12 +1296,12 @@ export default function Sql_Injection() {
                   </p>
                 </dd>
                 {/* Topic 7 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 7</span> Blind SQLi - Time Based
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
-                    <h3 className="content__title">Time-Based</h3>
+                    <h3 className='content__title'>Time-Based</h3>
                   </p>
                   <p>
                     A time-based blind SQL injection is very similar to the
@@ -1314,14 +1312,14 @@ export default function Sql_Injection() {
                     time delay is introduced using built-in methods such as
                     SLEEP(x) alongside the UNION statement. The SLEEP() method
                     will only ever get executed upon a successful UNION SELECT
-                    statement.{" "}
+                    statement.{' '}
                   </p>
                   <p>
                     So, for example, when trying to establish the number of
                     columns in a table, you would use the following query:
                   </p>
 
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT SLEEP(5);--
                   </code>
                   <p>
@@ -1329,7 +1327,7 @@ export default function Sql_Injection() {
                     query was unsuccessful, so like on previous Topics, we add
                     another column:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     admin123' UNION SELECT SLEEP(5),2;--
                   </code>
                   <p>
@@ -1346,16 +1344,16 @@ export default function Sql_Injection() {
                     If you're struggling to find the table name, the below query
                     should help you on your way:
                   </p>
-                  <code className="content__code">
+                  <code className='content__code'>
                     referrer=admin123' UNION SELECT SLEEP(5),2 where database()
                     like 'u%';--
                   </code>
                 </dd>
                 {/* Topic 8 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 8</span> Out-of-Band SQLi
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
                   <p>
                     Out-of-band SQL Injection isn't as common as it either
                     depends on specific features being enabled on the database
@@ -1388,23 +1386,23 @@ export default function Sql_Injection() {
                   </ul>
                   <img
                     src={OutOfBand}
-                    alt="out-of-band-img"
-                    className="img-fluid w-50 mx-auto d-block "
+                    alt='out-of-band-img'
+                    className='img-fluid w-50 mx-auto d-block '
                   />
                   <hr />
                 </dd>
                 {/* Topic 9 */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 9</span> Remediation
                 </dt>
-                <dd className="fadeInUp faq-body open-sans" id="border-left">
-                  <h3 className="content__title">Remediation</h3>
+                <dd className='fadeInUp faq-body open-sans' id='border-left'>
+                  <h3 className='content__title'>Remediation</h3>
                   <p>
                     As impactful as SQL Injection vulnerabilities are,
                     developers do have a way to protect their web applications
                     from them by following the advice below:
                   </p>
-                  <h3 className="content__title">
+                  <h3 className='content__title'>
                     Prepared Statements (With Parameterized Queries):
                   </h3>
                   <p>
@@ -1415,15 +1413,15 @@ export default function Sql_Injection() {
                     distinguish between the query and the data. As a benefit, it
                     also makes your code look much cleaner and easier to read.
                   </p>
-                  <h3 className="content__title">Input Validation:</h3>
+                  <h3 className='content__title'>Input Validation:</h3>
                   <p>
                     Input validation can go a long way to protecting what gets
                     put into an SQL query. Employing an allow list can restrict
                     input to only certain strings, or a string replacement
                     method in the programming language can filter the characters
-                    you wish to allow or disallow.{" "}
+                    you wish to allow or disallow.{' '}
                   </p>
-                  <h3 className="content__title">Escaping User Input:</h3>
+                  <h3 className='content__title'>Escaping User Input:</h3>
                   <p>
                     Allowing user input containing characters such as ' " $ \
                     can cause SQL Queries to break or, even worse, as we've
@@ -1435,13 +1433,12 @@ export default function Sql_Injection() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
-                  handleGoToLab("/sql_Injection/sql_Injection_labs")
+                  handleGoToLab('/sql_Injection/sql_Injection_labs')
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

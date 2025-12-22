@@ -1,52 +1,50 @@
-import React from "react";
-import "../Page_Styles/Lab.css";
-import Header from "../../Header/Header";
-import image from "../../assets//img/JWT attacks/card_image.png";
-import Footer from "../../Footer/Footer";
-import { Card } from "../../Components/Card/Card";
-import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
+import React from 'react';
+import '../Page_Styles/Lab.css';
+import Header from '../../Header/Header';
+import image from '../../assets//img/JWT attacks/card_image.png';
+import Footer from '../../Footer/Footer';
+import { Card } from '../../Components/Card/Card';
+import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function JWTAttacks_lab() {
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course">
-        <div className="container">
-          <PracticeTitle title={"JWT Attacks"} />
-          <div className="row">
+      <div className='course'>
+        <div className='container'>
+          <PracticeTitle title={'JWT Attacks'} />
+          <div className='row'>
             <Card
-              link={"/jwtattacks/jwtattacks_lab/lab1"}
+              link={'/jwtattacks/jwtattacks_lab/lab1'}
               image={image}
-              title={"JWT Unverified Signature"}
+              title={'JWT Unverified Signature'}
               brief={
                 "This lab uses a JWT-based mechanism for handling sessions. Due to implementation flaws, the server doesn't verify the signature of any JWTs that it receives."
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             <Card
-              link={"/jwtattacks/jwtattacks_lab/lab2"}
+              link={'/jwtattacks/jwtattacks_lab/lab2'}
               image={image}
-              title={"JWT  Flawed Signature Verification"}
+              title={'JWT  Flawed Signature Verification'}
               brief={
-                "This lab uses a JWT-based mechanism for handling sessions. The server is insecurely configured to accept unsigned JWTs."
+                'This lab uses a JWT-based mechanism for handling sessions. The server is insecurely configured to accept unsigned JWTs.'
               }
-              difficulty={"Intermediate"}
+              difficulty={'Intermediate'}
             />
             <Card
-              link={"/jwtattacks/jwtattacks_lab/lab3"}
+              link={'/jwtattacks/jwtattacks_lab/lab3'}
               image={image}
-              title={"JWT  Weak Signing Key"}
+              title={'JWT  Weak Signing Key'}
               brief={
-                "This lab uses a JWT-based mechanism for handling sessions. It uses an extremely weak secret key to both sign and verify tokens. This can be easily brute-forced using a wordlist of common secrets."
+                'This lab uses a JWT-based mechanism for handling sessions. It uses an extremely weak secret key to both sign and verify tokens. This can be easily brute-forced using a wordlist of common secrets.'
               }
-              difficulty={"Intermediate"}
+              difficulty={'Intermediate'}
             />
           </div>
         </div>

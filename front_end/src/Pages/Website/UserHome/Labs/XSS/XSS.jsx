@@ -1,52 +1,50 @@
-import React from "react";
-import "./XSS.css";
-import "../../Components/Topics CSS/topics.css";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Cross_Site_Scripting/cors1.png";
-import courseImage from "../../assets/img/Cross_Site_Scripting/Broken Authentication.webp";
-import { Link } from "react-router-dom";
-import Footer from "../../Footer/Footer";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
-import GoTop from "../../Components/Go2Top_Btn/Go2Top_Btn";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import './XSS.css';
+import '../../Components/Topics CSS/topics.css';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Cross_Site_Scripting/cors1.png';
+import courseImage from '../../assets/img/Cross_Site_Scripting/Broken Authentication.webp';
+import { Link } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher />
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Cross-Site Scripting"
+        courseTitle='Cross-Site Scripting'
         courseDescription=" Hack your first website (legally in a safe environment) and
                 experience an ethical hacker's job."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> What is cross-site scripting (XSS)?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
                       <p>
-                        <strong className="content__subtitle">
+                        <strong className='content__subtitle'>
                           Cross-site scripting
                         </strong>
                         (also known as XSS) is a web security vulnerability that
@@ -63,7 +61,7 @@ export default function XSS() {
                     </li>
                     <li>
                       <p>
-                        <strong className="content__subtitle">
+                        <strong className='content__subtitle'>
                           Cross-site scripting
                         </strong>
                         vulnerabilities normally allow an attacker to masquerade
@@ -71,7 +69,7 @@ export default function XSS() {
                         can perform, and to access any of the user's data.
                       </p>
                     </li>
-                    <li className="xss-style-li">
+                    <li className='xss-style-li'>
                       <p>
                         If the victim user has privileged access within the
                         application, then the attacker might be able to gain
@@ -82,20 +80,20 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span>How does cross-site scripting work?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
                       Most websites and web applications run client-side code in
                       the web browser using some kind of dynamic scripting
                       language. In a vast majority of cases, this language is
-                      <b className="content__code">JavaScript.</b>{" "}
+                      <b className='content__code'>JavaScript.</b>{' '}
                     </li>
                     <br></br>
                     <li>
-                      Pure <b className="content__code">HTML</b> websites and
+                      Pure <b className='content__code'>HTML</b> websites and
                       web applications still exist, but they are a rare sight
                       simply because client-side scripts greatly enhance the
                       user interface and capabilities of the website or web
@@ -111,22 +109,22 @@ export default function XSS() {
 
                     <li>
                       This, in turn, means that user browsers must be able to
-                      interpret any <b className="content__code">JavaScript</b>{" "}
+                      interpret any <b className='content__code'>JavaScript</b>{' '}
                       code on behalf of the web application.
                     </li>
                     <br></br>
 
                     <li>
                       Most web applications and websites also interact with
-                      users in some way, even if they don’t use{" "}
-                      <b className="content__code">JavaScript</b>.
+                      users in some way, even if they don’t use{' '}
+                      <b className='content__code'>JavaScript</b>.
                     </li>
                     <br></br>
 
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       Interaction requires some form of user input.
                     </li>
@@ -135,11 +133,11 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       For example, the user may need to type their username to
                       log in to the web application and the application may
-                      display that <b className="content__subtitle">username</b>{" "}
+                      display that <b className='content__subtitle'>username</b>{' '}
                       later in the user interface.
                     </li>
                     <br></br>
@@ -158,12 +156,12 @@ export default function XSS() {
                     <br></br>
 
                     <li>
-                      If an attacker is able to include{" "}
-                      <b className="content__code">JavaScript</b> code in a user
+                      If an attacker is able to include{' '}
+                      <b className='content__code'>JavaScript</b> code in a user
                       input parameter and the application directly returns that
                       code in its HTML output and sends it to the client
                       browser, the browser will execute the malicious
-                      <b className="content__code">JavaScript</b>.
+                      <b className='content__code'>JavaScript</b>.
                     </li>
                     <br></br>
 
@@ -171,8 +169,8 @@ export default function XSS() {
                       Whenever a web page directly echoes user input, attackers
                       will be able to run malicious scripts in the client
                       browser, even if the page itself is built only with static
-                      HTML tags and includes no{" "}
-                      <b className="content__code">JavaScript</b>.
+                      HTML tags and includes no{' '}
+                      <b className='content__code'>JavaScript</b>.
                     </li>
                     <br></br>
 
@@ -190,10 +188,10 @@ export default function XSS() {
                     <br></br>
 
                     <li>
-                      XSS is also possible for some APIs that allow{" "}
-                      <b className="content__code">JavaScript</b>, for example,
+                      XSS is also possible for some APIs that allow{' '}
+                      <b className='content__code'>JavaScript</b>, for example,
                       an API may present the user with an error message that
-                      contains <b className="content__code">JavaScript</b>{" "}
+                      contains <b className='content__code'>JavaScript</b>{' '}
                       previously injected by an attacker.
                     </li>
                     <br></br>
@@ -206,43 +204,43 @@ export default function XSS() {
 
                     <li>
                       However, in 2021, the creators of the list decided to
-                      incorporate it into the Injection category along with{" "}
-                      <b className="content__title">SQL injection</b> , RCE and
+                      incorporate it into the Injection category along with{' '}
+                      <b className='content__title'>SQL injection</b> , RCE and
                       many more.
                     </li>
                     <br></br>
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span>What are the types of XSS attacks?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
                       There are three main types of XSS attacks. These are:
                     </li>
                     <ol>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Reflected XSS, where the malicious script comes from the
                         current HTTP request.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Stored XSS, where the malicious script comes from the
                         website's database.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         DOM-based XSS, where the vulnerability exists in
                         client-side code rather than server-side code.
@@ -256,18 +254,18 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span>Reflected cross-site scripting
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
-                    <li className="content__title">
+                    <li className='content__title'>
                       Reflected XSS is the simplest variety of cross-site
                       scripting.
                     </li>
                     <li>
-                      It arises when an application receives data in an{" "}
-                      <b className="content__subtitle">HTTP</b>
+                      It arises when an application receives data in an{' '}
+                      <b className='content__subtitle'>HTTP</b>
                       request and includes that data within the immediate
                       response in an unsafe way.
                     </li>
@@ -275,9 +273,8 @@ export default function XSS() {
                     <li>
                       Here is a simple example of a reflected XSS vulnerability:
                       <Link
-                        to="https://insecure-website.com/status?message=All+is+well.<p>Status: All is well.</p>"
-                        target="_blank"
-                      >
+                        to='https://insecure-website.com/status?message=All+is+well.<p>Status: All is well.</p>'
+                        target='_blank'>
                         Click Here
                       </Link>
                     </li>
@@ -287,9 +284,8 @@ export default function XSS() {
                       the data, so an attacker can easily construct an attack
                       like this:
                       <Link
-                        to="https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</script><p>Status: <script>/* Bad stuff here... */</script></p>"
-                        target="_blank"
-                      >
+                        to='https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</script><p>Status: <script>/* Bad stuff here... */</script></p>'
+                        target='_blank'>
                         Click Here
                       </Link>
                     </li>
@@ -310,17 +306,17 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 5</span>Stored cross-site scripting
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
-                      <b className="content__subtitle">Store XSS</b>
+                      <b className='content__subtitle'>Store XSS</b>
                       (also known as persistent or second-order XSS) arises when
                       an application receives data from an untrusted source and
-                      includes that data within its later{" "}
-                      <b className="content__subtitle">HTTP</b>
+                      includes that data within its later{' '}
+                      <b className='content__subtitle'>HTTP</b>
                       responses in an unsafe way.
                     </li>
                     <br></br>
@@ -346,10 +342,10 @@ export default function XSS() {
                     </li>
                     <br></br>
                     <li>
-                      <h2 className="content__title">Example</h2>
+                      <h2 className='content__title'>Example</h2>
                     </li>
                     <pre>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           &lt;p&gt;Hello, this is my message!&lt;/p&gt;
                         </span>
@@ -361,7 +357,7 @@ export default function XSS() {
                       attacks other users:
                     </li>
                     <pre>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           &lt;p&gt;&lt;script&gt;Bad Stuff Here...
                           &lt;/script&gt;&lt;/p&gt;
@@ -371,13 +367,13 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 6</span>DOM-based cross-site scripting
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
-                      <b className="content__subtitle">DOM-based XSS</b>
+                      <b className='content__subtitle'>DOM-based XSS</b>
                       (also known as DOM XSS) arises when an application
                       contains some client-side JavaScript that processes data
                       from an untrusted source in an unsafe way, usually by
@@ -387,7 +383,7 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       In the following example, an application uses some
                       JavaScript to read the value from an input field and write
@@ -395,19 +391,19 @@ export default function XSS() {
                     </li>
                     <br></br>
                     <pre>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           var search = document.getElementById('search').value;
                         </span>
                       </code>
                       <br></br>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           var results = document.getElementById('results');
                         </span>
                       </code>
                       <br></br>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           results.innerHTML = 'You searched for: ' + search;
                         </span>
@@ -417,7 +413,7 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       If the attacker can control the value of the input field,
                       they can easily construct a malicious value that causes
@@ -425,14 +421,14 @@ export default function XSS() {
                     </li>
                     <br></br>
                     <pre>
-                      <code className="content__code">
+                      <code className='content__code'>
                         <span>
                           You Have Searched for &lt;img src=1 onerror='/* Bad
                           Stuff Here... */'&gt;
                         </span>
                       </code>
                     </pre>
-                    <li className="xss-style-li">
+                    <li className='xss-style-li'>
                       In a typical case, the input field would be populated from
                       part of the HTTP request, such as a URL query string
                       parameter, allowing the attacker to deliver an attack
@@ -442,16 +438,16 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 7</span>Examples of known cross-site scripting
                   vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       The 2005 Samy worm – in October 2005, Samy Kamkar, a user
                       of the MySpace social media platform, created an
@@ -470,7 +466,7 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       In 2011, attackers used a Facebook XSS vulnerability to
                       launch a self-propagating spam worm similar to the
@@ -486,7 +482,7 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       The British Airways 2018 breach – this was probably the
                       most famous XSS breach so far that led to the theft of
@@ -505,56 +501,56 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 8</span>What can XSS be used for?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
-                    <li className="content__title">
+                    <li className='content__title'>
                       An attacker who exploits a cross-site scripting
                       vulnerability is typically able to:
                     </li>
                     <ol>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Impersonate or masquerade as the victim user.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Carry out any action that the user is able to perform.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Read any data that the user is able to access.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Capture the user's login credentials.
                       </li>
 
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Perform virtual defacement of the web site.
                       </li>
-                      <li className="content__subtitle">
+                      <li className='content__subtitle'>
                         <FontAwesomeIcon
                           icon={faArrowRight}
-                          className="me-2 text-warning"
+                          className='me-2 text-warning'
                         />
                         Inject trojan functionality into the web site.
                       </li>
@@ -562,30 +558,30 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 9</span>How XSS Attacks Work?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
-                      <h2 className="content__title">User Input: </h2>A user
+                      <h2 className='content__title'>User Input: </h2>A user
                       interacts with a web application, submitting data such as
                       a username, password, or comment.
                     </li>
                     <li>
-                      <h2 className="content__title">Injection: </h2>An attacker
+                      <h2 className='content__title'>Injection: </h2>An attacker
                       injects malicious JavaScript code into the user's input,
                       without the website's knowledge. The code might be hidden
                       within a comment or embedded in a link.
                     </li>
                     <li>
-                      <h2 className="content__title">Execution: </h2>he website,
+                      <h2 className='content__title'>Execution: </h2>he website,
                       unaware of the malicious code, processes the user's input
                       and displays it to other users. The malicious script is
                       executed by the user's browser.
                     </li>
                     <li>
-                      <h2 className="content__title">Attack: </h2>The malicious
+                      <h2 className='content__title'>Attack: </h2>The malicious
                       script can then perform actions in the user's browser,
                       such as stealing cookies, hijacking accounts, or
                       redirecting users to malicious websites.
@@ -593,32 +589,32 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 10</span>Consequences of XSS Attacks
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
-                      <h2 className="content__title">Data Theft: </h2>Attackers
+                      <h2 className='content__title'>Data Theft: </h2>Attackers
                       can steal sensitive information, such as passwords, credit
                       card details, and personal data. This information can be
                       used for identity theft or financial fraud.
                     </li>
                     <li>
-                      <h2 className="content__title">Account Hijacking: </h2>
+                      <h2 className='content__title'>Account Hijacking: </h2>
                       Attackers can hijack user accounts by stealing
                       authentication cookies or manipulating session data. This
                       allows them to access the user's account and perform
                       actions on their behalf.
                     </li>
                     <li>
-                      <h2 className="content__title">Website Defacement: </h2>
+                      <h2 className='content__title'>Website Defacement: </h2>
                       Attackers can modify the content of the website to display
                       malicious content, change the website's appearance, or
                       redirect users to malicious websites.
                     </li>
                     <li>
-                      <h2 className="content__title">Reputation Damage: </h2>XSS
+                      <h2 className='content__title'>Reputation Damage: </h2>XSS
                       attacks can damage the reputation of the website and its
                       owners. Users may lose trust in the website and may stop
                       using it.
@@ -626,10 +622,10 @@ export default function XSS() {
                   </ul>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 11</span>How to prevent XSS attacks?
                 </dt>
-                <dd className="fadeInUp faq-body">
+                <dd className='fadeInUp faq-body'>
                   <ul>
                     <li>
                       Preventing cross-site scripting is trivial in some cases
@@ -641,23 +637,23 @@ export default function XSS() {
                     <li>
                       <FontAwesomeIcon
                         icon={faArrowRight}
-                        className="me-2 text-warning"
+                        className='me-2 text-warning'
                       />
                       In general, effectively preventing XSS vulnerabilities is
                       likely to involve a combination of the following measures:
                     </li>
                     <ol>
                       <li>
-                        <h2 className="content__title">
-                          Filter input on arrival:{" "}
+                        <h2 className='content__title'>
+                          Filter input on arrival:{' '}
                         </h2>
                         At the point where user input is received, filter as
                         strictly as possible based on what is expected or valid
                         input.
                       </li>
                       <li>
-                        <h2 className="content__title">
-                          Encode data on output:{" "}
+                        <h2 className='content__title'>
+                          Encode data on output:{' '}
                         </h2>
                         At the point where user-controllable data is output in
                         HTTP responses, encode the output to prevent it from
@@ -666,18 +662,18 @@ export default function XSS() {
                         of HTML, URL, JavaScript, and CSS encoding.
                       </li>
                       <li>
-                        <h2 className="content__title">
-                          Use appropriate response headers:{" "}
+                        <h2 className='content__title'>
+                          Use appropriate response headers:{' '}
                         </h2>
                         To prevent XSS in HTTP responses that aren't intended to
-                        contain any HTML or JavaScript, you can use the{" "}
-                        <span>Content-Type and X-Content-Type-Options </span>{" "}
+                        contain any HTML or JavaScript, you can use the{' '}
+                        <span>Content-Type and X-Content-Type-Options </span>{' '}
                         headers to ensure that browsers interpret the responses
                         in the way you intend.
                       </li>
                       <li>
-                        <h2 className="content__title">
-                          Content Security Policy:{" "}
+                        <h2 className='content__title'>
+                          Content Security Policy:{' '}
                         </h2>
                         As a last line of defense, you can use Content Security
                         Policy (CSP) to reduce the severity of any XSS
@@ -688,11 +684,10 @@ export default function XSS() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/xss/xss_labs")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/xss/xss_labs')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

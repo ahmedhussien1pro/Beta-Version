@@ -1,46 +1,44 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Server Side Template Injection/baner_lap.png";
-import courseImage from "../../assets/img/Server Side Template Injection/course_image.png";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Server Side Template Injection/baner_lap.png';
+import courseImage from '../../assets/img/Server Side Template Injection/course_image.png';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 
-import exampleImage10 from "../../assets/img/Server Side Template Injection/10.jpg";
-import exampleImage11 from "../../assets/img/Server Side Template Injection/11.jpg";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import exampleImage10 from '../../assets/img/Server Side Template Injection/10.jpg';
+import exampleImage11 from '../../assets/img/Server Side Template Injection/11.jpg';
 
 export default function SSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Server Side Request Forgery (SSRF)"
-        courseDescription="In this section we explain what server-side request forgery (SSRF) is, and describe some common examples. We also show you how to find and exploit SSRF vulnerabilities."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Server Side Request Forgery (SSRF)'
+        courseDescription='In this section we explain what server-side request forgery (SSRF) is, and describe some common examples. We also show you how to find and exploit SSRF vulnerabilities.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> What is SSRF ?
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     Server-side request forgery is a web security vulnerability
                     that allows an attacker to cause the server-side application
@@ -54,17 +52,17 @@ export default function SSRF() {
                     systems. This could leak sensitive data, such as
                     authorization credentials.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage10} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage10} alt='Example' />
                     </div>
                   </div>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> What is the impact of SSRF attacks ?
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     A successful SSRF attack can often result in unauthorized
                     actions or access to data within the organization. This can
@@ -79,17 +77,17 @@ export default function SSRF() {
                     attacks. These can appear to originate from the organization
                     hosting the vulnerable application.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage11} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage11} alt='Example' />
                     </div>
                   </div>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span> Common SSRF attacks
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     SSRF attacks often exploit trust relationships to escalate
                     an attack from the vulnerable application and perform
@@ -97,7 +95,7 @@ export default function SSRF() {
                     in relation to the server, or in relation to other back-end
                     systems within the same organization.
                   </p>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     SSRF attacks against the server
                   </h2>
                   <p>
@@ -106,7 +104,7 @@ export default function SSRF() {
                     that is hosting the application, via its loopback network
                     interface. This typically involves supplying a URL with a
                     hostname like <mark>127.0.0.1</mark> (a reserved IP address
-                    that points to the loopback adapter) or{" "}
+                    that points to the loopback adapter) or{' '}
                     <mark>localhost</mark> (a commonly used name for the same
                     adapter).
                   </p>
@@ -133,14 +131,14 @@ export default function SSRF() {
                     URL, retrieve the stock status, and return this to the user.
                   </p>
                   <p>
-                    The server fetches the contents of the <mark>/admin</mark>{" "}
+                    The server fetches the contents of the <mark>/admin</mark>{' '}
                     URL and returns it to the user.
                   </p>
                   <p>
                     An attacker can visit the <mark>/admin</mark> URL, but the
                     administrative functionality is normally only accessible to
                     authenticated users. This means an attacker won't see
-                    anything of interest. However, if the request to the{" "}
+                    anything of interest. However, if the request to the{' '}
                     <mark>/admin</mark> URL comes from the local machine, the
                     normal access controls are bypassed. The application grants
                     full access to the administrative functionality, because the
@@ -179,7 +177,7 @@ export default function SSRF() {
                     than ordinary requests, often make SSRF into a critical
                     vulnerability.
                   </p>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     SSRF attacks against other back-end systems
                   </h2>
                   <p>
@@ -195,7 +193,7 @@ export default function SSRF() {
                   </p>
                   <p>
                     In the previous example, imagine there is an administrative
-                    interface at the back-end URL{" "}
+                    interface at the back-end URL{' '}
                     <mark>https://192.168.0.68/admin</mark>. An attacker can
                     submit the following request to exploit the SSRF
                     vulnerability, and access the administrative interface:
@@ -210,20 +208,20 @@ export default function SSRF() {
                   <p></p>
                 </dd>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span> Circumventing common SSRF defenses
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     It is common to see applications containing SSRF behavior
                     together with defenses aimed at preventing malicious
                     exploitation. Often, these defenses can be circumvented.
                   </p>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     SSRF with blacklist-based input filters
                   </h2>
                   <p>
-                    Some applications block input containing hostnames like{" "}
+                    Some applications block input containing hostnames like{' '}
                     <mark>127.0.0.1</mark> and <mark>localhost</mark>, or
                     sensitive URLs like <mark>/admin</mark>. In this situation,
                     you can often circumvent the filter using the following
@@ -250,7 +248,7 @@ export default function SSRF() {
                       has been shown to bypass some anti-SSRF filters.
                     </li>
                   </ul>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     SSRF with whitelist-based input filters
                   </h2>
                   <p>
@@ -287,7 +285,7 @@ export default function SSRF() {
                       hexadecimal format.
                     </li>
                   </ul>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     Bypassing SSRF filters via open redirection
                   </h2>
                   <p>
@@ -328,18 +326,18 @@ export default function SSRF() {
                 </dd>
 
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 5</span> Finding hidden attack surface for SSRF
                   vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     Many server-side request forgery vulnerabilities are easy to
                     find, because the application's normal traffic involves
                     request parameters containing full URLs. Other examples of
                     SSRF are harder to locate.
                   </p>
-                  <h2 className="content__title">Partial URLs in requests</h2>
+                  <h2 className='content__title'>Partial URLs in requests</h2>
                   <p>
                     Sometimes, an application places only a hostname or part of
                     a URL path into request parameters. The value submitted is
@@ -363,7 +361,7 @@ export default function SSRF() {
                     We'll cover this in more detail when we look at XXE
                     injection vulnerabilities.
                   </p>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     SSRF via the Referer header
                   </h2>
                   <p>
@@ -377,22 +375,21 @@ export default function SSRF() {
                     header is often a useful attack surface for SSRF
                     vulnerabilities.
                   </p>
-                  <p id="ssrf-via-the-referer-header-V2L8">
-                    See{" "}
-                    <a href="https://portswigger.net/web-security/ssrf/blind">
+                  <p id='ssrf-via-the-referer-header-V2L8'>
+                    See{' '}
+                    <a href='https://portswigger.net/web-security/ssrf/blind'>
                       Blind SSRF vulnerabilities
-                    </a>{" "}
+                    </a>{' '}
                     for examples of vulnerabilities involving the Referer
                     header.
                   </p>
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/ssrf/ssrf_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/ssrf/ssrf_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

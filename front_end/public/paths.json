@@ -1,0 +1,323 @@
+[
+  {
+    "id": 1,
+    "name": "Cybersecurity Fundamentals",
+    "icon": "fundamentals",
+    "difficulty": "Beginner",
+    "description": "Build a strong foundation in cybersecurity with essential concepts and tools.",
+    "steps": [
+      {
+        "id": 101,
+        "title": "Introduction to Core Concepts",
+        "icon": "assessment",
+        "description": "Understand the basics of cybersecurity and key security principles.",
+        "skills": ["Cybersecurity Basics", "Threat Awareness"],
+        "status": "available",
+        "courses": [
+          "Introduction to Cybersecurity",
+          "Security Concepts Fundamentals"
+        ]
+      },
+      {
+        "id": 102,
+        "title": "Networking and Operating Systems",
+        "icon": "detection",
+        "description": "Learn networking essentials and basic OS skills for security contexts.",
+        "skills": ["Networking", "OS Fundamentals"],
+        "status": "available",
+        "courses": [
+          "Networking Essentials",
+          "Linux Essentials",
+          "Windows Basics"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Blue Team / SOC Analyst",
+    "icon": "blue",
+    "difficulty": "Intermediate",
+    "description": "Defend and monitor networks as a SOC analyst with defensive security skills.",
+    "steps": [
+      {
+        "id": 201,
+        "title": "Foundational Setup",
+        "icon": "assessment",
+        "description": "Establish basics in networking, OS, and initial security configurations.",
+        "skills": ["Networking", "OS Security"],
+        "status": "available",
+        "courses": [
+          "Networking Fundamentals",
+          "Linux Basics",
+          "Windows Security Basics"
+        ]
+      },
+      {
+        "id": 202,
+        "title": "Monitoring and Detection",
+        "icon": "detection",
+        "description": "Implement SIEM and log analysis for threat detection.",
+        "skills": ["SIEM", "Log Analysis"],
+        "status": "in-progress",
+        "courses": ["SIEM Fundamentals", "Log Analysis & Monitoring"]
+      },
+      {
+        "id": 203,
+        "title": "Threat Hunting and Response",
+        "icon": "response",
+        "description": "Hunt threats and respond to incidents using playbooks.",
+        "skills": ["Threat Hunting", "Incident Response"],
+        "status": "pro",
+        "courses": [
+          "Threat Hunting Essentials",
+          "SOC Use Cases & Playbooks",
+          "Digital Forensics Basics"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Penetration Tester",
+    "icon": "pentest",
+    "difficulty": "Intermediate",
+    "description": "Simulate attacks to identify vulnerabilities in systems and applications.",
+    "steps": [
+      {
+        "id": 301,
+        "title": "Preparation and Reconnaissance",
+        "icon": "assessment",
+        "description": "Build foundational skills and gather intelligence for testing.",
+        "skills": ["Networking", "OS Skills"],
+        "status": "available",
+        "courses": ["Networking Essentials", "Linux for Pentesters"]
+      },
+      {
+        "id": 302,
+        "title": "Scanning and Enumeration",
+        "icon": "detection",
+        "description": "Scan networks and enumerate services for vulnerabilities.",
+        "skills": ["Scripting", "Web Basics"],
+        "status": "in-progress",
+        "courses": [
+          "Python for pentesters",
+          "Web Hacking Basics",
+          "Burp Suite Essentials"
+        ]
+      },
+      {
+        "id": 303,
+        "title": "Exploitation and Post-Exploitation",
+        "icon": "response",
+        "description": "Exploit vulnerabilities and maintain access in advanced scenarios.",
+        "skills": ["Exploitation", "AD Attacks"],
+        "status": "pro",
+        "courses": [
+          "Web Application Pentesting",
+          "Privilege Escalation (Windows + Linux)",
+          "Active Directory Basics",
+          "Active Directory Attacks",
+          "OSCP Preparation Path"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Cloud Security",
+    "icon": "cloud",
+    "difficulty": "Advanced",
+    "description": "Secure cloud environments with focus on AWS, Azure, and container security.",
+    "steps": [
+      {
+        "id": 401,
+        "title": "Cloud Fundamentals",
+        "icon": "assessment",
+        "description": "Understand cloud computing basics and identity management.",
+        "skills": ["Cloud Basics", "IAM"],
+        "status": "available",
+        "courses": [
+          "Cloud Computing Basics",
+          "AWS IAM (Identity & Access Management)"
+        ]
+      },
+      {
+        "id": 402,
+        "title": "Platform-Specific Security",
+        "icon": "detection",
+        "description": "Secure AWS and Azure environments with best practices.",
+        "skills": ["AWS Security", "Azure Security"],
+        "status": "in-progress",
+        "courses": ["AWS Security Essentials", "Azure Security Fundamentals"]
+      },
+      {
+        "id": 403,
+        "title": "Advanced Cloud and Container Security",
+        "icon": "response",
+        "description": "Focus on Kubernetes and cloud pentesting techniques.",
+        "skills": ["Containers", "Pentesting"],
+        "status": "pro",
+        "courses": ["Kubernetes Security", "Cloud Pentesting"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "DFIR / Digital Forensics",
+    "icon": "dfir",
+    "difficulty": "Intermediate",
+    "description": "Investigate incidents and perform digital forensics for response.",
+    "steps": [
+      {
+        "id": 501,
+        "title": "Incident Response Basics",
+        "icon": "assessment",
+        "description": "Learn the fundamentals of incident handling and response.",
+        "skills": ["IR Fundamentals"],
+        "status": "available",
+        "courses": ["Incident Response Fundamentals"]
+      },
+      {
+        "id": 502,
+        "title": "Forensics Techniques",
+        "icon": "detection",
+        "description": "Acquire skills in disk and memory forensics.",
+        "skills": ["Disk Forensics", "Memory Analysis"],
+        "status": "in-progress",
+        "courses": ["Disk Forensics Basics", "Memory Forensics (Volatility)"]
+      },
+      {
+        "id": 503,
+        "title": "Advanced Analysis",
+        "icon": "response",
+        "description": "Reverse engineer malware and build advanced playbooks.",
+        "skills": ["Malware RE", "Advanced IR"],
+        "status": "pro",
+        "courses": [
+          "Malware Reverse Engineering (Beginner)",
+          "Advanced IR Playbooks"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Threat Intelligence",
+    "icon": "threat",
+    "difficulty": "Intermediate",
+    "description": "Gather and analyze threat data to inform security decisions.",
+    "steps": [
+      {
+        "id": 601,
+        "title": "OSINT and Basics",
+        "icon": "assessment",
+        "description": "Start with open-source intelligence and core concepts.",
+        "skills": ["OSINT"],
+        "status": "available",
+        "courses": ["OSINT Basics", "Threat Intelligence Fundamentals"]
+      },
+      {
+        "id": 602,
+        "title": "IOC and Framework Analysis",
+        "icon": "detection",
+        "description": "Analyze indicators and use frameworks like MITRE ATT&CK.",
+        "skills": ["IOC Analysis", "MITRE ATT&CK"],
+        "status": "in-progress",
+        "courses": [
+          "IOC Analysis (Indicators of Compromise)",
+          "MITRE ATT&CK for Intelligence"
+        ]
+      },
+      {
+        "id": 603,
+        "title": "Malware and Advanced Intel",
+        "icon": "response",
+        "description": "Dive into malware analysis for threat insights.",
+        "skills": ["Malware Analysis"],
+        "status": "pro",
+        "courses": ["Malware Analysis Basics"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "DevSecOps Engineer",
+    "icon": "devsecops",
+    "difficulty": "Advanced",
+    "description": "Integrate security into DevOps pipelines for secure development.",
+    "steps": [
+      {
+        "id": 701,
+        "title": "Foundational DevOps",
+        "icon": "assessment",
+        "description": "Learn Linux, networking, and container basics.",
+        "skills": ["Linux", "Containers"],
+        "status": "available",
+        "courses": ["Linux & Networking Basics", "Docker Fundamentals"]
+      },
+      {
+        "id": 702,
+        "title": "Pipeline and Orchestration",
+        "icon": "detection",
+        "description": "Build CI/CD pipelines and manage Kubernetes.",
+        "skills": ["CI/CD", "Kubernetes"],
+        "status": "in-progress",
+        "courses": ["CI/CD Pipeline Basics", "Kubernetes Fundamentals"]
+      },
+      {
+        "id": 703,
+        "title": "Security Integration",
+        "icon": "response",
+        "description": "Implement SAST/DAST and full DevSecOps practices.",
+        "skills": ["SAST/DAST", "DevSecOps"],
+        "status": "pro",
+        "courses": ["SAST / DAST Essentials", "DevSecOps Full Path"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Red Team (Advanced)",
+    "icon": "red",
+    "difficulty": "Advanced",
+    "description": "Advanced offensive techniques for red team operations.",
+    "steps": [
+      {
+        "id": 801,
+        "title": "Advanced Foundations",
+        "icon": "assessment",
+        "description": "Strengthen networking and OS skills for red teaming.",
+        "skills": ["Advanced Networking", "Advanced Linux"],
+        "status": "in-progress",
+        "courses": ["Advanced Networking & Linux"]
+      },
+      {
+        "id": 802,
+        "title": "Domain and Privilege Attacks",
+        "icon": "detection",
+        "description": "Target Active Directory and escalate privileges.",
+        "skills": ["AD Attacks", "Privilege Escalation"],
+        "status": "pro",
+        "courses": [
+          "Active Directory Attacks",
+          "Privilege Escalation (Advanced)"
+        ]
+      },
+      {
+        "id": 803,
+        "title": "Evasion and Operations",
+        "icon": "response",
+        "description": "Bypass defenses and conduct full red team engagements.",
+        "skills": ["Evasion", "OPSEC", "Labs"],
+        "status": "pro",
+        "courses": [
+          "AV/EDR Evasion Techniques",
+          "C2 Frameworks & OPSEC",
+          "Advanced Red Team Labs",
+          "OSCP Path"
+        ]
+      }
+    ]
+  }
+]

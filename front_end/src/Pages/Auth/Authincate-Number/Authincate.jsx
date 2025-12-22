@@ -1,84 +1,118 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Cookie from "cookie-universal";
-import { useNavigate } from "react-router-dom";
-import Preloader from "../../Website/Preloader/Preloader";
-import "./Auth.css";
+import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+import Cookie from 'cookie-universal';
+import { useNavigate } from 'react-router-dom';
+import Preloader from '../../Website/Preloader/Preloader';
+import ThemeSwitcher from '../../Website/UserHome/Components/ThemeSwitcher/ThemeSwitcher';
+
 export default function Authenticate() {
-  const [number, setNumber] = useState("");
-  const [error, setError] = useState("");
+  const [form, setForm] = useState({
+    code: '',
+  });
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const cookie = Cookie();
-  const handleNumberChange = (e) => {
-    setNumber(e.target.value);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
-    if (!/^\d{6}$/.test(number)) {
-      setError("The number must be 6 digits.");
+
+    if (!/^\d{6}$/.test(form.code)) {
       setLoading(false);
+      Swal.fire({
+        icon: 'warning',
+        title: 'Invalid Code',
+        text: 'The code must be exactly 6 digits.',
+        confirmButtonColor: 'var(--main-color)',
+      });
       return;
     }
+
     try {
       const response = await axios.post(
-        "https://digitopia-project-backend.vercel.app/api/authenticate",
+        'https://digitopia-project-backend.vercel.app/api/authenticate',
         {
-          number,
+          number: form.code,
         }
       );
+      setLoading(false);
       const token = response.data.token;
-      cookie.set("CuberWeb", token);
-      if (response.status === 200) {
-        navigate("/home");
-      }
+      cookie.set('CuberWeb', token);
+      Swal.fire({
+        icon: 'success',
+        title: 'Authentication Successful!',
+        text: 'You are now authenticated.',
+        confirmButtonColor: 'var(--main-color)',
+        timer: 2000,
+      }).then(() => {
+        navigate('/home');
+      });
     } catch (error) {
       setLoading(false);
-      if (error.response && error.response.data) {
-        console.error("Error Data:", error.response.data);
-        setError(error.response.data.data);
-      } else {
-        console.error("Error:", error.message);
-        setError("An unexpected error occurred.");
+      let message = 'An unexpected error occurred.';
+      if (error.response && error.response.data && error.response.data.data) {
+        message = error.response.data.data;
       }
+      Swal.fire({
+        icon: 'error',
+        title: 'Authentication Failed',
+        text: message,
+        confirmButtonColor: 'var(--main-color)',
+      });
     }
   };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 300);
     return () => clearTimeout(timer);
   }, []);
+
   return (
-    <div className="login-register-body">
+    <>
       {loading && <Preloader loading={loading} />}
-      <div className="container">
-        <div className="rows hh-100">
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="custom-form">
-              <h1 className="textcenter">Authenticate</h1>
-              <div className="formcontrol">
+      <ThemeSwitcher />
+      <section className='auth-form primary-bg'>
+        <div className='auth-form__container secondary-bg rounded-3'>
+          <div
+            className='auth-form__form-box'
+            style={{ width: '100%', left: 0, position: 'relative' }}>
+            <form onSubmit={handleSubmit} className='auth-form__form'>
+              <h1 className='auth-form__heading text-center main-color'>
+                Authenticate
+              </h1>
+
+              <div className='auth-form__input-box'>
                 <input
-                  type="text"
-                  id="number"
-                  value={number}
-                  onChange={handleNumberChange}
-                  placeholder="Enter 6-digit number"
+                  type='text'
+                  name='code'
+                  value={form.code}
+                  onChange={handleChange}
+                  placeholder='6-digit code'
                   required
-                  maxLength="6"
+                  maxLength='6'
+                  className='auth-form__input'
+                  pattern='\d{6}'
                 />
-                <label htmlFor="number">6-Digit Number:</label>
+                <i className='auth-form__input-icon fa-solid fa-key'></i>
               </div>
-              <button type="submit" className="button-login-register">
-                Submit
+
+              <button
+                type='submit'
+                className='auth-form__submit-btn btn text-light'
+                disabled={loading}>
+                {loading ? 'Authenticating...' : 'Submit'}
               </button>
-              {error && <span className="error">{error}</span>}
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

@@ -1,0 +1,203 @@
+/*-----------------------------------*
+# Our FAQs Section - Modernized
+/*-----------------------------------*/
+
+.our-faqs {
+  padding: 120px 0;
+  background: var(--primary-bg);
+  overflow: hidden;
+  position: relative;
+}
+
+.faq-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 400px;
+  margin: 0 auto 3rem;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.faq-image-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.faq-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.faq-image-container:hover .faq-image {
+  transform: scale(1.1);
+}
+
+.faq-accordion .accordion-item {
+  background: var(--secondary-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-accordion .accordion-item:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.faq-accordion .accordion-button {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: transparent;
+  color: var(--primary-color);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+  background: linear-gradient(
+    135deg,
+    var(--hover-primary-bg),
+    var(--primary-color)
+  );
+  color: var(--white-color);
+  border-bottom: 1px solid var(--main-color);
+}
+
+.faq-accordion .accordion-button::after {
+  content: '\f107';
+  font-family: 'FontAwesome';
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+  color: var(--white-color);
+}
+
+.faq-accordion .accordion-body {
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0 0 15px 15px;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.faq-accordion .accordion-body:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.faq-accordion .accordion-body p {
+  color: var(--primary-text);
+  opacity: 0.9;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUpFaq {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUpFaq {
+  animation: fadeInUpFaq 1s ease-in-out both;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .our-faqs {
+    padding: 100px 20px;
+  }
+  .faq-image-container {
+    width: 500px;
+    height: 350px;
+  }
+  .section-title h3 {
+    font-size: 2.5rem;
+  }
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .faq-image-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .section-title h3 {
+    font-size: 2.25rem;
+  }
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  .faq-accordion .accordion-button {
+    font-size: 1.1rem;
+    padding: 1.25rem 1.75rem;
+  }
+  .faq-accordion .accordion-body p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-faqs {
+    padding: 80px 15px;
+  }
+  .section-title h3 {
+    font-size: 2rem;
+  }
+  .section-title h2 {
+    font-size: 1.4rem;
+  }
+  .faq-accordion .accordion-button {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  .faq-accordion .accordion-body p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title h3 {
+    font-size: 1.75rem;
+  }
+  .section-title h2 {
+    font-size: 1.25rem;
+  }
+  .faq-accordion .accordion-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+  .faq-accordion .accordion-body p {
+    font-size: 0.9rem;
+  }
+}

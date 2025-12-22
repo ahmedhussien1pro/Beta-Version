@@ -10,16 +10,17 @@
   --crimson-red: #dc143c;
   --burnt-orange: #ff7034;
   --text-opacity: 0.85;
-  --main-color: #00e77f;
+  --main-color: #0d6efd;
   --primary-text: #ffffff;
   --secondary-text: #c4c2c2;
-  --main-color2: #00e77fcc;
-  --main-color3: #07a75b;
-  --main-color4: #06995769;
+  --main-color2: #0b5ed7;
+  --main-color3: #0a58ca;
+  --edge-icon: #0078d7;
+  --main-color4: #084fb9ff;
   --OVERLAY: rgba(15, 61, 40, 0.089);
   --border-color: #1e1e1e;
-  --link-color: #2575fc;
-  --highlight-color: #1aff8c;
+  --link-color: #1db6cd;
+  --highlight-color: #1db6cd66;
   --shadow-color: rgba(0, 0, 0, 0.5);
   --glass-effect: rgba(255, 255, 255, 0.1);
   --transition-speed: 0.3s;
@@ -28,15 +29,15 @@
   --font-size-base: 16px;
   --hover-primary-bg: #1a1a1a;
   --hover-secondary-bg: #2a2a2ad0;
-  --hover-main-color: #00c16f;
+  --hover-main-color: #0a54c3;
   --hover-border-color: #2b2b2b;
-  --hover-highlight-color: #1aff986c;
+  --hover-highlight-color: #0a54c358;
   --hover-shadow-color: rgba(0, 0, 0, 0.7);
-  --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  --primary-gradient: linear-gradient(135deg, #057bbaff 0%, #2575fc 100%);
   --glass-bg: rgba(255, 255, 255, 0.15);
   --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   --box-shadow: 2 2px 5px rgba(242, 242, 242, 0.402);
-  --whiteColor: hsl(0, 0%, 100%);
+  --whiteColor: #ffffff;
   --blackColor: hsl(201, 33%, 16%);
   --text-color: hsl(240, 4%, 36%);
   --whiteColorDeam: hsl(0, 0%, 93%);
@@ -55,6 +56,7 @@
   --eerie-black-4: hsla(0, 0%, 13%, 1);
   --white: hsla(0, 0%, 100%, 1);
   --white-alpha-20: rgba(255, 255, 255, 0.2);
+  --black-alpha-20: hsla(0, 0%, 0%, 0.2);
   --white-alpha-10: hsla(0, 0%, 100%, 0.1);
   --black: hsla(0, 0%, 0%, 1);
   --black-alpha-80: hsla(0, 0%, 0%, 0.8);
@@ -93,38 +95,34 @@
   --transition-3: 1000ms ease;
   --main-transition: all 0.3s ease-in-out;
 }
+
 .banner-power-icons {
   color: var(--crimson-red);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
-  transition: all 0.4s ease;
 }
-html.lang-switching {
-  transform: translateX(var(--lang-slide));
-  filter: blur(3px);
-  /* transform: translateY(10px); */
-  /* opacity: 0; */
-  /* transform: scale(.98); */
-}
-/* html[dir="rtl"].lang-switching {
-  transform: translateX(-20px);
-} */
+
 a {
   text-decoration: none !important;
   color: inherit;
 }
+
 ul li {
   list-style: none;
 }
+
 body {
   overflow-x: hidden;
 }
+
 html,
 body {
   color: var(--primary-text);
@@ -135,10 +133,12 @@ body {
   display: flex;
   align-items: center;
 }
+
 .grid {
   display: grid;
   align-items: center;
 }
+
 .btn-page {
   padding: 0.6rem 1.5rem;
   background: var(--gradient-color);
@@ -148,10 +148,12 @@ body {
   border-radius: 3rem;
   margin-right: 12px;
 }
+
 .btn-page a {
   color: var(--whiteColor);
   font-weight: 500;
 }
+
 .btn-page:hover {
   background: var(--SecondaryColor);
 }
@@ -159,11 +161,13 @@ body {
 .hh-100 {
   height: 100vh;
 }
+
 .rows {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .home__page--bg {
   background-color: var(--primary-bg);
   color: var(--primary-text);
@@ -184,6 +188,29 @@ section,
     scroll-margin-top: 66px;
   }
 }
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(13, 110, 253, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Section Header */
 .courses__header {
   padding-bottom: 60px;
@@ -203,7 +230,7 @@ section,
 }
 
 .courses__title::after {
-  content: "";
+  content: '';
   width: 120px;
   height: 1px;
   display: inline-block;
@@ -218,55 +245,86 @@ section,
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .primary-bg {
   background-color: var(--primary-bg) !important;
 }
+
 .secondary-bg {
   background-color: var(--secondary-bg) !important;
 }
+
 .primary-text {
   color: var(--primary-text) !important;
 }
+
 .secondary-text {
   color: var(--secondary-text) !important;
 }
+
 .main-color {
   color: var(--main-color) !important;
 }
+
 .italic {
   font-style: italic;
 }
+
 .bg-main-color {
   background: var(--main-color) !important;
 }
+
 .Custom__body--bg {
   background: var(--primary-bg) !important;
   color: var(--primary-text) !important;
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
+
+.focus-bg-transparent {
+  background-color: transparent !important;
+  border: 0.2px solid var(--main-color) !important;
+  outline: none !important;
+}
+
+select.focus-bg-transparent option {
+  background-color: var(--primary-bg) !important;
+  color: var(--primary-text) !important;
+}
+
+select.focus-bg-transparent option:hover {
+  background-color: var(--main-color) !important;
+  color: var(--primary-text) !important;
+}
+
 .focus-bg-transparent:disabled,
 .focus-bg-transparent:focus {
   background-color: transparent !important;
   color: var(--primary-text) !important;
 }
+
 .focus-bg-transparent::placeholder {
   color: var(--secondary-text) !important;
 }
+
+::-webkit-scrollbar,
 .scrollbar::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
 }
 
+::-webkit-scrollbar-track,
 .scrollbar::-webkit-scrollbar-track {
   background-color: var(--primary-bg) !important;
 }
 
+::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--main-color) !important;
   border-radius: 0.25rem;
   cursor: pointer;
 }
 
+::-webkit-scrollbar-thumb:hover,
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: var(--main-color2) !important;
 }
@@ -284,22 +342,35 @@ section,
   margin-block: 1rem;
   width: fit-content;
 }
+
 .btn-main-color {
   background: transparent;
   color: var(--main-color);
 }
+
 .btn-main-color2 {
   background: var(--main-color);
   color: var(--primary-text);
 }
+
 .btn-main-color:hover {
   background: var(--main-color);
   color: var(--primary-text);
 }
+
 .btn-main-color2:hover {
   background: transparent;
   color: var(--main-color);
 }
+
+.btn-main-color-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--main-color);
+  outline: none;
+  margin-block: 0;
+}
+
 .toast-notification {
   animation: slideIn 0.6s forwards;
 }
@@ -309,8 +380,202 @@ section,
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
+/* Input */
+
+.custom-placeholder::placeholder {
+  color: var(--secondary-text);
+  opacity: 1;
+  /* مهم للفايرفوكس */
+}
+
+/* Add to index.css or global.css */
+iframe#webpack-dev-server-client-overlay,
+div#webpack-dev-server-client-overlay,
+div#react-error-overlay {
+  display: none !important;
+}
+
+.custom--faq__header {
+  color: var(--white) !important;
+  background-color: var(--faq-header) !important;
+  transition: background-color 0.3s ease;
+}
+
+.custom--faq__header:hover,
+.custom--faq__header.active {
+  background-color: var(--faq-header-hover) !important;
+}
+
+.border-main-color {
+  border: 1px solid var(--main-color) !important;
+}
+
+/*  Course Preview Overlay */
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.preview-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 1200px;
+  position: relative;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.preview-content .btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.2rem;
+}
+
+.preview-content .row {
+  margin-top: 40px;
+}
+
+/* .preview-content .course-card .card-hover-overlay {
+  opacity: 1;
+  transition: opacity 0.3s;
+} */
+
+.preview-content > button {
+  margin-right: 10px;
+}
+
+.preview-content > button {
+  margin-right: 10px;
+}
+
+/* Coming Soon Page */
+.notify-btn {
+  background-color: var(--main-color);
+  border: none;
+  padding: 0.6rem 0.9rem;
+  color: var(--primary-text);
+  font-size: 16px;
+  border-radius: 1.9rem;
+  box-shadow: 0 2px 8px rgba(10, 84, 195, 0.4);
+  transition: background-color var(--transition-speed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.notify-input {
+  min-width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+.notify-input:focus {
+  outline: none;
+  border: 2px solid var(--main-color);
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.notify-input::placeholder {
+  color: var(--secondary-text) !important;
+  font-style: italic;
+}
+
+.notify-btn:hover {
+  background-color: var(--hover-main-color);
+}
+
+.in-progress-hero-image {
+  max-height: 500px;
+  filter: drop-shadow(0 5px 50px var(--main-color));
+}
+
+@media (max-width: 768px) {
+  .in-progress-hero-image {
+    max-height: 250px;
+  }
+}
+
+/* rtl - ltr */
+/* دعم كامل للـ RTL مع Bootstrap بدون ما تغيري أي كلاس */
+/* body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+body.ltr {
+  direction: ltr;
+  text-align: left;
+} */
+
+/* عكس الـ logical margins & paddings اللي في Bootstrap */
+/* body.rtl [class*="ms-"] {
+  margin-left: 0 !important;
+  margin-right: var(--bs-spacer) !important;
+}
+
+body.rtl [class*="me-"] {
+  margin-right: 0 !important;
+  margin-left: var(--bs-spacer) !important;
+}
+
+body.rtl [class*="ps-"] {
+  padding-left: 0 !important;
+  padding-right: var(--bs-spacer) !important;
+}
+
+body.rtl [class*="pe-"] {
+  padding-right: 0 !important;
+  padding-left: var(--bs-spacer) !important;
+} */
+
+/* عكس text-start / text-end */
+/* body.rtl .text-start {
+  text-align: right !important;
+}
+
+body.rtl .text-end {
+  text-align: left !important;
+} */
+
+/* عكس float */
+/* body.rtl .float-start {
+  float: right !important;
+}
+
+body.rtl .float-end {
+  float: left !important;
+} */
+
+/* لو عندك أيقونات أو عناصر لازم تعكسي ترتيبها */
+/* body.rtl .d-flex {
+  flex-direction: row-reverse;
+}
+
+body.rtl .flex-row {
+  flex-direction: row-reverse !important;
+}
+
+body.rtl .flex-row-reverse {
+  flex-direction: row !important;
+} */

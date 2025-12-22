@@ -1,39 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import './ThemeSwitcher.css';
+import { Moon, Sun } from 'lucide-react';
 
 const darkTheme = {
-  '--primary-bg': '#0f0f0f',
-  '--secondary-bg': '#1b1b1b',
+  '--primary-bg': '#191B21',
+  '--secondary-bg': '#23272F',
+  '--tertiary-bg': '#16181D',
   '--primary-text': '#ffffff',
-  '--secondary-text': '#c4c2c2',
-  '--main-color': '#00e77f',
+  '--secondary-text': '#EBECF0',
+  '--main-color': '#0d6efd',
   '--faq-body-bg': '#282626',
   '--faq-header': '#3a3c40',
   '--faq-header-hover': '#3a3c40',
 };
 
 const lightTheme = {
-  '--primary-bg': '#ffffff',
-  '--secondary-bg': '#c4c2c2',
-  // '--primary-bg': '#c4c2c2',
-  // '--secondary-bg': '#ffffff',
-  '--primary-text': '#0f0f0f',
-  '--secondary-text': '#1b1b1b',
-  '--main-color': '#048a4e',
+  '--primary-bg': '#fcf9f9',
+  '--secondary-bg': '#EFF0F3',
+  '--primary-text': '#191B21',
+  '--secondary-text': '#3a3c40',
+  '--main-color': '#0c65ebff',
   '--faq-body-bg': '#bebebe',
   '--faq-header': '#3a3c40',
   '--faq-header-hover': '#505358',
 };
 
 const ThemeSwitcher = () => {
-  // Initialize state from local storage or default to false (light theme)
   const [isDark, setIsDark] = useState(() => {
     const storedTheme = localStorage.getItem('theme');
     return storedTheme ? storedTheme === 'dark' : false;
   });
 
   useEffect(() => {
-    // Save current theme state to local storage
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     const theme = isDark ? darkTheme : lightTheme;
     Object.keys(theme).forEach((variable) => {
@@ -46,17 +44,14 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <div className='switch-box'>
-      <label id='switch' className='switch'>
-        <input
-          type='checkbox'
-          onChange={toggleTheme}
-          id='slider'
-          checked={isDark}
-        />
-        <span className='slider round'></span>
-      </label>
-    </div>
+    <>
+      <button
+        className='theme-floating-btn'
+        onClick={toggleTheme}
+        title='Toggle Theme'>
+        {isDark ? <Sun className='fs-4' /> : <Moon className='fs-4' />}
+      </button>
+    </>
   );
 };
 

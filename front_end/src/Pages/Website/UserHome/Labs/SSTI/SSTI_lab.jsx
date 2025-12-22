@@ -1,44 +1,42 @@
-import React from "react";
-import "../Page_Styles/Lab.css";
-import Header from "../../Header/Header";
-import image from "../../assets//img/Server Side Template Injection/card_image.png";
-import Footer from "../../Footer/Footer";
-import { Card } from "../../Components/Card/Card";
-import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
+import React from 'react';
+import '../Page_Styles/Lab.css';
+import Header from '../../Header/Header';
+import image from '../../assets//img/Server Side Template Injection/card_image.png';
+import Footer from '../../Footer/Footer';
+import { Card } from '../../Components/Card/Card';
+import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function SSTI_lab() {
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <LandingPractice />
       {/* End Landing  */}
       {/* Start Courses  */}
-      <div className="course">
-        <div className="container">
-          <PracticeTitle title={"SSTI"} />
-          <div className="row">
+      <div className='course'>
+        <div className='container'>
+          <PracticeTitle title={'SSTI'} />
+          <div className='row'>
             <Card
-              link={"SSTIlab1/store"}
+              link={'SSTIlab1/store'}
               image={image}
-              title={"SSTI Store Vulnerability"}
+              title={'SSTI Store Vulnerability'}
               brief={
-                "This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template."
+                'This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.'
               }
-              difficulty={"Intermediate"}
+              difficulty={'Intermediate'}
             />
 
             <Card
-              link={"SSTIlab2/blog"}
+              link={'SSTIlab2/blog'}
               image={image}
-              title={"Basic server-side template injection"}
+              title={'Basic server-side template injection'}
               brief={
-                "This lab is vulnerable to server-side template injection due to the way it unsafely uses a Handlebars template."
+                'This lab is vulnerable to server-side template injection due to the way it unsafely uses a Handlebars template.'
               }
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
 
             {/* <Card

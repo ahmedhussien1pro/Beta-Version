@@ -1,23 +1,41 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Cookie from "cookie-universal";
-import "./form.css";
-import "./register-login.css";
 import Preloader from "../../Website/Preloader/Preloader";
 import { useNavigate } from "react-router-dom";
+import "../../../App.css";
+import "./login.css";
+
 export default function Login() {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
   const cookie = Cookie();
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
+  const [isFocused, setIsFocused] = useState({
+    email: false,
+    password: false
+  });
+
   function handleChange(e) {
-    e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   }
+
+  function handleFocus(e) {
+    setIsFocused({ ...isFocused, [e.target.name]: true });
+  }
+
+  function handleBlur(e) {
+    if (e.target.value === "") {
+      setIsFocused({ ...isFocused, [e.target.name]: false });
+    }
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -32,7 +50,6 @@ export default function Login() {
       cookie.set("CuberWeb", token);
       navigate("/home");
     } catch (error) {
-      setLoading(false);
       setLoading(false);
       if (error.response) {
         const status = error.response.status;
@@ -55,72 +72,102 @@ export default function Login() {
       }
     }
   }
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
+
   return (
-    <div className="login-register-body">
+    <div className="login-body">
       {loading && <Preloader loading={loading} />}
-      <div className="container">
-        <div className="rows hh-100">
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="custom-form">
-              <h1 className="textcenter">Login Now</h1>
-              <div className="formcontrol">
+
+      <div className="login-container">
+        <div className="login-card">
+          <div className="login-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to continue</p>
+          </div>
+
+          <form className="login-form" onSubmit={handleSubmit}>
+            {/* Email Input */}
+            <div className="input-group">
+              <div className={`input-container ${isFocused.email || form.email ? 'focused' : ''}`}>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                   required
-                  placeholder="Enter Your Email.."
                 />
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">Email Address</label>
+                <div className="input-highlight"></div>
               </div>
-              <div className="formcontrol">
+            </div>
+
+            {/* Password Input */}
+            <div className="input-group">
+              <div className={`input-container ${isFocused.password || form.password ? 'focused' : ''}`}>
                 <input
                   type="password"
                   id="password"
                   name="password"
                   value={form.password}
                   onChange={handleChange}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                   required
                   minLength={6}
-                  placeholder="Enter Your Password.."
                 />
-                <label htmlFor="password">Password:</label>
-              </div>
-              <div className="social-icons">
-                <a href="{}" className="icon-social-media">
-                  <i className="fa-brands fa-google-plus-g"></i>
-                </a>
-                <a href="{}" className="icon-social-media">
-                  <i className="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="{}" className="icon-social-media">
-                  <i className="fa-brands fa-github"></i>
-                </a>
-                <a href="{}" className="icon-social-media">
-                  <i className="fa-brands fa-linkedin-in"></i>
-                </a>
-              </div>
-              <button type="submit" className="button-login-register">
-                Login
-              </button>
-              {err !== "" && (
-                <span className="error-login-register">{err}</span>
-              )}
-              <div className="register-link">
-                <p>
-                  Not account yet? <a href="/register">Register</a>
-                </p>
+                <label htmlFor="password">Password</label>
+                <div className="input-highlight"></div>
               </div>
             </div>
+
+            <div className="forgot-password">
+              <a href="/forgot-password">Forgot your password?</a>
+            </div>
+
+            <button type="submit" className="login-button" disabled={loading}>
+              {loading ? <div className="button-loader"></div> : "Sign In"}
+            </button>
+
+            {err && (
+              <div className="error-message">
+                <i className="fas fa-exclamation-circle"></i>
+                <span>{err}</span>
+              </div>
+            )}
           </form>
+
+          <div className="divider">
+            <span>Or continue with</span>
+          </div>
+
+          <div className="social-login">
+            <button type="button" className="social-button google">
+              <i className="fab fa-google"></i> Google
+            </button>
+            <button type="button" className="social-button facebook">
+              <i className="fab fa-facebook-f"></i> Facebook
+            </button>
+            <button type="button" className="social-button github">
+              <i className="fab fa-github"></i> GitHub
+            </button>
+          </div>
+
+          <div className="register-link">
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
+          </div>
+        </div>
+
+        {/* Decoration Side */}
+        <div className="login-decoration">
+          <div className="decoration-shape shape-1"></div>
+          <div className="decoration-shape shape-2"></div>
+          <div className="decoration-shape shape-3"></div>
+          <div className="decoration-text">
+            <h3>Welcome back to the CyberLabs</h3>
+            <p>Let's Hack Some Labs</p>
+          </div>
         </div>
       </div>
     </div>

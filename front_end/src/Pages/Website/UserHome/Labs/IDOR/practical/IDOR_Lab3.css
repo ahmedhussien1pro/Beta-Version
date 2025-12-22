@@ -102,7 +102,7 @@
   padding: 0.75rem;
   border: 1px solid var(--input-border);
   border-radius: var(--border-radius);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: var(--font-size-base);
   background-color: var(--inputColor);
   color: var(--primary-text);
@@ -113,7 +113,8 @@
   margin: 0;
 }
 
-.idor-number[type="number"] {
+.idor-number[type='number'] {
+  appearance: none;
   -moz-appearance: textfield;
 }
 .idor-number:focus {

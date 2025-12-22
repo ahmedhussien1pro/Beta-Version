@@ -1,51 +1,49 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Server Side Template Injection/baner_lap.png";
-import courseImage from "../../assets/img/Server Side Template Injection/course_image.png";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import exampleImage1 from "../../assets/img/Server Side Template Injection/1.png";
-import exampleImage2 from "../../assets/img/Server Side Template Injection/2.png";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Server Side Template Injection/baner_lap.png';
+import courseImage from '../../assets/img/Server Side Template Injection/course_image.png';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import exampleImage1 from '../../assets/img/Server Side Template Injection/1.png';
+import exampleImage2 from '../../assets/img/Server Side Template Injection/2.png';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 
 export default function SSTI() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing  */}
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Server Side Template Injection (SSTI)"
-        courseDescription="Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Server Side Template Injection (SSTI)'
+        courseDescription='Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Step 1</span> Introduction
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
-                  <h1 className="content__title">
+                <dd className='fadeInUp faq-body' id='border-left'>
+                  <h1 className='content__title'>
                     Welcome to Server Side Template Injection (SSTI)
                   </h1>
 
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     What is server-side template injection?
                   </h2>
                   <br />
@@ -68,7 +66,7 @@ export default function SSTI() {
                     injection.
                   </p>
                   <br />
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     What is the impact of server-side template injection?
                   </h2>
                   <br />
@@ -96,15 +94,15 @@ export default function SSTI() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Step 2</span> SSTI vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     server-side template injection vulnerabilities
                   </h1>
-                  <h2 className="content__title">
+                  <h2 className='content__title'>
                     How do server-side template injection vulnerabilities arise?
                   </h2>
                   <br />
@@ -121,13 +119,13 @@ export default function SSTI() {
                     following extract from a Twig template:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">output</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
-                          $output = $twig-{">"}render("Dear (first_name),",
-                          array("first_name" ={">"} $user.first_name) );
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>output</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
+                          $output = $twig-{'>'}render("Dear (first_name),",
+                          array("first_name" ={'>'} $user.first_name) );
                         </code>
                       </pre>
                     </div>
@@ -147,12 +145,12 @@ export default function SSTI() {
                     to choose the name that is used:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">output</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
-                          $output = $twig-{">"}render("Dear " . $_GET['name']);
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>output</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
+                          $output = $twig-{'>'}render("Dear " . $_GET['name']);
                         </code>
                       </pre>
                     </div>
@@ -161,18 +159,18 @@ export default function SSTI() {
                   <p>
                     In this example, instead of a static value being passed into
                     the template, part of the template itself is being
-                    dynamically generated using the <span>GET</span> parameter{" "}
+                    dynamically generated using the <span>GET</span> parameter{' '}
                     <span>name</span>. As template syntax is evaluated
                     server-side, this potentially allows an attacker to place a
-                    server-side template injection payload inside the{" "}
+                    server-side template injection payload inside the{' '}
                     <span>name</span> parameter as follows:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           http://vulnerable-website.com/?name=&#123;&#123;bad-stuff-here&#125;&#125;
                         </code>
                       </pre>
@@ -198,18 +196,18 @@ export default function SSTI() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Step 2</span> Constructing a SSTI attack
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     Constructing a server-side template injection attack
                   </h1>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage1} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage1} alt='Example' />
                     </div>
                   </div>
                   <br />
@@ -230,7 +228,7 @@ export default function SSTI() {
                     expressions, such as
                     <span>
                       $&#123;&#123;&lt;%[%&quot;&#39;&#125;&#125;%\
-                    </span>{" "}
+                    </span>{' '}
                     If an exception is raised, this indicates that the injected
                     template syntax is potentially being interpreted by the
                     server in some way. This is one sign that a vulnerability to
@@ -268,11 +266,11 @@ export default function SSTI() {
                     a template that contains the following vulnerable code:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">vulnerable code:</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>vulnerable code:</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           render('Hello ' + username)
                         </code>
                       </pre>
@@ -284,11 +282,11 @@ export default function SSTI() {
                     injection by requesting a URL such as:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           http://vulnerable-website.com/?username=${7 * 7}
                         </code>
                       </pre>
@@ -317,11 +315,11 @@ export default function SSTI() {
                     user-controllable variable name being placed inside a
                     parameter, such as:
                   </p>
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">Code</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>Code</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           greeting = getQueryParameter('greeting')
                           engine.render("Hello
                           &#123;&#123;"+greeting+"&#125;&#125;", data)
@@ -334,11 +332,11 @@ export default function SSTI() {
                     On the website, the resulting URL would be something like:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           http://vulnerable-website.com/?greeting=data.username
                         </code>
                       </pre>
@@ -346,7 +344,7 @@ export default function SSTI() {
                   </div>
                   <br />
                   <p>
-                    This would be rendered in the output to{" "}
+                    This would be rendered in the output to{' '}
                     <span>Hello Carlos</span>, for example.
                   </p>
                   <p>
@@ -359,12 +357,12 @@ export default function SSTI() {
                     HTML into the value:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
-                          http://vulnerable-website.com/?greeting=data.username&lt;tag&gt;{" "}
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
+                          http://vulnerable-website.com/?greeting=data.username&lt;tag&gt;{' '}
                         </code>
                       </pre>
                     </div>
@@ -378,12 +376,12 @@ export default function SSTI() {
                     syntax and attempt to inject arbitrary HTML after it:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
-                          http://vulnerable-website.com/?greeting=data.username&#125;&#125;&lt;tag&gt;{" "}
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
+                          http://vulnerable-website.com/?greeting=data.username&#125;&#125;&lt;tag&gt;{' '}
                         </code>
                       </pre>
                     </div>
@@ -399,11 +397,11 @@ export default function SSTI() {
                     injection vulnerability is present:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           Hello Carlos&lt;tag&gt;
                         </code>
                       </pre>
@@ -425,7 +423,7 @@ export default function SSTI() {
                     invalid syntax is often enough because the resulting error
                     message will tell you exactly what the template engine is,
                     and sometimes even which version. For example, the invalid
-                    expression{" "}
+                    expression{' '}
                     <code>&lt;span&gt;&lt;%=foobar%&gt;&lt;/span&gt;</code>
                     triggers the following response from the Ruby-based ERB
                   </p>
@@ -455,17 +453,17 @@ export default function SSTI() {
                     you can use a decision tree similar to the following:
                   </p>
                   <br />
-                  <div className="Content__img--box">
-                    <div className="Content__img__box__over--hidden">
-                      <img src={exampleImage2} alt="Example" />
+                  <div className='Content__img--box'>
+                    <div className='Content__img__box__over--hidden'>
+                      <img src={exampleImage2} alt='Example' />
                     </div>
                   </div>
                   <br />
                   <p>
                     You should be aware that the same payload can sometimes
                     return a successful response in more than one template
-                    language. For example, the payload{" "}
-                    <span>&#123;&#123;7*'7'&#125;&#125;</span> returns{" "}
+                    language. For example, the payload{' '}
+                    <span>&#123;&#123;7*'7'&#125;&#125;</span> returns{' '}
                     <span>49</span> in Twig and <span>7777777</span> in Jinja2.
                     Therefore, it is important not to jump to conclusions based
                     on a single successful response.
@@ -480,12 +478,12 @@ export default function SSTI() {
                   </p>
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Step 4</span> How to prevent SSTI vulnerabilities
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <br />
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     How to prevent server-side template injection
                     vulnerabilities
                   </h1>
@@ -498,7 +496,7 @@ export default function SSTI() {
                   </p>
 
                   <p>
-                    {" "}
+                    {' '}
                     One of the simplest ways to avoid introducing server-side
                     template injection vulnerabilities is to always use a
                     "logic-less" template engine, such as Mustache, unless
@@ -522,11 +520,10 @@ export default function SSTI() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
-                onClick={() => handleGoToLab("/ssti/ssti_lab")}
-                className="go-to"
-              >
+                onClick={() => handleGoToLab('/ssti/ssti_lab')}
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

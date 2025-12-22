@@ -1,12 +1,3 @@
-:root {
-  --shadow-1: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --border-radius: 8px;
-  --transition-speed: 0.3s;
-  --highlight-color: #00e77f;
-  --hover-main-color: #00c66f;
-  --input-border: #ced4da;
-}
-
 .settings-container {
   display: flex;
   justify-content: center;
@@ -29,14 +20,14 @@
 .theme-customizer-form .card-title {
   text-align: center;
   margin-bottom: 1.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--highlight-color);
 }
 
 /* Label styling */
 .form-group label {
   font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--secondary-text);
 }
 
@@ -45,7 +36,7 @@
 .form-control-color {
   border: 1px solid var(--input-border);
   border-radius: var(--border-radius);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: var(--primary-bg);
   color: var(--primary-text);
 }

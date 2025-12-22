@@ -1,94 +1,92 @@
-import React from "react";
-import "./XSS.css";
-import Header from "../../Header/Header";
-import lab_Cover from "../../assets/img/Cross_Site_Scripting/labs_cover.jpg";
-import Footer from "../../Footer/Footer";
-import { Card } from "../../Components/Card/Card";
-import LandingPractice from "../../Components/PracticeLanding/PracticeLanding";
-import PracticeTitle from "../../Components/PracticeTitle/PracticeTitle";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher";
+import React from 'react';
+import './XSS.css';
+import Header from '../../Header/Header';
+import lab_Cover from '../../assets/img/Cross_Site_Scripting/labs_cover.jpg';
+import Footer from '../../Footer/Footer';
+import { Card } from '../../Components/Card/Card';
+import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function XSS_lab() {
   return (
     <>
       <Header />
-      <ThemeSwitcher/>
       {/* Start Landing */}
       <LandingPractice />
       {/* End Landing */}
       {/* Start Courses  */}
-      <div class="course">
-        <div class="container">
-          <PracticeTitle title={ "XSS"} />
-          <div class="row">
+      <div class='course'>
+        <div class='container'>
+          <PracticeTitle title={'XSS'} />
+          <div class='row'>
             {/* lab1 */}
             <Card
-              link={"/xss/xss_lab/first_lab"}
+              link={'/xss/xss_lab/first_lab'}
               image={lab_Cover}
-              title={"Reflected XSS into HTML context"}
+              title={'Reflected XSS into HTML context'}
               brief={[
-                "This lab contains a ",
-                <span className="highlight">
+                'This lab contains a ',
+                <span className='highlight'>
                   simple reflected cross-site scripting vulnerability
                 </span>,
-                " in the search functionality. To solve the lab, perform a cross-site scripting attack that calls the ",
-                <span className="highlight">alert function</span>,
-                ".",
+                ' in the search functionality. To solve the lab, perform a cross-site scripting attack that calls the ',
+                <span className='highlight'>alert function</span>,
+                '.',
               ]}
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             {/* lab2 */}
             <Card
-              link={"/xss/xss_lab/second_lab"}
+              link={'/xss/xss_lab/second_lab'}
               image={lab_Cover}
-              title={"Stored XSS into HTML context"}
+              title={'Stored XSS into HTML context'}
               brief={[
-                "This lab contains a ",
-                <span className="highlight">
-                  stored cross-site scripting vulnerability{" "}
+                'This lab contains a ',
+                <span className='highlight'>
+                  stored cross-site scripting vulnerability{' '}
                 </span>,
-                " in the comment functionality. To solve the lab, submit a comment that calls the ",
-                <span className="highlight">alert function</span>,
-                " when the blog post is viewed.",
+                ' in the comment functionality. To solve the lab, submit a comment that calls the ',
+                <span className='highlight'>alert function</span>,
+                ' when the blog post is viewed.',
               ]}
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             {/* lab3 */}
             <Card
-              link={"/xss/xss_lab/third_lab"}
+              link={'/xss/xss_lab/third_lab'}
               image={lab_Cover}
-              title={"DOM XSS"}
+              title={'DOM XSS'}
               brief={[
-                "This lab contains a ",
-                <span className="highlight">
+                'This lab contains a ',
+                <span className='highlight'>
                   DOM-based cross-site scripting vulnerability
                 </span>,
-                "  in the search query tracking functionality. It uses the JavaScript",
-                <span class="highlight">document.write</span>,
-                " function, which writes data out to the page. The ",
-                <span class="highlight">document.write</span>,
-                "function is called with data from ",
-                <span class="highlight">location.search</span>,
-                ", which you can control using the website URL. To solve this lab, perform a cross-site scripting attack that calls the",
-                <span class="highlight">alert function</span>,
-                ".",
+                '  in the search query tracking functionality. It uses the JavaScript',
+                <span class='highlight'>document.write</span>,
+                ' function, which writes data out to the page. The ',
+                <span class='highlight'>document.write</span>,
+                'function is called with data from ',
+                <span class='highlight'>location.search</span>,
+                ', which you can control using the website URL. To solve this lab, perform a cross-site scripting attack that calls the',
+                <span class='highlight'>alert function</span>,
+                '.',
               ]}
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
             {/* lab4 */}
             <Card
-              link={"/xss/xss_lab/fourth_lab"}
+              link={'/xss/xss_lab/fourth_lab'}
               image={lab_Cover}
-              title={["Stored XSS in anchor ", <q>href</q>]}
+              title={['Stored XSS in anchor ', <q>href</q>]}
               brief={[
-                "This lab contains a ",
-                <span className="highlight">
+                'This lab contains a ',
+                <span className='highlight'>
                   stored cross-site scripting vulnerability
                 </span>,
-                "  in the comment functionality. To solve this lab, submit a comment that calls the ",
-                <span className="highlight">alert function</span>,
-                " when the comment author name is clicked.",
+                '  in the comment functionality. To solve this lab, submit a comment that calls the ',
+                <span className='highlight'>alert function</span>,
+                ' when the comment author name is clicked.',
               ]}
-              difficulty={"Easy"}
+              difficulty={'Easy'}
             />
 
             {/* lab7 */}

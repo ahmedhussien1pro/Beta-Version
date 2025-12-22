@@ -1,26 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
 .title-gradient {
-  font-family: "Roboto Slab", serif;
-  background: linear-gradient(135deg, var(--main-color), var(--hover-main-color), var(--main-color4));
+  font-family: 'Roboto Slab', serif;
+  background: linear-gradient(
+    135deg,
+    var(--main-color),
+    var(--hover-main-color),
+    var(--main-color4)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 2rem;
 }
 
 .custom-accordion .accordion-button {
-  background: linear-gradient(135deg, var(--main-color), var(--hover-main-color), var(--main-color4));
+  background: linear-gradient(
+    135deg,
+    var(--main-color),
+    var(--hover-main-color),
+    var(--main-color4)
+  );
   color: var(--primary-text);
   border: none;
   border-radius: 8px;
   font-weight: bold;
   transition: all 0.3s ease;
 }
-.bb-1{
+.bb-1 {
   border-bottom: 1px solid var(--glass-effect);
 }
 .custom-accordion .accordion-button:not(.collapsed) {
-  background:  linear-gradient(135deg, var(--main-color), var(--hover-main-color), var(--main-color4));;
+  background: linear-gradient(
+    135deg,
+    var(--main-color),
+    var(--hover-main-color),
+    var(--main-color4)
+  );
   box-shadow: 0 4px 6px var(--glass-effect);
 }
 
@@ -39,5 +54,3 @@
 .ref-link:hover {
   color: var(--hover-main-color);
 }
-
-

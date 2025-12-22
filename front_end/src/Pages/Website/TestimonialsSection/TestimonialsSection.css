@@ -2,8 +2,6 @@
 # Testimonials Section
 --------------------------------------------------------------*/
 
-
-
 .testimonials__container {
   position: relative;
 }
@@ -12,31 +10,33 @@
   overflow: hidden;
 }
 
-
-
+/* Use logical padding so it's easier to flip in RTL via .rtl overrides */
 .testimonials__wrap {
-  padding-left: 50px;
+  padding-inline-start: 50px; /* left for LTR, start for logical */
 }
 
 .testimonials__item {
   background-color: var(--secondary-bg);
   border: 1px solid color-mix(in srgb, var(--primary-text), transparent 90%);
   box-sizing: content-box;
-  padding: 30px 30px 30px 60px;
+  padding: 30px 30px 30px 60px; /* default: left padding for avatar */
   margin: 30px 15px;
   min-height: 200px;
   position: relative;
   cursor: pointer;
 }
 
+/* Avatar */
 .testimonials__img {
   width: 90px;
   border-radius: 10px;
   border: 6px solid var(--background-color);
   position: absolute;
   left: -45px;
+  top: 30px;
 }
 
+/* Texts */
 .testimonials__name {
   font-size: 18px;
   font-weight: bold;
@@ -67,13 +67,13 @@
 .testimonials__quote-icon--left {
   display: inline-block;
   position: relative;
-  /* left: -5px; */
+  left: -5px;
 }
 
 .testimonials__quote-icon--right {
   display: inline-block;
   position: relative;
-  /* right: -5px; */
+  right: -5px;
   top: 10px;
   transform: scale(-1, -1);
 }
@@ -83,6 +83,7 @@
   margin: 15px auto;
 }
 
+/* Pagination */
 .testimonials__slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -100,9 +101,39 @@
   background-color: var(--main-color);
 }
 
+/* RTL overrides */
+.rtl .testimonials__wrap {
+  padding-inline-start: 0; /* reset */
+  padding-inline-end: 50px; /* push from right */
+}
+
+.rtl .testimonials__item {
+  padding: 30px 60px 30px 30px; /* switch paddings for avatar on right */
+}
+
+.rtl .testimonials__img {
+  left: auto;
+  right: -45px;
+}
+
+/* flip quote icons for RTL to look natural */
+.rtl .testimonials__quote-icon--left {
+  left: auto;
+  right: -5px;
+  transform: scale(-1, 1);
+}
+
+.rtl .testimonials__quote-icon--right {
+  right: auto;
+  left: -5px;
+  transform: scale(1, -1);
+}
+
+/* responsive */
 @media (max-width: 767px) {
   .testimonials__wrap {
     padding-left: 0;
+    padding-inline-start: 0;
   }
 
   .testimonials__slider {
@@ -117,5 +148,16 @@
   .testimonials__img {
     position: static;
     left: auto;
+    right: auto;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .rtl .testimonials__img {
+    position: static;
+    right: auto;
+    left: auto;
+    display: block;
+    margin: 0 auto 10px;
   }
 }

@@ -1,0 +1,165 @@
+/* cybersec-roadmap.css */
+
+/* Root variables */
+:root {
+  --accent-color: #10b981; /* Green accent */
+}
+
+/* General styles */
+/* body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+.roadmap__container {
+  margin: 0 auto;
+}
+
+.roadmap__card {
+  /* background: linear-gradient(135deg, var(--secondary-bg), #334155); */
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  border-radius: 12px;
+}
+
+.roadmap__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+
+.roadmap__text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.roadmap__list li {
+  font-size: 1rem;
+  position: relative;
+}
+
+.roadmap__list i {
+  color: var(--main-color);
+}
+
+.roadmap__flow {
+  width: 100%;
+  height: 80vh;
+  padding: 30px;
+  background: var(--primary-bg);
+  border: 1px solid var(--secondary-bg);
+  position: relative;
+}
+
+.roadmap__toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  padding: 10px 16px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.roadmap__toggle:hover {
+  background-color: var(--main-color);
+  color: white;
+  border-color: transparent;
+}
+
+/* Node styles */
+.roadmap__node {
+  background: var(--secondary-bg);
+  color: var(--primary-text);
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.roadmap__node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.roadmap__node--root {
+  font-size: 0.92rem;
+  border: 2px solid var(--main-color);
+  /* background: var(--main-color); */
+  color: var(--primary-text);
+}
+
+.roadmap__node--course {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-block: 0;
+}
+
+.roadmap__course-link {
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.roadmap__course-link:hover {
+  border: none;
+  text-decoration: underline;
+}
+
+/* Role specific styles */
+.roadmap__node--role {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.roadmap__node--fundamentals {
+  border-color: #0d6efd;
+}
+.roadmap__node--pentest {
+  border-color: #22c55e;
+}
+.roadmap__node--devsecops {
+  border-color: #a855f7;
+}
+.roadmap__node--blue {
+  border-color: #06b6d4;
+}
+.roadmap__node--red {
+  border-color: #ef4444;
+}
+.roadmap__node--dfir {
+  border-color: #f59e0b;
+}
+.roadmap__node--threat {
+  border-color: #ec4899;
+}
+.roadmap__node--cloud {
+  border-color: #38bdf8;
+}
+
+/* Media queries */
+@media (max-width: 991px) {
+  .roadmap__flow {
+    height: 60vh;
+  }
+
+  .roadmap__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .roadmap__container {
+    padding: 15px;
+  }
+
+  .roadmap__flow {
+    height: 60vh;
+  }
+}

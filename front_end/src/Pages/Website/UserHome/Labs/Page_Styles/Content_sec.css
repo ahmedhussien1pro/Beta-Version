@@ -38,10 +38,6 @@
   }
 }
 
-b {
-  margin: 0;
-}
-
 /* Start landing-labd */
 .landing-labd {
   height: auto;
@@ -60,15 +56,17 @@ b {
 }
 
 .landing-labd .banner::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0px;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(to right,
-      var(--alt-color) 30%,
-      rgba(21, 28, 43, 0.98) 50%,
-      transparent 100%);
+  background: linear-gradient(
+    to right,
+    var(--alt-color) 30%,
+    rgba(21, 28, 43, 0.98) 50%,
+    transparent 100%
+  );
 }
 
 .landing-labd .banner img {
@@ -112,9 +110,11 @@ b {
   color: #d63384;
   font-weight: 400;
   text-transform: capitalize;
-  background: linear-gradient(90deg,
-      rgba(214, 51, 132, 0.2) 0%,
-      rgba(214, 51, 132, 0.1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(214, 51, 132, 0.2) 0%,
+    rgba(214, 51, 132, 0.1) 100%
+  );
   padding: 0.2rem 0.4rem;
   border-radius: 8px;
   transition: background 0.3s ease;

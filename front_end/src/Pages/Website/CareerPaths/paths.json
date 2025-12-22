@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "SOC Analyst",
+    "icon": "soc",
+    "difficulty": "Beginner",
+    "description": "Monitoring, triage and responding to incidents.",
+    "steps": [
+      {
+        "id": 101,
+        "title": "Comprehensive Assessment",
+        "icon": "assessment",
+        "description": "Evaluate severity of threats, impact analysis and compliance checks.",
+        "skills": ["Threat modeling", "Risk analysis"],
+        "status": "available",
+        "courses": [
+          "Introduction to Threat Modeling",
+          "Risk Assessment Fundamentals"
+        ]
+      },
+      {
+        "id": 102,
+        "title": "Advanced Threat Detection",
+        "icon": "detection",
+        "description": "Detect and prevent cyberattacks. Monitor logs & network traffic.",
+        "skills": ["SIEM", "Log analysis"],
+        "status": "in-progress",
+        "courses": [
+          "SIEM Tools Overview",
+          "Advanced Log Analysis",
+          "Network Traffic Monitoring"
+        ]
+      },
+      {
+        "id": 103,
+        "title": "Incident Response",
+        "icon": "response",
+        "description": "Contain incidents, remediation and recovery procedures.",
+        "skills": ["IR", "Forensics"],
+        "status": "pro",
+        "courses": ["Incident Response Basics", "Digital Forensics Essentials"]
+      },
+      {
+        "id": 104,
+        "title": "Continuous Monitoring",
+        "icon": "monitoring",
+        "description": "24/7 monitoring and adaptive threat intelligence.",
+        "skills": ["Threat intel", "Automation"],
+        "status": "available",
+        "courses": ["Threat Intelligence Gathering"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Penetration Tester",
+    "icon": "pentest",
+    "difficulty": "Intermediate",
+    "description": "Offensive security & assessments.",
+    "steps": [
+      {
+        "id": 201,
+        "title": "Baseline Knowledge",
+        "icon": "assessment",
+        "description": "Linux, Networking and basic scripting.",
+        "skills": ["Linux", "Networking"],
+        "status": "available",
+        "courses": ["Linux Fundamentals"]
+      },
+      {
+        "id": 202,
+        "title": "Recon & Scanning",
+        "icon": "detection",
+        "description": "OSINT, Nmap, scanning strategies.",
+        "skills": ["OSINT", "Nmap"],
+        "status": "in-progress",
+        "courses": ["OSINT Techniques", "Nmap Mastery"]
+      },
+      {
+        "id": 203,
+        "title": "Exploitation",
+        "icon": "response",
+        "description": "Web exploitation, burpsuite, pocs.",
+        "skills": ["Burp", "Exploit dev"],
+        "status": "pro",
+        "courses": [
+          "Burp Suite Essentials",
+          "Web Exploitation Lab",
+          "Exploit Development Workshop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "GRC Specialist",
+    "icon": "grc",
+    "difficulty": "Beginner",
+    "description": "Governance, Risk & Compliance.",
+    "steps": [
+      {
+        "id": 301,
+        "title": "GRC Foundations",
+        "icon": "assessment",
+        "description": "Policies, frameworks and governance basics.",
+        "skills": ["Policies", "Frameworks"],
+        "status": "available",
+        "courses": ["GRC Policies Introduction", "Compliance Frameworks"]
+      },
+      {
+        "id": 302,
+        "title": "Risk Management",
+        "icon": "detection",
+        "description": "Assessing and mitigating organizational risk.",
+        "skills": ["Risk assessment"],
+        "status": "in-progress",
+        "courses": ["Risk Assessment Methods", "Mitigation Strategies"]
+      }
+    ]
+  }
+]

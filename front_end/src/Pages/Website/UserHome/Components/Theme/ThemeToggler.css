@@ -1,0 +1,27 @@
+.theme-btn {
+  font: inherit;
+  padding: 2px;
+  width: 48px;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  /* background: var(--secondary-bg); */
+  position: relative;
+  /* مهم علشان الـ icon تتحرّك جوا الزر */
+}
+
+.theme-btn .theme-icon {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 50%;
+  transform: translateY(0%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  box-shadow: inset 9px -6px var(--main-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-btn.active .theme-icon {
+  inset-inline-start: 20px;
+  box-shadow: inset 20px -20px var(--main-color);
+}

@@ -1,50 +1,48 @@
-import React from "react";
-import Header from "../../Header/Header";
-import background from "../../assets/img/Captcha Bypass/baner_lap.png";
-import courseImage from "../../assets/img/Captcha Bypass/course_image.png";
-import Footer from "../../Footer/Footer";
-import "../../Components/Topics CSS/topics.css";
-import UseFaqSection from "../../Components/UseFaqSection/UseFaqSection.jsx";
-import CourseLanding from "../../Components/CourseLanding/CourseLanding.jsx";
-import ThemeSwitcher from "../../Components/ThemeSwitcher/ThemeSwitcher.jsx";
+import React from 'react';
+import Header from '../../Header/Header';
+import background from '../../assets/img/Captcha Bypass/baner_lap.png';
+import courseImage from '../../assets/img/Captcha Bypass/course_image.png';
+import Footer from '../../Footer/Footer';
+import '../../Components/Topics CSS/topics.css';
+import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
+import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
 export default function CaptchaBypass() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <ThemeSwitcher />
       <CourseLanding
         background={background}
         courseImage={courseImage}
-        courseTitle="Captcha Bypass"
-        courseDescription=" CAPTCHA bypass methods use programming and AI techniques to defeat website security measures, enabling automated bots to solve challenges. This can facilitate spam, account creation bots, and other malicious activities. However, these methods are unethical, illegal, and actively countered by website owners."
-        difficulty="Intermediate"
-        duration="30 min"
-        onSaveRoom={() => console.log("Room Saved!")}
-        onLike={() => console.log("Liked!")}
-        onDislike={() => console.log("Disliked!")}
+        courseTitle='Captcha Bypass'
+        courseDescription=' CAPTCHA bypass methods use programming and AI techniques to defeat website security measures, enabling automated bots to solve challenges. This can facilitate spam, account creation bots, and other malicious activities. However, these methods are unethical, illegal, and actively countered by website owners.'
+        difficulty='Intermediate'
+        duration='30 min'
+        onSaveRoom={() => console.log('Room Saved!')}
+        onLike={() => console.log('Liked!')}
+        onDislike={() => console.log('Disliked!')}
       />
       {/* End Landing  */}
       {/* Start Course Content  */}
-      <div className="Content">
-        <div className="secure-container" ref={faqSectionRef}>
-          <div className="content-row">
-            <div className="content-section">
-              <dl className="topics-text">
+      <div className='Content'>
+        <div className='secure-container' ref={faqSectionRef}>
+          <div className='content-row'>
+            <div className='content-section'>
+              <dl className='topics-text'>
                 {/* Single FAQ Area  */}
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Module 1</span> Introduction to Captcha & Its Purpose
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">What is Captcha?</h1>
+                  <h1 className='content__title'>What is Captcha?</h1>
                   <h4>Captcha Overview</h4>
                   <p>
-                    Captcha stands for{" "}
+                    Captcha stands for{' '}
                     <strong>
                       Completely Automated Public Turing test to tell Computers
                       and Humans Apart
@@ -141,14 +139,14 @@ export default function CaptchaBypass() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Module 2</span> Understanding Captcha Bypass Techniques
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     Understanding Captcha Bypass Techniques
                   </h1>
                   <h4>Bypass Methods Overview</h4>
@@ -191,7 +189,7 @@ export default function CaptchaBypass() {
                       but not entirely automated.
                     </p>
                     <p>
-                      <strong>Browser Automation (Selenium, Puppeteer):</strong>{" "}
+                      <strong>Browser Automation (Selenium, Puppeteer):</strong>{' '}
                       Tools like Selenium and Puppeteer simulate human browsing
                       behavior. These tools can interact with Captchas by
                       mimicking mouse movements, keyboard input, or even solving
@@ -225,14 +223,14 @@ export default function CaptchaBypass() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Module 3</span> Bypassing Simple Captchas using Python
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     Bypassing Simple Captchas using Python
                   </h1>
                   <h4>Python Setup & Tools</h4>
@@ -248,11 +246,11 @@ export default function CaptchaBypass() {
                     To start, you need to install the required libraries. You
                     can install them using the following commands:
                   </p>
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">URL</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>URL</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           pip install pytesseract opencv-python selenium
                         </code>
                       </pre>
@@ -262,11 +260,11 @@ export default function CaptchaBypass() {
                     You also need to install the `Tesseract OCR` engine. On
                     Linux, you can install it using:
                   </p>
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">Code</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>Code</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           sudo apt install tesseract-ocr
                         </code>
                       </pre>
@@ -284,11 +282,11 @@ export default function CaptchaBypass() {
                     text from an image:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">Code</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>Code</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           import pytesseract
                           <br />
                           import cv2
@@ -330,11 +328,11 @@ export default function CaptchaBypass() {
                     out a form and submit it:
                   </p>
                   <br />
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">Code</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>Code</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           from selenium import webdriver
                           <br />
                           from selenium.webdriver.common.keys import Keys
@@ -383,15 +381,15 @@ export default function CaptchaBypass() {
                   <br />
                 </dd>
 
-                <dt className="fadeInUp faq-header">
+                <dt className='fadeInUp faq-header'>
                   <span>Module 4</span> Advanced Captcha Bypass – reCAPTCHA v2 &
                   v3
                 </dt>
-                <dd className="fadeInUp faq-body" id="border-left">
+                <dd className='fadeInUp faq-body' id='border-left'>
                   <p>
                     <br />
                   </p>
-                  <h1 className="content__title">
+                  <h1 className='content__title'>
                     Bypassing reCAPTCHA v2 & v3
                   </h1>
                   <h4>Understanding reCAPTCHA v2</h4>
@@ -416,11 +414,11 @@ export default function CaptchaBypass() {
                     Captcha challenge to a team of human workers who solve it
                     for you. Here’s how you can use their API:
                   </p>
-                  <div className="terminal-container">
-                    <div className="terminal-content">
-                      <div className="terminal-top">Code</div>
-                      <pre className="terminal-codelanguage-bash" tabIndex="0">
-                        <code className="language-bash">
+                  <div className='terminal-container'>
+                    <div className='terminal-content'>
+                      <div className='terminal-top'>Code</div>
+                      <pre className='terminal-codelanguage-bash' tabIndex='0'>
+                        <code className='language-bash'>
                           <p>import requests</p>
                           <br /># API key from 2Captcha <br />
                           <br />
@@ -494,13 +492,12 @@ export default function CaptchaBypass() {
                 </dd>
               </dl>
             </div>
-            <div className="go-to-section">
+            <div className='go-to-section'>
               <button
                 onClick={() =>
-                  handleGoToLab("/captchabypass/captchabypass_lab")
+                  handleGoToLab('/captchabypass/captchabypass_lab')
                 }
-                className="go-to"
-              >
+                className='go-to'>
                 Go To Labs
               </button>
             </div>

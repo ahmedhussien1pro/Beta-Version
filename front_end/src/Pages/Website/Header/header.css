@@ -1,49 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .header {
   width: 100%;
-  position: relative;
   z-index: 1030;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 2px solid var(--main-color);
-  background-color: var(--primary-bg);
-  padding:0 2rem; 
+  background: var(--primary-bg);
+  padding: 0 2rem;
+  z-index: 999999 !important;
 }
+
+.header.header-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-bg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
 @media screen and (max-width: 768px) {
   .header {
-    padding: 0 1rem; 
+    padding: 0 1rem;
   }
-  
 }
+
 @media screen and (max-width: 576px) {
   .header {
-    padding: 0 0.5rem; 
+    padding: 0 0.5rem;
   }
-  
 }
+
 .header .navbar {
-  padding: 0.5rem 0;
-  transition: background-color 0.3s ease;
-}
-.header.sticky {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background-color: var(--secondary-bg);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .navbar .container-fluid,
 .navbar .container {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .header__logo {
   display: flex;
   align-items: center;
-  margin-right: 2rem; 
-  transition: transform 0.3s ease;
+  margin-right: 2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .header__logo-title {
@@ -51,9 +56,9 @@
   font-weight: 700;
   margin: 0 0.5rem;
   color: var(--primary-text);
-  font-family: "Lobster", cursive; 
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  transition: color 0.3s ease;
+  font-family: 'Lobster', cursive;
+  text-shadow: 1px 1px 2px var(--black-alpha-20);
+  transition: color 0.3s ease-in-out;
 }
 
 .header__logo-title span {
@@ -65,22 +70,57 @@
 }
 
 .nav-link {
-  color: var(--primary-text) !important;
+  color: var(--primary-text);
   font-weight: 500;
   position: relative;
-  margin: 0 0.5rem; 
-  transition: color 0.3s ease;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   bottom: -5px;
   width: 0%;
   height: 2px;
   background: var(--main-color);
-  transition: width 0.3s ease, left 0.3s ease;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.profile-img {
+  transition: all 0.3s ease-in-out;
+}
+
+.lang-toggler {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  color: var(--primary-text);
+}
+
+.lang-toggler::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--main-color);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.lang-toggler:hover {
+  color: var(--main-color) !important;
+  rotate: 10deg;
+}
+
+.lang-toggler:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.profile-img:hover {
+  transform: scale(1.15);
 }
 
 .nav-link:hover,
@@ -103,11 +143,15 @@
   background: transparent;
   border: none;
   padding: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .header__profile-btn:hover {
   transform: scale(1.1);
+}
+
+.navbar-collapse {
+  overflow: visible !important;
 }
 
 .header__profile-dropdown {
@@ -120,8 +164,17 @@
   padding: 0.5rem;
   min-width: 200px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease;
-  z-index: 10;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 10000000;
+}
+
+
+@media (max-width: 992px) {
+  .header__profile-dropdown {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+  }
 }
 
 .header__profile-dropdown ul {
@@ -138,7 +191,7 @@
   color: var(--secondary-text);
   text-decoration: none;
   font-size: 0.875rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .header__profile-dropdown a:hover {
@@ -150,42 +203,10 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.search-icon__results {
-  position: absolute;
-  width: 100%;
-  max-width: 400px; 
-  top: calc(100% + 0.5em);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--secondary-bg);
-  border: 1px solid var(--main-color);
-  color: var(--primary-text);
-  border-radius: 0.25rem;
-  padding: 0.5em;
-  z-index: 10;
-}
-
-.search-icon-container {
-  display: none;
-}
-@media (min-width: 768px) {
-  .search-icon-container {
-    display: flex !important;
-  }
-}
-
-.dropdown-search-icon {
-  display: block;
-}
-@media (min-width: 768px) {
-  .dropdown-search-icon {
-    display: none;
   }
 }
 
@@ -196,22 +217,52 @@
     border-radius: 0.25rem;
     margin-top: 0.5rem;
   }
-
-  .search-icon__results {
-    width: 90%;
-    left: 5%;
-    transform: translateX(0);
-  }
 }
+
 .navbar-toggler {
   border: 1px solid var(--main-color);
+  color: var(--main-color);
   background-color: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
+
 .navbar-toggler:hover {
   background-color: var(--main-color);
+  color: var(--primary-text);
 }
+
 .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
+}
+
+/* Bootstrap overrides for theme compatibility */
+.header .dropdown-menu {
+  background-color: var(--secondary-bg);
+  border-color: var(--secondary-text);
+}
+
+.header .dropdown-item {
+  color: var(--primary-text);
+}
+
+.header .dropdown-item:hover {
+  background-color: var(--tertiary-bg);
+  color: var(--main-color);
+}
+
+.header .btn-primary {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.header .btn-outline-light {
+  color: var(--primary-text);
+  border-color: var(--primary-text);
+}
+
+.header .btn-outline-light:hover {
+  background-color: var(--main-color);
+  color: var(--primary-bg);
+  border-color: var(--main-color);
 }

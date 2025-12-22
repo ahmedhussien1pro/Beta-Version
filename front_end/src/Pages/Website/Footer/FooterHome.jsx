@@ -18,11 +18,15 @@ export default function Footer() {
             <div className="d-flex align-items-center logo">
               <h2 className="our__logo">Cyber Labs</h2>
             </div>
-            <p>
+            <p
+              ar-data="شريكك الموثوق في تعليم الأمن السيبراني. نحن نمكّن الأفراد من المعرفة والمهارات لمواجهة التهديدات الإلكترونية وتأمين البيئة الرقمية."
+              en-data="Your trusted partner in cybersecurity education. We empower individuals with the knowledge and skills to combat cyber threats and secure the digital landscape."
+            >
               Your trusted partner in cybersecurity education. We empower
               individuals with the knowledge and skills to combat cyber threats
               and secure the digital landscape.
             </p>
+
             <div className="footer__social-icons">
               <Link to="#" className="footer__social-icons--item">
                 <i className="fab fa-facebook-f"></i>
@@ -44,22 +48,40 @@ export default function Footer() {
             className="footer__top--item col-sm-6 col-md-3"
             data-aos="fade-up"
           >
-            <h3 className="fw-normal">Policies</h3>
+            <h3 className="fw-normal"
+            ar-data="السياسات"
+            en-data="Policies"
+            >Policies</h3>
             <ul className="footer__links">
               <li>
-                <Link to="#">Privacy Policy</Link>
+                <Link to="#"
+                ar-data="سياسة الخصوصية"
+                en-data="Privacy Policy"
+                >Privacy Policy</Link>
               </li>
               <li>
-                <Link to="#">Terms of Service</Link>
+                <Link to="#"
+                ar-data="شروط الخدمة"
+                en-data="Terms of Service"
+                >Terms of Service</Link>
               </li>
               <li>
-                <Link to="#">Acceptable Use Policy</Link>
+                <Link to="#"
+                ar-data="سياسة الاستخدام المقبول"
+                en-data="Acceptable Use Policy"
+                >Acceptable Use Policy</Link>
               </li>
               <li>
-                <Link to="#">Data Protection Policy</Link>
+                <Link to="#"
+                ar-data="سياسة حماية البيانات"
+                en-data="Data Protection Policy"
+                >Data Protection Policy</Link>
               </li>
               <li>
-                <Link to="#">Cookies Policy</Link>
+                <Link to="#"
+                ar-data="سياسة الكوكيز"
+                en-data="Cookies Policy"
+                >Cookies Policy</Link>
               </li>
             </ul>
           </div>
@@ -69,30 +91,48 @@ export default function Footer() {
             className="footer__top--item col-sm-6 col-md-3"
             data-aos="fade-up"
           >
-            <h3 className="fw-normal">Useful Links</h3>
+            <h3 className="fw-normal"
+            ar-data="روابط مفيدة"
+            en-data="Useful Links"
+            >Useful Links</h3>
             <ul className="footer__links">
               <li>
-                <Link to="/about-us" className="footer__links--item">
+                <Link to="/about-us" className="footer__links--item"
+                ar-data="من نحن"
+                en-data="About Us"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="footer__links--item">
+                <Link to="/contact" className="footer__links--item"
+                ar-data="اتصل بنا"
+                en-data="Contact Us"
+                >
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="#" className="footer__links--item">
+                <Link to="#" className="footer__links--item"
+                ar-data="الحجز"
+                en-data="Reservation"
+                >
                   Reservation
                 </Link>
               </li>
               <li>
-                <Link to="#" className="footer__links--item">
+                <Link to="#" className="footer__links--item"
+                ar-data="سياسة الخصوصية"
+                en-data="Privacy Policy"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="#" className="footer__links--item">
+                <Link to="#" className="footer__links--item"
+                ar-data="الشروط والأحكام"
+                en-data="Terms & Condition"
+                >
                   Terms &amp; Condition
                 </Link>
               </li>
@@ -104,10 +144,19 @@ export default function Footer() {
             className="footer__top--item col-sm-6 col-md-3"
             data-aos="flip-up"
           >
-            <h3 className="fw-normal">Contact</h3>
+            <h3 className="fw-normal"
+            ar-data="اتصل بنا"
+            en-data="Contact"
+            >Contact</h3>
             <ul className="footer__top--location">
-              <li>Faculty of Electronic Engineering</li>
-              <li>Menouf City, Menofia Governorate</li>
+              <li
+              ar-data="كلية الهندسة الإلكترونية"
+              en-data="Faculty of Electronic Engineering"
+              >Faculty of Electronic Engineering</li>
+              <li
+              ar-data="مدينة منوف، محافظة المنوفية"
+              en-data="Menouf City, Menofia Governorate"
+              >Menouf City, Menofia Governorate</li>
               <li>📞 +201000000000</li>
               <li>📧 support@cyberlabs.com</li>
             </ul>
@@ -129,10 +178,22 @@ export default function Footer() {
             </Link>
           </div>
           <div className="footer__bottom--menu col-lg-3 col-sm-12">
-            <Link to="/home">Home</Link>
-            <Link to="#">Cookies</Link>
-            <Link to="#">Help</Link>
-            <Link to="#">FQAs</Link>
+            <Link to="/home"
+            ar-data="الرئيسة"
+            en-data="Home"
+            >Home</Link>
+            <Link to="#"
+            ar-data="سياسة الكوكيز"
+            en-data="Cookies Policy"
+            >Cookies</Link>
+            <Link to="#"
+            ar-data="مساعدة"
+            en-data="Help"
+            >Help</Link>
+            <Link to="#"
+            ar-data="الأسئلة الشائعة"
+            en-data="FAQs"
+            >FAQs</Link>
           </div>
         </div>
         {/* End Bottom Section */}
