@@ -159,9 +159,11 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
             </div>
             <div className='cyber-curriculum__terminal-body'>
               <FaTerminal className='cyber-curriculum__terminal-icon' />
-              <code className='cyber-curriculum__terminal-code'>
-                {el.value}
-              </code>
+              <pre className='cyber-curriculum__code-pre'>
+                <code className='cyber-curriculum__terminal-code'>
+                  {el.value}
+                </code>
+              </pre>
             </div>
           </div>
         );
@@ -221,7 +223,7 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
                     </span>
                   )}
                   {/* add it only if there is an example */}
-                  
+
                   {item.example && (
                     <ul className='cyber-curriculum__nested-list'>
                       <li className='cyber-curriculum__nested-item'>

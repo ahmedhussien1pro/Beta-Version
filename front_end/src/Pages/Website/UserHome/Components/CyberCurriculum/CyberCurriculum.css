@@ -434,23 +434,30 @@
   word-break: break-all;
 }
 /* Force LTR for code elements in RTL pages */
+[dir='rtl'] .cyber-curriculum__code-block,
 [dir='rtl'] .cyber-curriculum__terminal {
   direction: ltr !important;
   text-align: left !important;
 }
-
+[dir='rtl'] .cyber-curriculum__code,
 [dir='rtl'] .cyber-curriculum__terminal * {
   direction: ltr !important;
   text-align: inherit !important;
 }
 
 /* Keep buttons on the left side always */
+[dir='rtl'] .cyber-curriculum__code-header,
 [dir='rtl'] .cyber-curriculum__terminal-buttons {
   margin-right: var(--cc-spacing-md) !important;
   margin-left: 0 !important;
 }
 
 /* Ensure code stays left-to-right */
+[dir='rtl'] .cyber-curriculum__code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: embed;
+}
 [dir='rtl'] .cyber-curriculum__terminal-code {
   direction: ltr !important;
   text-align: left !important;

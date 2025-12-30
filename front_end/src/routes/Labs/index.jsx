@@ -1,5 +1,4 @@
 import SqlInjectionRoutes from './SqlInjectionRoutes';
-import { Routes } from 'react-router-dom';
 import XSSRoutes from './XSSRoutes';
 import BL_VULN__ROUTES from './BL_VULNRoutes';
 import BASH_ROUTES from './BashRoutes';

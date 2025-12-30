@@ -10,46 +10,37 @@ import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function AC_Vuln_labs() {
   const Labs = [
     {
-      title: 'vulnerability allowing login bypass',
+      title: 'Vulnerability allowing login bypass',
       link: '/AC-Vuln/AC_Vuln_labs/first_lab',
       image: labImg,
-      brief: [
-        'This lab has an unprotected admin panel. Solve the lab by deleting the user',
-        <mark>carlos</mark>,
-        '.',
-      ],
+      brief:
+        'This lab has an unprotected admin panel. Solve the lab by deleting the user carlos.',
       difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 3,
     },
     {
       title: 'Unprotected admin functionality with unpredictable URL',
       link: '/AC-Vuln/AC_Vuln_labs/second_lab',
       image: labImg,
-      brief: [
-        `This lab has an unprotected admin panel. It's located at an
-                unpredictable location, but the location is disclosed
-                somewhere in the application. Solve the lab by accessing the
-                admin panel, and using it to delete the user`,
-        <mark>carlos</mark>,
-        '.',
-      ],
-      difficulty: 'Easy',
+      brief:
+        "This lab has an unprotected admin panel. It's located at an unpredictable location.",
+      difficulty: 'Medium',
+      isFree: false, // Premium Lab
+      topicsCount: 5,
     },
     {
-      title: 'vulnerability in WHERE clause allowing retrieval of hidden data',
+      title: 'Vulnerability in WHERE clause allowing retrieval of hidden data',
       link: '/AC-Vuln/AC_Vuln_labs/third_lab',
       image: labImg,
-      brief: [
-        `This lab has an admin panel at /admin, which identifies
-                  administrators using a forgeable cookie. Solve the lab by
-                  accessing the admin panel and using it to delete the user
-                  carlos. You can log in to your own account using the following
-                  credentials: `,
-        <code>wiener:peter</code>,
-        '.',
-      ],
-      difficulty: 'Easy',
+      brief:
+        'This lab has an admin panel at /admin, which identifies administrators using a forgeable cookie.',
+      difficulty: 'Hard',
+      isFree: true,
+      topicsCount: 4,
     },
   ];
+
   return (
     <>
       <Banner />
@@ -67,6 +58,8 @@ export default function AC_Vuln_labs() {
                   image={lab.image}
                   brief={lab.brief}
                   difficulty={lab.difficulty}
+                  isFree={lab.isFree}
+                  topicsCount={lab.topicsCount}
                   key={index}
                 />
               );
