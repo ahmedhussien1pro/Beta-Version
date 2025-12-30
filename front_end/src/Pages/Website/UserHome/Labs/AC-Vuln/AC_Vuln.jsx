@@ -49,7 +49,7 @@ export default function AC_Vuln() {
       <main className='d-flex flex-column gap-2'>
         <CyberCurriculum
           topics={contentData.topics}
-          labsLink={contentData.labsLink.link}
+          labsLink={contentData.landingData.labsLink}
           imageMap={imageMap}
           onLabClick={handleGoToLab}
         />

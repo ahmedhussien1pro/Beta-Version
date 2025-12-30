@@ -55,7 +55,7 @@
 .cyber-curriculum {
   padding: var(--cc-spacing-xl) 0;
   background: var(--primary-bg);
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .cyber-curriculum__container {
@@ -362,6 +362,7 @@
 /* ============================================
    TERMINAL
 ============================================ */
+[dir='rtl'] .cyber-curriculum__terminal,
 .cyber-curriculum__terminal {
   margin: var(--cc-spacing-md) 0;
   border-radius: var(--cc-radius-md);
@@ -370,7 +371,7 @@
   box-shadow: var(--cc-shadow-md);
   border: 1px solid var(--cc-border-color);
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-header,
 .cyber-curriculum__terminal-header {
   display: flex;
   align-items: center;
@@ -378,13 +379,13 @@
   background: #0f1729;
   border-bottom: 1px solid var(--cc-border-color);
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-buttons,
 .cyber-curriculum__terminal-buttons {
   display: flex;
   gap: 0.5rem;
   margin-right: var(--cc-spacing-md);
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-btn,
 .cyber-curriculum__terminal-btn {
   width: 12px;
   height: 12px;
@@ -403,14 +404,14 @@
 .cyber-curriculum__terminal-btn--green {
   background: #27c93f;
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-title,
 .cyber-curriculum__terminal-title {
   font-size: var(--cc-font-sm);
   color: var(--cc-text-muted);
   flex: 1;
   text-align: center;
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-body,
 .cyber-curriculum__terminal-body {
   display: flex;
   align-items: center;
@@ -418,19 +419,42 @@
   padding: var(--cc-spacing-md);
   background: #0a0e1a;
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-icon,
 .cyber-curriculum__terminal-icon {
   color: var(--cc-success);
   font-size: var(--cc-font-md);
   flex-shrink: 0;
 }
-
+[dir='rtl'] .cyber-curriculum__terminal-code,
 .cyber-curriculum__terminal-code {
   font-family: 'Fira Code', 'Courier New', monospace;
   font-size: var(--cc-font-sm);
   color: var(--cc-success);
   flex: 1;
   word-break: break-all;
+}
+/* Force LTR for code elements in RTL pages */
+[dir='rtl'] .cyber-curriculum__terminal {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+[dir='rtl'] .cyber-curriculum__terminal * {
+  direction: ltr !important;
+  text-align: inherit !important;
+}
+
+/* Keep buttons on the left side always */
+[dir='rtl'] .cyber-curriculum__terminal-buttons {
+  margin-right: var(--cc-spacing-md) !important;
+  margin-left: 0 !important;
+}
+
+/* Ensure code stays left-to-right */
+[dir='rtl'] .cyber-curriculum__terminal-code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: embed;
 }
 
 /* ============================================
@@ -539,7 +563,7 @@
 .cyber-curriculum__item-subtitle {
   color: var(--main-color3);
   font-weight: 600;
-  display: block;
+  /* display: block; */
   margin-bottom: 0.25rem;
 }
 

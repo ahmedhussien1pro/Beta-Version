@@ -19,10 +19,8 @@
     },
     "instructor": "Cyberlabs",
     "rating": "5",
-    "students": "200"
-  },
-  "labsLink": {
-    "link": "/cookies/cookies_lab"
+    "students": "200",
+    "labsLink": "/cookies/cookies_lab"
   },
   "topics": [
     {

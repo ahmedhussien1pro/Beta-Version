@@ -220,6 +220,8 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
                       {Lang === 'en' ? item.text.en : item.text.ar}
                     </span>
                   )}
+                  {/* add it only if there is an example */}
+                  
                   {item.example && (
                     <ul className='cyber-curriculum__nested-list'>
                       <li className='cyber-curriculum__nested-item'>

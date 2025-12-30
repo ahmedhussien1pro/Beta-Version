@@ -12,11 +12,10 @@
     "duration": { "en": "45 min", "ar": "45 دقيقة" },
     "instructor": "CyberLab",
     "rating": "4.9",
-    "students": "3400"
+    "students": "3400",
+    "labsLink": "/AC-Vuln/AC_Vuln_labs"
   },
-  "labsLink": {
-    "link": "/AC-Vuln/AC_Vuln_labs"
-  },
+
   "topics": [
     {
       "id": "intro",

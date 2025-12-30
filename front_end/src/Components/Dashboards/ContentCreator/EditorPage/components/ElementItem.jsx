@@ -40,6 +40,25 @@ const ElementItem = ({
     };
     return classMap[type] || '';
   };
+  const handleExampleChange = (items, index, lang, value) => {
+    const newItems = [...items];
+    const trimmedValue = value.trim();
+    const otherLang = lang === 'en' ? 'ar' : 'en';
+    const otherValue = newItems[index].example?.[otherLang]?.trim() || '';
+
+    // Set to null if both languages are empty
+    if (!trimmedValue && !otherValue) {
+      newItems[index].example = null;
+    } else {
+      newItems[index].example = {
+        ...newItems[index].example,
+        [lang]: trimmedValue,
+        [otherLang]: otherValue,
+      };
+    }
+
+    return newItems;
+  };
 
   const renderFields = () => {
     switch (element.type) {
@@ -570,6 +589,7 @@ const ElementItem = ({
                       </div>
                     </div>
 
+                    {/* ✅ IMPROVED EXAMPLE SECTION */}
                     <div className='element-card__row'>
                       <div className='element-card__col'>
                         <label className='element-card__label element-card__label--optional'>
@@ -578,14 +598,15 @@ const ElementItem = ({
                         <input
                           type='text'
                           className='element-card__input'
-                          placeholder='Example'
+                          placeholder='Example (optional)'
                           value={item.example?.en || ''}
                           onChange={(e) => {
-                            const newItems = [...element.items];
-                            newItems[i].example = {
-                              ...newItems[i].example,
-                              en: e.target.value,
-                            };
+                            const newItems = handleExampleChange(
+                              element.items,
+                              i,
+                              'en',
+                              e.target.value
+                            );
                             onChange({ ...element, items: newItems });
                           }}
                         />
@@ -597,15 +618,16 @@ const ElementItem = ({
                         <input
                           type='text'
                           className='element-card__input'
-                          placeholder='مثال'
+                          placeholder='مثال (اختياري)'
                           dir='rtl'
                           value={item.example?.ar || ''}
                           onChange={(e) => {
-                            const newItems = [...element.items];
-                            newItems[i].example = {
-                              ...newItems[i].example,
-                              ar: e.target.value,
-                            };
+                            const newItems = handleExampleChange(
+                              element.items,
+                              i,
+                              'ar',
+                              e.target.value
+                            );
                             onChange({ ...element, items: newItems });
                           }}
                         />
@@ -620,7 +642,7 @@ const ElementItem = ({
                     const newItem = {
                       subtitle: { en: '', ar: '' },
                       text: { en: '', ar: '' },
-                      example: { en: '', ar: '' },
+                      example: null, // ✅ Start with null
                     };
                     onChange({
                       ...element,
@@ -633,7 +655,6 @@ const ElementItem = ({
             </div>
           </>
         );
-
       case 'video':
         return (
           <>
