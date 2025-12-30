@@ -1,0 +1,323 @@
+{
+  "landingData": {
+    "title": {
+      "en": "Cookies",
+      "ar": "ملفات تعريف الارتباط"
+    },
+
+    "description": {
+      "en": "Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.\n",
+      "ar": "فهم دور ملفات تعريف الارتباط في أمان الويب، وكيفية استخدامها، والمخاوف المحتملة بشأن الخصوصية التي تثيرها.\n"
+    },
+    "difficulty": {
+      "en": "Intermediate",
+      "ar": "متوسط"
+    },
+    "duration": {
+      "en": "30",
+      "ar": "30"
+    },
+    "instructor": "Cyberlabs",
+    "rating": "5",
+    "students": "200"
+  },
+  "labsLink": {
+    "link": "/cookies/cookies_lab"
+  },
+  "topics": [
+    {
+      "id": "topic-1767096905876",
+      "title": {
+        "en": "Topic 1",
+        "ar": "الموضوع الأول"
+      },
+      "elements": [
+        {
+          "id": 1767096918113.8752,
+          "type": "title",
+          "value": {
+            "en": "What Are Cookies?\n",
+            "ar": "ما هي ملفات تعريف الارتباط؟\n"
+          }
+        },
+        {
+          "id": 1767096939447.778,
+          "type": "text",
+          "value": {
+            "en": "Cookies are data that browsers store in small text files on your computer.\n\n",
+            "ar": "ملفات تعريف الارتباط هي بيانات تقوم المتصفحات بتخزينها في ملفات نصية صغيرة على جهازك.\n\n"
+          }
+        },
+        {
+          "id": 1767096945424.5127,
+          "type": "text",
+          "value": {
+            "en": "Cookies were invented to solve the problem of \"how to remember information about the user?\".\n\n",
+            "ar": "تم اختراع ملفات تعريف الارتباط لحل مشكلة \"كيف يمكن تذكر معلومات المستخدم؟\".\n\n"
+          }
+        },
+        {
+          "id": 1767096954637.6187,
+          "type": "text",
+          "value": {
+            "en": "When you sign in to a web application like Cyberlabs, you won't need to type your email and password again next time because it stores your credentials in the cookies.\n\n",
+            "ar": "عند تسجيل الدخول إلى تطبيق ويب مثل Cyberlabs، لن تضطر إلى إعادة إدخال بريدك الإلكتروني وكلمة مرورك في المرة القادمة لأنه يخزن بيانات اعتماد الدخول الخاصة بك في ملفات تعريف الارتباط.\n\n"
+          }
+        },
+        {
+          "id": 1767096976569.3335,
+          "type": "terminal",
+          "label": {
+            "en": "Cookies are saved in name-value pairs like:",
+            "ar": "يتم حفظ ملفات تعريف الارتباط على شكل أزواج اسم-قيمة كما يلي:"
+          },
+          "value": "usersname = user\n"
+        },
+        {
+          "id": 1767096994434.1948,
+          "type": "text",
+          "value": {
+            "en": "When a browser requests a web page from a server, cookies belonging to the page are added to the request. This way the server gets the necessary data to \"remember\" information about users.\n\n",
+            "ar": "عندما يطلب المتصفح صفحة ويب من الخادم، تُضاف ملفات تعريف الارتباط المرتبطة بالصفحة إلى الطلب. بهذه الطريقة، يحصل الخادم على البيانات اللازمة \"لتذكر\" المعلومات الخاصة بالمستخدمين.\n\n"
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic-1767097084427",
+      "title": {
+        "en": "What are Cookies Used For?",
+        "ar": "ما هي الاستخدامات الرئيسية لملفات تعريف الارتباط؟"
+      },
+      "elements": [
+        {
+          "id": 1767097091763.493,
+          "type": "title",
+          "value": {
+            "en": "Session Management:\n",
+            "ar": "إدارة الجلسة:\n"
+          }
+        },
+        {
+          "id": 1767097095444.779,
+          "type": "text",
+          "value": {
+            "en": "Cookies store things like items in your shopping cart or your language preference, so you don't have to re enter this information each time you visit. Cookies let websites allow users and recollect their individual login information and preferences.",
+            "ar": "تقوم ملفات تعريف الارتباط بتخزين معلومات مثل العناصر الموجودة في سلة التسوق الخاصة بك أو تفضيلات اللغة، بحيث لا تضطر إلى إعادة إدخال هذه المعلومات في كل مرة تزور فيها الموقع. تسمح ملفات تعريف الارتباط للمواقع بتعريف المستخدمين واسترجاع معلومات تسجيل الدخول والتفضيلات الفردية الخاصة بهم."
+          }
+        },
+        {
+          "id": 1767097109539.1995,
+          "type": "title",
+          "value": {
+            "en": "Tracking:",
+            "ar": "التتبع (Tracking):\n"
+          }
+        },
+        {
+          "id": 1767097118983.577,
+          "type": "text",
+          "value": {
+            "en": "Advertisers use cookies to track your browsing habits and show you ads that are relevant to you based on the sites you visit. E Commerce sites also use cookies to track items users had previously viewed allowing the sites to suggest other goods in which you are interested.",
+            "ar": "يستخدم المعلنون ملفات تعريف الارتباط لتتبع عادات تصفحك وعرض الإعلانات ذات الصلة بك بناءً على المواقع التي تزورها. تستخدم مواقع التجارة الإلكترونية أيضاً ملفات تعريف الارتباط لتتبع العناصر التي شاهدتها سابقاً، مما يسمح لهذه المواقع بالتوصية بسلع أخرى قد تكون مهتماً بها."
+          }
+        },
+        {
+          "id": 1767097129073.3823,
+          "type": "title",
+          "value": {
+            "en": "Personalization:\n",
+            "ar": "التخصيص (Personalization):\n"
+          }
+        },
+        {
+          "id": 1767097139364.1606,
+          "type": "text",
+          "value": {
+            "en": "They allow websites to show you content that matches your interests, like suggesting videos or products similar to what you've viewed before. It is customized advertising which is the main way cookies are used to personalize your sessions.",
+            "ar": "تسمح ملفات تعريف الارتباط للمواقع بعرض محتوى يتطابق مع اهتماماتك، مثل اقتراح مقاطع فيديو أو منتجات مشابهة لما شاهدته سابقاً. يعتبر هذا إعلاناً مخصصاً وهو الطريقة الرئيسية التي تُستخدم فيها ملفات تعريف الارتباط لتخصيص جلساتك."
+          }
+        },
+        {
+          "id": 1767097146114.581,
+          "type": "title",
+          "value": {
+            "en": "Keeping You Logged In:\n",
+            "ar": "الحفاظ على تسجيل دخولك:\n"
+          }
+        },
+        {
+          "id": 1767097151342.9941,
+          "type": "text",
+          "value": {
+            "en": "Cookies remember your login details, so you don't need to enter your username and password every time you visit a website.\n\n",
+            "ar": "تتذكر ملفات تعريف الارتباط بيانات تسجيل الدخول الخاصة بك، بحيث لا تضطر إلى إدخال اسم المستخدم وكلمة المرور في كل مرة تزور فيها موقعاً ويبياً.\n\n"
+          }
+        },
+        {
+          "id": 1767097157723.608,
+          "type": "image",
+          "srcKey": "InLab3",
+          "size": "medium"
+        }
+      ]
+    },
+    {
+      "id": "topic-1767097292578",
+      "title": {
+        "en": "Where are Cookies Stored?",
+        "ar": "أين يتم تخزين ملفات تعريف الارتباط؟"
+      },
+      "elements": [
+        {
+          "id": 1767097318618.656,
+          "type": "title",
+          "value": {
+            "en": "Where are Cookies Stored?",
+            "ar": "أين يتم تخزين ملفات تعريف الارتباط؟"
+          }
+        },
+        {
+          "id": 1767097322701.992,
+          "type": "text",
+          "value": {
+            "en": "Cookies are stored on your device in special folders or files within your web browser. Here's where they can typically be found:",
+            "ar": "يتم تخزين ملفات تعريف الارتباط على جهازك في مجلدات أو ملفات خاصة داخل متصفح الويب الخاص بك. فيما يلي حيث يمكن عادة العثور عليها:"
+          }
+        },
+        {
+          "id": 1767097334359.5872,
+          "type": "list",
+          "title": {
+            "en": "",
+            "ar": ""
+          },
+          "items": {
+            "en": [
+              "On Your Computer or Device: Cookies are stored as small text files on your hard drive or in your device's storage.",
+              "In Your Web Browser: Each browser (like Chrome, Firefox, or Safari) has its own way of storing cookies. They keep cookies in a specific location within the browser's data storage.",
+              "In the Browser's Data Folder: For instance, in Chrome, cookies are kept in the  file located in the browser's profile directory, while Firefox uses a database file called cookies.sqlite."
+            ],
+            "ar": [
+              "على جهازك أو الجهاز الخاص بك: يتم تخزين ملفات تعريف الارتباط كملفات نصية صغيرة على محرك الأقراص الثابت الخاص بك أو في تخزين جهازك.",
+              "في متصفح الويب الخاص بك: لكل متصفح (مثل Chrome أو Firefox أو Safari) طريقته الخاصة في تخزين ملفات تعريف الارتباط. يتم الاحتفاظ بملفات تعريف الارتباط في موقع محدد داخل تخزين بيانات المتصفح.",
+              "في مجلد بيانات المتصفح: على سبيل المثال، في Chrome، يتم الاحتفاظ بملفات تعريف الارتباط في الملف الموجود في دليل ملف التعريف الخاص بالمتصفح، بينما يستخدم Firefox ملف قاعدة بيانات يسمى cookies.sqlite."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic-1767097411570",
+      "title": {
+        "en": "Cookies Manipulation",
+        "ar": "التعامل مع ملفات تعريف الارتباط"
+      },
+      "elements": [
+        {
+          "id": 1767097436784.1272,
+          "type": "title",
+          "value": {
+            "en": "Create a Cookie With JavaScript:",
+            "ar": "إنشاء ملف تعريف ارتباط باستخدام JavaScript:\n"
+          }
+        },
+        {
+          "id": 1767097449561.2915,
+          "type": "terminal",
+          "label": {
+            "en": "JavaScript can create, read, and delete cookies with the document.cookie property With JavaScript, a cookie can be created like this",
+            "ar": "يمكن لـ JavaScript إنشاء وقراءة وحذف ملفات تعريف الارتباط باستخدام خاصية document.cookie. يمكن إنشاء ملف تعريف ارتباط باستخدام JavaScript بالطريقة التالية:"
+          },
+          "value": "document.cookie=\"username= user\";\n"
+        },
+        {
+          "id": 1767097464272.4822,
+          "type": "terminal",
+          "label": {
+            "en": "You can also add an expiry date (in UTC time). By default, the cookie is deleted when the browser is closed",
+            "ar": "يمكنك أيضاً إضافة تاريخ انتهاء الصلاحية (بتوقيت UTC). بشكل افتراضي، يتم حذف ملف تعريف الارتباط عند إغلاق المتصفح:"
+          },
+          "value": "document.cookie = \"username=user; expires=Thu, 18 Dec 2013 12:00:00 UTC\";\n"
+        },
+        {
+          "id": 1767097471439.7688,
+          "type": "terminal",
+          "label": {
+            "en": "With a path parameter, you can tell the browser what path the cookie belongs to. By default, the cookie belongs to the current page",
+            "ar": "باستخدام معامل المسار (path)، يمكنك إخبار المتصفح بالمسار الذي ينتمي إليه ملف تعريف الارتباط. بشكل افتراضي، ينتمي ملف تعريف الارتباط إلى الصفحة الحالية:"
+          },
+          "value": "document.cookie = \"username=user; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/\";\n"
+        },
+        {
+          "id": 1767097483304.579,
+          "type": "title",
+          "value": {
+            "en": "Read a Cookie With JavaScript:\n",
+            "ar": "قراءة ملف تعريف ارتباط باستخدام JavaScript:\n"
+          }
+        },
+        {
+          "id": 1767097489268.3745,
+          "type": "terminal",
+          "label": {
+            "en": "With JavaScript, cookies can be read like this",
+            "ar": "يمكن قراءة ملفات تعريف الارتباط باستخدام JavaScript بالطريقة التالية:"
+          },
+          "value": "var x = document.cookie;\n"
+        },
+        {
+          "id": 1767097503863.9692,
+          "type": "title",
+          "value": {
+            "en": "Change a Cookie With JavaScript:\n",
+            "ar": "تعديل ملف تعريف ارتباط باستخدام JavaScript:\n"
+          }
+        },
+        {
+          "id": 1767097514329.6614,
+          "type": "terminal",
+          "label": {
+            "en": "With JavaScript, you can change a cookie the same way as you create it",
+            "ar": "يمكنك باستخدام JavaScript تعديل ملف تعريف ارتباط بنفس الطريقة التي تنشئ بها ملف جديد:"
+          },
+          "value": "document.cookie = \"username= test ; expires=Thu, 18 Aug 2020 12:00:00 UTC; path=/\";\n"
+        },
+        {
+          "id": 1767097525494.0208,
+          "type": "title",
+          "value": {
+            "en": "Delete a Cookie With JavaScript:\n",
+            "ar": "حذف ملف تعريف ارتباط باستخدام JavaScript:\n"
+          }
+        },
+        {
+          "id": 1767097532052.5818,
+          "type": "terminal",
+          "label": {
+            "en": "Deleting a cookie is very simple. You don't have to specify a cookie value when you delete a cookie. Just set the expires parameter to a passed date:",
+            "ar": "حذف ملف تعريف ارتباط عملية بسيطة جداً. لا تحتاج إلى تحديد قيمة ملف تعريف الارتباط عند حذفه. فقط قم بتعيين معامل expires إلى تاريخ سابق:"
+          },
+          "value": "document.cookie = \"username=test; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;\";\n"
+        },
+        {
+          "id": 1767097545799.755,
+          "type": "title",
+          "value": {
+            "en": "A Function to Set a Cookie:\n",
+            "ar": "دالة لإنشاء ملف تعريف ارتباط:\n"
+          }
+        },
+        {
+          "id": 1767097551912.5103,
+          "type": "terminal",
+          "label": {
+            "en": "First, we create a function that stores the name of the visitor in a cookie variable:",
+            "ar": "أولاً، ننشئ دالة تقوم بتخزين اسم الزائر في متغير ملف تعريف ارتباط:"
+          },
+          "value": "function setCookie(cname, cvalue, exdays) {\n        var d = new Date();\n        d.setTime(d.getTime() + (exdays*24*60*60*1000));\n        var expires = \"expires=\"+ d.toUTCString();\n        document.cookie = cname + \"=\" + cvalue + \";\" + expires + \";path=/\";\n}"
+        }
+      ]
+    }
+  ]
+}
