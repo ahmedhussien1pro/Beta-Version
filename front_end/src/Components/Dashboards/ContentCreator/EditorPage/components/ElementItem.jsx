@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   FaChevronDown,
   FaChevronUp,
-  FaChevronRight,
   FaTrash,
   FaCopy,
   FaPlus,

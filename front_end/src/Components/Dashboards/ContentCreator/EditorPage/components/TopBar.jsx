@@ -7,7 +7,6 @@ const TopBar = ({
   onToggleSidebar,
   onSave,
   onCopyJSON,
-  theme,
   onToggleTheme,
   onPreview,
 }) => {

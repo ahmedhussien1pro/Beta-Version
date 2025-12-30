@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   FaPlus,
-  FaSave,
   FaFileAlt,
   FaHeading,
   FaImage,
@@ -14,7 +13,6 @@ import {
   FaTable,
   FaMinus,
   FaCube,
-  FaTrash,
 } from 'react-icons/fa';
 import ElementItem from './ElementItem';
 import Swal from 'sweetalert2';

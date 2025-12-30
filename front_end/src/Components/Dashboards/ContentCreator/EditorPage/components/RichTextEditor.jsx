@@ -1,18 +1,20 @@
-import React, { useRef, useState } from 'react';
-import {
-  FaBold,
-  FaItalic,
-  FaUnderline,
-  FaStrikethrough,
-  FaLink,
-  FaPalette,
-  FaCode,
-} from 'react-icons/fa';
+// import React, { useRef, useState } from 'react';
+
+// import {
+//   FaBold,
+//   FaItalic,
+//   FaUnderline,
+//   FaStrikethrough,
+//   FaLink,
+//   FaPalette,
+//   FaCode,
+// } from 'react-icons/fa';
+import React, { useRef } from 'react';
 import Swal from 'sweetalert2';
 
 const RichTextEditor = ({ value, onChange, dir = 'ltr' }) => {
   const textareaRef = useRef(null);
-  const [activeFormats, setActiveFormats] = useState([]);
+  // const [activeFormats, setActiveFormats] = useState([]);
 
   const insertTag = (startTag, endTag) => {
     const textarea = textareaRef.current;
