@@ -7,6 +7,9 @@ import {
   FaCopy,
   FaPlus,
   FaCheckCircle,
+  FaLink,
+  FaUpload,
+  FaTimes,
 } from 'react-icons/fa';
 import RichTextEditor from './RichTextEditor';
 
@@ -112,19 +115,6 @@ const ElementItem = ({
                 />
               </div>
               <div className='element-card__col'>
-                <label className='element-card__label'>Upload Image</label>
-                <input
-                  type='file'
-                  className='element-card__input'
-                  accept='image/*'
-                  onChange={(e) => {
-                    if (e.target.files[0]) {
-                      onImageUpload(element.srcKey, e.target.files[0]);
-                    }
-                  }}
-                />
-              </div>
-              <div className='element-card__col'>
                 <label className='element-card__label'>Size</label>
                 <select
                   className='element-card__select'
@@ -138,13 +128,130 @@ const ElementItem = ({
                 </select>
               </div>
             </div>
-            {imageMap[element.srcKey] && (
-              <div className='element-card__image-preview'>
-                <div className='element-card__alert element-card__alert--success'>
-                  <FaCheckCircle />
-                  <span>Image uploaded successfully</span>
+
+            {/* ✅ Image Mode Toggle */}
+            <div className='element-card__image-mode'>
+              <button
+                type='button'
+                className={`element-card__mode-btn ${
+                  element.imageMode === 'url' ? 'active' : ''
+                }`}
+                onClick={() =>
+                  onChange({ ...element, imageMode: 'url', imageUrl: '' })
+                }>
+                <FaLink /> Image URL
+              </button>
+              <button
+                type='button'
+                className={`element-card__mode-btn ${
+                  element.imageMode === 'upload' ? 'active' : ''
+                }`}
+                onClick={() => onChange({ ...element, imageMode: 'upload' })}>
+                <FaUpload /> Upload Image
+              </button>
+            </div>
+
+            {/* ✅ URL Input Mode */}
+            {(!element.imageMode || element.imageMode === 'url') && (
+              <div className='element-card__row'>
+                <div className='element-card__col element-card__col--full'>
+                  <label className='element-card__label'>Image URL</label>
+                  <input
+                    type='text'
+                    className='element-card__input'
+                    placeholder='https://example.com/image.jpg'
+                    value={element.imageUrl || ''}
+                    onChange={(e) =>
+                      onChange({ ...element, imageUrl: e.target.value })
+                    }
+                  />
                 </div>
-                <img src={imageMap[element.srcKey]} alt='Preview' />
+              </div>
+            )}
+
+            {/* ✅ Upload Mode */}
+            {element.imageMode === 'upload' && (
+              <div className='element-card__row'>
+                <div className='element-card__col element-card__col--full'>
+                  <label className='element-card__label'>Upload Image</label>
+                  <label className='element-card__upload-box'>
+                    <input
+                      type='file'
+                      accept='image/jpeg,image/png,image/jpg,image/webp'
+                      style={{ display: 'none' }}
+                      onChange={(e) => {
+                        if (e.target.files[0]) {
+                          const file = e.target.files[0];
+
+                          // Validate file type
+                          const validTypes = [
+                            'image/jpeg',
+                            'image/png',
+                            'image/jpg',
+                            'image/webp',
+                          ];
+                          if (!validTypes.includes(file.type)) {
+                            alert(
+                              'Please upload a valid image (JPEG, PNG, WebP)'
+                            );
+                            return;
+                          }
+
+                          // Validate file size (max 5MB)
+                          if (file.size > 5 * 1024 * 1024) {
+                            alert('Image size should be less than 5MB');
+                            return;
+                          }
+
+                          // Upload and create preview
+                          onImageUpload(element.srcKey, file);
+                        }
+                      }}
+                    />
+                    <div className='element-card__upload-content'>
+                      <FaUpload className='element-card__upload-icon' />
+                      <span>Click to upload or drag and drop</span>
+                      <small>PNG, JPG, WEBP (max 5MB)</small>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* ✅ Image Preview - For both URL and Upload */}
+            {(imageMap[element.srcKey] || element.imageUrl) && (
+              <div className='element-card__image-preview'>
+                {imageMap[element.srcKey] && (
+                  <div className='element-card__alert element-card__alert--success'>
+                    <FaCheckCircle />
+                    <span>Image uploaded successfully</span>
+                  </div>
+                )}
+                <button
+                  type='button'
+                  className='element-card__image-remove'
+                  onClick={() => {
+                    onChange({
+                      ...element,
+                      imageUrl: '',
+                      imageMode: element.imageMode || 'url',
+                    });
+                    // Clear uploaded image if exists
+                    if (imageMap[element.srcKey]) {
+                      delete imageMap[element.srcKey];
+                    }
+                  }}
+                  title='Remove image'>
+                  <FaTimes />
+                </button>
+                <img
+                  src={imageMap[element.srcKey] || element.imageUrl}
+                  alt='Preview'
+                  onError={(e) => {
+                    e.target.src =
+                      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200"%3E%3Crect fill="%23ddd" width="200" height="200"/%3E%3Ctext fill="%23999" font-size="16" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage not found%3C/text%3E%3C/svg%3E';
+                  }}
+                />
               </div>
             )}
           </>
@@ -721,6 +828,7 @@ const ElementItem = ({
                   width='100%'
                   height='315'
                   frameBorder='0'
+                  title='image preview'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                   allowFullScreen
                   style={{ borderRadius: 'var(--radius-md)' }}
