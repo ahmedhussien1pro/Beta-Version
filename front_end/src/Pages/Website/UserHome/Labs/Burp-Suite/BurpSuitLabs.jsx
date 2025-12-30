@@ -8,6 +8,81 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function BurpSuitLabs() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Proxy',
+      en_brief:
+        'Gain many instead of buying by proxy manipulation and traffic control.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'البروكسي',
+      ar_brief:
+        'احصل على الكثير بدلاً من الشراء عن طريق التلاعب بالبروكسي والتحكم في حركة المرور.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Burp_Suit/Burp_Suit_Labs/lab1',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Intruder',
+      en_brief:
+        'Can you find the correct username and password using Intruder?',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'المتطفل',
+      ar_brief:
+        'هل يمكنك العثور على اسم المستخدم وكلمة المرور الصحيحة باستخدام Intruder؟',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Burp_Suit/Burp_Suit_Labs/lab2',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Repeater',
+      en_brief: 'Find the valid pages',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'المكرر',
+      ar_brief: 'ابحث عن الصفحات الصالحة',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Burp_Suit/Burp_Suit_Labs/lab3',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Decoder',
+      en_brief: 'Try to decode messages and find the hidden password.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'فك التشفير',
+      ar_brief: 'حاول فك تشفير الرسائل والعثور على كلمة المرور المخفية.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/coming-soon',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 1,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -19,43 +94,9 @@ export default function BurpSuitLabs() {
         <div className='container'>
           <PracticeTitle title={'Burp Suit'} />
           <div className='row'>
-            {/* lab1 */}
-            <Card
-              link={'/Burp_Suit/Burp_Suit_Labs/lab1'}
-              image={Auth_Photo}
-              title={'Proxy'}
-              brief={
-                'gain many instead of buying by proxy manipulation and traffic control.'
-              }
-              difficulty={'Easy'}
-            />
-            {/* lab2 */}
-            <Card
-              link={'/Burp_Suit/Burp_Suit_Labs/lab2'}
-              image={Auth_Photo}
-              title={'Intruder'}
-              brief={
-                'Can you find the correct username and password using Intruder?'
-              }
-              difficulty={'Easy'}
-            />
-            {/* lab3 */}
-            <Card
-              link={'/Burp_Suit/Burp_Suit_Labs/lab3'}
-              image={Auth_Photo}
-              title={'Repeater'}
-              brief={'Find the valid padges'}
-              difficulty={'Easy'}
-            />
-            {/* lab4 */}
-            <Card
-              // link={'/Burp_Suit/Burp_Suit_Labs/lab4'}
-              link={'/coming-soon'}
-              image={Auth_Photo}
-              title={'Decoder'}
-              brief={'Try to decode massages and find the hidden password.'}
-              difficulty={'Easy'}
-            />
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>

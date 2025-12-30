@@ -8,6 +8,85 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function CryptoGraphy_lab() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Top Secret',
+      en_brief:
+        'Cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'سري للغاية',
+      ar_brief:
+        'التشفير، مهارة حاسمة لتأمين البيانات وفهم تقنيات التشفير في بيئات الأمن السيبراني. 🚀',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cryptography/cryptography_lab/top-secret',
+      image: image,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Decode the Image',
+      en_brief:
+        'Cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'فك تشفير الصورة',
+      ar_brief:
+        'التشفير، مهارة حاسمة لتأمين البيانات وفهم تقنيات التشفير في بيئات الأمن السيبراني. 🚀',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cryptography/cryptography_lab/decode-the-image',
+      image: image,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Corrupted',
+      en_brief:
+        'Cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'ملف تالف',
+      ar_brief:
+        'التشفير، مهارة حاسمة لتأمين البيانات وفهم تقنيات التشفير في بيئات الأمن السيبراني. 🚀',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cryptography/cryptography_lab/corrupted',
+      image: image,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Hash Crack',
+      en_brief:
+        'Cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'كسر التجزئة',
+      ar_brief:
+        'التشفير، مهارة حاسمة لتأمين البيانات وفهم تقنيات التشفير في بيئات الأمن السيبراني. 🚀',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cryptography/cryptography_lab/hash-crack',
+      image: image,
+      isFree: true,
+      topicsCount: 2,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -19,42 +98,9 @@ export default function CryptoGraphy_lab() {
         <div className='container'>
           <PracticeTitle title={'CryptoGraphy'} />
           <div className='row'>
-            <Card
-              link={'/cryptography/cryptography_lab/top-secret'}
-              image={image}
-              title={'Top Secret'}
-              brief={
-                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
-              }
-              difficulty={'Easy'}
-            />
-            <Card
-              link={'/cryptography/cryptography_lab/decode-the-image'}
-              image={image}
-              title={'Decode the Image'}
-              brief={
-                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
-              }
-              difficulty={'Easy'}
-            />
-            <Card
-              link={'/cryptography/cryptography_lab/corrupted'}
-              image={image}
-              title={'Corrupted'}
-              brief={
-                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
-              }
-              difficulty={'Easy'}
-            />
-            <Card
-              link={'/cryptography/cryptography_lab/hash-crack'}
-              image={image}
-              title={'Hash Crack'}
-              brief={
-                'cryptography, a crucial skill for securing data and understanding encryption techniques in cybersecurity environments. 🚀'
-              }
-              difficulty={'Easy'}
-            />
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>

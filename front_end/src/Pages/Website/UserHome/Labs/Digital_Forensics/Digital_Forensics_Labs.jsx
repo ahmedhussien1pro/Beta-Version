@@ -11,13 +11,25 @@ import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function Digital_Forensics_labs() {
   const Labs = [
     {
-      title: 'Audio Forensics',
+      // English Content
+      en_title: 'Audio Forensics',
+      en_brief:
+        'Analyze audio files to extract information and solve the case.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'الطب الشرعي الصوتي',
+      ar_brief: 'قم بتحليل الملفات الصوتية لاستخراج المعلومات وحل القضية.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Digital_Forensics/Digital_Forensics_labs/lab1',
       image: labImg,
-      brief: ['Analyze audio files to extract information and solve the case.'],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 3,
     },
   ];
+
   return (
     <>
       <Banner />
@@ -28,26 +40,10 @@ export default function Digital_Forensics_labs() {
           <PracticeTitle title={'Digital Forensics'} />
           <div className='row'>
             {Labs.map((lab, index) => {
-              return (
-                <Card
-                  title={lab.title}
-                  link={lab.link}
-                  image={lab.image}
-                  brief={lab.brief}
-                  difficulty={lab.difficulty}
-                  key={index}
-                />
-              );
+              return <Card key={index} {...lab} />;
             })}
-            {mcqData.map((mcq) => (
-              <Card
-                link={mcq.link}
-                image={mcq.image}
-                alt={mcq.title}
-                title={mcq.title}
-                brief={mcq.description}
-                difficulty={mcq.difficulty}
-              />
+            {mcqData.map((mcq, index) => (
+              <Card key={mcq.id || index} {...mcq} />
             ))}
           </div>
         </div>

@@ -18,14 +18,7 @@ export default function Regex_labs() {
           <PracticeTitle title={'Careers in Cyber'} />
           <div className='row'>
             {mcqData.map((mcq, id) => (
-              <Card
-                title={mcq.title}
-                brief={mcq.description}
-                difficulty={mcq.difficulty}
-                image={mcq.image}
-                link={mcq.link}
-                key={mcq.id}
-              />
+              <Card key={mcq.id || id} {...mcq} />
             ))}
           </div>
         </div>

@@ -8,6 +8,47 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function SSTI_lab() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'SSTI Store Vulnerability',
+      en_brief:
+        'This lab is vulnerable to server-side template injection due to the unsafe construction of a Handlebars template.',
+      en_difficulty: 'Medium',
+
+      // Arabic Content
+      ar_title: 'ثغرة SSTI في المتجر',
+      ar_brief:
+        'هذا المعمل عرضة لحقن القوالب من جانب الخادم بسبب البناء غير الآمن لقالب Handlebars.',
+      ar_difficulty: 'متوسط',
+
+      // Common Data
+      link: 'SSTIlab1/store',
+      image: image,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Basic server-side template injection',
+      en_brief:
+        'This lab is vulnerable to server-side template injection due to the way it unsafely uses a Handlebars template.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'حقن القوالب الأساسي من جانب الخادم',
+      ar_brief:
+        'هذا المعمل عرضة لحقن القوالب من جانب الخادم بسبب الطريقة غير الآمنة في استخدام قالب Handlebars.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: 'SSTIlab2/blog',
+      image: image,
+      isFree: true,
+      topicsCount: 2,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -19,33 +60,9 @@ export default function SSTI_lab() {
         <div className='container'>
           <PracticeTitle title={'SSTI'} />
           <div className='row'>
-            <Card
-              link={'SSTIlab1/store'}
-              image={image}
-              title={'SSTI Store Vulnerability'}
-              brief={
-                'This lab is vulnerable to server-side template injection due to the unsafe construction of an Handlebars template.'
-              }
-              difficulty={'Intermediate'}
-            />
-
-            <Card
-              link={'SSTIlab2/blog'}
-              image={image}
-              title={'Basic server-side template injection'}
-              brief={
-                'This lab is vulnerable to server-side template injection due to the way it unsafely uses a Handlebars template.'
-              }
-              difficulty={'Easy'}
-            />
-
-            {/* <Card
-            link={""}
-            image={image}
-            title={"Vulnerable Flask Application"}
-            brief={"Understanding Server-Side Template Injection (SSTI) in Flask/Jinja2 Applications"}
-            difficulty={"Hard"}
-            /> */}
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>

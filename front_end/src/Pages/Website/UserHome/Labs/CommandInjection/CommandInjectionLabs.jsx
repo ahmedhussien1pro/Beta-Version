@@ -7,6 +7,60 @@ import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function CommandInjectionLabs() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Pingject',
+      en_brief: 'Try to execute a forbidden command.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'حقن الأوامر عبر Ping',
+      ar_brief: 'حاول تنفيذ أمر محظور.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Command_Injection/Command_Injection_labs/lab1',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Blacklist Breakout',
+      en_brief: 'Find a way to bypass the blacklist.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'كسر القائمة السوداء',
+      ar_brief: 'ابحث عن طريقة لتجاوز القائمة السوداء.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Command_Injection/Command_Injection_labs/lab3',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'URLject',
+      en_brief: 'Hack the Address Bar',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'حقن الأوامر عبر URL',
+      ar_brief: 'اختراق شريط العنوان',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Command_Injection/Command_Injection_labs/lab2',
+      image: Auth_Photo,
+      isFree: true,
+      topicsCount: 2,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -18,30 +72,11 @@ export default function CommandInjectionLabs() {
         <div className='container'>
           <PracticeTitle title={'Command Injection'} />
           <div className='row'>
-            {/* lab1 */}
-            <Card
-              link={'/Command_Injection/Command_Injection_labs/lab1'}
-              image={Auth_Photo}
-              title={'Pingject'}
-              brief={'Try to execute a forbidden command.'}
-              difficulty={'Easy'}
-            />
-            {/* lab3 */}
-            <Card
-              link={'/Command_Injection/Command_Injection_labs/lab3'}
-              image={Auth_Photo}
-              title={'Blacklist Breakout'}
-              brief={'Find a way to bypass the blacklist.'}
-              difficulty={'Easy'}
-            />
-            {/* lab2 */}
-            <Card
-              link={'/Command_Injection/Command_Injection_labs/lab2'}
-              image={Auth_Photo}
-              title={'URLject'}
-              brief={'Hack the Address Bar'}
-              difficulty={'Easy'}
-            />
+            <div className='row'>
+              {Labs.map((lab, index) => {
+                return <Card key={index} {...lab} />;
+              })}
+            </div>
           </div>
         </div>
       </div>

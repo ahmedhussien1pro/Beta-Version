@@ -8,6 +8,43 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function Cookies_lab() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Admin has the power',
+      en_brief: 'Try to login as admin',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'المسؤول لديه السلطة',
+      ar_brief: 'حاول تسجيل الدخول كمسؤول',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cookies/cookies_lab/first/login',
+      image: image,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Hashing',
+      en_brief: 'Try to login as admin',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'التجزئة',
+      ar_brief: 'حاول تسجيل الدخول كمسؤول',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/cookies/cookies_lab/second/login',
+      image: image,
+      isFree: true,
+      topicsCount: 3,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -19,20 +56,9 @@ export default function Cookies_lab() {
         <div className='container'>
           <PracticeTitle title={'Cookies'} />
           <div className='row'>
-            <Card
-              link='/cookies/cookies_lab/first/login'
-              image={image}
-              title='Admin has the power'
-              brief='try to login as admin'
-              difficulty='Easy'
-            />
-            <Card
-              link='/cookies/cookies_lab/second/login'
-              image={image}
-              title='Hashing'
-              brief='try to login as admin'
-              difficulty='Easy'
-            />
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>

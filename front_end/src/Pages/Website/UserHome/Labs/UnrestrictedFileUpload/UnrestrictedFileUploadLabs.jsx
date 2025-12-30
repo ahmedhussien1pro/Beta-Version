@@ -7,6 +7,60 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function UnrestrictedFileUploadLabs() {
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Unrestricted File Upload',
+      en_brief: 'Upload disallowed file type.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'رفع الملفات غير المقيد',
+      ar_brief: 'قم برفع نوع ملف غير مسموح به.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab',
+      image: lab_Cover,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'MIME Type Bypass',
+      en_brief: 'Upload disallowed file type, bypassing MIME type checking.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'تجاوز نوع MIME',
+      ar_brief: 'قم برفع نوع ملف غير مسموح به، متجاوزًا فحص نوع MIME.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab',
+      image: lab_Cover,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Blacklist Bypass',
+      en_brief: 'Upload disallowed file type, bypassing the blacklist check.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'تجاوز القائمة السوداء',
+      ar_brief: 'قم برفع نوع ملف غير مسموح به، متجاوزًا فحص القائمة السوداء.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab',
+      image: lab_Cover,
+      isFree: true,
+      topicsCount: 4,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -18,40 +72,9 @@ export default function UnrestrictedFileUploadLabs() {
         <div className='container'>
           <PracticeTitle title={'Unrestricted File Upload'} />
           <div className='row'>
-            {/* lab1 */}
-            <Card
-              link={
-                '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/first_lab'
-              }
-              image={lab_Cover}
-              title={'Unrestricted:'}
-              brief={'Upload disallowed file type.'}
-              difficulty={'Easy'}
-            />
-            {/* lab2 */}
-            <Card
-              link={
-                '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/second_lab'
-              }
-              image={lab_Cover}
-              title={'MIME Type:'}
-              brief={
-                'Upload disallowed file type, bypassing MIME type checking.'
-              }
-              difficulty={'Easy'}
-            />
-            {/* lab3 */}
-            <Card
-              link={
-                '/Unrestricted File Upload/lab_Unrestricted_File_Uplode/third_lab'
-              }
-              image={lab_Cover}
-              title={'Blacklist:'}
-              brief={
-                'Upload disallowed file type, bypassing the blacklist check.'
-              }
-              difficulty={'Easy'}
-            />
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>

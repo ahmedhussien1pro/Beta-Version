@@ -9,16 +9,42 @@ import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function Click_Jacking_Labs() {
   const Labs = [
     {
-      title: 'Basic clickjacking with CSRF token protection',
+      // English Content
+      en_title: 'Basic clickjacking with CSRF token protection',
+      en_brief: (
+        <>
+          This lab contains login functionality and a delete account button that
+          is protected by a CSRF token. A user will click on elements that
+          display the word 'click' on a decoy website. To solve the lab, craft
+          some HTML that frames the account page and fools the user into
+          deleting their account. The lab is solved when the account is deleted.
+          You can log in to your own account using the following credentials:{' '}
+          <mark>wiener:peter</mark>.
+        </>
+      ),
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'اختطاف النقر الأساسي مع حماية رمز CSRF',
+      ar_brief: (
+        <>
+          يحتوي هذا المعمل على وظيفة تسجيل الدخول وزر حذف الحساب المحمي برمز
+          CSRF. سينقر المستخدم على العناصر التي تعرض كلمة 'انقر' على موقع خداع.
+          لحل المعمل، قم بإنشاء HTML يؤطر صفحة الحساب ويخدع المستخدم لحذف حسابه.
+          يتم حل المعمل عند حذف الحساب. يمكنك تسجيل الدخول إلى حسابك باستخدام
+          بيانات الاعتماد التالية: <mark>wiener:peter</mark>.
+        </>
+      ),
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Click_Jacking/Click_Jacking_labs/lab1',
       image: labImg,
-      brief: [
-        "This lab contains login functionality and a delete account button that is protected by a CSRF token. A user will click on elements that display the word 'click' on a decoy website.To solve the lab, craft some HTML that frames the account page and fools the user into deleting their account. The lab is solved when the account is deleted.You can log in to your own account using the following credentials: ",
-        <mark>wiener:peter</mark>,
-      ],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 3,
     },
   ];
+
   return (
     <>
       <Header />
@@ -28,16 +54,7 @@ export default function Click_Jacking_Labs() {
           <PracticeTitle title={'Click Jacking'} />
           <div className='row'>
             {Labs.map((lab, index) => {
-              return (
-                <Card
-                  title={lab.title}
-                  link={lab.link}
-                  image={lab.image}
-                  brief={lab.brief}
-                  difficulty={lab.difficulty}
-                  key={index}
-                />
-              );
+              return <Card key={index} {...lab} />;
             })}
           </div>
         </div>

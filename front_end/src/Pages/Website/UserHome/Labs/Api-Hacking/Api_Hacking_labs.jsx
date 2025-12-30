@@ -10,26 +10,55 @@ import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function AC_Vuln_labs() {
   const Labs = [
     {
-      title: 'MCQ Question Review',
+      // English Content
+      en_title: 'MCQ Question Review',
+      en_brief:
+        'These are multiple choice questions that are designed to be a review for the exam.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'مراجعة أسئلة الاختيار من متعدد',
+      ar_brief: 'هذه أسئلة اختيار من متعدد مصممة لتكون مراجعة للامتحان.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Api_Hacking/Api_Hacking_labs/lab1',
       image: labImg,
-      brief: [
-        'These are multiple choice questions that are designed to be a review for the exam.',
-      ],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 1,
     },
     {
-      title: 'Unprotected admin functionality with unpredictable URL',
+      // English Content
+      en_title: 'Unprotected admin functionality with unpredictable URL',
+      en_brief: (
+        <>
+          This lab has an unprotected admin panel. It's located at an
+          unpredictable location, but the location is disclosed somewhere in the
+          application. Solve the lab by accessing the admin panel, and using it
+          to delete the user <mark>Carlos</mark>.
+        </>
+      ),
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'لوحة إدارة غير محمية برابط غير متوقع',
+      ar_brief: (
+        <>
+          يحتوي هذا المعمل على لوحة إدارة غير محمية. تقع في موقع غير متوقع، لكن
+          يتم الكشف عن الموقع في مكان ما في التطبيق. قم بحل المعمل عن طريق
+          الوصول إلى لوحة الإدارة واستخدامها لحذف المستخدم <mark>Carlos</mark>.
+        </>
+      ),
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Api_Hacking/Api_Hacking_labs/lab2',
       image: labImg,
-      brief: [
-        "This lab has an unprotected admin panel. It's located at an unpredictable location, but the location is disclosed somewhere in the application. Solve the lab by accessing the admin panel, and using it to delete the user ",
-        <mark>Carlos</mark>,
-        '.',
-      ],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 3,
     },
   ];
+
   return (
     <>
       <Banner />
@@ -40,16 +69,7 @@ export default function AC_Vuln_labs() {
           <PracticeTitle title={'Api Hacking'} />
           <div className='row'>
             {Labs.map((lab, index) => {
-              return (
-                <Card
-                  title={lab.title}
-                  link={lab.link}
-                  image={lab.image}
-                  brief={lab.brief}
-                  difficulty={lab.difficulty}
-                  key={index}
-                />
-              );
+              return <Card key={index} {...lab} />;
             })}
           </div>
         </div>

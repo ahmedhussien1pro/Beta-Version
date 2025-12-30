@@ -10,24 +10,43 @@ import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function Regex_labs() {
   const Labs = [
     {
-      title: 'MCQ Question Review',
+      // English Content
+      en_title: 'MCQ Question Review',
+      en_brief:
+        'These are multiple choice questions that are designed to be a review for the exam.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'مراجعة أسئلة الاختيار من متعدد',
+      ar_brief: 'هذه أسئلة اختيار من متعدد مصممة لتكون مراجعة للامتحان.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Regex/Regex_labs/MCQReview',
       image: labImg,
-      brief: [
-        'These are multiple choice questions that are designed to be a review for the exam.',
-      ],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 10,
     },
     {
-      title: 'Complete Question Review',
+      // English Content
+      en_title: 'Complete Question Review',
+      en_brief:
+        'These are complete questions that are designed to be a review for the exam.',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'مراجعة الأسئلة الكاملة',
+      ar_brief: 'هذه أسئلة كاملة مصممة لتكون مراجعة للامتحان.',
+      ar_difficulty: 'سهل',
+
+      // Common Data
       link: '/Regex/Regex_labs/CompleteReview',
       image: labImg,
-      brief: [
-        'These are Complete questions that are designed to be a review for the exam.',
-      ],
-      difficulty: 'Easy',
+      isFree: true,
+      topicsCount: 15,
     },
   ];
+
   return (
     <>
       <Banner />
@@ -38,16 +57,7 @@ export default function Regex_labs() {
           <PracticeTitle title={'Regular Expressions'} />
           <div className='row'>
             {Labs.map((lab, index) => {
-              return (
-                <Card
-                  title={lab.title}
-                  link={lab.link}
-                  image={lab.image}
-                  brief={lab.brief}
-                  difficulty={lab.difficulty}
-                  key={index}
-                />
-              );
+              return <Card key={index} {...lab} />;
             })}
           </div>
         </div>

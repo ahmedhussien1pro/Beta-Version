@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../Page_Styles/Lab.css';
 import Header from '../../Header/Header';
 import image from '../../assets/img/linux/card_image.png';
@@ -8,9 +8,77 @@ import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function Linux_lab() {
-  useEffect(() => {
-    document.title = 'Linux Lab';
-  }, []);
+  const Labs = [
+    {
+      // English Content
+      en_title: 'Be Patient or Skillful',
+      en_brief: 'Try to Capture the Flag',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'كن صبورًا أو ماهرًا',
+      ar_brief: 'حاول الحصول على العلم',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/linux/linux_lab/patient',
+      image: image,
+      isFree: true,
+      topicsCount: 2,
+    },
+    {
+      // English Content
+      en_title: 'Power Of Command',
+      en_brief: 'Try to Capture the Flag',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'قوة الأوامر',
+      ar_brief: 'حاول الحصول على العلم',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/linux/linux_lab/power-of-command',
+      image: image,
+      isFree: true,
+      topicsCount: 3,
+    },
+    {
+      // English Content
+      en_title: 'Welcome',
+      en_brief: 'Try to Capture the Flag',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'مرحبًا',
+      ar_brief: 'حاول الحصول على العلم',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/linux/linux_lab/welcome',
+      image: image,
+      isFree: true,
+      topicsCount: 1,
+    },
+    {
+      // English Content
+      en_title: 'Test Yourself',
+      en_brief: 'Try to Capture the Flag',
+      en_difficulty: 'Easy',
+
+      // Arabic Content
+      ar_title: 'اختبر نفسك',
+      ar_brief: 'حاول الحصول على العلم',
+      ar_difficulty: 'سهل',
+
+      // Common Data
+      link: '/linux/linux_lab/test-yourself',
+      image: image,
+      isFree: true,
+      topicsCount: 4,
+    },
+  ];
+
   return (
     <>
       <Header />
@@ -22,34 +90,9 @@ export default function Linux_lab() {
         <div className='container'>
           <PracticeTitle title={'Linux'} />
           <div className='row'>
-            <Card
-              link='/linux/linux_lab/patient'
-              image={image}
-              title='Be Patient or Skillful'
-              brief='Try to Capture the Flag'
-              difficulty={'Easy'}
-            />
-            <Card
-              link='/linux/linux_lab/power-of-command'
-              image={image}
-              title='Power Of Command'
-              brief='Try to Capture the Flag'
-              difficulty={'Easy'}
-            />
-            <Card
-              link='/linux/linux_lab/welcome'
-              image={image}
-              title='Welcome'
-              brief='Try to Capture the Flag'
-              difficulty={'Easy'}
-            />
-            <Card
-              link='/linux/linux_lab/test-yourself'
-              image={image}
-              title='Test YourSelf'
-              brief='Try to Capture the Flag'
-              difficulty={'Easy'}
-            />
+            {Labs.map((lab, index) => {
+              return <Card key={index} {...lab} />;
+            })}
           </div>
         </div>
       </div>
