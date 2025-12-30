@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   FaBook,
   FaPlus,
@@ -9,6 +9,7 @@ import {
   FaCode,
   FaGraduationCap,
   FaFolderOpen,
+  FaFileImport,
 } from 'react-icons/fa';
 
 const Sidebar = ({
@@ -25,7 +26,10 @@ const Sidebar = ({
   onSave,
   onCopyJSON,
   onClear,
+  onImportJSON,
 }) => {
+  const fileInputRef = useRef(null);
+
   // Prevent body scroll on mobile when sidebar is open
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
@@ -55,8 +59,30 @@ const Sidebar = ({
     }
   };
 
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+    if (file && onImportJSON) {
+      onImportJSON(file);
+    }
+    // Reset input to allow same file selection
+    e.target.value = '';
+  };
+
   return (
     <>
+      {/* Hidden file input */}
+      <input
+        ref={fileInputRef}
+        type='file'
+        accept='.json'
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
+
       {/* Overlay for mobile only */}
       <div
         className={`sidebar__overlay ${
@@ -74,10 +100,10 @@ const Sidebar = ({
               <FaGraduationCap />
             </div>
             <a href='/' className='sidebar__brand-text'>
-              <h2 className='header__logo-title sidebar__brand-title '>
+              <h2 className='header__logo-title sidebar__brand-title'>
                 Cyber <span>Labs</span>
               </h2>
-              <span className='sidebar__brand-subtitle '>Content Creator</span>
+              <span className='sidebar__brand-subtitle'>Content Creator</span>
             </a>
           </div>
         </div>
@@ -189,6 +215,13 @@ const Sidebar = ({
 
         {/* Actions */}
         <div className='sidebar__actions'>
+          <button
+            className='sidebar__action-btn sidebar__action-btn--secondary'
+            onClick={handleImportClick}
+            title='Import JSON File'>
+            <FaFileImport /> Import JSON
+          </button>
+
           <button
             className='sidebar__action-btn sidebar__action-btn--primary'
             onClick={onSave}>

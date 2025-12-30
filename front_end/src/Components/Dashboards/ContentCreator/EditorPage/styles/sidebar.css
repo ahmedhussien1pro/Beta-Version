@@ -549,6 +549,13 @@
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }
+.sidebar__action-btn--secondary i.fa-file-import {
+  color: #3b82f6;
+}
+
+.sidebar__action-btn--secondary:hover i.fa-file-import {
+  color: white;
+}
 
 /* ==================== OVERLAY (Mobile Only) ==================== */
 
