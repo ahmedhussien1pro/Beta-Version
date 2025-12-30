@@ -15,11 +15,11 @@ const SearchIcon = ({ mode = 'desktop' }) => {
     : globalItems.filter((item) => {
         const lowerQuery = searchTerm.toLowerCase();
         return (
-          item.title.toLowerCase().includes(lowerQuery) ||
-          item.description.toLowerCase().includes(lowerQuery) ||
-          item.category.toLowerCase().includes(lowerQuery) ||
-          item.difficulty.toLowerCase().includes(lowerQuery) ||
-          item.state.toLowerCase().includes(lowerQuery)
+          item.en_data.title.toLowerCase().includes(lowerQuery) ||
+          item.en_data.description.toLowerCase().includes(lowerQuery) ||
+          item.en_data.category.toLowerCase().includes(lowerQuery) ||
+          item.en_data.difficulty.toLowerCase().includes(lowerQuery) ||
+          item.en_data.state.toLowerCase().includes(lowerQuery)
         );
       });
 

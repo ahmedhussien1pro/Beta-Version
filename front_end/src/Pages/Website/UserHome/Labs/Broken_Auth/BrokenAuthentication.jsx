@@ -3,32 +3,43 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import './BrokenAuthentication.css';
 import '../../Components/Topics CSS/topics.css';
-import background from '../../assets/img/Broken Authentication/broken_authentication_blogpost.png';
 import courseImage from '../../assets/img/Broken Authentication/broken-authentication.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function BrokenAuthentication() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Broken Authentication',
+      ar: 'ثغرات المصادقة المكسورة (Authentication)',
+    },
+    description: {
+      en: 'Learn how vulnerabilities in authentication and session management allow attackers to compromise passwords, keys, and session tokens. Explore techniques like Credential Stuffing, Brute Force, and Session Hijacking.',
+      ar: 'تعلم كيف تؤدي الثغرات في أنظمة المصادقة وإدارة الجلسات إلى تمكين المهاجمين من اختراق كلمات المرور والمفاتيح والرموز الأمنية. استكشف تقنيات مثل حشو الاعتمادات (Credential Stuffing)، والتخمين، واختطاف الجلسات.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '2600',
+  };
 
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Broken Authentication'
-        courseDescription='This course delves into the common vulnerabilities in authentication systems that can lead to security breaches. You will learn about the flaws in authentication mechanisms, such as weak password policies, improper session management, and failure to validate user inputs, and how these weaknesses can be exploited by attackers. By the end of the course, you will understand how to strengthen authentication systems, implement secure login processes, and protect user identities against unauthorized access.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>

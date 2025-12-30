@@ -5,26 +5,39 @@ import courseImage from '../../assets/img/Path__Traversal/Directory_Traversal.pn
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import './PathTraversal.css';
 export default function PathTraversal() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Path Traversal Attacks',
+      ar: 'هجمات تخطي المسارات (Path Traversal)',
+    },
+    description: {
+      en: 'Understand how attackers trick applications into reading sensitive files outside the web root directory. Learn to exploit "dot-dot-slash" sequences and implement secure file handling practices.',
+      ar: 'افهم كيف يخدع المهاجمون التطبيقات لقراءة ملفات حساسة خارج دليل الويب الرئيسي. تعلم كيفية استغلال تسلسلات "نقطة-نقطة-شرطة" وتطبيق ممارسات آمنة للتعامل مع الملفات.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '35 min',
+      ar: '35 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.7',
+    students: '2150',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Path Traversal'
-        courseDescription='Learn how attackers exploit path traversal vulnerabilities to access restricted files and directories. Understand the risks, detection techniques, and mitigation strategies, including input validation, secure file handling, and access controls to prevent unauthorized access.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>

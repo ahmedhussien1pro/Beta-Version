@@ -2,9 +2,8 @@ import React from 'react';
 import Header from '../../Header/Header';
 import '../../Components/Topics CSS/topics.css';
 import courseImage from '../../assets/img/cookies/course_image.png';
-import background from '../../assets/img/cookies/baner_lap.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import inLab3 from '../../assets/img/inLab3.png';
@@ -12,22 +11,34 @@ import Footer from '../../Footer/Footer';
 
 export default function Cookies() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Cookies',
+      ar: 'ملفات تعريف الارتباط (Cookies)',
+    },
+    description: {
+      en: 'Understand how cookies manage web sessions and track user data. Learn about common vulnerabilities like session hijacking and how to implement secure cookie flags.',
+      ar: 'افهم كيف تدير ملفات الكوكيز جلسات الويب وتتبع بيانات المستخدمين. تعرف على الثغرات الشائعة مثل اختطاف الجلسات وكيفية تفعيل خصائص الأمان للملفات.',
+    },
+    difficulty: {
+      en: 'Beginner',
+      ar: 'مبتدئ',
+    },
+    duration: {
+      en: '25 min',
+      ar: '25 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.6',
+    students: '4200',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Cookies'
-        courseDescription=' Understand the role of cookies in web security, how they are
-                used, and the potential privacy concerns they introduce.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

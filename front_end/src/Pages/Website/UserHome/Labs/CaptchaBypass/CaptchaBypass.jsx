@@ -1,28 +1,40 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Captcha Bypass/baner_lap.png';
 import courseImage from '../../assets/img/Captcha Bypass/course_image.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 export default function CaptchaBypass() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Captcha Bypass Techniques',
+      ar: 'تقنيات تجاوز الكابتشا (Captcha Bypass)',
+    },
+    description: {
+      en: 'Learn how to identify and exploit weaknesses in CAPTCHA implementations. Explore logical flaws, session reuse, OCR-based automation, and AI-driven techniques to bypass anti-bot protections.',
+      ar: 'تعلم كيفية تحديد واستغلال نقاط الضعف في تطبيقات الكابتشا. استكشف الثغرات المنطقية، وإعادة استخدام الجلسات، والأتمتة القائمة على التعرف الضوئي (OCR)، والتقنيات المدعومة بالذكاء الاصطناعي لتجاوز حماية البوتات.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.6',
+    students: '1750',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Captcha Bypass'
-        courseDescription=' CAPTCHA bypass methods use programming and AI techniques to defeat website security measures, enabling automated bots to solve challenges. This can facilitate spam, account creation bots, and other malicious activities. However, these methods are unethical, illegal, and actively countered by website owners.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

@@ -1,33 +1,45 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Command Injection/What-is-a-Command-Injection.png';
 import courseImage from '../../assets/img/Command Injection/Icon_Command_Injection.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import './CommandInjection.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import exampleImage1 from '../../assets/img/Command Injection/1.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function CommandInjection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Command Injection',
+      ar: 'حقن الأوامر (Command Injection)',
+    },
+    description: {
+      en: 'Discover how attackers execute arbitrary operating system commands through vulnerable applications. Learn to identify execution points and implement secure input validation.',
+      ar: 'اكتشف كيف يقوم المهاجمون بتنفيذ أوامر عشوائية على نظام التشغيل من خلال التطبيقات المصابة. تعلم كيفية تحديد نقاط التنفيذ وتنفيذ التحقق الآمن من المدخلات.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.7',
+    students: '1850',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle=' Command Injection'
-        courseDescription='In this section, we explain what OS command injection is, and describe how vulnerabilities can be detected and exploited. We also show you some useful commands and techniques for different operating systems, and describe how to prevent OS command injection.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>

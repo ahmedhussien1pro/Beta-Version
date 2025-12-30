@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../Components/Topics CSS/topics.css';
 import Header from '../../Header/Header';
-import background from '../../assets/img/wireshark/baner_lap.png';
 import courseImage from '../../assets/img/wireshark/course_image.png';
 import Footer from '../../Footer/Footer';
 import exampleImage1 from '../../assets/img/wireshark/course_image.png';
@@ -35,27 +34,38 @@ import exampleImage28 from '../../assets/img/wireshark/28.png';
 import exampleImage29 from '../../assets/img/wireshark/29.png';
 import exampleImage30 from '../../assets/img/wireshark/30.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 
 export default function WireShark() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Wireshark',
+      ar: 'برنامج واير شارك (Wireshark)',
+    },
+    description: {
+      en: "Learn to capture and analyze network traffic using the world's leading protocol analyzer. Master the art of packet inspection, network troubleshooting, and security analysis.",
+      ar: 'تعلم كيفية التقاط وتحليل حركة مرور الشبكة باستخدام المحلل الرائد عالمياً للبروتوكولات. أتقن فن فحص الحزم (Packets)، واستكشاف أخطاء الشبكة، والتحليل الأمني.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '55 min',
+      ar: '55 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '3750',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Wire Shark'
-        courseDescription='Master the basics of Wire Shark, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

@@ -1,11 +1,10 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Insecure_Deserialization/Insecure_Photo_Background.jpg';
 import courseImage from '../../assets/img/Insecure_Deserialization/Icon_Insecure.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import exampleImage1 from '../../assets/img/Insecure_Deserialization/1.jpg';
 import exampleImage2 from '../../assets/img/Insecure_Deserialization/2.jpg';
@@ -13,21 +12,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function InsecureDeserialization() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Insecure Deserialization',
+      ar: 'إعادة تسلسل البيانات غير الآمنة',
+    },
+    description: {
+      en: 'Learn how untrusted data can be used to abuse logic, execute code, or bypass authentication through flawed deserialization. Master the techniques to identify and patch these critical vulnerabilities.',
+      ar: 'تعلم كيف يمكن استخدام البيانات غير الموثوقة للتلاعب بالمنطق، تنفيذ الأكواد، أو تجاوز المصادقة من خلال عمليات إعادة التسلسل المعيبة. أتقن تقنيات اكتشاف ومعالجة هذه الثغرات الحرجة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '55 min',
+      ar: '55 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '1150',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Insecure Deserialization'
-        courseDescription="In this section, we'll cover what insecure deserialization is and describe how it can potentially expose websites to high-severity attacks. We'll highlight typical scenarios and demonstrate some widely applicable techniques using concrete examples of PHP, Ruby, and Java deserialization. We'll also look at some ways that you can avoid insecure deserialization vulnerabilities in your own websites."
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>

@@ -5,7 +5,7 @@ import '../../Components/Topics CSS/topics.css';
 import background from '../../assets/img/SQL_Injection/New/background.png';
 import courseImage from '../../assets/img/SQL_Injection/New/courseImage.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Banner from '../../Components/Banner/Banner.jsx';
 import '../Page_Styles/Content_sec.css';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
@@ -14,26 +14,35 @@ import OutOfBand from '../../assets/img/SQL_Injection/Out-of-Band SQLi.png';
 import table from '../../assets/img/SQL_Injection/table.png';
 export default function Sql_Injection() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'SQL Injection',
+      ar: 'حقن قواعد البيانات (SQLi)',
+    },
+    description: {
+      en: 'Master the art of exploiting and defending against SQL injection vulnerabilities. Learn how attackers manipulate databases and how to write secure queries.',
+      ar: 'أتقن فن استغلال وحماية تطبيقات الويب من ثغرات حقن قواعد البيانات. تعلم كيف يتلاعب المهاجمون بالبيانات وكيفية كتابة استعلامات آمنة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '3120',
+  };
 
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='SQL Injection'
-        courseDescription='Learn how attackers exploit vulnerabilities in web applications
-                using SQL injection and understand the techniques to detect and
-                prevent them.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
 
       {/* Start Course */}

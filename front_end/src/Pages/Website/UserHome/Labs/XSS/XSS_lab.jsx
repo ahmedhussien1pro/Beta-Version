@@ -4,7 +4,7 @@ import Header from '../../Header/Header';
 import lab_Cover from '../../assets/img/Cross_Site_Scripting/labs_cover.jpg';
 import Footer from '../../Footer/Footer';
 import { Card } from '../../Components/Card/Card';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function XSS_lab() {
   return (

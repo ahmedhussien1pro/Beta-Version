@@ -1,34 +1,45 @@
 import React from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
-import background from '../../../assets/img/CareersInCyber/DFE/background.png';
 import courseImage from '../../../assets/img/CareersInCyber/DFE/courseImage.png';
 import UseFaqSection from '../../../Components/UseFaqSection/UseFaqSection.jsx';
 import Banner from '../../../Components/Banner/Banner.jsx';
-import CourseLanding from '../../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Digital Forensics Examiner',
+      ar: 'فاحص الأدلة الجنائية الرقمية (Digital Forensics)',
+    },
+    description: {
+      en: 'Master the science of recovering and analyzing data from digital devices for legal investigations. Learn evidence preservation, chain of custody, and deep file system analysis to uncover hidden activities.',
+      ar: 'أتقن علم استعادة وتحليل البيانات من الأجهزة الرقمية للتحقيقات القانونية. تعلم الحفاظ على الأدلة، وسلسلة العهدة (Chain of Custody)، والتحليل العميق لأنظمة الملفات لكشف الأنشطة المخفية.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '85 min',
+      ar: '85 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '2100',
+  };
+
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Digital Forensics Examiner'
-        courseDescription='Learn how to investigate cybercrimes by analyzing digital evidence.'
-        difficulty='Intermediate'
-        duration='20 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
 

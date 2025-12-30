@@ -4,7 +4,7 @@ import labImg from '../../assets/img/ACV/lab.jpeg';
 import Footer from '../../Footer/Footer';
 import { Card } from '../../Components/Card/Card';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function Click_Jacking_Labs() {
   const Labs = [

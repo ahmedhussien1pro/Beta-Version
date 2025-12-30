@@ -2,34 +2,44 @@ import React from 'react';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
-import background from '../../assets/img/Obfuscation/baner_lap.png';
 import courseImage from '../../assets/img/Obfuscation/course_image.png';
 import exampleImage1 from '../../assets/img/Obfuscation/1.png';
 import exampleImage2 from '../../assets/img/Obfuscation/2.png';
 import exampleImage3 from '../../assets/img/Obfuscation/3.png';
 import exampleImage4 from '../../assets/img/Obfuscation/4.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 
 export default function Obfuscation() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Obfuscation',
+      ar: 'تمويه الأكواد (Obfuscation)',
+    },
+    description: {
+      en: 'Learn the techniques used to make code difficult to understand and analyze. Explore how attackers hide malicious scripts and how to de-obfuscate them for security analysis.',
+      ar: 'تعلم التقنيات المستخدمة لجعل الأكواد البرمجية صعبة الفهم والتحليل. استكشف كيف يخفي المهاجمون البرمجيات الخبيثة وكيفية فك التمويه لغرض التحليل الأمني.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '1420',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Obfuscation'
-        courseDescription='Master the basics of obfuscation, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

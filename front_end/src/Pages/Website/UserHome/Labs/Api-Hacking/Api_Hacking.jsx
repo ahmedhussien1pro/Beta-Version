@@ -2,11 +2,10 @@ import React from 'react';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
-import background from '../../assets/img/Api_Hacking/background.png';
 import courseImage from '../../assets/img/Api_Hacking/courseImage.png';
 import Banner from '../../Components/Banner/Banner.jsx';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 import image1 from '../../assets/img/Api_Hacking/image1.png';
 import image4 from '../../assets/img/Api_Hacking/image4.jpg';
@@ -15,27 +14,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function Api_Hacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'API Hacking & Testing',
+      ar: 'اختبار اختراق الواجهات البرمجية (API)',
+    },
+    description: {
+      en: 'Master the art of securing modern applications by attacking their back-end APIs. Learn to identify vulnerabilities like BOLA, Broken Authentication, and Mass Assignment using tools like Postman and Burp Suite.',
+      ar: 'أتقن فن تأمين التطبيقات الحديثة عبر مهاجمة واجهاتها البرمجية الخلفية. تعلم كيفية اكتشاف ثغرات مثل BOLA، وكسر المصادقة، والتعيين الجماعي (Mass Assignment) باستخدام أدوات مثل Postman وBurp Suite.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '50 min',
+      ar: '50 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '3100',
+  };
 
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='API Hacking & Testing'
-        courseDescription=' Learn how attackers exploit vulnerabilities in APIs to access
-                sensitive data, manipulate functionality, or bypass security
-                measures, and discover techniques to identify and mitigate these
-                attacks effectively.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
       <div className='Content'>

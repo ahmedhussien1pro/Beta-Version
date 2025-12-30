@@ -5,32 +5,43 @@ import Footer from '../../Footer/Footer';
 import './InsecureDirectObjectReference.css';
 import '../../Components/Topics CSS/topics.css';
 import courseImage from '../../assets/img/IDOR/idorIcon.jpg';
-import background from '../../assets/img/IDOR/IDOR.jpg';
 import IDOR_Vulerability from '../../assets/img/IDOR/InsecureDirectObjectReference(IDOR)Vulnerability.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function InsecureDirectObjectReference() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Insecure Direct Object Reference (IDOR)',
+      ar: 'المرجع المباشر غير الآمن للكائنات (IDOR)',
+    },
+    description: {
+      en: 'Discover how attackers access unauthorized data by manipulating object identifiers in requests. Master access control implementation to prevent sensitive information disclosure.',
+      ar: 'اكتشف كيف يصل المهاجمون إلى بيانات غير مصرح بها من خلال التلاعب بمعرفات الكائنات في الطلبات. أتقن تطبيق ضوابط الوصول لمنع تسريب المعلومات الحساسة.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '30 min',
+      ar: '30 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '2600',
+  };
 
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Insecure Direct Object Reference (IDOR)'
-        courseDescription='Understand the role of cookies in web security, how they are used, and the potential privacy concerns they introduce.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Content */}
       <div className='Content'>

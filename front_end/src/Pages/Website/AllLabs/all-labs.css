@@ -282,12 +282,6 @@
    Bootstrap Overrides (Soft)
 ========================================================= */
 
-.list-group-item {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
 /* =========================================================
    Mobile & Tablet
 ========================================================= */

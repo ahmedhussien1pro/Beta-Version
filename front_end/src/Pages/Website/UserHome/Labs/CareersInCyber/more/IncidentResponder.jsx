@@ -1,34 +1,45 @@
 import React from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
-import background from '../../../assets/img/CareersInCyber/IR/background.png';
 import courseImage from '../../../assets/img/CareersInCyber/IR/courseImage.png';
 import UseFaqSection from '../../../Components/UseFaqSection/UseFaqSection.jsx';
 import Banner from '../../../Components/Banner/Banner.jsx';
-import CourseLanding from '../../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Incident Responder',
+      ar: 'مستجيب الحوادث الأمنية (Incident Responder)',
+    },
+    description: {
+      en: 'Learn to manage and mitigate active security breaches. Master the incident response lifecycle, from detection and containment to eradication and recovery, based on NIST and SANS frameworks.',
+      ar: 'تعلم كيفية إدارة وتخفيف حدة الاختراقات الأمنية النشطة. أتقن دورة حياة الاستجابة للحوادث، من الكشف والاحتواء إلى القضاء على التهديد والاسترداد، بناءً على أطر عمل NIST وSANS.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '80 min',
+      ar: '80 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '3200',
+  };
+
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Incident Responder'
-        courseDescription='Learn how to detect, investigate, and respond to security incidents as an Incident Responder.'
-        difficulty='Intermediate'
-        duration='20 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
 

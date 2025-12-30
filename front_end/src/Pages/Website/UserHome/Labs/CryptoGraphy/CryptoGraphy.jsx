@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../Components/Topics CSS/topics.css';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Cryptography/baner_lap.png';
 import courseImage from '../../assets/img/Cryptography/course_image.png';
 import Footer from '../../Footer/Footer';
 import exampleImage1 from '../../assets/img/Cryptography/1.png';
@@ -14,26 +13,37 @@ import exampleImage7 from '../../assets/img/Cryptography/7.svg';
 import exampleImage8 from '../../assets/img/Cryptography/8.svg';
 import exampleImage9 from '../../assets/img/Cryptography/9.svg';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 export default function CryptoGraphy() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Cryptography',
+      ar: 'علم التشفير (Cryptography)',
+    },
+    description: {
+      en: 'Dive into the world of secure communication. Learn about symmetric and asymmetric encryption, hashing algorithms, and how to protect data integrity in digital environments.',
+      ar: 'غص في عالم الاتصالات الآمنة. تعرف على التشفير المتماثل وغير المتماثل، خوارزميات التجزئة (Hashing)، وكيفية حماية سلامة البيانات في البيئات الرقمية.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '2980',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='CryptoGraphy'
-        courseDescription='  Master the basics of CryptoGraphy, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

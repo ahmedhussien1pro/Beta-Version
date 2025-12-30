@@ -1,0 +1,55 @@
+/* ==================== LAYOUT ==================== */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  position: relative;
+  transition: background var(--transition-base);
+}
+
+.app__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: margin-left var(--transition-slow);
+}
+
+/* Desktop: margin based on sidebar state */
+@media (min-width: 769px) {
+  .app__content {
+    margin-left: var(--sidebar-width);
+  }
+
+  .app__content--expanded {
+    margin-left: 0;
+  }
+}
+
+/* Mobile: no margin, full width */
+@media (max-width: 768px) {
+  .app__content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.app__main {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .app__main {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 576px) {
+  .app__main {
+    padding: var(--space-3);
+  }
+}

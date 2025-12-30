@@ -2,33 +2,44 @@ import React from 'react';
 import './XSS.css';
 import '../../Components/Topics CSS/topics.css';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Cross_Site_Scripting/cors1.png';
 import courseImage from '../../assets/img/Cross_Site_Scripting/Broken Authentication.webp';
 import { Link } from 'react-router-dom';
 import Footer from '../../Footer/Footer';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function XSS() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Cross-Site Scripting (XSS)',
+      ar: 'حقن النصوص البرمجية (XSS)',
+    },
+    description: {
+      en: 'Master the most common web vulnerability. Learn about Stored, Reflected, and DOM-based XSS, and how attackers steal sessions or deface websites. Discover modern defense mechanisms like CSP.',
+      ar: 'أتقن الثغرة الأكثر شيوعاً في الويب. تعلم أنواع XSS المخزنة والمنعكسة والقائمة على DOM، وكيف يسرق المهاجمون الجلسات. اكتشف آليات الدفاع الحديثة مثل سياسة أمان المحتوى (CSP).',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '4800',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Cross-Site Scripting'
-        courseDescription=" Hack your first website (legally in a safe environment) and
-                experience an ethical hacker's job."
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

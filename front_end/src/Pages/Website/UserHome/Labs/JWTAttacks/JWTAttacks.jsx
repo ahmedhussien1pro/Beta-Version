@@ -1,32 +1,42 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/JWT attacks/baner_lap.png';
 import courseImage from '../../assets/img/JWT attacks/course_image.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import exampleImage1 from '../../assets/img/JWT attacks/image_1.webp';
 import exampleImage2 from '../../assets/img/JWT attacks/image_2.webp';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 export default function JWTAttacks() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'JWT Attacks',
+      ar: 'هجمات رموز الجلسة (JWT)',
+    },
+    description: {
+      en: 'Master the techniques used to exploit JSON Web Tokens. Learn about common flaws like weak secrets, algorithm confusion, and how to prevent session hijacking in modern web apps.',
+      ar: 'أتقن التقنيات المستخدمة لاستغلال رموز (JSON Web Tokens). تعرف على العيوب الشائعة مثل الأسرار الضعيفة، وتغيير الخوارزميات، وكيفية منع اختطاف الجلسات في تطبيقات الويب الحديثة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '1940',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='JWT Attacks'
-        courseDescription='Master the basics of JWT Attacks, a powerful technique for
-                securing code and protecting intellectual property in
-                cybersecurity environments.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

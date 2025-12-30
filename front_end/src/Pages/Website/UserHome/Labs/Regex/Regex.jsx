@@ -3,39 +3,43 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Banner from '../../Components/Banner/Banner.jsx';
 import '../../Components/Topics CSS/topics.css';
-import background from '../../assets/img/Regex/background.png';
 import courseImage from '../../assets/img/Regex/courseImage.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 export default function Regex() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Regular Expressions',
+      ar: 'التعبيرات النمطية (Regex)',
+    },
+    description: {
+      en: 'Master the power of pattern matching. Learn how to write complex expressions for searching, validating, and extracting data from logs and network traffic.',
+      ar: 'أتقن قوة مطابقة الأنماط. تعلم كيفية كتابة تعبيرات معقدة للبحث والتحقق واستخراج البيانات من السجلات وحركة مرور الشبكة.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '35 min',
+      ar: '35 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.7',
+    students: '3820',
+  };
 
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Regular Expressions'
-        courseDescription='Learn how attackers leverage regular expressions (regex) for
-                pattern matching in malicious scripts, data exfiltration, and
-                crafting payloads. Explore how security professionals use regex
-                to identify vulnerabilities, analyze logs, detect threats, and
-                filter malicious inputs. Master techniques to create robust
-                regex patterns to safeguard applications from injection attacks
-                and unauthorized access.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
       <div className='Content'>

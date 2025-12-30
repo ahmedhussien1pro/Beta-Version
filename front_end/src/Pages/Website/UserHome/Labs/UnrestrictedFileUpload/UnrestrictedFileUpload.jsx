@@ -8,28 +8,40 @@ import code1 from '../../assets/img/Unrestricted File Upload/code1FileUpload.png
 import code2 from '../../assets/img/Unrestricted File Upload/code2FileUpload.png';
 import code3 from '../../assets/img/Unrestricted File Upload/code3FileUpload.png';
 import courseImage from '../../assets/img/Unrestricted File Upload/FileUploadIcon.png';
-import background from '../../assets/img/Unrestricted File Upload/background_File_Upload.jpg';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function UnrestrictedFileUpload() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Unrestricted File Upload',
+      ar: 'رفع الملفات غير المقيد (File Upload)',
+    },
+    description: {
+      en: 'Understand the risks of allowing users to upload files without proper validation. Learn how attackers gain remote code execution through web shells and how to implement robust security checks.',
+      ar: 'افهم مخاطر السماح للمستخدمين برفع الملفات دون التحقق المناسب. تعلم كيف يحصل المهاجمون على صلاحية تنفيذ الأكواد عن بعد عبر "Web Shells" وكيفية تطبيق ضوابط أمنية قوية.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '2300',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Unrestricted File Upload'
-        courseDescription='In this course, you will explore the security risks associated with unrestricted file uploads in web applications. We will cover how attackers can exploit vulnerabilities in file upload mechanisms and the potential consequences, including unauthorized access and data breaches. You will learn about the best practices to mitigate such risks, ensuring safe file handling and improving the overall security posture of web applications.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Content */}
       <div className='Content'>

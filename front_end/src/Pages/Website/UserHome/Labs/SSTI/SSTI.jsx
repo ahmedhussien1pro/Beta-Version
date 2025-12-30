@@ -1,31 +1,43 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Server Side Template Injection/baner_lap.png';
 import courseImage from '../../assets/img/Server Side Template Injection/course_image.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import exampleImage1 from '../../assets/img/Server Side Template Injection/1.png';
 import exampleImage2 from '../../assets/img/Server Side Template Injection/2.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 
 export default function SSTI() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Server Side Template Injection (SSTI)',
+      ar: 'حقن القوالب من جانب الخادم (SSTI)',
+    },
+    description: {
+      en: 'Explore how attackers inject malicious code into server-side templates. Learn to identify vulnerable engines like Jinja2, Twig, or Mako and how to prevent remote code execution.',
+      ar: 'استكشف كيف يقوم المهاجمون بحقن أكواد خبيثة في القوالب البرمجية من جانب الخادم. تعلم كيفية تحديد المحركات المصابة مثل Jinja2 و Twig و Mako وكيفية منع تنفيذ الأكواد عن بعد.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '50 min',
+      ar: '50 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '1560',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Server Side Template Injection (SSTI)'
-        courseDescription='Server-Side Template Injection (SSTI) is a web vulnerability that arises when user input is improperly handled within a server-side template engine.Attackers can exploit this flaw to execute arbitrary code, potentially leaking sensitive information or performing unauthorized actions on the system.\nThis can lead to severe security risks, including data breaches, remote code execution, and server compromise.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

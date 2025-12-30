@@ -4,7 +4,7 @@ import Header from '../../Header/Header';
 import image from '../../assets//img/File Inclusion/card_image.png';
 import { Card } from '../../Components/Card/Card';
 import Footer from '../../Footer/Footer';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function FileInclusion_lab() {

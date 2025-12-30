@@ -2,30 +2,41 @@ import React from 'react';
 import '../../Components/Topics CSS/topics.css';
 import Header from '../../Header/Header';
 import courseImage from '../../assets/img/linux/linux_logo.png';
-import background from '../../assets/img/linux/baner_lap.png';
 import Footer from '../../Footer/Footer';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function Linux() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Linux Fundamentals',
+      ar: 'أساسيات نظام لينكس (Linux)',
+    },
+    description: {
+      en: 'Master the core concepts of the Linux operating system. Learn essential terminal commands, file system navigation, and user permissions required for any security professional.',
+      ar: 'أتقن المفاهيم الأساسية لنظام التشغيل لينكس. تعلم أوامر الطرفية الضرورية، والتنقل في نظام الملفات، وصلاحيات المستخدمين المطلوبة لأي متخصص في الأمن السيبراني.',
+    },
+    difficulty: {
+      en: 'Beginner',
+      ar: 'مبتدئ',
+    },
+    duration: {
+      en: '60 min',
+      ar: '60 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '5400',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Linux Fundamentals'
-        courseDescription='Build a solid foundation in Linux, the operating system at the
-                core of many cybersecurity tools and infrastructures.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

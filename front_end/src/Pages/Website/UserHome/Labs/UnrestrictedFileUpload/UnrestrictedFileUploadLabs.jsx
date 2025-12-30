@@ -3,7 +3,7 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import lab_Cover from '../../assets/img/Unrestricted File Upload/file-upload-vector.jpg';
 import { Card } from '../../Components/Card/Card';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function UnrestrictedFileUploadLabs() {

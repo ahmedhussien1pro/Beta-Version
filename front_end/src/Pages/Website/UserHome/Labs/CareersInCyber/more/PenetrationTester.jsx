@@ -1,34 +1,45 @@
 import React from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
-import background from '../../../assets/img/CareersInCyber/PenTst/background.svg';
 import courseImage from '../../../assets/img/CareersInCyber/PenTst/courseImage.png';
 import UseFaqSection from '../../../Components/UseFaqSection/UseFaqSection.jsx';
 import Banner from '../../../Components/Banner/Banner.jsx';
-import CourseLanding from '../../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Penetration Testing Fundamentals',
+      ar: 'أساسيات اختبار الاختراق (Penetration Testing)',
+    },
+    description: {
+      en: 'Learn the structured process of professional security assessments. Master the five phases of pentesting: Reconnaissance, Scanning, Vulnerability Assessment, Exploitation, and Reporting.',
+      ar: 'تعلم العملية المنظمة للتقييمات الأمنية الاحترافية. أتقن المراحل الخمس لاختبار الاختراق: الاستطلاع، الفحص، تقييم الثغرات، الاستغلال، وكتابة التقارير.',
+    },
+    difficulty: {
+      en: 'Beginner',
+      ar: 'مبتدئ',
+    },
+    duration: {
+      en: '60 min',
+      ar: '60 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '4950',
+  };
+
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Penetration Testing Fundamentals'
-        courseDescription='Learn how to identify and exploit vulnerabilities in systems to secure them.'
-        difficulty='Intermediate'
-        duration='20 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
 

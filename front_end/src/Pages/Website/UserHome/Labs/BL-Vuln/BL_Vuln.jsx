@@ -2,40 +2,42 @@ import React from 'react';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
-import background from '../../assets/img/BLV/background.png';
 import courseImage from '../../assets/img/BLV/course_image.png';
 import logicFlow from '../../assets/img/BLV/logic-flaws.jpg';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Banner from '../../Components/Banner/Banner.jsx';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 export default function BL_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Business Logic Vulnerabilities',
+      ar: 'ثغرات المنطق البرمجي (Business Logic)',
+    },
+    description: {
+      en: 'Explore vulnerabilities that arise from flaws in the design and implementation of application logic. Learn how attackers bypass payment systems, abuse workflows, and subvert business rules.',
+      ar: 'استكشف الثغرات الناتجة عن أخطاء في تصميم وتنفيذ منطق التطبيق. تعلم كيف يتجاوز المهاجمون أنظمة الدفع، ويسيئون استخدام مسارات العمل (Workflows)، ويكسرون قواعد العمل البرمجية.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.7',
+    students: '1900',
+  };
 
   return (
     <>
       <Banner />
       <Header />
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Business logic vulnerabilities'
-        courseDescription='Learn how attackers exploit business logic vulnerabilities in
-                web applications, where legitimate processes are manipulated to
-                achieve unintended outcomes. These vulnerabilities occur when an
-                application’s functionality or workflows are misused, bypassing
-                intended logic or restrictions to perform unauthorized actions.
-                Understanding these vulnerabilities involves identifying flaws
-                in business rules, data flows, or decision-making processes, and
-                implementing secure validation and authorization mechanisms to
-                prevent exploitation.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
 
       <div className='Content'>
         <div className='secure-container'>

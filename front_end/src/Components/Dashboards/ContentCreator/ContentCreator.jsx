@@ -34,18 +34,18 @@ const SIDEBAR_GROUPS = [
     label: 'Create New',
     icon: Icon.plus,
     links: [
-      {
-        id: 'create_course',
-        label: 'Create Course',
-        path: '/create/course',
-        icon: Icon.course,
-      },
-      {
-        id: 'create_lab',
-        label: 'Create Lab',
-        path: '/create/lab',
-        icon: Icon.lab,
-      },
+      // {
+      //   id: 'create_course',
+      //   label: 'Create Course',
+      //   path: '/create/course',
+      //   icon: Icon.course,
+      // },
+      // {
+      //   id: 'create_lab',
+      //   label: 'Create Lab',
+      //   path: '/create/lab',
+      //   icon: Icon.lab,
+      // },
       {
         id: 'create_content',
         label: 'Create Content',
@@ -54,55 +54,55 @@ const SIDEBAR_GROUPS = [
       },
     ],
   },
-  {
-    id: 'labs',
-    label: 'Labs',
-    icon: Icon.lab,
-    links: [
-      {
-        id: 'lab_drafts',
-        label: 'Lab Drafts',
-        path: '/labs/drafts',
-        icon: Icon.activity,
-      },
-      {
-        id: 'lab_preview',
-        label: 'Lab Preview',
-        path: '/labs/preview',
-        icon: Icon.content,
-      },
-    ],
-  },
-  {
-    id: 'courses',
-    label: 'Courses',
-    icon: Icon.course,
-    links: [
-      {
-        id: 'course_drafts',
-        label: 'Course Drafts',
-        path: '/courses/drafts',
-        icon: Icon.activity,
-      },
-      {
-        id: 'course_preview',
-        label: 'Course Preview',
-        path: '/create/course',
-        icon: Icon.content,
-      },
-    ],
-  },
+  // {
+  //   id: 'labs',
+  //   label: 'Labs',
+  //   icon: Icon.lab,
+  //   links: [
+  //     {
+  //       id: 'lab_drafts',
+  //       label: 'Lab Drafts',
+  //       path: '/labs/drafts',
+  //       icon: Icon.activity,
+  //     },
+  //     {
+  //       id: 'lab_preview',
+  //       label: 'Lab Preview',
+  //       path: '/labs/preview',
+  //       icon: Icon.content,
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 'courses',
+  //   label: 'Courses',
+  //   icon: Icon.course,
+  //   links: [
+  //     {
+  //       id: 'course_drafts',
+  //       label: 'Course Drafts',
+  //       path: '/courses/drafts',
+  //       icon: Icon.activity,
+  //     },
+  //     {
+  //       id: 'course_preview',
+  //       label: 'Course Preview',
+  //       path: '/create/course',
+  //       icon: Icon.content,
+  //     },
+  //   ],
+  // },
   {
     id: 'content',
     label: 'Content',
     icon: Icon.content,
     links: [
-      {
-        id: 'content_drafts',
-        label: 'Content Drafts',
-        path: '/content/drafts',
-        icon: Icon.activity,
-      },
+      // {
+      //   id: 'content_drafts',
+      //   label: 'Content Drafts',
+      //   path: '/content/drafts',
+      //   icon: Icon.activity,
+      // },
       {
         id: 'content_preview',
         label: 'Content Preview',
@@ -119,7 +119,7 @@ const SIDEBAR_GROUPS = [
       {
         id: 'activity_log',
         label: 'Activity Log',
-        path: '/activity',
+        path: '',
         icon: Icon.activity,
       },
     ],

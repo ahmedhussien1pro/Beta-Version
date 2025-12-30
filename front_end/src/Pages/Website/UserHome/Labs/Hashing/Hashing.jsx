@@ -3,34 +3,44 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import Banner from '../../Components/Banner/Banner';
-import background from '../../assets/img/Hashing/background.png';
 import courseImage from '../../assets/img/Hashing/courseImage.png';
 import HashingVsEncryption from '../../assets/img/Hashing/hashing-vs-encryption.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 export default function Hashing() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Hashing',
+      ar: 'خوارزميات التجزئة (Hashing)',
+    },
+    description: {
+      en: 'Learn the fundamentals of one-way cryptographic functions. Understand the difference between hashing and encryption, and how to securely store passwords using salts and peppers.',
+      ar: 'تعلم أساسيات الدوال التشفيرية أحادية الاتجاه. افهم الفرق بين التجزئة والتشفير، وكيفية تخزين كلمات المرور بشكل آمن باستخدام تقنيات Salt و Pepper.',
+    },
+    difficulty: {
+      en: 'Beginner',
+      ar: 'مبتدئ',
+    },
+    duration: {
+      en: '20 min',
+      ar: '20 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '3450',
+  };
 
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Hashing'
-        courseDescription='Learn how attackers exploit access control vulnerabilities in web applications, gaining unauthorized access to sensitive areas or data, and the techniques used to detect and prevent these attacks.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
       <div className='Content'>

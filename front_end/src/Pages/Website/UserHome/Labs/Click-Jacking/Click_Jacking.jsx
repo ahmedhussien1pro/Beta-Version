@@ -4,34 +4,41 @@ import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import background from '../../assets/img/Click_Jacking/background.svg';
 import courseImage from '../../assets/img/Click_Jacking/courseImage.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 import click from '../../assets/img/Click_Jacking/clickjacking.svg';
 export default function Click_Jacking() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Click Jacking',
+      ar: 'هجوم اختطاف النقرات (Click Jacking)',
+    },
+    description: {
+      en: 'Learn how attackers exploit access control vulnerabilities in web applications, gaining unauthorized access to sensitive areas or data, and the techniques used to detect and prevent these attacks.',
+      ar: 'تعلم كيف يستغل المهاجمون ثغرات التحكم في الوصول في تطبيقات الويب، للحصول على وصول غير مصرح به للمناطق أو البيانات الحساسة، والتقنيات المستخدمة لاكتشاف ومنع هذه الهجمات.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '30 min',
+      ar: '30 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '2543',
+  };
 
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ left: '70%', objectFit: 'cover', height: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Click Jacking'
-        courseDescription=' Learn how attackers exploit access control vulnerabilities in
-                web applications, gaining unauthorized access to sensitive areas
-                or data, and the techniques used to detect and prevent these
-                attacks.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
       <div className='Content'>

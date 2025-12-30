@@ -1,32 +1,43 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Server Side Template Injection/baner_lap.png';
 import courseImage from '../../assets/img/Server Side Template Injection/course_image.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
-
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import exampleImage10 from '../../assets/img/Server Side Template Injection/10.jpg';
 import exampleImage11 from '../../assets/img/Server Side Template Injection/11.jpg';
 
 export default function SSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Server Side Request Forgery (SSRF)',
+      ar: 'تزوير الطلبات من جانب الخادم (SSRF)',
+    },
+    description: {
+      en: 'Learn how attackers trick servers into making unauthorized requests to internal or external systems. Master the techniques to identify SSRF vulnerabilities and protect sensitive internal resources.',
+      ar: 'تعلم كيف يخدع المهاجمون الخوادم لإرسال طلبات غير مصرح بها لأنظمة داخلية أو خارجية. أتقن تقنيات اكتشاف ثغرات SSRF وحماية الموارد الداخلية الحساسة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '45 min',
+      ar: '45 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '2150',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Server Side Request Forgery (SSRF)'
-        courseDescription='In this section we explain what server-side request forgery (SSRF) is, and describe some common examples. We also show you how to find and exploit SSRF vulnerabilities.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

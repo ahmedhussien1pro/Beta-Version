@@ -1,10 +1,9 @@
 import React from 'react';
 import '../../Components/Topics CSS/topics.css';
 import Header from '../../Header/Header';
-import background from '../../assets/img/bash/baner_lap.png';
 import courseImage from '../../assets/img/bash/full_colored_dark (1).png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Footer from '../../Footer/Footer';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import exampleImage1 from '../../assets/img/bash/carbon-8.png';
@@ -30,24 +29,35 @@ import ThemeSwitcher from '../../Components/ThemeSwitcher/ThemeSwitcher.jsx';
 
 export default function Bash() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Bash Scripting for Automation',
+      ar: 'برمجة باش للأتمتة (Bash Scripting)',
+    },
+    description: {
+      en: 'Master the power of the Linux command line. Learn to write shell scripts that automate repetitive tasks, manage system configurations, and process large amounts of data efficiently.',
+      ar: 'أتقن قوة سطر أوامر لينكس. تعلم كتابة سكربتات الصدفة (Shell Scripts) التي تؤتمت المهام المتكررة، وتدير إعدادات النظام، وتعالج كميات كبيرة من البيانات بكفاءة عالية.',
+    },
+    difficulty: {
+      en: 'Beginner',
+      ar: 'مبتدئ',
+    },
+    duration: {
+      en: '35 min',
+      ar: '35 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '4100',
+  };
+
   return (
     <>
       <Header />
       <ThemeSwitcher />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Bash Scripting'
-        courseDescription='Master the basics of Bash scripting, a powerful tool for
-                automating tasks and managing systems in cybersecurity
-                environments.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

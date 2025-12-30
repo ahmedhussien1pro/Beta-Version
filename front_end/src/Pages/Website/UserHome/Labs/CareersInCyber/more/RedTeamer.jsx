@@ -1,33 +1,44 @@
 import React from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
-import background from '../../../assets/img/CareersInCyber/RT/background.png';
 import courseImage from '../../../assets/img/CareersInCyber/RT/courseImage.png';
 import UseFaqSection from '../../../Components/UseFaqSection/UseFaqSection.jsx';
 import Banner from '../../../Components/Banner/Banner.jsx';
-import CourseLanding from '../../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Red Team Fundamentals',
+      ar: 'أساسيات الفريق الأحمر (Red Team)',
+    },
+    description: {
+      en: 'Learn the mindset and methodology of a Red Team operator. Master adversary emulation, initial access vectors, lateral movement, and persistence techniques to test organizational resilience.',
+      ar: 'تعلم عقلية ومنهجية مشغل الفريق الأحمر. أتقن محاكاة الخصوم، ونواقل الوصول الأولية، والتحرك الجانبي، وتقنيات الاستمرارية لاختبار مرونة المنظمة الدفاعية.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '90 min',
+      ar: '90 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '2800',
+  };
+
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Red Team Fundamentals'
-        courseDescription='Learn about the basics of a red engagement, the main components and stakeholders involved, and how red teaming differs from other cyber security engagements.'
-        difficulty='Intermediate'
-        duration='20 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
 

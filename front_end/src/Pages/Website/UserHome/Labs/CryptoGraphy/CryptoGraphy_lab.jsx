@@ -4,7 +4,7 @@ import Header from '../../Header/Header';
 import image from '../../assets/img/Cryptography/card_image.png';
 import Footer from '../../Footer/Footer';
 import { Card } from '../../Components/Card/Card';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function CryptoGraphy_lab() {

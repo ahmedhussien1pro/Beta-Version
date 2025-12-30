@@ -1,34 +1,45 @@
 import React from 'react';
 import Header from '../../../Header/Header';
 import Footer from '../../../Footer/Footer';
-import background from '../../../assets/img/CareersInCyber/SE/background.png';
 import courseImage from '../../../assets/img/CareersInCyber/SE/courseImage.png';
 import UseFaqSection from '../../../Components/UseFaqSection/UseFaqSection.jsx';
 import Banner from '../../../Components/Banner/Banner.jsx';
-import CourseLanding from '../../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function AC_Vuln() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Security Engineer',
+      ar: 'مهندس أمن سيبراني (Security Engineer)',
+    },
+    description: {
+      en: 'Master the technical skills to design, implement, and maintain robust security architectures. Learn to build automated defense systems, configure secure networks, and harden infrastructure against persistent threats.',
+      ar: 'أتقن المهارات التقنية لتصميم وتنفيذ وصيانة بنيات أمنية قوية. تعلم بناء أنظمة دفاع مؤتمتة، وإعداد شبكات آمنة، وتحصين البنية التحتية ضد التهديدات المستمرة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '75 min',
+      ar: '75 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '3800',
+  };
+
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Security Engineer'
-        courseDescription='Learn how to secure systems and protect data from cyber threats.'
-        difficulty='Intermediate'
-        duration='20 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/File Inclusion/baner_lap.png';
 import courseImage from '../../assets/img/File Inclusion/course_image.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
@@ -12,24 +11,37 @@ import exampleImage5 from '../../assets/img/File Inclusion/image_5.webp';
 import exampleImage6 from '../../assets/img/File Inclusion/image_6.webp';
 import exampleImage7 from '../../assets/img/File Inclusion/image_7.webp';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 export default function FileInclusion() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'File Inclusion',
+      ar: 'تضمين الملفات (File Inclusion)',
+    },
+    description: {
+      en: 'Master Local and Remote File Inclusion (LFI/RFI) vulnerabilities. Learn how attackers execute malicious code by manipulating file paths and how to secure your application.',
+      ar: 'أتقن ثغرات تضمين الملفات المحلية والبعيدة (LFI/RFI). تعلم كيف يقوم المهاجمون بتنفيذ أكواد خبيثة من خلال التلاعب بمسارات الملفات وكيفية تأمين تطبيقك.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '40 min',
+      ar: '40 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.7',
+    students: '1920',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing  */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='File Inclusion'
-        courseDescription=' A vulnerability that allows an attacker to attach a remotely or locally hosted file, usually via a script on the web server.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing  */}
       {/* Start Course Content  */}
       <div className='Content'>

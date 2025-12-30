@@ -3,7 +3,7 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Idor_cover from '../../assets/img/IDOR/IDOR_Cover.jpg';
 import { Card } from '../../Components/Card/Card';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 
 export default function InsecureDirectObjectReferenceLabs() {

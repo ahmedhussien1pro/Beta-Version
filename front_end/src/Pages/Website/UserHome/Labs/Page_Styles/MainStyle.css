@@ -1,115 +1,221 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* CyberAccordion.css - Block Element Modifier (BEM) Strategy */
 
-.open-sans {
-  font-family: "Open Sans", serif !important;
-  font-style: normal;
+:root {
+  --cyber-main: #00d4ff; /* Neon Cyan */
+  --cyber-success: #00ff9d; /* Matrix Green */
+  --cyber-warning: #ffcc00; /* Terminal Yellow */
+  --cyber-danger: #ff4444; /* Terminal Red */
+  --cyber-bg-dark: #0a0b10;
+  --cyber-item-bg: #151921;
+  --cyber-body-bg: #0e1218;
+  --cyber-glow: 0 0 20px rgba(0, 212, 255, 0.25);
 }
 
-.content__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--main-color);
+/* --- Block: Cyber Curriculum Section --- */
+.cyber-curriculum {
+  background-color: var(--cyber-bg-dark);
 }
 
-.content__subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: var(--main-color3);
-  background: var(--glass-effect);
-  width: fit-content;
+/* --- Element: Item Container --- */
+.cyber-curriculum__item {
+  background-color: var(--cyber-item-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  margin-bottom: 1.5rem !important;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.content__code {
-  margin-block: 1rem;
-  color: var(--main-color);
-  background: var(--glass-effect);
-  width: fit-content;
-  padding: 0.2rem;
-}
-
-.Content__img--box {
+/* --- Element: Trigger Header --- */
+.cyber-curriculum__trigger {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: transparent !important;
+  border: none !important;
+  border-left: 5px solid var(--cyber-main) !important;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.underline {
-  text-decoration: underline !important;
+.cyber-curriculum__trigger:not(.collapsed) {
+  background: rgba(0, 212, 255, 0.05) !important;
+  border-left-width: 10px !important;
+  box-shadow: inset 0 0 30px rgba(0, 212, 255, 0.05);
 }
 
-.terminal-container {
-  margin-bottom: 20px;
+/* --- Element: Topic Badge --- */
+.cyber-curriculum__badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--cyber-main);
+  background: rgba(0, 212, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-right: 1.5rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  letter-spacing: 1px;
 }
 
-.terminal-content {
+/* --- Element: Topic Title --- */
+.cyber-curriculum__title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- Element: Panel (Accordion Body) --- */
+.cyber-curriculum__panel {
+  padding: 2.5rem;
+  background-color: var(--cyber-body-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #d1d5db;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+}
+
+/* --- Element: Terminal Block --- */
+.cyber-curriculum__terminal {
+  margin: 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #2d333b;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cyber-curriculum__terminal-top {
+  background: #3e4552;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.terminal-top {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  background: rgb(62, 69, 82);
-  color: white;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.terminal-top::after {
-  display: block;
+/* Logic for Terminal 3-Dots (Your original requirement) */
+.cyber-curriculum__terminal-top::after {
+  content: '';
   position: absolute;
-  content: "";
-  top: 14px;
-  left: 10px;
-  width: 5px;
-  height: 5px;
+  left: 15px;
+  top: 15px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: rgb(255, 68, 68);
-  box-shadow: rgb(255, 68, 68) 0px 0px 0px 2px,
-    rgb(178, 224, 40) 1.5rem 0px 0px 2px,
-    rgb(255, 156, 7) 3rem 0px 0px 2px;
+  background-color: var(--cyber-danger);
+  box-shadow: 0 0 0 2px var(--cyber-danger), 1.5rem 0 0 2px var(--cyber-success),
+    3rem 0 0 2px var(--cyber-warning);
 }
 
-.terminal-code {
+.cyber-curriculum__terminal-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cyber-curriculum__terminal-body {
+  background: #1c2128;
+  padding: 1.5rem;
+}
+
+.cyber-curriculum__code-line {
+  color: #a5d6ff;
+  font-family: 'Fira Code', monospace;
+  word-break: break-all;
+  font-size: 0.95rem;
+}
+
+/* --- Element: Notes & Labs --- */
+.cyber-curriculum__note {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--cyber-main);
+  padding: 1.5rem;
+  border-radius: 8px;
   display: flex;
-  padding: 20px;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-.language-bash {
-  color: rgb(186, 200, 212);
-  background: rgb(40, 44, 51);
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  tab-size: 4;
-  margin-top: 0;
-  margin-bottom: 2px;
-  padding: 5px;
-  width: 100%;
+.cyber-curriculum__note--lab {
+  background: rgba(0, 255, 157, 0.03);
+  border-left-color: var(--cyber-success);
+}
+
+.cyber-curriculum__note-icon {
+  color: var(--cyber-success);
+  filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.4));
+}
+
+/* --- Element: Image Box --- */
+.cyber-curriculum__img {
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+}
+
+/* --- Modifier: RTL Support (Arabic) --- */
+[dir='rtl'] .cyber-curriculum__trigger {
+  border-left: none !important;
+  border-right: 5px solid var(--cyber-main) !important;
+  text-align: right;
+}
+
+[dir='rtl'] .cyber-curriculum__badge {
+  margin-right: 0;
+  margin-left: 1.5rem;
+}
+
+[dir='rtl'] .cyber-curriculum__terminal-top::after {
+  left: auto;
+  right: 15px;
+  box-shadow: 0 0 0 2px var(--cyber-danger),
+    -1.5rem 0 0 2px var(--cyber-success), -3rem 0 0 2px var(--cyber-warning);
+}
+
+[dir='rtl'] .cyber-curriculum__note {
+  border-left: none;
+  border-right: 4px solid var(--cyber-main);
+}
+
+[dir='rtl'] .cyber-curriculum__note--lab {
+  border-right-color: var(--cyber-success);
+}
+/* Image Sizing Classes */
+.cyber-curriculum__image-box {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.cyber-curriculum__image-box--small img {
+  width: 50% !important; /* للصور الصغيرة مثل الايكونات */
+}
+
+.cyber-curriculum__image-box--medium img {
+  width: 75% !important; /* الحجم الافتراضي المتناسق */
+}
+
+.cyber-curriculum__img {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cyber-curriculum__ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.cyber-curriculum__li {
   display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 12px;
+  color: #c9d1d9;
 }
 
-.custom__table {
-  color: var(--primary-text);
-  background: var(--secondary-bg);
-
-}
-
-.custom__table thead,
-.custom__table th {
-  color: var(--primary-text) !important;
-  background: var(--primary-bg) !important;
-}
-
-.custom__table td,
-.custom__table tr:hover {
-  color: var(--primary-text) !important;
-  background: var(--secondary-bg) !important;
+.cyber-curriculum__li-icon {
+  color: #ffcc00; /* لون سهم التنبيه من الكود القديم */
+  font-size: 0.8rem;
 }

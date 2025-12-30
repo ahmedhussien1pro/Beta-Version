@@ -3,12 +3,11 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import Banner from '../../Components/Banner/Banner';
-import background from '../../assets/img/CSRF/background.svg';
 import courseImage from '../../assets/img/CSRF/CourseImage.png';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn.jsx';
 import IntroImage from '../../assets/img/CSRF/intro.png';
 import Topic2 from '../../assets/img/CSRF/topic2.svg';
@@ -20,28 +19,35 @@ import Topic42 from '../../assets/img/CSRF/topic42.png';
 import Topic43 from '../../assets/img/CSRF/topic43.png';
 export default function CSRF() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Cross-Site Request Forgery (CSRF)',
+      ar: 'تزوير الطلبات عبر المواقع (CSRF)',
+    },
+    description: {
+      en: 'Learn how attackers force authenticated users to execute unwanted actions on web applications. Master defense techniques like CSRF tokens and SameSite cookie attributes.',
+      ar: 'تعلم كيف يجبر المهاجمون المستخدمين المسجلين على تنفيذ إجراءات غير مرغوب فيها. أتقن تقنيات الدفاع مثل رموز CSRF وخصائص الكوكيز SameSite.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '35 min',
+      ar: '35 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.8',
+    students: '2150',
+  };
 
   return (
     <>
       <Banner />
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseImage={courseImage}
-        courseTitle='Cross-Site Request Forgery (CSRF)'
-        courseDescription='Discover how attackers exploit CSRF vulnerabilities to perform
-                unauthorized actions on behalf of authenticated users without
-                their consent. Learn the strategies to detect, mitigate, and
-                safeguard web applications against such attacks, ensuring robust
-                protection for your users.'
-        difficulty='Intermediate'
-        duration='30 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       {/* Start Course */}
       <div className='Content '>

@@ -1,0 +1,126 @@
+/* ==================== RICH TEXT EDITOR - BEM STYLE ==================== */
+
+.rich-editor {
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.rich-editor:focus-within {
+  border-color: var(--color-primary-500);
+  box-shadow: var(--shadow-focus);
+  background: var(--bg-primary);
+}
+
+/* ==================== TOOLBAR ==================== */
+
+.rich-editor__toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: var(--bg-tertiary);
+  border-bottom: var(--border-width) solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.rich-editor__btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+}
+
+.rich-editor__btn:hover {
+  background: var(--bg-primary);
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-500);
+  transform: translateY(-1px);
+}
+
+.rich-editor__btn:active {
+  transform: translateY(0);
+}
+
+.rich-editor__btn--active {
+  background: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+  color: white;
+}
+
+.rich-editor__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--border-color);
+  margin: 0 var(--space-1);
+}
+
+/* ==================== CONTENT ==================== */
+
+.rich-editor__content {
+  padding: var(--space-4);
+  min-height: 120px;
+  outline: none;
+  color: var(--text-primary);
+  line-height: var(--leading-relaxed);
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  background: transparent;
+  border: none;
+  width: 100%;
+  resize: vertical;
+  transition: background var(--transition-fast);
+}
+
+.rich-editor__content::placeholder {
+  color: var(--text-tertiary);
+}
+
+.rich-editor__content:focus {
+  background: var(--bg-primary);
+}
+
+/* ==================== COLOR PICKER ==================== */
+
+.rich-editor__color-picker {
+  position: relative;
+}
+
+.rich-editor__color-input {
+  position: absolute;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 576px) {
+  .rich-editor__toolbar {
+    gap: var(--space-1);
+    padding: var(--space-2);
+  }
+
+  .rich-editor__btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .rich-editor__content {
+    padding: var(--space-3);
+    min-height: 100px;
+  }
+}

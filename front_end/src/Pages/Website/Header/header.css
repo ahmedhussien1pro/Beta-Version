@@ -168,7 +168,6 @@
   z-index: 10000000;
 }
 
-
 @media (max-width: 992px) {
   .header__profile-dropdown {
     top: 50%;

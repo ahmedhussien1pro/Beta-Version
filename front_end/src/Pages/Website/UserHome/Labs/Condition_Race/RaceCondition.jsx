@@ -1,11 +1,10 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Condition_Race/background-race-condition.jpg';
 import courseImage from '../../assets/img/Condition_Race/race condition icon.jpg';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import exampleImage1 from '../../assets/img/Condition_Race/1.png';
 import exampleImage2 from '../../assets/img/Condition_Race/2.png';
@@ -16,21 +15,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 export default function RaceCondition() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Race Condition',
+      ar: 'حالة السباق (Race Condition)',
+    },
+    description: {
+      en: 'Explore vulnerabilities that occur when multiple threads or processes access shared resources simultaneously. Learn to exploit timing issues and implement proper synchronization.',
+      ar: 'استكشف الثغرات التي تحدث عندما تحاول عمليات متعددة الوصول إلى الموارد المشتركة في وقت واحد. تعلم كيفية استغلال مشاكل التوقيت وتطبيق المزامنة الصحيحة.',
+    },
+    difficulty: {
+      en: 'Advanced',
+      ar: 'متقدم',
+    },
+    duration: {
+      en: '50 min',
+      ar: '50 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '1240',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        courseTitle='Race Condition'
-        courseDescription='In this course, you’ll learn about race condition vulnerabilities, which occur when the behavior of a system depends on the sequence or timing of events, allowing attackers to manipulate execution order for malicious purposes. The course covers causes, exploitation techniques, impacts, and best practices for mitigation.'
-        difficulty='Intermediate'
-        duration='45 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>

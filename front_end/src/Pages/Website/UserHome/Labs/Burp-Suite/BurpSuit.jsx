@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../../Header/Header';
-import background from '../../assets/img/Burp_Suit/Background_Burp_suit.jpg';
 import courseImage from '../../assets/img/Burp_Suit/Icon_Burp_Suit.png';
 import Footer from '../../Footer/Footer';
 import '../../Components/Topics CSS/topics.css';
@@ -8,7 +7,7 @@ import './BurpSuit.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import UseFaqSection from '../../Components/UseFaqSection/UseFaqSection.jsx';
-import CourseLanding from '../../Components/CourseLanding/CourseLanding.jsx';
+import CourseLanding from '../../Components/Landing/CourseLanding.jsx';
 import GoTop from '../../Components/Go2Top_Btn/Go2Top_Btn';
 import exampleImage1 from '../../assets/img/Burp_Suit/1.png';
 import exampleImage2 from '../../assets/img/Burp_Suit/2.png';
@@ -32,22 +31,34 @@ import exampleImage19 from '../../assets/img/Burp_Suit/19.png';
 
 export default function BurpSuit() {
   const { faqSectionRef, handleGoToLab } = UseFaqSection();
+  const data = {
+    title: {
+      en: 'Burp Suite Mastery',
+      ar: 'احتراف برنامج بيرب سويت (Burp Suite)',
+    },
+    description: {
+      en: 'Learn the industry-standard tool for web application security. Master the Proxy, Repeater, and Intruder modules to intercept traffic, perform manual testing, and automate attacks.',
+      ar: 'تعلم الأداة القياسية في عالم أمن تطبيقات الويب. أتقن وحدات البروكسي (Proxy)، والمكرر (Repeater)، والمقتحم (Intruder) لاعتراض حركة المرور، وإجراء الاختبارات اليدوية، وأتمتة الهجمات.',
+    },
+    difficulty: {
+      en: 'Intermediate',
+      ar: 'متوسط',
+    },
+    duration: {
+      en: '60 min',
+      ar: '60 دقيقة',
+    },
+    courseImage: courseImage,
+    instructor: 'CyberLab',
+    rating: '4.9',
+    students: '5200',
+  };
+
   return (
     <>
       <Header />
       {/* Start Landing */}
-      <CourseLanding
-        background={background}
-        courseImage={courseImage}
-        backgroundStyle={{ objectFit: 'cover', height: '100%', width: '100%' }}
-        courseTitle='Burp Suite'
-        courseDescription='In this course, you’ll learn about Burp Suite, a powerful web security testing tool. The course covers its core components, including the Proxy, Intruder, Repeater, and Decoder, along with their practical applications, attack techniques, and security testing strategies.'
-        difficulty='Intermediate'
-        duration='45 min'
-        onSaveRoom={() => console.log('Room Saved!')}
-        onLike={() => console.log('Liked!')}
-        onDislike={() => console.log('Disliked!')}
-      />
+      <CourseLanding {...data} />
       {/* End Landing */}
       <div className='Content'>
         <div className='secure-container' ref={faqSectionRef}>
@@ -568,7 +579,7 @@ export default function BurpSuit() {
                       in various Burp tools, such as HTTP history. To carry out
                       a data transformation using Burp Decoder:
                     </p>
-                    <ul class='custom-transformation-list'>
+                    <ul className='custom-transformation-list'>
                       {[
                         '1. Locate the data that you want to analyze.',
                         '2. Right-click the data in the message editor and select Send to Decoder.',
@@ -591,7 +602,7 @@ export default function BurpSuit() {
                       further transformations as required. For each
                       transformation, the following applies:
                     </p>
-                    <ul class='custom-transformation-list'>
+                    <ul className='custom-transformation-list'>
                       <li>
                         {' '}
                         <FontAwesomeIcon

@@ -12,6 +12,7 @@ const darkTheme = {
   '--faq-header': '#3a3c40',
   '--faq-header-hover': '#3a3c40',
   '--box-shadow': '0 2px 6px rgb(0 0 0 / 20%), 0 2px 12px rgb(0 0 0 / 16%)',
+  '--course-card-bg': '#ffffff0a',
 };
 
 const lightTheme = {
@@ -26,6 +27,8 @@ const lightTheme = {
   '--faq-header': '#3a3c40',
   '--faq-header-hover': '#505358',
   '--box-shadow': '0 4px 12px rgba(0,0,0,0.08)',
+  '--course-card-bg': 'rgba(255, 255, 255, 0.8)',
+  '--course-card-border': 'rgba(0, 0, 0, 0.1)',
 };
 
 const ThemeSwitcher = (isDropdownOpen) => {

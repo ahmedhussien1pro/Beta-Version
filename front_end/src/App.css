@@ -99,11 +99,12 @@
 .banner-power-icons {
   color: var(--crimson-red);
 }
-
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -125,8 +126,13 @@ body {
 
 html,
 body {
+  font-family: var(--font-sans);
   color: var(--primary-text);
   background-color: var(--primary-bg);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--transition-base), color var(--transition-base);
 }
 
 .flex {
@@ -515,67 +521,3 @@ div#react-error-overlay {
     max-height: 250px;
   }
 }
-
-/* rtl - ltr */
-/* دعم كامل للـ RTL مع Bootstrap بدون ما تغيري أي كلاس */
-/* body.rtl {
-  direction: rtl;
-  text-align: right;
-}
-
-body.ltr {
-  direction: ltr;
-  text-align: left;
-} */
-
-/* عكس الـ logical margins & paddings اللي في Bootstrap */
-/* body.rtl [class*="ms-"] {
-  margin-left: 0 !important;
-  margin-right: var(--bs-spacer) !important;
-}
-
-body.rtl [class*="me-"] {
-  margin-right: 0 !important;
-  margin-left: var(--bs-spacer) !important;
-}
-
-body.rtl [class*="ps-"] {
-  padding-left: 0 !important;
-  padding-right: var(--bs-spacer) !important;
-}
-
-body.rtl [class*="pe-"] {
-  padding-right: 0 !important;
-  padding-left: var(--bs-spacer) !important;
-} */
-
-/* عكس text-start / text-end */
-/* body.rtl .text-start {
-  text-align: right !important;
-}
-
-body.rtl .text-end {
-  text-align: left !important;
-} */
-
-/* عكس float */
-/* body.rtl .float-start {
-  float: right !important;
-}
-
-body.rtl .float-end {
-  float: left !important;
-} */
-
-/* لو عندك أيقونات أو عناصر لازم تعكسي ترتيبها */
-/* body.rtl .d-flex {
-  flex-direction: row-reverse;
-}
-
-body.rtl .flex-row {
-  flex-direction: row-reverse !important;
-}
-
-body.rtl .flex-row-reverse {
-  flex-direction: row !important;
-} */

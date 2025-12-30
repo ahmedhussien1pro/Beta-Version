@@ -5,7 +5,7 @@ import Banner from '../../Components/Banner/Banner';
 import Footer from '../../Footer/Footer';
 import { Card } from '../../Components/Card/Card';
 import Go2TopBtn from '../../Components/Go2Top_Btn/Go2Top_Btn';
-import LandingPractice from '../../Components/PracticeLanding/PracticeLanding';
+import LandingPractice from '../../Components/Landing/PracticeLanding';
 import PracticeTitle from '../../Components/PracticeTitle/PracticeTitle';
 export default function AC_Vuln_labs() {
   const Labs = [
