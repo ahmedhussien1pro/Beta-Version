@@ -1,0 +1,43 @@
+import multer from 'multer';
+import prisma from "../../../utilities/db";
+
+
+export const upload = multer({
+    storage: multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, 'uploads/'); // Directory where files will be stored
+        },
+        filename: (req, file, cb) => {
+            cb(null, `${Date.now()}-${file.originalname}`); // Unique filename
+        },
+    }),
+});
+
+export async function saveFile(req, res)  {
+  try {
+    const file = req.file;
+
+    if (!file) {
+      return res.status(400).send('No file uploaded.');
+    }
+
+    // Save file details to the database
+    const savedFile = await prisma.file.create({
+      data: {
+        name: file.originalname,
+        mimetype: file.mimetype,
+        path: file.path,
+        userId:req.params.id
+      },
+    });
+
+    res.status(200).json({
+      message: 'File uploaded successfully',
+      file: savedFile,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error uploading file.');
+  }
+}
+

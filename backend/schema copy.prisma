@@ -1,0 +1,318 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String            @id @default(uuid())
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  name             String            @unique
+  email            String            @unique
+  password         String
+  isVerified       Boolean           @default(false) @map("is_verified")
+  role             Role              @default(writer)
+  token            String?
+  address          String?
+  birthday         String?
+  phoneNum         String?
+  File             File[]
+  image            Image?
+  validationNumber ValidationNumber?
+}
+
+model Image {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  path      String
+  mimetype  String
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model ValidationNumber {
+  id         String   @id @default(uuid())
+  number     String
+  createdAt  DateTime @default(now())
+  expiration BigInt
+  isVerified Boolean  @default(false) @map("is_verified")
+  userId     String   @unique
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+model userForsqlInjection {
+  id       String  @id @default(uuid())
+  username String? @unique
+  password String
+
+  @@map("userForSQLInjection")
+}
+
+model userForXSS {
+  id    String @id @default(uuid())
+  email String @unique
+  posts Post[]
+}
+
+model File {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  name      String
+  path      String
+  mimetype  String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Lab1IDORS {
+  id   Int     @id @default(autoincrement())
+  path String?
+}
+
+model Lab2IDORS {
+  id      Int @id @default(1)
+  balance Int @default(1000)
+}
+
+model Lab3IDORS {
+  id      Int    @id @default(autoincrement())
+  name    String @default("user")
+  balance Int    @default(1000)
+}
+
+model Post {
+  id        String     @id @default(uuid())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  content   String
+  userId    String
+  user      userForXSS @relation(fields: [userId], references: [id])
+}
+
+model lab2sql {
+  id       String  @id @default(uuid())
+  category String? @default("electronics")
+  released String? @default("1")
+}
+
+model lab3sql {
+  id       String  @id @default(uuid())
+  name     String?
+  price    String?
+  category String? @default("electronics")
+}
+
+model ACUser {
+  id   Int    @id @default(autoincrement())
+  name String
+}
+
+model apiHackingLab {
+  id       Int                  @id @default(autoincrement())
+  username String               @unique
+  password String
+  image    imageForApiHacking[]
+}
+
+model imageForApiHacking {
+  id     Int           @id @default(autoincrement())
+  name   String
+  path   String
+  userId Int
+  user   apiHackingLab @relation(fields: [userId], references: [id])
+}
+
+model ProductToPathTraversalLab1 {
+  id          Int     @id @default(autoincrement())
+  name        String?
+  path        String
+  description String
+}
+
+model BankAccount {
+  id             Int    @id @default(autoincrement())
+  accountNo      String @unique
+  accountPass    String
+  accountBalance Float  @default(0)
+  accountName    String
+}
+
+model CSRFLab2 {
+  id        Int    @id @default(autoincrement())
+  authority String @unique
+  password  String
+}
+
+model CSRFLab3 {
+  id      Int    @id @default(autoincrement())
+  name    String @default("user")
+  balance Int    @default(1000)
+}
+
+model FileInclusionLab1 {
+  id   String @id @default(uuid())
+  name String @unique
+  path String
+}
+
+model CartItem {
+  id    Int    @id @default(autoincrement())
+  name  String
+  price Int
+}
+
+model BurPSuiteLab3 {
+  id          String  @id @default(uuid())
+  name        String?
+  path        String?
+  description String?
+}
+
+model Course {
+  id            Int                  @id @default(autoincrement())
+  title         String
+  description   String
+  image         String?
+  link          String?
+  state         String
+  topics        String[]
+  difficulty    String
+  favorite      Boolean              @default(false)
+  category      String
+  myCourses     Boolean
+  registrations CourseRegistration[]
+}
+
+model CourseRegistration {
+  id        Int      @id @default(autoincrement())
+  courseId  Int
+  createdAt DateTime @default(now())
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model ClickJackLab1 {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+  email    String?
+}
+
+enum Role {
+  admin
+  writer
+}
+
+model Lab1RaceCondition {
+  id      String @id @default(uuid())
+  email   String
+  name    String
+  surname String
+  tel     String
+}
+
+model Lab1captcha {
+  id      String  @id @default(uuid())
+  comment String?
+  captcha String  @unique
+}
+
+model Lab2captcha {
+  id      String  @id @default(uuid())
+  comment String?
+  captcha String?
+}
+
+model Lab2captchaComment {
+  id      String  @id @default(uuid())
+  comment String?
+}
+
+model BLVulnUser {
+  id        Int              @id @default(autoincrement())
+  email     String           @unique
+  name      String?
+  password  String           @default("") // New field with a default value
+  balance   Float            @default(0)
+  cartItems BLVulnCartItem[]
+}
+
+model BLVulnCartItem {
+  id        Int        @id @default(autoincrement())
+  productId Int
+  quantity  Int
+  user      BLVulnUser @relation(fields: [userId], references: [id])
+  userId    Int
+}
+
+model Lab3captchaComment {
+  id      String  @id @default(uuid())
+  comment String?
+}
+
+model lab1SSTI1 {
+  id      String  @id @default(uuid())
+  name    String?
+  comment String?
+}
+
+model lab1jwt {
+  id       String  @id @default(uuid(7))
+  username String  @unique
+  email    String? @unique
+  password String
+  token    String?
+}
+
+model lab2jwt {
+  id       String  @id @default(uuid(7))
+  username String  @unique
+  email    String? @unique
+  password String
+  token    String?
+}
+
+model lab3jwt {
+  id       String  @id @default(uuid(7))
+  username String  @unique
+  email    String? @unique
+  password String
+  token    String?
+}
+
+model lab2RaceConditionCoupon {
+  id       Int                        @id @default(autoincrement())
+  coupon   String?                    @unique
+  discount Int?                       @default(50)
+  isValid  Boolean                    @default(true)
+  payments lab2RaceConditionPayment[] @relation("CouponPayments")
+}
+
+model lab2RaceConditionPayment {
+  id                 Int                      @id @default(autoincrement())
+  price              Int
+  priceAfterDiscount Int?
+  createdAt          DateTime                 @default(now())
+  couponId           Int?
+  coupon             lab2RaceConditionCoupon? @relation(fields: [couponId], references: [id], name: "CouponPayments")
+}
+
+model lab1SSRF {
+  id       String @id @default(uuid())
+  username String @unique
+}
+
+model contactUs {
+  id        String   @id @default(uuid())
+  fname     String
+  lname     String
+  phone     String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}

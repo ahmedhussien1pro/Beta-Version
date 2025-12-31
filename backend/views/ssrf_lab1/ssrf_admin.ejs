@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Admin Lab</title>
+    <link rel="stylesheet" href="/css/SSRF_Labs.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <a href="/previous-page">
+        <button class="go-back-btn">Go Back</button>
+    </a>
+
+    <button class="show-hint-btn" onclick="alert('This lab demonstrates SSRF vulnerabilities.')">Show Hint</button>
+
+    <button onclick="resetLab()" class="reset-btn">Reset</button>
+
+    <h1 style="text-align: center; margin-bottom: 20px;">User Management</h1>
+
+    <ul>
+        <% if (usernames.length> 0) { %>
+            <% usernames.forEach(function(username) { %>
+                <li class="ssrf_user_list">
+                    <%= username %>
+                        <button onclick="deleteUser('<%= username %>')" class="delete_user">Delete</button>
+                </li>
+                <% }); %>
+                    <% } else { %>
+                        <p>No users found.</p>
+                        <% } %>
+    </ul>
+
+    <script>
+        async function resetLab() {
+            try {
+                const response = await axios.post("http://127.0.0.1:8080/api/SSRFLab/resetLab1");
+                window.location.reload();
+            } catch (error) {
+                console.error("Error creating users:", error);
+            }
+        }
+
+        async function deleteUser(username) {
+            try {
+                await axios.delete(`http://127.0.0.1:8080/api/SSRFLab/deleteUser/${username}`);
+                window.location.reload();
+            } catch (error) {
+                console.error("Error deleting user:", error);
+            }
+        }
+    </script>
+</body>
+
+</html>

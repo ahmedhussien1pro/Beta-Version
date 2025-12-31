@@ -40,12 +40,12 @@ const SIDEBAR_GROUPS = [
       //   path: '/create/course',
       //   icon: Icon.course,
       // },
-      // {
-      //   id: 'create_lab',
-      //   label: 'Create Lab',
-      //   path: '/create/lab',
-      //   icon: Icon.lab,
-      // },
+      {
+        id: 'create_lab',
+        label: 'Create Lab',
+        path: '/create/lab',
+        icon: Icon.lab,
+      },
       {
         id: 'create_content',
         label: 'Create Content',
@@ -54,44 +54,50 @@ const SIDEBAR_GROUPS = [
       },
     ],
   },
-  // {
-  //   id: 'labs',
-  //   label: 'Labs',
-  //   icon: Icon.lab,
-  //   links: [
-  //     {
-  //       id: 'lab_drafts',
-  //       label: 'Lab Drafts',
-  //       path: '/labs/drafts',
-  //       icon: Icon.activity,
-  //     },
-  //     {
-  //       id: 'lab_preview',
-  //       label: 'Lab Preview',
-  //       path: '/labs/preview',
-  //       icon: Icon.content,
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 'courses',
-  //   label: 'Courses',
-  //   icon: Icon.course,
-  //   links: [
-  //     {
-  //       id: 'course_drafts',
-  //       label: 'Course Drafts',
-  //       path: '/courses/drafts',
-  //       icon: Icon.activity,
-  //     },
-  //     {
-  //       id: 'course_preview',
-  //       label: 'Course Preview',
-  //       path: '/create/course',
-  //       icon: Icon.content,
-  //     },
-  //   ],
-  // },
+  {
+    id: 'labs',
+    label: 'Labs',
+    icon: Icon.lab,
+    links: [
+      // {
+      //   id: 'lab_drafts',
+      //   label: 'Lab Drafts',
+      //   path: '/labs/drafts',
+      //   icon: Icon.activity,
+      // },
+      {
+        id: 'lab_preview',
+        label: 'Lab Preview',
+        path: '/labs/preview',
+        icon: Icon.content,
+      },
+      {
+        id: 'create_lab',
+        label: 'Create Lab',
+        path: '/create/lab',
+        icon: Icon.lab,
+      },
+    ],
+  },
+  {
+    id: 'courses',
+    label: 'Courses',
+    icon: Icon.course,
+    links: [
+      {
+        id: 'course_drafts',
+        label: 'Course Drafts',
+        path: '/courses/drafts',
+        icon: Icon.activity,
+      },
+      {
+        id: 'course_preview',
+        label: 'Course Preview',
+        path: '/create/course',
+        icon: Icon.content,
+      },
+    ],
+  },
   {
     id: 'content',
     label: 'Content',
@@ -107,6 +113,12 @@ const SIDEBAR_GROUPS = [
         id: 'content_preview',
         label: 'Content Preview',
         path: '/content/preview',
+        icon: Icon.content,
+      },
+      {
+        id: 'create_content',
+        label: 'Create Content',
+        path: '/create/content',
         icon: Icon.content,
       },
     ],

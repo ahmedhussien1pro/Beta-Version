@@ -1,0 +1,36 @@
+# Node.js dependencies
+/node_modules
+/package-lock.json
+/npm-debug.log*
+/yarn-error.log
+/debug.log
+/error.log
+
+# Build output
+/dist/
+/build/
+/temp/
+# Environment variables
+.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Log files
+logs/
+*.log
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*.swn
+
+# Ignore generated image files (optional)
+public/generated_images/

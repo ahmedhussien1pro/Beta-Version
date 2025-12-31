@@ -76,7 +76,7 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
               el.size || 'medium'
             }`}>
             <img
-              src={imageMap[el.srcKey]}
+              src={el.srcKey || el.imageUrl || ''}
               alt={el.alt || 'visual'}
               className='cyber-curriculum__image'
             />
