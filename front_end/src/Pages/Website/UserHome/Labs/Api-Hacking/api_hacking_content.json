@@ -1,0 +1,645 @@
+{
+  "landingData": {
+    "title": {
+      "en": "API Hacking & Testing",
+      "ar": "اختبار اختراق الواجهات البرمجية (API)"
+    },
+    "description": {
+      "en": "Master the art of securing modern applications by attacking their back-end APIs. Learn to identify vulnerabilities like BOLA, Broken Authentication, and Mass Assignment using tools like Postman and Burp Suite.",
+      "ar": "أتقن فن تأمين التطبيقات الحديثة عبر مهاجمة واجهاتها البرمجية الخلفية. تعلم كيفية اكتشاف ثغرات مثل BOLA، وكسر المصادقة، والتعيين الجماعي (Mass Assignment) باستخدام أدوات مثل Postman وBurp Suite."
+    },
+    "difficulty": { "en": "Intermediate", "ar": "متوسط" },
+    "duration": { "en": "50 min", "ar": "50 دقيقة" },
+    "instructor": "CyberLab",
+    "rating": "4.9",
+    "students": "3100",
+    "labsLink": "/Api_Hacking/Api_Hacking_labs"
+  },
+
+  "topics": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Intro to API Testing",
+        "ar": "مقدمة لاختبار الواجهات البرمجية"
+      },
+      "elements": [
+        {
+          "type": "title",
+          "value": {
+            "en": "API Testing",
+            "ar": "اختبار الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "APIs (Application Programming Interfaces) enable software systems and applications to communicate and share data. API testing is important as vulnerabilities in APIs may undermine core aspects of a website's confidentiality, integrity, and availability.",
+            "ar": "تمكن الواجهات البرمجية (APIs) أنظمة البرامج والتطبيقات من التواصل وتبادل البيانات. اختبار الواجهات البرمجية مهم لأن الثغرات فيها قد تقوض الجوانب الأساسية لسرية الموقع وسلامته وتوافره."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "All dynamic websites are composed of APIs, so classic web vulnerabilities like SQL injection could be classed as API testing. In this topic, we'll teach you how to test APIs that aren't fully used by the website front-end, with a focus on RESTful and JSON APIs. We'll also teach you how to test for server-side parameter pollution vulnerabilities that may impact internal APIs.",
+            "ar": "تتكون جميع المواقع الديناميكية من واجهات برمجية، لذا يمكن تصنيف ثغرات الويب التقليدية مثل حقن SQL كاختبار للواجهات البرمجية. في هذا الموضوع، سنعلمك كيفية اختبار الواجهات البرمجية التي لا تستخدمها الواجهة الأمامية للموقع بالكامل، مع التركيز على واجهات RESTful وJSON البرمجية. سنعلمك أيضاً كيفية اختبار ثغرات تلوث المعاملات من جانب الخادم التي قد تؤثر على الواجهات البرمجية الداخلية."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To illustrate the overlap between API testing and general web testing, we've created a mapping between our existing topics and the OWASP API Security Top 10 2023.",
+            "ar": "لتوضيح التداخل بين اختبار الواجهات البرمجية واختبار الويب العام، أنشأنا تعييناً بين موضوعاتنا الحالية وقائمة OWASP لأمان الواجهات البرمجية العشرة الأوائل لعام 2023."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "image1",
+          "size": "medium"
+        },
+        { "type": "hr" },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this section, we'll introduce the concept of API testing, focusing on how APIs enable communication between different software systems and why testing them is crucial for identifying vulnerabilities. We'll dive into API recon, the importance of understanding API documentation, and how to identify potential weaknesses in APIs, especially RESTful and JSON APIs. Lastly, we'll give you the opportunity to practice with our interactive labs, simulating real-world API testing scenarios.",
+            "ar": "في هذا القسم، سنقدم مفهوم اختبار الواجهات البرمجية، مع التركيز على كيفية تمكين الواجهات البرمجية للتواصل بين أنظمة البرمجيات المختلفة ولماذا اختبارها أمر بالغ الأهمية لتحديد الثغرات. سنتعمق في استطلاع الواجهات البرمجية، وأهمية فهم وثائق الواجهات البرمجية، وكيفية تحديد نقاط الضعف المحتملة في الواجهات البرمجية، خاصة واجهات RESTful وJSON البرمجية. أخيراً، سنمنحك الفرصة للممارسة مع معاملنا التفاعلية، محاكاة سيناريوهات اختبار الواجهات البرمجية في العالم الحقيقي."
+          }
+        },
+        {
+          "type": "note",
+          "isLab": true,
+          "value": {
+            "en": "If you already understand the basics of API testing and want to apply your knowledge to vulnerable targets, you can access all the labs in this topic through the following link",
+            "ar": "إذا كنت تفهم بالفعل أساسيات اختبار الواجهات البرمجية وتريد تطبيق معرفتك على الأهداف الضعيفة، يمكنك الوصول إلى جميع المعامل في هذا الموضوع من خلال الرابط التالي"
+          },
+          "link": "/Api_Hacking/Api_Hacking_labs"
+        }
+      ]
+    },
+    {
+      "id": "topic1",
+      "title": {
+        "en": "What is API Testing?",
+        "ar": "ما هو اختبار الواجهات البرمجية؟"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "API Testing",
+            "ar": "اختبار الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "API testing is a critical aspect of ensuring the security and functionality of modern web applications. APIs (Application Programming Interfaces) allow systems to communicate and share data, but flawed APIs can lead to vulnerabilities that compromise a website's security. APIs are often used in dynamic websites, and testing them ensures that common vulnerabilities like SQL injection or parameter pollution are prevented. This section will help you understand the role of API testing in maintaining the confidentiality, integrity, and availability of web applications.",
+            "ar": "اختبار الواجهات البرمجية هو جانب حاسم لضمان أمن ووظائف تطبيقات الويب الحديثة. تسمح الواجهات البرمجية (APIs) للأنظمة بالتواصل وتبادل البيانات، لكن الواجهات البرمجية المعيبة يمكن أن تؤدي إلى ثغرات تعرض أمان الموقع للخطر. غالباً ما تُستخدم الواجهات البرمجية في المواقع الديناميكية، واختبارها يضمن منع الثغرات الشائعة مثل حقن SQL أو تلوث المعاملات. سيساعدك هذا القسم على فهم دور اختبار الواجهات البرمجية في الحفاظ على سرية تطبيقات الويب وسلامتها وتوافرها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Key Areas Covered:",
+            "ar": "المجالات الرئيسية المغطاة:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "text": {
+                "en": "RESTful API testing",
+                "ar": "اختبار واجهات RESTful البرمجية"
+              }
+            },
+            {
+              "text": {
+                "en": "JSON API testing",
+                "ar": "اختبار واجهات JSON البرمجية"
+              }
+            },
+            {
+              "text": {
+                "en": "Server-side parameter pollution vulnerabilities",
+                "ar": "ثغرات تلوث المعاملات من جانب الخادم"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic2",
+      "title": {
+        "en": "How Do APIs Work?",
+        "ar": "كيف تعمل الواجهات البرمجية؟"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "srcKey": "image4",
+          "size": "medium"
+        },
+        { "type": "hr" },
+        {
+          "type": "text",
+          "value": {
+            "en": "To begin testing an API, you need to understand how it functions and how to interact with it. This includes:",
+            "ar": "لبدء اختبار الواجهة البرمجية، تحتاج إلى فهم كيفية عملها وكيفية التفاعل معها. يشمل ذلك:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "subtitle": {
+                "en": "Identifying Endpoints:",
+                "ar": "تحديد نقاط النهاية:"
+              },
+              "text": {
+                "en": "These are the locations where an API receives requests, such as /api/books for retrieving books from a library.",
+                "ar": "هذه هي المواقع التي تتلقى فيها الواجهة البرمجية الطلبات، مثل /api/books لاسترجاع الكتب من مكتبة."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Understanding Input Data:",
+                "ar": "فهم بيانات الإدخال:"
+              },
+              "text": {
+                "en": "Knowing both mandatory and optional parameters helps in constructing valid requests.",
+                "ar": "معرفة المعاملات الإلزامية والاختيارية يساعد في إنشاء طلبات صالحة."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "HTTP Methods:",
+                "ar": "طرق HTTP:"
+              },
+              "text": {
+                "en": "APIs accept specific methods like GET, POST, PUT, and DELETE to perform different operations.",
+                "ar": "تقبل الواجهات البرمجية طرقاً محددة مثل GET وPOST وPUT وDELETE لإجراء عمليات مختلفة."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Rate Limits and Authentication:",
+                "ar": "حدود المعدل والمصادقة:"
+              },
+              "text": {
+                "en": "APIs may restrict access to certain actions based on factors like the number of requests or the type of user authentication.",
+                "ar": "قد تقيد الواجهات البرمجية الوصول إلى إجراءات معينة بناءً على عوامل مثل عدد الطلبات أو نوع مصادقة المستخدم."
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this section, you'll learn how to identify these elements and understand how they impact API behavior during testing.",
+            "ar": "في هذا القسم، ستتعلم كيفية تحديد هذه العناصر وفهم كيفية تأثيرها على سلوك الواجهة البرمجية أثناء الاختبار."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic3",
+      "title": {
+        "en": "Discovering API Documentation",
+        "ar": "اكتشاف وثائق الواجهات البرمجية"
+      },
+      "elements": [
+        {
+          "type": "title",
+          "value": {
+            "en": "API Documentation",
+            "ar": "وثائق الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "APIs are usually documented so that developers know how to use and integrate with them.",
+            "ar": "عادةً ما يتم توثيق الواجهات البرمجية حتى يعرف المطورون كيفية استخدامها والتكامل معها."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "image3",
+          "size": "medium"
+        },
+        { "type": "hr" },
+        {
+          "type": "text",
+          "value": {
+            "en": "Documentation can be in both human-readable and machine-readable forms. Human-readable documentation is designed for developers to understand how to use the API. It may include detailed explanations, examples, and usage scenarios. Machine-readable documentation is designed to be processed by software for automating tasks like API integration and validation. It's written in structured formats like JSON or XML.",
+            "ar": "يمكن أن تكون الوثائق في أشكال يمكن قراءتها بواسطة الإنسان والآلة. الوثائق التي يمكن قراءتها بواسطة الإنسان مصممة للمطورين لفهم كيفية استخدام الواجهة البرمجية. قد تتضمن شروحات مفصلة وأمثلة وسيناريوهات استخدام. الوثائق التي يمكن قراءتها بواسطة الآلة مصممة لمعالجتها بواسطة البرنامج لأتمتة المهام مثل تكامل الواجهة البرمجية والتحقق من صحتها. تُكتب بتنسيقات منظمة مثل JSON أو XML."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "API documentation is often publicly available, particularly if the API is intended for use by external developers. If this is the case, always start your recon by reviewing the documentation.",
+            "ar": "غالباً ما تكون وثائق الواجهة البرمجية متاحة للجمهور، خاصةً إذا كانت الواجهة البرمجية مخصصة للاستخدام من قبل المطورين الخارجيين. إذا كان الأمر كذلك، ابدأ دائماً استطلاعك بمراجعة الوثائق."
+          }
+        },
+        {
+          "type": "title",
+          "value": {
+            "en": "Discovering API Documentation",
+            "ar": "اكتشاف وثائق الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Even if API documentation isn't openly available, you may still be able to access it by browsing applications that use the API. To do this, you can use Burp Scanner to crawl the API. You can also browse applications manually using Burp's browser. Look for endpoints that may refer to API documentation, for example:",
+            "ar": "حتى إذا لم تكن وثائق الواجهة البرمجية متاحة بشكل علني، فقد تظل قادراً على الوصول إليها من خلال تصفح التطبيقات التي تستخدم الواجهة البرمجية. للقيام بذلك، يمكنك استخدام Burp Scanner للزحف إلى الواجهة البرمجية. يمكنك أيضاً تصفح التطبيقات يدوياً باستخدام متصفح Burp. ابحث عن نقاط النهاية التي قد تشير إلى وثائق الواجهة البرمجية، على سبيل المثال:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": ["/api", "/swagger/index.html", "/openapi.json"],
+            "ar": ["/api", "/swagger/index.html", "/openapi.json"]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Where to Look:",
+            "ar": "أين تبحث:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "text": {
+                "en": "Endpoints like /api, /swagger/index.html, or /openapi.json often provide documentation.",
+                "ar": "نقاط النهاية مثل /api أو /swagger/index.html أو /openapi.json غالباً ما توفر الوثائق."
+              }
+            },
+            {
+              "text": {
+                "en": "Burp Suite and other tools can help in identifying hidden endpoints.",
+                "ar": "يمكن أن تساعد Burp Suite والأدوات الأخرى في تحديد نقاط النهاية المخفية."
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "By discovering the documentation, you can start constructing test cases and simulate realistic API requests.",
+            "ar": "من خلال اكتشاف الوثائق، يمكنك البدء في إنشاء حالات الاختبار ومحاكاة طلبات الواجهة البرمجية الواقعية."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic4",
+      "title": {
+        "en": "Common API Vulnerabilities",
+        "ar": "ثغرات الواجهات البرمجية الشائعة"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "APIs can be vulnerable to a variety of attacks if not properly tested. These include:",
+            "ar": "يمكن أن تكون الواجهات البرمجية عرضة لمجموعة متنوعة من الهجمات إذا لم يتم اختبارها بشكل صحيح. وتشمل هذه:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "subtitle": {
+                "en": "SQL Injection:",
+                "ar": "حقن SQL:"
+              },
+              "text": {
+                "en": "Attacks that exploit input validation flaws to manipulate database queries.",
+                "ar": "هجمات تستغل عيوب التحقق من صحة الإدخال للتلاعب باستعلامات قاعدة البيانات."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Parameter Pollution:",
+                "ar": "تلوث المعاملات:"
+              },
+              "text": {
+                "en": "When attackers introduce additional parameters that the server doesn't expect, leading to unintended behaviors.",
+                "ar": "عندما يقدم المهاجمون معاملات إضافية لا يتوقعها الخادم، مما يؤدي إلى سلوكيات غير مقصودة."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Authentication Flaws:",
+                "ar": "عيوب المصادقة:"
+              },
+              "text": {
+                "en": "If authentication mechanisms (like API keys or tokens) are improperly configured, they can be bypassed by attackers.",
+                "ar": "إذا تم تكوين آليات المصادقة (مثل مفاتيح الواجهة البرمجية أو الرموز) بشكل غير صحيح، فيمكن للمهاجمين تجاوزها."
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In this section, we'll walk you through common API vulnerabilities and how to test for them.",
+            "ar": "في هذا القسم، سنوجهك عبر ثغرات الواجهات البرمجية الشائعة وكيفية اختبارها."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic5",
+      "title": {
+        "en": "Identifying API",
+        "ar": "تحديد الواجهات البرمجية"
+      },
+      "elements": [
+        {
+          "type": "title",
+          "value": {
+            "en": "Identifying API Endpoints",
+            "ar": "تحديد نقاط نهاية الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can also gather a lot of information by browsing applications that use the API. This is often worth doing even if you have access to API documentation, as sometimes documentation may be inaccurate or out of date. You can use Burp Scanner to crawl the application, then manually investigate interesting attack surface using Burp's browser.",
+            "ar": "يمكنك أيضاً جمع الكثير من المعلومات من خلال تصفح التطبيقات التي تستخدم الواجهة البرمجية. غالباً ما يكون هذا يستحق القيام به حتى لو كان لديك وصول إلى وثائق الواجهة البرمجية، حيث قد تكون الوثائق أحياناً غير دقيقة أو قديمة. يمكنك استخدام Burp Scanner للزحف إلى التطبيق، ثم فحص سطح الهجوم المثير للاهتمام يدوياً باستخدام متصفح Burp."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "While browsing the application, look for patterns that suggest API endpoints in the URL structure, such as /api/. Also look out for JavaScript files. These can contain references to API endpoints that you haven't triggered directly via the web browser. Burp Scanner automatically extracts some endpoints during crawls, but for a more heavyweight extraction, use the JS Link Finder BApp. You can also manually review JavaScript files in Burp.",
+            "ar": "أثناء تصفح التطبيق، ابحث عن الأنماط التي تشير إلى نقاط نهاية الواجهة البرمجية في بنية URL، مثل /api/. ابحث أيضاً عن ملفات JavaScript. يمكن أن تحتوي هذه على مراجع لنقاط نهاية الواجهة البرمجية التي لم تطلقها مباشرةً عبر متصفح الويب. يستخرج Burp Scanner تلقائياً بعض نقاط النهاية أثناء الزحف، ولكن للحصول على استخراج أكثر ثقلاً، استخدم JS Link Finder BApp. يمكنك أيضاً مراجعة ملفات JavaScript يدوياً في Burp."
+          }
+        },
+        {
+          "type": "title",
+          "value": {
+            "en": "Interacting with API Endpoints",
+            "ar": "التفاعل مع نقاط نهاية الواجهات البرمجية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Once you've identified API endpoints, interact with them using Burp Repeater and Burp Intruder. This enables you to observe the API's behavior and discover additional attack surface. For example, you could investigate how the API responds to changing the HTTP method and media type.",
+            "ar": "بمجرد تحديد نقاط نهاية الواجهة البرمجية، تفاعل معها باستخدام Burp Repeater وBurp Intruder. هذا يمكّنك من مراقبة سلوك الواجهة البرمجية واكتشاف سطح هجوم إضافي. على سبيل المثال، يمكنك التحقيق في كيفية استجابة الواجهة البرمجية لتغيير طريقة HTTP ونوع الوسائط."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As you interact with the API endpoints, review error messages and other responses closely. Sometimes these include information that you can use to construct a valid HTTP request.",
+            "ar": "أثناء تفاعلك مع نقاط نهاية الواجهة البرمجية، راجع رسائل الخطأ والاستجابات الأخرى عن كثب. في بعض الأحيان تتضمن هذه معلومات يمكنك استخدامها لإنشاء طلب HTTP صالح."
+          }
+        },
+        {
+          "type": "title",
+          "value": {
+            "en": "Identifying Supported HTTP Methods",
+            "ar": "تحديد طرق HTTP المدعومة"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The HTTP method specifies the action to be performed on a resource. For example:",
+            "ar": "تحدد طريقة HTTP الإجراء الذي سيتم تنفيذه على مورد. على سبيل المثال:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "subtitle": { "en": "GET", "ar": "GET" },
+              "text": {
+                "en": "Retrieves data from a resource.",
+                "ar": "استرجاع البيانات من مورد."
+              }
+            },
+            {
+              "subtitle": { "en": "PATCH", "ar": "PATCH" },
+              "text": {
+                "en": "Applies partial changes to a resource.",
+                "ar": "تطبيق تغييرات جزئية على مورد."
+              }
+            },
+            {
+              "subtitle": { "en": "OPTIONS", "ar": "OPTIONS" },
+              "text": {
+                "en": "Retrieves information on the types of request methods that can be used on a resource.",
+                "ar": "استرجاع معلومات حول أنواع طرق الطلب التي يمكن استخدامها على مورد."
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "An API endpoint may support different HTTP methods. It's therefore important to test all potential methods when you're investigating API endpoints. This may enable you to identify additional endpoint functionality, opening up more attack surface.",
+            "ar": "قد تدعم نقطة نهاية الواجهة البرمجية طرق HTTP مختلفة. لذلك من المهم اختبار جميع الطرق المحتملة عند فحص نقاط نهاية الواجهة البرمجية. قد يمكّنك هذا من تحديد وظائف نقطة نهاية إضافية، مما يفتح المزيد من سطح الهجوم."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "For example, the endpoint /api/tasks may support the following methods:",
+            "ar": "على سبيل المثال، قد تدعم نقطة النهاية /api/tasks الطرق التالية:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "subtitle": { "en": "GET /api/tasks", "ar": "GET /api/tasks" },
+              "text": {
+                "en": "Retrieves a list of tasks.",
+                "ar": "استرجاع قائمة بالمهام."
+              }
+            },
+            {
+              "subtitle": { "en": "POST /api/tasks", "ar": "POST /api/tasks" },
+              "text": {
+                "en": "Creates a new task.",
+                "ar": "إنشاء مهمة جديدة."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "DELETE /api/tasks/1",
+                "ar": "DELETE /api/tasks/1"
+              },
+              "text": {
+                "en": "Deletes a task.",
+                "ar": "حذف مهمة."
+              }
+            }
+          ]
+        },
+        {
+          "type": "title",
+          "value": {
+            "en": "Identifying Supported Content Types",
+            "ar": "تحديد أنواع المحتوى المدعومة"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "API endpoints often expect data in a specific format. They may therefore behave differently depending on the content type of the data provided in a request. Changing the content type may enable you to:",
+            "ar": "غالباً ما تتوقع نقاط نهاية الواجهة البرمجية البيانات بتنسيق محدد. لذلك قد تتصرف بشكل مختلف اعتماداً على نوع محتوى البيانات المقدمة في الطلب. قد يمكّنك تغيير نوع المحتوى من:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Trigger errors that disclose useful information.",
+              "Bypass flawed defenses.",
+              "Take advantage of differences in processing logic. For example, an API may be secure when handling JSON data but susceptible to injection attacks when dealing with XML."
+            ],
+            "ar": [
+              "تشغيل أخطاء تكشف معلومات مفيدة.",
+              "تجاوز الدفاعات المعيبة.",
+              "الاستفادة من الاختلافات في منطق المعالجة. على سبيل المثال، قد تكون الواجهة البرمجية آمنة عند التعامل مع بيانات JSON ولكنها عرضة لهجمات الحقن عند التعامل مع XML."
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To change the content type, modify the Content-Type header, then reformat the request body accordingly. You can use the Content type converter BApp to automatically convert data submitted within requests between XML and JSON.",
+            "ar": "لتغيير نوع المحتوى، قم بتعديل رأس Content-Type، ثم أعد تنسيق نص الطلب وفقاً لذلك. يمكنك استخدام Content type converter BApp لتحويل البيانات المقدمة ضمن الطلبات تلقائياً بين XML وJSON."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic6",
+      "title": {
+        "en": "Best Practices for API Testing",
+        "ar": "أفضل ممارسات اختبار الواجهات البرمجية"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "To prevent vulnerabilities, adhere to these best practices:",
+            "ar": "لمنع الثغرات، التزم بأفضل الممارسات التالية:"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "subtitle": {
+                "en": "Validate Input:",
+                "ar": "التحقق من صحة الإدخال:"
+              },
+              "text": {
+                "en": "Always ensure that input data is sanitized to avoid security flaws like SQL injection.",
+                "ar": "تأكد دائماً من تعقيم بيانات الإدخال لتجنب العيوب الأمنية مثل حقن SQL."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Enforce Authentication and Authorization:",
+                "ar": "فرض المصادقة والترخيص:"
+              },
+              "text": {
+                "en": "Properly configure authentication and enforce access controls.",
+                "ar": "قم بتكوين المصادقة بشكل صحيح وفرض ضوابط الوصول."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Use Secure Development Practices:",
+                "ar": "استخدام ممارسات التطوير الآمنة:"
+              },
+              "text": {
+                "en": "Follow secure coding guidelines to minimize the risk of API vulnerabilities.",
+                "ar": "اتبع إرشادات الترميز الآمن لتقليل مخاطر ثغرات الواجهات البرمجية."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Test Thoroughly:",
+                "ar": "الاختبار الشامل:"
+              },
+              "text": {
+                "en": "Conduct both automated and manual tests to detect any weaknesses in the API.",
+                "ar": "قم بإجراء اختبارات آلية ويدوية لاكتشاف أي نقاط ضعف في الواجهة البرمجية."
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Monitor APIs:",
+                "ar": "مراقبة الواجهات البرمجية:"
+              },
+              "text": {
+                "en": "Continuously monitor API traffic for abnormal patterns that could signal exploitation attempts.",
+                "ar": "راقب حركة مرور الواجهة البرمجية باستمرار بحثاً عن أنماط غير طبيعية قد تشير إلى محاولات استغلال."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic7",
+      "title": {
+        "en": "Preventing Vulnerabilities in APIs",
+        "ar": "منع الثغرات في الواجهات البرمجية"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "When designing APIs, make sure that security is a consideration from the beginning. In particular, make sure that you:",
+            "ar": "عند تصميم الواجهات البرمجية، تأكد من أن الأمن هو اعتبار منذ البداية. على وجه الخصوص، تأكد من أنك:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Secure your documentation if you don't intend your API to be publicly accessible.",
+              "Ensure your documentation is kept up to date so that legitimate testers have full visibility of the API's attack surface.",
+              "Apply an allowlist of permitted HTTP methods.",
+              "Validate that the content type is expected for each request or response.",
+              "Use generic error messages to avoid giving away information that may be useful for an attacker.",
+              "Use protective measures on all versions of your API, not just the current production version."
+            ],
+            "ar": [
+              "قم بتأمين وثائقك إذا كنت لا تنوي أن تكون واجهتك البرمجية متاحة للجمهور.",
+              "تأكد من تحديث وثائقك بحيث يكون لدى المختبرين الشرعيين رؤية كاملة لسطح هجوم الواجهة البرمجية.",
+              "تطبيق قائمة سماح لطرق HTTP المسموح بها.",
+              "التحقق من أن نوع المحتوى متوقع لكل طلب أو استجابة.",
+              "استخدام رسائل خطأ عامة لتجنب الكشف عن معلومات قد تكون مفيدة للمهاجم.",
+              "استخدام إجراءات الحماية على جميع إصدارات واجهتك البرمجية، وليس فقط إصدار الإنتاج الحالي."
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To prevent mass assignment vulnerabilities, allowlist the properties that can be updated by the user, and blocklist sensitive properties that shouldn't be updated by the user.",
+            "ar": "لمنع ثغرات التعيين الجماعي، قم بإدراج الخصائص التي يمكن للمستخدم تحديثها في قائمة السماح، وقم بحظر الخصائص الحساسة التي لا ينبغي للمستخدم تحديثها."
+          }
+        }
+      ]
+    }
+  ]
+}

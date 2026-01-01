@@ -1,0 +1,1025 @@
+{
+  "landingData": {
+    "title": {
+      "en": "Business Logic Vulnerabilities",
+      "ar": "ثغرات المنطق البرمجي (Business Logic)"
+    },
+    "description": {
+      "en": "Master business logic vulnerabilities - from price manipulation to workflow abuse. Learn real-world attack patterns and defense strategies used by security professionals.",
+      "ar": "أتقن ثغرات المنطق البرمجي - من التلاعب بالأسعار إلى إساءة استخدام سير العمل. تعلم أنماط الهجمات الواقعية واستراتيجيات الدفاع التي يستخدمها محترفو الأمن."
+    },
+    "difficulty": { "en": "Advanced", "ar": "متقدم" },
+    "duration": { "en": "60 min", "ar": "60 دقيقة" },
+    "instructor": "CyberLab",
+    "rating": "4.8",
+    "students": "2400",
+    "labsLink": "/BL-Vuln/BL_Vuln_labs"
+  },
+
+  "topics": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Introduction to Business Logic Vulnerabilities",
+        "ar": "مقدمة إلى ثغرات المنطق البرمجي"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Business logic vulnerabilities represent a critical class of security flaws that exploit the intended functionality of applications rather than technical implementation bugs. Unlike SQL injection or XSS, these vulnerabilities arise from flawed assumptions in application design, making them particularly dangerous and difficult to detect with automated scanners.",
+            "ar": "تمثل ثغرات المنطق البرمجي فئة حرجة من العيوب الأمنية التي تستغل الوظائف المقصودة للتطبيقات بدلاً من أخطاء التنفيذ التقنية. على عكس حقن SQL أو XSS، تنشأ هذه الثغرات من افتراضات خاطئة في تصميم التطبيق، مما يجعلها خطيرة بشكل خاص ويصعب اكتشافها باستخدام الماسحات الآلية."
+          }
+        },
+        {
+          "type": "image",
+          "url": "https://portswigger.net/web-security/images/logic-flaws.svg",
+          "alt": "Business Logic Vulnerabilities Diagram",
+          "size": "medium",
+          "caption": {
+            "en": "How business logic flaws bypass security controls",
+            "ar": "كيف تتجاوز عيوب المنطق البرمجي ضوابط الأمان"
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Why Are Business Logic Flaws Critical?",
+            "ar": "لماذا تعتبر عيوب المنطق البرمجي حرجة؟"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Bypass All Security Controls**: Logic flaws can render firewalls, WAFs, and authentication useless",
+              "**Financial Impact**: Direct monetary losses through price manipulation, discount abuse, or unauthorized transactions",
+              "**Hard to Detect**: Automated scanners miss 90%+ of business logic vulnerabilities",
+              "**Context-Specific**: Each application has unique business rules creating unique attack surfaces",
+              "**Legal Consequences**: Fraud, data breaches, and compliance violations"
+            ],
+            "ar": [
+              "**تجاوز جميع ضوابط الأمان**: يمكن لعيوب المنطق جعل الجدران النارية وWAF والمصادقة عديمة الفائدة",
+              "**التأثير المالي**: خسائر مالية مباشرة من خلال التلاعب بالأسعار أو إساءة استخدام الخصومات أو المعاملات غير المصرح بها",
+              "**صعبة الاكتشاف**: تفوت الماسحات الآلية أكثر من 90٪ من ثغرات المنطق البرمجي",
+              "**خاصة بالسياق**: كل تطبيق له قواعد عمل فريدة تخلق أسطح هجوم فريدة",
+              "**عواقب قانونية**: الاحتيال وانتهاكات البيانات وانتهاكات الامتثال"
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "style": "info",
+          "value": {
+            "en": "**Real-World Example**: In 2019, a major airline allowed passengers to book first-class tickets for economy prices by manipulating the upgrade workflow sequence. Loss: $2.3 million before detection.",
+            "ar": "**مثال من العالم الحقيقي**: في عام 2019، سمحت شركة طيران كبرى للركاب بحجز تذاكر الدرجة الأولى بأسعار الدرجة الاقتصادية من خلال التلاعب بتسلسل سير عمل الترقية. الخسارة: 2.3 مليون دولار قبل الاكتشاف."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Learning Objectives",
+            "ar": "أهداف التعلم"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Understand the fundamental differences between technical and business logic vulnerabilities",
+              "Identify common business logic flaw patterns across different application types",
+              "Master exploitation techniques for payment systems, workflows, and access controls",
+              "Learn to analyze business rules and find logic gaps",
+              "Implement secure coding practices to prevent logic flaws",
+              "Conduct effective business logic security testing"
+            ],
+            "ar": [
+              "فهم الاختلافات الأساسية بين الثغرات التقنية وثغرات المنطق البرمجي",
+              "تحديد أنماط عيوب المنطق البرمجي الشائعة عبر أنواع التطبيقات المختلفة",
+              "إتقان تقنيات الاستغلال لأنظمة الدفع وسير العمل وضوابط الوصول",
+              "تعلم تحليل قواعد العمل والعثور على ثغرات المنطق",
+              "تطبيق ممارسات الترميز الآمن لمنع عيوب المنطق",
+              "إجراء اختبار أمان فعال للمنطق البرمجي"
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Lab Environment",
+            "ar": "بيئة المعمل"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Throughout this module, you'll work with realistic, deliberately vulnerable applications including an e-commerce platform, banking system, and social media application. Each lab demonstrates real vulnerabilities found in production systems.",
+            "ar": "خلال هذه الوحدة، ستعمل مع تطبيقات واقعية معرضة للخطر عمداً بما في ذلك منصة التجارة الإلكترونية والنظام المصرفي وتطبيق وسائل التواصل الاجتماعي. يوضح كل معمل ثغرات حقيقية موجودة في أنظمة الإنتاج."
+          }
+        },
+        {
+          "type": "labLink",
+          "url": "/BL-Vuln/BL_Vuln_labs",
+          "text": {
+            "en": "Access All Business Logic Labs →",
+            "ar": "الوصول إلى جميع معامل المنطق البرمجي ←"
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic1",
+      "title": {
+        "en": "What Are Business Logic Vulnerabilities?",
+        "ar": "ما هي ثغرات المنطق البرمجي؟"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Business logic vulnerabilities are flaws in the design and implementation of application workflows that allow attackers to abuse legitimate functionality. These occur when developers make incorrect assumptions about how users will interact with the system or fail to validate the complete business process flow.",
+            "ar": "ثغرات المنطق البرمجي هي عيوب في تصميم وتنفيذ سير عمل التطبيق تسمح للمهاجمين بإساءة استخدام الوظائف المشروعة. تحدث هذه عندما يضع المطورون افتراضات غير صحيحة حول كيفية تفاعل المستخدمين مع النظام أو يفشلون في التحقق من تدفق عملية العمل الكامل."
+          }
+        },
+        {
+          "type": "note",
+          "style": "definition",
+          "value": {
+            "en": "**Key Distinction**: Business logic refers to the rules defining how an application operates - not just the code, but the intended behavior, workflows, and business rules. When these rules have gaps or flawed assumptions, vulnerabilities emerge.",
+            "ar": "**التمييز الرئيسي**: يشير المنطق البرمجي إلى القواعد التي تحدد كيفية عمل التطبيق - ليس فقط الكود، ولكن السلوك المقصود وسير العمل وقواعد العمل. عندما تحتوي هذه القواعد على ثغرات أو افتراضات خاطئة، تظهر الثغرات."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Core Characteristics",
+            "ar": "الخصائص الأساسية"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "title": {
+                "en": "**Application-Specific**",
+                "ar": "**خاص بالتطبيق**"
+              },
+              "text": {
+                "en": "Each application's business logic is unique. A vulnerability in an e-commerce checkout process won't exist in a banking transfer system, though similar patterns may emerge.",
+                "ar": "منطق العمل لكل تطبيق فريد من نوعه. لن توجد الثغرة في عملية الدفع للتجارة الإلكترونية في نظام التحويل المصرفي، على الرغم من أن أنماط مماثلة قد تظهر."
+              }
+            },
+            {
+              "title": {
+                "en": "**Invisible to Scanners**",
+                "ar": "**غير مرئية للماسحات**"
+              },
+              "text": {
+                "en": "Logic flaws don't trigger technical errors. The application works as coded - just not as intended. This makes automated detection nearly impossible without understanding business context.",
+                "ar": "لا تؤدي عيوب المنطق إلى أخطاء تقنية. يعمل التطبيق كما هو مُشفر - ليس كما هو مقصود فقط. هذا يجعل الكشف التلقائي مستحيلاً تقريباً بدون فهم سياق العمل."
+              }
+            },
+            {
+              "title": {
+                "en": "**Exploits Trust**",
+                "ar": "**يستغل الثقة**"
+              },
+              "text": {
+                "en": "Attackers manipulate the trust relationship between user and system by following unexpected but valid interaction paths that developers never anticipated.",
+                "ar": "يتلاعب المهاجمون بعلاقة الثقة بين المستخدم والنظام من خلال اتباع مسارات تفاعل غير متوقعة ولكنها صالحة لم يتوقعها المطورون أبداً."
+              }
+            },
+            {
+              "title": {
+                "en": "**Circumvents Controls**",
+                "ar": "**يتجاوز الضوابط**"
+              },
+              "text": {
+                "en": "Business logic flaws allow attackers to bypass intended restrictions by completing transactions without proper workflow validation, modifying prices, or abusing discounts.",
+                "ar": "تسمح عيوب المنطق البرمجي للمهاجمين بتجاوز القيود المقصودة من خلال إكمال المعاملات بدون التحقق الصحيح من سير العمل، أو تعديل الأسعار، أو إساءة استخدام الخصومات."
+              }
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "url": "https://www.legitsecurity.com/hs-fs/hubfs/Blog%20Images/Business_Logic_Diagram_LG-1.png?width=600&height=450&name=Business_Logic_Diagram_LG-1.png",
+          "alt": "Business Logic Attack Flow",
+          "size": "medium",
+          "caption": {
+            "en": "Typical business logic vulnerability exploitation flow",
+            "ar": "تدفق استغلال ثغرة المنطق البرمجي النموذجي"
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Why Logic Flaws Are Dangerous",
+            "ar": "لماذا عيوب المنطق خطيرة"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Traditional security measures like firewalls, WAFs, and input validation are ineffective against business logic attacks because:",
+            "ar": "تدابير الأمان التقليدية مثل الجدران النارية وWAF والتحقق من صحة الإدخال غير فعالة ضد هجمات المنطق البرمجي لأن:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**All inputs are valid** - Attackers use legitimate values in unexpected sequences",
+              "**No technical signatures** - Attack traffic looks identical to normal user behavior",
+              "**Application accepts requests** - Each individual request is properly authenticated and authorized",
+              "**Requires business context** - Only understanding the business rules reveals the vulnerability"
+            ],
+            "ar": [
+              "**جميع المدخلات صالحة** - يستخدم المهاجمون قيم مشروعة في تسلسلات غير متوقعة",
+              "**لا توجد توقيعات تقنية** - تبدو حركة المرور الهجومية متطابقة مع سلوك المستخدم العادي",
+              "**التطبيق يقبل الطلبات** - كل طلب فردي مصادق عليه ومفوض بشكل صحيح",
+              "**يتطلب سياق العمل** - فقط فهم قواعد العمل يكشف عن الثغرة"
+            ]
+          }
+        },
+        {
+          "type": "example",
+          "title": {
+            "en": "Real-World Attack: E-Commerce Price Manipulation",
+            "ar": "هجوم من العالم الحقيقي: التلاعب بالأسعار في التجارة الإلكترونية"
+          },
+          "scenario": {
+            "en": "An online store offers free shipping on orders over $50. The logic checks the cart total before checkout. However, the application doesn't re-validate after the user modifies the cart.",
+            "ar": "يقدم متجر عبر الإنترنت شحناً مجانياً على الطلبات التي تزيد قيمتها عن 50 دولاراً. يتحقق المنطق من إجمالي سلة التسوق قبل الدفع. ومع ذلك، لا يعيد التطبيق التحقق بعد أن يعدل المستخدم سلة التسوق."
+          },
+          "attack": {
+            "en": "**Attack Steps:**\n1. Add items totaling $51 to cart\n2. Proceed to checkout (free shipping applied)\n3. Return to cart and remove all but $5 item\n4. Complete purchase with free shipping on $5 order",
+            "ar": "**خطوات الهجوم:**\n1. أضف عناصر بإجمالي 51 دولاراً إلى سلة التسوق\n2. انتقل إلى الدفع (تم تطبيق الشحن المجاني)\n3. عد إلى سلة التسوق وأزل جميع العناصر ما عدا عنصر بقيمة 5 دولارات\n4. أكمل الشراء مع الشحن المجاني على طلب 5 دولارات"
+          },
+          "impact": {
+            "en": "The business loses shipping costs on every order. If exploited at scale: thousands of dollars in losses daily.",
+            "ar": "تخسر الشركة تكاليف الشحن على كل طلب. إذا تم استغلالها على نطاق واسع: آلاف الدولارات من الخسائر يومياً."
+          }
+        },
+        {
+          "type": "note",
+          "style": "warning",
+          "value": {
+            "en": "**Bug Bounty Insight**: Business logic vulnerabilities are among the highest-paid bug bounty findings, often ranging from $5,000 to $50,000+ depending on impact. They require manual testing and business understanding, making them perfect targets for skilled researchers.",
+            "ar": "**رؤية مكافأة الأخطاء**: تعد ثغرات المنطق البرمجي من بين أعلى النتائج المدفوعة لمكافأة الأخطاء، وتتراوح غالباً من 5,000 دولار إلى أكثر من 50,000 دولار حسب التأثير. تتطلب اختباراً يدوياً وفهماً للأعمال، مما يجعلها أهدافاً مثالية للباحثين المهرة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic2",
+      "title": {
+        "en": "How Business Logic Vulnerabilities Arise",
+        "ar": "كيف تنشأ ثغرات المنطق البرمجي"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Business logic flaws emerge from gaps between developer assumptions and real-world user behavior. Understanding root causes helps both in exploitation and prevention.",
+            "ar": "تظهر عيوب المنطق البرمجي من الثغرات بين افتراضات المطورين وسلوك المستخدم في العالم الحقيقي. يساعد فهم الأسباب الجذرية في كل من الاستغلال والوقاية."
+          }
+        },
+        {
+          "type": "image",
+          "url": "https://owasp.org/www-project-top-10-for-business-logic-abuse/assets/images/workflow-diagram.png",
+          "alt": "Business Logic Flaw Origins",
+          "size": "medium"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Common Root Causes",
+            "ar": "الأسباب الجذرية الشائعة"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "title": {
+                "en": "**Flawed Assumptions About User Behavior**",
+                "ar": "**افتراضات خاطئة حول سلوك المستخدم**"
+              },
+              "text": {
+                "en": "Developers assume users will follow the 'happy path' - a linear workflow from start to finish. Reality: Users can skip steps, go backwards, submit requests in parallel, or use browser tools to modify parameters.\n\n**Example**: A multi-step checkout assumes users progress sequentially (Cart → Shipping → Payment → Confirm). What if a user jumps directly to confirmation with an incomplete order?",
+                "ar": "يفترض المطورون أن المستخدمين سيتبعون 'المسار السعيد' - سير عمل خطي من البداية إلى النهاية. الواقع: يمكن للمستخدمين تخطي الخطوات أو العودة للخلف أو إرسال الطلبات بالتوازي أو استخدام أدوات المتصفح لتعديل المعاملات.\n\n**مثال**: تفترض عملية دفع متعددة الخطوات أن المستخدمين يتقدمون بالتسلسل (السلة ← الشحن ← الدفع ← التأكيد). ماذا لو انتقل المستخدم مباشرة إلى التأكيد مع طلب غير مكتمل؟"
+              },
+              "codeExample": {
+                "language": "javascript",
+                "title": "Vulnerable Workflow Check",
+                "code": "// Flawed: Only checks if user reached payment page\nif (req.session.reachedPayment) {\n  processOrder(req.session.cart);\n}\n// Missing: Validate payment was actually completed"
+              }
+            },
+            {
+              "title": {
+                "en": "**Insufficient Validation of State Transitions**",
+                "ar": "**التحقق غير الكافي من انتقالات الحالة**"
+              },
+              "text": {
+                "en": "Applications often validate individual actions but fail to verify the complete workflow sequence. Each step might be secure, but transitions between states lack validation.\n\n**Real Scenario**: Banking application allows initiating a transfer, then canceling it. Bug: The cancel function doesn't verify the transfer hasn't been processed yet, allowing double-spending.",
+                "ar": "غالباً ما تتحقق التطبيقات من الإجراءات الفردية ولكنها تفشل في التحقق من تسلسل سير العمل الكامل. قد تكون كل خطوة آمنة، لكن الانتقالات بين الحالات تفتقر إلى التحقق.\n\n**سيناريو حقيقي**: يسمح تطبيق مصرفي ببدء تحويل، ثم إلغاؤه. خطأ: لا تتحقق وظيفة الإلغاء من أن التحويل لم تتم معالجته بعد، مما يسمح بالإنفاق المزدوج."
+              }
+            },
+            {
+              "title": {
+                "en": "**Race Conditions & Concurrent Requests**",
+                "ar": "**حالات السباق والطلبات المتزامنة**"
+              },
+              "text": {
+                "en": "Modern applications handle multiple requests simultaneously. If business logic doesn't account for concurrent operations, attackers can exploit TOCTOU (Time-Of-Check-Time-Of-Use) gaps.\n\n**Attack Pattern**: Send 10 simultaneous 'use coupon' requests before the system can mark it as used. Result: Apply single-use coupon multiple times.",
+                "ar": "تتعامل التطبيقات الحديثة مع طلبات متعددة في وقت واحد. إذا لم يأخذ منطق العمل في الاعتبار العمليات المتزامنة، يمكن للمهاجمين استغلال ثغرات TOCTOU (وقت الفحص - وقت الاستخدام).\n\n**نمط الهجوم**: أرسل 10 طلبات 'استخدام قسيمة' متزامنة قبل أن يتمكن النظام من وضع علامة عليها كمستخدمة. النتيجة: تطبيق قسيمة لمرة واحدة عدة مرات."
+              },
+              "codeExample": {
+                "language": "python",
+                "title": "Race Condition Vulnerability",
+                "code": "# Vulnerable: Check and update in separate operations\ndef use_coupon(coupon_code, user_id):\n    if coupon.is_valid():  # Check\n        time.sleep(0.1)  # Simulated processing\n        coupon.mark_used()  # Update\n        apply_discount()\n    \n# Attack: Send multiple requests during sleep window"
+              }
+            },
+            {
+              "title": {
+                "en": "**Missing Business Rule Enforcement**",
+                "ar": "**فقدان إنفاذ قواعد العمل**"
+              },
+              "text": {
+                "en": "Business rules defined in requirements don't get properly translated into code validation. Common gaps include:\n- Price boundaries not enforced (negative prices, zero cost)\n- Quantity limits ignored (order -5 items to get refund)\n- Role restrictions only checked on UI, not backend\n- Time-based rules (expired coupons) not validated",
+                "ar": "قواعد العمل المحددة في المتطلبات لا يتم ترجمتها بشكل صحيح إلى التحقق من الكود. الثغرات الشائعة تشمل:\n- حدود الأسعار غير مطبقة (أسعار سلبية، تكلفة صفر)\n- تجاهل حدود الكمية (اطلب -5 عناصر للحصول على استرداد)\n- قيود الأدوار يتم التحقق منها فقط في واجهة المستخدم، وليس في الخلفية\n- القواعد القائمة على الوقت (القسائم منتهية الصلاحية) غير محققة"
+              }
+            },
+            {
+              "title": {
+                "en": "**Client-Side Trust**",
+                "ar": "**الثقة في جانب العميل**"
+              },
+              "text": {
+                "en": "Relying on client-side validation or hidden form fields for security. Attackers easily bypass JavaScript checks and modify HTML parameters.\n\n**Classic Example**: E-commerce site passes price in hidden field `<input type=\"hidden\" name=\"price\" value=\"99.99\">`. Attacker changes to value=\"0.01\" using browser DevTools.",
+                "ar": "الاعتماد على التحقق من جانب العميل أو حقول النموذج المخفية للأمان. يتجاوز المهاجمون بسهولة فحوصات JavaScript ويعدلون معاملات HTML.\n\n**مثال كلاسيكي**: يمرر موقع التجارة الإلكترونية السعر في حقل مخفي `<input type=\"hidden\" name=\"price\" value=\"99.99\">`. يغير المهاجم إلى value=\"0.01\" باستخدام DevTools للمتصفح."
+              }
+            }
+          ]
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "OWASP Top 10 Business Logic Abuse (2025)",
+            "ar": "أفضل 10 حالات لإساءة استخدام المنطق البرمجي حسب OWASP (2025)"
+          }
+        },
+        {
+          "type": "table",
+          "headers": {
+            "en": ["Class", "Description", "Impact"],
+            "ar": ["الفئة", "الوصف", "التأثير"]
+          },
+          "rows": [
+            {
+              "en": [
+                "BLA1: Action Limit Overrun",
+                "Bypass single-use limits (coupons, refunds)",
+                "Financial loss, fraud"
+              ],
+              "ar": [
+                "BLA1: تجاوز حد الإجراء",
+                "تجاوز حدود الاستخدام الواحد (القسائم، الاستردادات)",
+                "خسارة مالية، احتيال"
+              ]
+            },
+            {
+              "en": [
+                "BLA2: Workflow Order Bypass",
+                "Skip mandatory workflow steps",
+                "Unauthorized access"
+              ],
+              "ar": [
+                "BLA2: تجاوز ترتيب سير العمل",
+                "تخطي خطوات سير العمل الإلزامية",
+                "وصول غير مصرح به"
+              ]
+            },
+            {
+              "en": [
+                "BLA3: Object State Manipulation",
+                "Alter objects in unexpected states",
+                "Data corruption"
+              ],
+              "ar": [
+                "BLA3: التلاعب بحالة الكائن",
+                "تغيير الكائنات في حالات غير متوقعة",
+                "فساد البيانات"
+              ]
+            },
+            {
+              "en": [
+                "BLA4: Malicious Logic Loop",
+                "Trigger infinite loops, exhaust resources",
+                "DoS, service crashes"
+              ],
+              "ar": [
+                "BLA4: حلقة منطق ضارة",
+                "تشغيل حلقات لا نهائية، استنزاف الموارد",
+                "رفض الخدمة، تعطل الخدمة"
+              ]
+            },
+            {
+              "en": [
+                "BLA5: Artifact Lifetime Exploitation",
+                "Abuse tokens/sessions beyond intended lifecycle",
+                "Session hijacking"
+              ],
+              "ar": [
+                "BLA5: استغلال عمر العناصر",
+                "إساءة استخدام الرموز/الجلسات بعد دورة الحياة المقصودة",
+                "اختطاف الجلسة"
+              ]
+            }
+          ],
+          "source": {
+            "en": "Source: [OWASP BLA Top 10 2025](https://owasp.org/www-project-top-10-for-business-logic-abuse/)",
+            "ar": "المصدر: [OWASP BLA أفضل 10 لعام 2025](https://owasp.org/www-project-top-10-for-business-logic-abuse/)"
+          }
+        },
+        {
+          "type": "note",
+          "style": "tip",
+          "value": {
+            "en": "**Testing Tip**: To find business logic flaws, think like a dishonest customer. Ask: \"How could I abuse this feature for financial gain?\" Test unexpected sequences, negative values, and concurrent operations.",
+            "ar": "**نصيحة الاختبار**: للعثور على عيوب المنطق البرمجي، فكر مثل العميل غير الأمين. اسأل: 'كيف يمكنني إساءة استخدام هذه الميزة لتحقيق مكاسب مالية؟' اختبر التسلسلات غير المتوقعة والقيم السلبية والعمليات المتزامنة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic3",
+      "title": {
+        "en": "Common Business Logic Attack Patterns",
+        "ar": "أنماط هجوم المنطق البرمجي الشائعة"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "While each application is unique, certain attack patterns repeatedly appear across different business logic implementations. Mastering these patterns accelerates vulnerability discovery.",
+            "ar": "بينما كل تطبيق فريد من نوعه، تظهر أنماط هجوم معينة بشكل متكرر عبر تطبيقات منطق الأعمال المختلفة. إتقان هذه الأنماط يسرع اكتشاف الثغرات."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Pattern 1: Price Manipulation",
+            "ar": "النمط 1: التلاعب بالسعر"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Attackers modify pricing information that the application trusts from client-side or doesn't re-validate after initial checks.",
+            "ar": "يعدل المهاجمون معلومات التسعير التي يثق بها التطبيق من جانب العميل أو لا يعيد التحقق منها بعد الفحوصات الأولية."
+          }
+        },
+        {
+          "type": "example",
+          "title": {
+            "en": "Real Attack Scenario: Online Store",
+            "ar": "سيناريو هجوم حقيقي: متجر عبر الإنترنت"
+          },
+          "steps": {
+            "en": [
+              "**Step 1**: Browse products, intercept requests with Burp Suite",
+              "**Step 2**: Add $100 item to cart",
+              "**Step 3**: In checkout POST request, find parameter `price=100.00`",
+              "**Step 4**: Modify to `price=0.01` or `price=-100.00`",
+              "**Step 5**: Complete purchase at manipulated price",
+              "**Result**: Purchased $100 item for $0.01 or received $100 credit"
+            ],
+            "ar": [
+              "**الخطوة 1**: تصفح المنتجات، اعترض الطلبات باستخدام Burp Suite",
+              "**الخطوة 2**: أضف عنصراً بقيمة 100 دولار إلى سلة التسوق",
+              "**الخطوة 3**: في طلب POST للدفع، ابحث عن المعامل `price=100.00`",
+              "**الخطوة 4**: عدل إلى `price=0.01` أو `price=-100.00`",
+              "**الخطوة 5**: أكمل الشراء بالسعر المعدل",
+              "**النتيجة**: تم شراء عنصر بقيمة 100 دولار مقابل 0.01 دولار أو تلقيت 100 دولار رصيد"
+            ]
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "http",
+          "title": {
+            "en": "Vulnerable Request",
+            "ar": "طلب ضعيف"
+          },
+          "code": "POST /checkout HTTP/1.1\nHost: shop.example.com\nContent-Type: application/x-www-form-urlencoded\n\nitem_id=12345&price=100.00&quantity=1\n\n// Modified Attack:\nitem_id=12345&price=0.01&quantity=1\n// Or negative price:\nitem_id=12345&price=-100.00&quantity=1"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Pattern 2: Discount/Coupon Abuse",
+            "ar": "النمط 2: إساءة استخدام الخصم/القسيمة"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Stack multiple discounts**: Apply student discount + loyalty discount + promo code when only one should be allowed",
+              "**Reuse single-use coupons**: Submit coupon code in concurrent requests before system marks it used",
+              "**Expired coupon exploitation**: Backend doesn't validate expiration dates",
+              "**Negative quantity**: Order -10 items with discount code to get paid by the store"
+            ],
+            "ar": [
+              "**تكديس خصومات متعددة**: تطبيق خصم الطلاب + خصم الولاء + رمز ترويجي عندما يجب السماح بواحد فقط",
+              "**إعادة استخدام القسائم لمرة واحدة**: إرسال رمز القسيمة في طلبات متزامنة قبل أن يضع النظام علامة عليها كمستخدمة",
+              "**استغلال القسيمة منتهية الصلاحية**: الخلفية لا تتحقق من تواريخ انتهاء الصلاحية",
+              "**الكمية السلبية**: اطلب -10 عناصر مع رمز الخصم للحصول على أموال من المتجر"
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Pattern 3: Workflow Bypass",
+            "ar": "النمط 3: تجاوز سير العمل"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Skip mandatory steps in multi-stage processes by directly accessing later stages or manipulating session state.",
+            "ar": "تخطي الخطوات الإلزامية في العمليات متعددة المراحل من خلال الوصول المباشر إلى المراحل اللاحقة أو التلاعب بحالة الجلسة."
+          }
+        },
+        {
+          "type": "example",
+          "title": {
+            "en": "Attack: Account Upgrade Bypass",
+            "ar": "هجوم: تجاوز ترقية الحساب"
+          },
+          "scenario": {
+            "en": "Normal Flow: `Free Account` → `Select Premium Plan` → `Enter Payment` → `Verify Payment` → `Activate Premium`\n\nAttack: Directly POST to `/activate-premium` endpoint, skipping payment verification. If backend doesn't check payment status, get free premium access.",
+            "ar": "التدفق العادي: `حساب مجاني` → `اختيار خطة مميزة` → `إدخال الدفع` → `التحقق من الدفع` → `تفعيل المميز`\n\nالهجوم: POST مباشرة إلى نقطة النهاية `/activate-premium`، تخطي التحقق من الدفع. إذا لم تتحقق الخلفية من حالة الدفع، احصل على وصول مجاني مميز."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Pattern 4: Parameter Tampering",
+            "ar": "النمط 4: التلاعب بالمعاملات"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Modify hidden or predictable parameters to escalate privileges, access other users' data, or bypass restrictions.",
+            "ar": "تعديل المعاملات المخفية أو القابلة للتنبؤ لتصعيد الامتيازات أو الوصول إلى بيانات مستخدمين آخرين أو تجاوز القيود."
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**User ID manipulation**: Change `user_id=123` to `user_id=456` to access another account",
+              "**Role parameter injection**: Add `role=admin` to POST request",
+              "**Boolean flips**: Change `is_premium=false` to `is_premium=true`",
+              "**Quantity limits**: Modify `max_items=10` to `max_items=10000`"
+            ],
+            "ar": [
+              "**التلاعب بمعرف المستخدم**: تغيير `user_id=123` إلى `user_id=456` للوصول إلى حساب آخر",
+              "**حقن معامل الدور**: إضافة `role=admin` إلى طلب POST",
+              "**قلب القيم المنطقية**: تغيير `is_premium=false` إلى `is_premium=true`",
+              "**حدود الكمية**: تعديل `max_items=10` إلى `max_items=10000`"
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Pattern 5: Race Conditions (TOCTOU)",
+            "ar": "النمط 5: حالات السباق (TOCTOU)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Exploit timing gaps between validation checks and actual operations by sending concurrent requests.",
+            "ar": "استغلال الفجوات الزمنية بين فحوصات التحقق والعمليات الفعلية عن طريق إرسال طلبات متزامنة."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "python",
+          "title": {
+            "en": "Race Condition Attack Script",
+            "ar": "سكريبت هجوم حالة السباق"
+          },
+          "code": "import requests\nimport threading\n\n# Target: Apply single-use coupon multiple times\ndef use_coupon():\n    requests.post('https://shop.com/apply-coupon', \n                  data={'code': 'SAVE50'})\n\n# Launch 10 simultaneous requests\nthreads = []\nfor i in range(10):\n    t = threading.Thread(target=use_coupon)\n    threads.append(t)\n    t.start()\n\nfor t in threads:\n    t.join()\n\n# Result: Coupon applied 10 times instead of once"
+        },
+        {
+          "type": "note",
+          "style": "warning",
+          "value": {
+            "en": "**Ethical Note**: These examples are for educational purposes only. Always obtain written authorization before testing any system. Unauthorized testing is illegal and unethical.",
+            "ar": "**ملاحظة أخلاقية**: هذه الأمثلة لأغراض تعليمية فقط. احصل دائماً على تفويض كتابي قبل اختبار أي نظام. الاختبار غير المصرح به غير قانوني وغير أخلاقي."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic4",
+      "title": {
+        "en": "Exploitation Techniques & Methodology",
+        "ar": "تقنيات الاستغلال والمنهجية"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Effective business logic testing requires systematic methodology. Unlike automated scanning, manual testing with business understanding is essential.",
+            "ar": "يتطلب اختبار المنطق البرمجي الفعال منهجية منظمة. على عكس المسح الآلي، يعد الاختبار اليدوي مع فهم الأعمال أمراً أساسياً."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Testing Methodology",
+            "ar": "منهجية الاختبار"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "title": {
+                "en": "**Phase 1: Business Logic Mapping**",
+                "ar": "**المرحلة 1: رسم خريطة منطق الأعمال**"
+              },
+              "text": {
+                "en": "Understand the application's business rules, workflows, and intended behavior before testing:\n- Document all user workflows (signup, checkout, transfers, etc.)\n- Identify business-critical operations (payments, access control, inventory)\n- Map multi-step processes and state transitions\n- Note any business rules (discounts, limits, eligibility criteria)\n- Review client-side code for hidden parameters and validation logic",
+                "ar": "افهم قواعد العمل والسير والسلوك المقصود للتطبيق قبل الاختبار:\n- وثق جميع سير عمل المستخدم (التسجيل، الدفع، التحويلات، إلخ.)\n- حدد العمليات الحرجة للعمل (المدفوعات، التحكم في الوصول، المخزون)\n- رسم خريطة للعمليات متعددة الخطوات وانتقالات الحالة\n- لاحظ أي قواعد عمل (الخصومات، الحدود، معايير الأهلية)\n- راجع كود جانب العميل للمعاملات المخفية ومنطق التحقق"
+              }
+            },
+            {
+              "title": {
+                "en": "**Phase 2: Identify Trust Boundaries**",
+                "ar": "**المرحلة 2: تحديد حدود الثقة**"
+              },
+              "text": {
+                "en": "Find where the application trusts user input or client-side controls:\n- Hidden form fields (prices, user IDs, roles)\n- URL parameters affecting business logic\n- API endpoints with modifiable JSON payloads\n- Cookie values controlling features\n- Client-side JavaScript validation only",
+                "ar": "ابحث عن مكان يثق فيه التطبيق في إدخال المستخدم أو ضوابط جانب العميل:\n- حقول النموذج المخفية (الأسعار، معرفات المستخدم، الأدوار)\n- معاملات عنوان URL التي تؤثر على منطق الأعمال\n- نقاط نهاية API بحمولات JSON قابلة للتعديل\n- قيم ملفات تعريف الارتباط التي تتحكم في الميزات\n- التحقق من JavaScript من جانب العميل فقط"
+              }
+            },
+            {
+              "title": {
+                "en": "**Phase 3: Test Edge Cases**",
+                "ar": "**المرحلة 3: اختبار الحالات الحدية**"
+              },
+              "text": {
+                "en": "Push boundaries with unexpected inputs:\n- **Negative values**: -1, -999, -0.01\n- **Zero values**: 0, 0.00\n- **Maximum values**: 9999999, MAX_INT\n- **Special characters**: NULL, empty strings\n- **Data type mismatches**: String where number expected\n- **Out-of-range dates**: Future/past dates for time-sensitive features",
+                "ar": "ادفع الحدود بمدخلات غير متوقعة:\n- **القيم السلبية**: -1، -999، -0.01\n- **قيم الصفر**: 0، 0.00\n- **القيم القصوى**: 9999999، MAX_INT\n- **أحرف خاصة**: NULL، سلاسل فارغة\n- **عدم تطابق نوع البيانات**: سلسلة حيث يتوقع رقم\n- **تواريخ خارج النطاق**: تواريخ مستقبلية/ماضية للميزات الحساسة للوقت"
+              }
+            },
+            {
+              "title": {
+                "en": "**Phase 4: Workflow Manipulation**",
+                "ar": "**المرحلة 4: التلاعب بسير العمل**"
+              },
+              "text": {
+                "en": "Test unconventional workflow sequences:\n- Skip steps (go from step 1 to step 5)\n- Reverse order (complete before starting)\n- Repeat steps (submit twice)\n- Parallel execution (multiple browser tabs)\n- Incomplete workflows (abandon mid-process)\n- State rollback (go backwards after progressing)",
+                "ar": "اختبر تسلسلات سير العمل غير التقليدية:\n- تخطي الخطوات (انتقل من الخطوة 1 إلى الخطوة 5)\n- عكس الترتيب (أكمل قبل البدء)\n- تكرار الخطوات (إرسال مرتين)\n- التنفيذ المتوازي (علامات تبويب متصفح متعددة)\n- سير عمل غير مكتمل (التخلي في منتصف العملية)\n- التراجع عن الحالة (العودة للخلف بعد التقدم)"
+              }
+            },
+            {
+              "title": {
+                "en": "**Phase 5: Race Condition Testing**",
+                "ar": "**المرحلة 5: اختبار حالة السباق**"
+              },
+              "text": {
+                "en": "Use tools like Burp Suite Turbo Intruder or custom scripts to send concurrent requests:\n- Simultaneously apply single-use resources\n- Race to modify shared data\n- Exploit TOCTOU gaps in validation logic",
+                "ar": "استخدم أدوات مثل Burp Suite Turbo Intruder أو نصوص مخصصة لإرسال طلبات متزامنة:\n- تطبيق موارد الاستخدام الواحد في وقت واحد\n- سباق لتعديل البيانات المشتركة\n- استغلال فجوات TOCTOU في منطق التحقق"
+              }
+            }
+          ]
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Essential Tools",
+            "ar": "الأدوات الأساسية"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Burp Suite Pro**: Intercept/modify requests, test race conditions with Turbo Intruder",
+              "**Browser DevTools**: Inspect/modify client-side code, monitor network traffic",
+              "**Postman/Insomnia**: API testing, workflow sequence manipulation",
+              "**Python/requests**: Custom scripts for automation and concurrent requests",
+              "**SQLMap**: When business logic intersects with database queries",
+              "**Selenium**: Automated workflow testing at scale"
+            ],
+            "ar": [
+              "**Burp Suite Pro**: اعتراض/تعديل الطلبات، اختبار حالات السباق مع Turbo Intruder",
+              "**Browser DevTools**: فحص/تعديل كود جانب العميل، مراقبة حركة مرور الشبكة",
+              "**Postman/Insomnia**: اختبار API، التلاعب بتسلسل سير العمل",
+              "**Python/requests**: نصوص مخصصة للأتمتة والطلبات المتزامنة",
+              "**SQLMap**: عندما يتقاطع منطق الأعمال مع استعلامات قاعدة البيانات",
+              "**Selenium**: اختبار سير العمل الآلي على نطاق واسع"
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Practical Lab Exercise",
+            "ar": "تمرين معمل عملي"
+          }
+        },
+        {
+          "type": "note",
+          "style": "lab",
+          "value": {
+            "en": "**Lab Challenge**: Access the vulnerable e-commerce application in the labs section. Your goal:\n1. Purchase a $999 laptop for under $10\n2. Apply multiple incompatible discount codes\n3. Bypass the 'one item per customer' restriction\n4. Find and exploit the negative quantity vulnerability\n\nTime to complete: 30-45 minutes  \n**Hint**: Start by mapping the checkout workflow and identifying all parameters passed in each step.",
+            "ar": "**تحدي المعمل**: الوصول إلى تطبيق التجارة الإلكترونية المعرض للخطر في قسم المعامل. هدفك:\n1. شراء كمبيوتر محمول بقيمة 999 دولاراً بأقل من 10 دولارات\n2. تطبيق رموز خصم متعددة غير متوافقة\n3. تجاوز قيد 'عنصر واحد لكل عميل'\n4. العثور على ثغرة الكمية السلبية واستغلالها\n\nالوقت للإكمال: 30-45 دقيقة\n**تلميح**: ابدأ برسم خريطة سير عمل الدفع وتحديد جميع المعاملات التي تم تمريرها في كل خطوة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic5",
+      "title": {
+        "en": "Prevention & Secure Coding Practices",
+        "ar": "الوقاية وممارسات الترميز الآمن"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Preventing business logic vulnerabilities requires shifting from reactive patching to proactive secure design. Implement defense-in-depth strategies at every layer.",
+            "ar": "تتطلب الوقاية من ثغرات المنطق البرمجي التحول من الإصلاح التفاعلي إلى التصميم الآمن الاستباقي. نفذ استراتيجيات الدفاع في العمق في كل طبقة."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Core Prevention Principles",
+            "ar": "مبادئ الوقاية الأساسية"
+          }
+        },
+        {
+          "type": "orderedList",
+          "items": [
+            {
+              "title": {
+                "en": "**Never Trust Client-Side Data**",
+                "ar": "**لا تثق أبداً في بيانات جانب العميل**"
+              },
+              "text": {
+                "en": "All business-critical values must be validated and recalculated server-side. Treat any client input as potentially malicious.",
+                "ar": "يجب التحقق من صحة جميع القيم الحرجة للعمل وإعادة حسابها من جانب الخادم. تعامل مع أي إدخال عميل على أنه ضار محتمل."
+              },
+              "codeExample": {
+                "language": "python",
+                "title": "Secure Price Validation",
+                "code": "# BAD: Trusting client price\n@app.route('/checkout', methods=['POST'])\ndef checkout():\n    price = request.form.get('price')  # ❌ Dangerous!\n    process_payment(price)\n\n# GOOD: Server-side price lookup\n@app.route('/checkout', methods=['POST'])\ndef checkout():\n    item_id = request.form.get('item_id')\n    # ✅ Fetch actual price from database\n    price = db.get_price(item_id)  \n    # ✅ Apply discounts server-side\n    final_price = apply_valid_discounts(price, user)\n    process_payment(final_price)"
+              }
+            },
+            {
+              "title": {
+                "en": "**Validate Complete Workflows**",
+                "ar": "**التحقق من سير العمل الكامل**"
+              },
+              "text": {
+                "en": "Don't just validate individual steps - ensure the entire workflow sequence is followed correctly.",
+                "ar": "لا تقتصر على التحقق من صحة الخطوات الفردية - تأكد من اتباع تسلسل سير العمل بالكامل بشكل صحيح."
+              },
+              "codeExample": {
+                "language": "javascript",
+                "title": "Workflow State Validation",
+                "code": "// Secure multi-step checkout\nclass CheckoutWorkflow {\n  constructor() {\n    this.states = ['CART', 'SHIPPING', 'PAYMENT', 'CONFIRM'];\n    this.currentState = 'CART';\n  }\n  \n  validateTransition(nextState) {\n    const currentIndex = this.states.indexOf(this.currentState);\n    const nextIndex = this.states.indexOf(nextState);\n    \n    // ✅ Only allow sequential progression\n    if (nextIndex !== currentIndex + 1) {\n      throw new Error('Invalid workflow transition');\n    }\n    \n    // ✅ Validate prerequisites for each state\n    if (nextState === 'PAYMENT' && !this.shippingComplete) {\n      throw new Error('Shipping information required');\n    }\n    \n    this.currentState = nextState;\n  }\n}"
+              }
+            },
+            {
+              "title": {
+                "en": "**Implement Atomicity for Critical Operations**",
+                "ar": "**تنفيذ الذرية للعمليات الحرجة**"
+              },
+              "text": {
+                "en": "Use database transactions and locking mechanisms to prevent race conditions.",
+                "ar": "استخدم معاملات قاعدة البيانات وآليات القفل لمنع حالات السباق."
+              },
+              "codeExample": {
+                "language": "python",
+                "title": "Race Condition Prevention",
+                "code": "# Prevent coupon reuse with database lock\nfrom sqlalchemy import select\n\ndef apply_coupon(session, coupon_code, user_id):\n    # ✅ Use pessimistic lock to prevent concurrent access\n    coupon = session.execute(\n        select(Coupon)\n        .where(Coupon.code == coupon_code)\n        .with_for_update()  # Database-level lock\n    ).scalar_one()\n    \n    if coupon.used:\n        raise ValueError('Coupon already used')\n    \n    # Mark as used atomically\n    coupon.used = True\n    coupon.used_by = user_id\n    coupon.used_at = datetime.now()\n    session.commit()  # ✅ All or nothing"
+              }
+            },
+            {
+              "title": {
+                "en": "**Enforce Business Rules at All Layers**",
+                "ar": "**فرض قواعد العمل في جميع الطبقات**"
+              },
+              "text": {
+                "en": "Implement validation at database, API, and application layers. Defense-in-depth ensures one bypass doesn't compromise everything.",
+                "ar": "نفذ التحقق في طبقات قاعدة البيانات وAPI والتطبيق. يضمن الدفاع في العمق أن تجاوزاً واحداً لا يعرض كل شيء للخطر."
+              },
+              "codeExample": {
+                "language": "sql",
+                "title": "Database-Level Constraints",
+                "code": "-- ✅ Enforce business rules at database level\nCREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    user_id INT NOT NULL,\n    total_price DECIMAL(10,2) NOT NULL,\n    quantity INT NOT NULL,\n    \n    -- Prevent negative values\n    CONSTRAINT positive_price CHECK (total_price >= 0),\n    CONSTRAINT positive_quantity CHECK (quantity > 0),\n    \n    -- Enforce reasonable limits\n    CONSTRAINT max_quantity CHECK (quantity <= 100)\n);"
+              }
+            },
+            {
+              "title": {
+                "en": "**Implement Rate Limiting & Anomaly Detection**",
+                "ar": "**تنفيذ تحديد المعدل واكتشاف الشذوذ**"
+              },
+              "text": {
+                "en": "Monitor for suspicious patterns indicating logic abuse attempts.",
+                "ar": "راقب الأنماط المشبوهة التي تشير إلى محاولات إساءة استخدام المنطق."
+              },
+              "codeExample": {
+                "language": "python",
+                "title": "Anomaly Detection",
+                "code": "# Detect suspicious behavior patterns\nclass FraudDetector:\n    def check_suspicious_activity(self, user_id, action):\n        # ✅ Flag unusual behavior\n        if action == 'checkout':\n            recent_checkouts = get_user_checkouts(user_id, minutes=10)\n            \n            if len(recent_checkouts) > 5:\n                alert_security_team(user_id, 'Rapid checkout attempts')\n                raise SecurityException('Too many transactions')\n            \n            # Check for price manipulation patterns\n            avg_price = calculate_average_price(recent_checkouts)\n            if avg_price < 1.00 and user.account_age < 1:\n                flag_for_review(user_id, 'Possible price manipulation')"
+              }
+            }
+          ]
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Secure Development Lifecycle Integration",
+            "ar": "دمج دورة حياة التطوير الآمن"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Design Phase**: Threat model business logic flows, identify attack surfaces",
+              "**Development**: Code reviews focusing on business rule validation",
+              "**Testing**: Manual security testing with business context knowledge",
+              "**Deployment**: Monitor for logic abuse patterns in production",
+              "**Maintenance**: Regular business logic security audits"
+            ],
+            "ar": [
+              "**مرحلة التصميم**: نموذج التهديدات لتدفقات منطق الأعمال، تحديد أسطح الهجوم",
+              "**التطوير**: مراجعات الكود التي تركز على التحقق من قواعد العمل",
+              "**الاختبار**: اختبار الأمان اليدوي مع معرفة سياق العمل",
+              "**النشر**: مراقبة أنماط إساءة استخدام المنطق في الإنتاج",
+              "**الصيانة**: عمليات تدقيق منتظمة لأمن منطق الأعمال"
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "style": "best-practice",
+          "value": {
+            "en": "**Best Practice**: Create 'abuse cases' alongside use cases during requirements gathering. For every feature, ask: \"How could someone misuse this for their benefit?\" Document and test these scenarios.",
+            "ar": "**أفضل ممارسة**: أنشئ 'حالات الإساءة' جنباً إلى جنب مع حالات الاستخدام أثناء جمع المتطلبات. لكل ميزة، اسأل: 'كيف يمكن لشخص ما إساءة استخدام هذا لصالحه؟' وثق هذه السيناريوهات واختبرها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Security Testing Checklist",
+            "ar": "قائمة مرجعية لاختبار الأمان"
+          }
+        },
+        {
+          "type": "checklist",
+          "items": {
+            "en": [
+              "[ ] All business-critical values calculated server-side",
+              "[ ] Workflow state transitions validated at each step",
+              "[ ] Database constraints enforce business rules",
+              "[ ] Race condition protection for shared resources",
+              "[ ] Rate limiting on sensitive operations",
+              "[ ] Negative value handling for all numeric inputs",
+              "[ ] Proper session/token expiration enforcement",
+              "[ ] Concurrent request handling tested",
+              "[ ] Anomaly detection for abuse patterns",
+              "[ ] Regular security audits with business context"
+            ],
+            "ar": [
+              "[ ] جميع القيم الحرجة للعمل محسوبة من جانب الخادم",
+              "[ ] تحقق من انتقالات حالة سير العمل في كل خطوة",
+              "[ ] قيود قاعدة البيانات تفرض قواعد العمل",
+              "[ ] حماية حالة السباق للموارد المشتركة",
+              "[ ] تحديد المعدل على العمليات الحساسة",
+              "[ ] معالجة القيمة السلبية لجميع المدخلات الرقمية",
+              "[ ] فرض انتهاء صلاحية الجلسة/الرمز المناسب",
+              "[ ] معالجة الطلبات المتزامنة مختبرة",
+              "[ ] اكتشاف الشذوذ لأنماط الإساءة",
+              "[ ] عمليات تدقيق أمنية منتظمة مع سياق العمل"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "title": {
+        "en": "Summary & Next Steps",
+        "ar": "الملخص والخطوات التالية"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Business logic vulnerabilities represent one of the most critical and overlooked security risks in modern applications. Unlike technical vulnerabilities that can be automatically scanned, logic flaws require deep understanding of business processes and creative thinking to discover and exploit.",
+            "ar": "تمثل ثغرات المنطق البرمجي واحدة من أخطر المخاطر الأمنية والمتجاهلة في التطبيقات الحديثة. على عكس الثغرات التقنية التي يمكن فحصها تلقائياً، تتطلب عيوب المنطق فهماً عميقاً لعمليات العمل والتفكير الإبداعي لاكتشافها واستغلالها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Key Takeaways",
+            "ar": "النقاط الرئيسية"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Think Like an Attacker**: Question every assumption, test unexpected sequences, manipulate parameters",
+              "**Manual Testing is Essential**: Automated tools miss 90%+ of business logic flaws",
+              "**Business Context Matters**: Understanding the intended behavior is crucial to finding violations",
+              "**High-Value Targets**: Logic flaws often yield significant bug bounties and have severe business impact",
+              "**Prevention Requires Design**: Security must be built into business logic from the start"
+            ],
+            "ar": [
+              "**فكر مثل المهاجم**: اشكك في كل افتراض، اختبر التسلسلات غير المتوقعة، تلاعب بالمعاملات",
+              "**الاختبار اليدوي ضروري**: تفوت الأدوات الآلية أكثر من 90٪ من عيوب منطق الأعمال",
+              "**سياق العمل مهم**: فهم السلوك المقصود أمر حاسم للعثور على الانتهاكات",
+              "**أهداف عالية القيمة**: غالباً ما تحقق عيوب المنطق مكافآت أخطاء كبيرة ولها تأثير تجاري شديد",
+              "**الوقاية تتطلب التصميم**: يجب بناء الأمان في منطق الأعمال من البداية"
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Ready to Practice?",
+            "ar": "هل أنت مستعد للممارسة؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Apply what you've learned in our comprehensive lab environment featuring realistic, deliberately vulnerable applications. Each lab simulates real-world scenarios found in production systems.",
+            "ar": "طبق ما تعلمته في بيئة المعمل الشاملة لدينا التي تضم تطبيقات واقعية معرضة للخطر عمداً. يحاكي كل معمل سيناريوهات من العالم الحقيقي موجودة في أنظمة الإنتاج."
+          }
+        },
+        {
+          "type": "labLink",
+          "url": "/BL-Vuln/BL_Vuln_labs",
+          "text": {
+            "en": "🚀 Start Practical Labs Now",
+            "ar": "🚀 ابدأ المعامل العملية الآن"
+          },
+          "style": "prominent"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Further Learning Resources",
+            "ar": "موارد تعليمية إضافية"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "[PortSwigger Web Security Academy - Business Logic Flaws](https://portswigger.net/web-security/logic-flaws)",
+              "[OWASP Top 10 Business Logic Abuse (2025)](https://owasp.org/www-project-top-10-for-business-logic-abuse/)",
+              "[HackerOne Bug Bounty Reports - Logic Flaws](https://hackerone.com/hacktivity?querystring=business+logic)",
+              "[SANS: Business Logic Testing Guide](https://www.sans.org/)",
+              "[PentesterLab: Business Logic Exercises](https://pentesterlab.com/)"
+            ],
+            "ar": [
+              "[أكاديمية أمان الويب PortSwigger - عيوب منطق الأعمال](https://portswigger.net/web-security/logic-flaws)",
+              "[OWASP أفضل 10 حالات لإساءة استخدام منطق الأعمال (2025)](https://owasp.org/www-project-top-10-for-business-logic-abuse/)",
+              "[تقارير مكافأة أخطاء HackerOne - عيوب المنطق](https://hackerone.com/hacktivity?querystring=business+logic)",
+              "[SANS: دليل اختبار منطق الأعمال](https://www.sans.org/)",
+              "[PentesterLab: تمارين منطق الأعمال](https://pentesterlab.com/)"
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "style": "success",
+          "value": {
+            "en": "**Congratulations!** You now have the foundational knowledge to identify and exploit business logic vulnerabilities. Remember: The best security researchers combine technical skills with creative thinking and business understanding. Now go practice in the labs!",
+            "ar": "**تهانينا!** لديك الآن المعرفة الأساسية لتحديد واستغلال ثغرات منطق الأعمال. تذكر: أفضل باحثي الأمان يجمعون بين المهارات التقنية والتفكير الإبداعي وفهم الأعمال. الآن اذهب للتدرب في المعامل!"
+          }
+        }
+      ]
+    }
+  ]
+}

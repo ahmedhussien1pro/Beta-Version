@@ -1,0 +1,669 @@
+{
+  "landingData": {
+    "title": {
+      "en": "Cross-Site Request Forgery (CSRF)",
+      "ar": "تزوير الطلبات عبر المواقع (CSRF)"
+    },
+    "description": {
+      "en": "Learn how attackers force authenticated users to execute unwanted actions on web applications. Master defense techniques like CSRF tokens and SameSite cookie attributes.",
+      "ar": "تعلم كيف يجبر المهاجمون المستخدمين المسجلين على تنفيذ إجراءات غير مرغوب فيها. أتقن تقنيات الدفاع مثل رموز CSRF وخصائص الكوكيز SameSite."
+    },
+    "difficulty": { "en": "Intermediate", "ar": "متوسط" },
+    "duration": { "en": "35 min", "ar": "35 دقيقة" },
+    "instructor": "CyberLab",
+    "rating": "4.8",
+    "students": "2150",
+    "labsLink": "/CSRF/CSRF_labs"
+  },
+
+  "topics": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Introduction",
+        "ar": "مقدمة"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Welcome to a world where launching web attacks is so easy that even beginners (like script kiddies) can write simple scripts to hack into big businesses. These attacks are like sneaky tricks that can cause much trouble online. In this room, we will focus on one such web attack called Cross-Site Request Forgery (CSRF or XSRF). We will understand various exploitation techniques of CSRF and protection measures for its prevention.",
+            "ar": "مرحباً بك في عالم يكون فيه شن هجمات الويب سهلاً للغاية بحيث يمكن حتى للمبتدئين (مثل script kiddies) كتابة نصوص بسيطة لاختراق الشركات الكبيرة. هذه الهجمات تشبه الحيل الخبيثة التي يمكن أن تسبب الكثير من المشاكل عبر الإنترنت. في هذه الغرفة، سنركز على أحد هجمات الويب هذه والذي يسمى تزوير الطلبات عبر المواقع (CSRF أو XSRF). سنفهم تقنيات الاستغلال المختلفة لـ CSRF وتدابير الحماية للوقاية منها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Learning Objectives",
+            "ar": "أهداف التعلم"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Understanding the working of CSRF",
+              "Type of CSRF attacks",
+              "Advance payloads for exploitation",
+              "Defensive mechanisms"
+            ],
+            "ar": [
+              "فهم كيفية عمل CSRF",
+              "أنواع هجمات CSRF",
+              "حمولات متقدمة للاستغلال",
+              "آليات الدفاع"
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "value": {
+            "en": "The Following Links From TryHackMe Website",
+            "ar": "الروابط التالية من موقع TryHackMe"
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Learning Pre-requisites",
+            "ar": "المتطلبات الأساسية للتعلم"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "An understanding of the following topics is recommended before starting the room:",
+            "ar": "يُنصح بفهم المواضيع التالية قبل بدء الغرفة:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "[How websites work](https://tryhackme.com/room/howwebsiteswork)",
+              "[OWASP top 10 web vulnerabilities](https://tryhackme.com/room/owasptop102021)"
+            ],
+            "ar": [
+              "[كيف تعمل المواقع الإلكترونية](https://tryhackme.com/room/howwebsiteswork)",
+              "[أفضل 10 ثغرات ويب حسب OWASP](https://tryhackme.com/room/owasptop102021)"
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "IntroImage",
+          "size": "medium"
+        },
+        { "type": "hr" },
+        {
+          "type": "title",
+          "value": {
+            "en": "Connecting to the Machine",
+            "ar": "الاتصال بالجهاز"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can start the virtual machine by clicking Start Machine. The machine will start in a split-screen view. In case the VM is not visible, use the blue Show Split View button at the top of the page. We use a vulnerable online banking application throughout the room to perform the exercise practically and become familiar with various CSRF attacks. Please wait 1-2 minutes after the system boots completely to let the auto scripts run successfully. The following hostnames have already been added to the attached VM:",
+            "ar": "يمكنك بدء تشغيل الجهاز الافتراضي بالنقر فوق Start Machine. سيبدأ الجهاز في عرض منقسم. في حالة عدم ظهور الجهاز الافتراضي، استخدم الزر الأزرق Show Split View أعلى الصفحة. نستخدم تطبيق مصرفي عبر الإنترنت معرض للثغرات في جميع أنحاء الغرفة لإجراء التمرين عملياً والتعرف على هجمات CSRF المختلفة. يرجى الانتظار لمدة 1-2 دقيقة بعد إقلاع النظام بالكامل للسماح بتشغيل النصوص التلقائية بنجاح. تمت إضافة أسماء المضيفين التالية بالفعل إلى الجهاز الافتراضي المرفق:"
+          }
+        },
+        {
+          "type": "table",
+          "headers": {
+            "en": ["App Name", "IP Address", "Host Address", "URL to Access"],
+            "ar": [
+              "اسم التطبيق",
+              "عنوان IP",
+              "عنوان المضيف",
+              "عنوان URL للوصول"
+            ]
+          },
+          "rows": [
+            {
+              "en": [
+                "Online banking application",
+                "MACHINE_IP",
+                "mybank.thm",
+                "http://mybank.thm:8080"
+              ],
+              "ar": [
+                "تطبيق مصرفي عبر الإنترنت",
+                "MACHINE_IP",
+                "mybank.thm",
+                "http://mybank.thm:8080"
+              ]
+            },
+            {
+              "en": [
+                "Mailbox application",
+                "MACHINE_IP",
+                "mailbox.thm",
+                "http://mailbox.thm:8081"
+              ],
+              "ar": [
+                "تطبيق صندوق البريد",
+                "MACHINE_IP",
+                "mailbox.thm",
+                "http://mailbox.thm:8081"
+              ]
+            },
+            {
+              "en": [
+                "Attacker panel (subdomain of bank app)",
+                "MACHINE_IP",
+                "attacker.mybank.thm",
+                "http://attacker.mybank.thm:8080"
+              ],
+              "ar": [
+                "لوحة المهاجم (نطاق فرعي لتطبيق البنك)",
+                "MACHINE_IP",
+                "attacker.mybank.thm",
+                "http://attacker.mybank.thm:8080"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic1",
+      "title": {
+        "en": "Overview of CSRF Attack",
+        "ar": "نظرة عامة على هجوم CSRF"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What is CSRF?",
+            "ar": "ما هو CSRF؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "CSRF is a type of security vulnerability where an attacker tricks a user's web browser into performing an unwanted action on a trusted site where the user is authenticated. This is achieved by exploiting the fact that the browser includes any relevant cookies (credentials) automatically, allowing the attacker to forge and submit unauthorised requests on behalf of the user (through the browser). The attacker's website may contain HTML forms or JavaScript code that is intended to send queries to the targeted web application.",
+            "ar": "CSRF هو نوع من الثغرات الأمنية حيث يخدع المهاجم متصفح الويب الخاص بالمستخدم للقيام بإجراء غير مرغوب فيه على موقع موثوق به حيث يتم مصادقة المستخدم. يتحقق ذلك من خلال استغلال حقيقة أن المتصفح يتضمن أي ملفات تعريف ارتباط ذات صلة (بيانات الاعتماد) تلقائياً، مما يسمح للمهاجم بتزوير وإرسال طلبات غير مصرح بها نيابة عن المستخدم (من خلال المتصفح). قد يحتوي موقع المهاجم على نماذج HTML أو كود JavaScript مخصص لإرسال استعلامات إلى تطبيق الويب المستهدف."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Cycle of CSRF",
+            "ar": "دورة CSRF"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A CSRF attack has three essential phases:",
+            "ar": "يحتوي هجوم CSRF على ثلاث مراحل أساسية:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The attacker already knows the format of the web application's requests to carry out a particular task and sends a malicious link to the user.",
+              "The victim's identity on the website is verified, typically by cookies transmitted automatically with each domain request and clicks on the link shared by the attacker. This interaction could be a click, mouse over, or any other action.",
+              "Insufficient security measures prevent the web application from distinguishing between authentic user requests and those that have been falsified."
+            ],
+            "ar": [
+              "يعرف المهاجم بالفعل تنسيق طلبات تطبيق الويب لتنفيذ مهمة معينة ويرسل رابطاً ضاراً إلى المستخدم.",
+              "يتم التحقق من هوية الضحية على الموقع، عادةً بواسطة ملفات تعريف الارتباط المرسلة تلقائياً مع كل طلب نطاق والنقرات على الرابط المشترك من قبل المهاجم. قد يكون هذا التفاعل نقرة أو تمرير الماوس أو أي إجراء آخر.",
+              "تمنع تدابير الأمان غير الكافية تطبيق الويب من التمييز بين طلبات المستخدم الحقيقية وتلك التي تم تزويرها."
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic2",
+          "size": "medium"
+        },
+        { "type": "hr" },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Effects of CSRF",
+            "ar": "آثار CSRF"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Understanding CSRF's impact is crucial for keeping online activities secure. Although CSRF attacks don't directly expose user data, they can still cause harm by changing passwords and email addresses or making financial transactions. The risks associated with CSRF include:",
+            "ar": "فهم تأثير CSRF أمر بالغ الأهمية للحفاظ على أمان الأنشطة عبر الإنترنت. على الرغم من أن هجمات CSRF لا تكشف بيانات المستخدم مباشرة، إلا أنها لا تزال قادرة على التسبب في ضرر عن طريق تغيير كلمات المرور وعناوين البريد الإلكتروني أو إجراء معاملات مالية. تشمل المخاطر المرتبطة بـ CSRF:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Unauthorised Access:** Attackers can access and control a user's actions, putting them at risk of losing money, damaging their reputation, and facing legal consequences.",
+              "**Exploiting Trust:** CSRF exploits the trust websites put in their users, undermining the sense of security in online browsing.",
+              "**Stealthy Exploitation:** CSRF works quietly, using standard browser behaviour without needing advanced malware. Users might be unaware of the attack, making them susceptible to repeated exploitation."
+            ],
+            "ar": [
+              "**الوصول غير المصرح به:** يمكن للمهاجمين الوصول إلى إجراءات المستخدم والتحكم فيها، مما يعرضهم لخطر فقدان الأموال وإلحاق الضرر بسمعتهم ومواجهة عواقب قانونية.",
+              "**استغلال الثقة:** يستغل CSRF الثقة التي تضعها المواقع الإلكترونية في مستخدميها، مما يقوض الشعور بالأمان في التصفح عبر الإنترنت.",
+              "**الاستغلال الخفي:** يعمل CSRF بهدوء، باستخدام سلوك المتصفح القياسي دون الحاجة إلى برامج ضارة متقدمة. قد لا يكون المستخدمون على دراية بالهجوم، مما يجعلهم عرضة للاستغلال المتكرر."
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Understanding these risks is essential for implementing effective measures to protect web applications from CSRF vulnerabilities.",
+            "ar": "فهم هذه المخاطر أمر ضروري لتنفيذ تدابير فعالة لحماية تطبيقات الويب من ثغرات CSRF."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic2",
+      "title": {
+        "en": "Types of CSRF Attack",
+        "ar": "أنواع هجمات CSRF"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Traditional CSRF",
+            "ar": "CSRF التقليدي"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Conventional CSRF attacks frequently concentrate on state-changing actions carried out by submitting forms. The victim is tricked into submitting a form without realising the associated data like cookies, URL parameters, etc. The victim's web browser sends an HTTP request to a web application form where the victim has already been authenticated. These forms are made to transfer money, modify account information, or alter an email address.",
+            "ar": "غالباً ما تركز هجمات CSRF التقليدية على الإجراءات المغيرة للحالة التي يتم تنفيذها عن طريق إرسال النماذج. يتم خداع الضحية لإرسال نموذج دون إدراك البيانات المرتبطة مثل ملفات تعريف الارتباط ومعاملات عنوان URL وما إلى ذلك. يرسل متصفح الويب الخاص بالضحية طلب HTTP إلى نموذج تطبيق ويب حيث تمت مصادقة الضحية بالفعل. تُصنع هذه النماذج لتحويل الأموال أو تعديل معلومات الحساب أو تغيير عنوان البريد الإلكتروني."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic3",
+          "size": "large"
+        },
+        { "type": "hr" },
+        {
+          "type": "text",
+          "value": {
+            "en": "The above diagram shows traditional CSRF examples in the following steps:",
+            "ar": "يوضح الرسم التخطيطي أعلاه أمثلة CSRF التقليدية في الخطوات التالية:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The victim is already logged on to his bank website. The attackers create a crafted malicious link and email it to the victim.",
+              "The victim opens the email in the same browser.",
+              "Once clicked, the malicious link enables the auto-transfer of the amount from the victim's browser to the attacker's bank account."
+            ],
+            "ar": [
+              "الضحية مسجل الدخول بالفعل إلى موقع البنك الخاص به. ينشئ المهاجمون رابطاً ضاراً مصمماً بعناية ويرسلونه عبر البريد الإلكتروني إلى الضحية.",
+              "تفتح الضحية البريد الإلكتروني في نفس المتصفح.",
+              "بمجرد النقر عليه، يتيح الرابط الضار التحويل التلقائي للمبلغ من متصفح الضحية إلى الحساب المصرفي للمهاجم."
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "XMLHttpRequest CSRF",
+            "ar": "CSRF بواسطة XMLHttpRequest"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "An asynchronous CSRF exploitation occurs when operations are initiated without a complete page request-response cycle. This is typical of contemporary online apps that leverage asynchronous server communication (via XMLHttpRequest or the Fetch API) and JavaScript to produce more dynamic user interfaces. These attacks use asynchronous calls instead of the more conventional form submissions. Still, they exploit the same trust relationship between the user and the online service.",
+            "ar": "يحدث استغلال CSRF غير المتزامن عندما يتم بدء العمليات دون دورة طلب-استجابة كاملة للصفحة. هذا نموذجي لتطبيقات الإنترنت المعاصرة التي تستفيد من الاتصال غير المتزامن بالخادم (عبر XMLHttpRequest أو Fetch API) وJavaScript لإنتاج واجهات مستخدم أكثر ديناميكية. تستخدم هذه الهجمات استدعاءات غير متزامنة بدلاً من إرسالات النماذج التقليدية. ومع ذلك، فإنها تستغل نفس علاقة الثقة بين المستخدم والخدمة عبر الإنترنت."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Consider an online email client, for instance, where users may change their email preferences without reloading the page. If this online application is CSRF-vulnerable, a hacker might create a fake asynchronous HTTP request, usually a POST request, and alter the victim's email preferences, forwarding all their correspondence to a malicious address.",
+            "ar": "فكر في عميل بريد إلكتروني عبر الإنترنت، على سبيل المثال، حيث يمكن للمستخدمين تغيير تفضيلات بريدهم الإلكتروني دون إعادة تحميل الصفحة. إذا كان هذا التطبيق عبر الإنترنت عرضة لـ CSRF، فقد يقوم المتسلل بإنشاء طلب HTTP غير متزامن مزيف، عادة طلب POST، وتغيير تفضيلات البريد الإلكتروني للضحية، وإعادة توجيه جميع مراسلاتهم إلى عنوان ضار."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The following is a simplified overview of the steps that an asynchronous CSRF attack could take:",
+            "ar": "فيما يلي نظرة عامة مبسطة على الخطوات التي يمكن أن يتخذها هجوم CSRF غير المتزامن:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The victim opens a session saved in their browser's cookies and logs into the `mailbox.thm`.",
+              "The attacker entices the victim to open a malicious webpage with a script that can send queries to the `mailbox.thm`.",
+              "To modify the user's email forwarding preferences, the malicious script on the attacker's page makes an AJAX call to `mailbox.thm/api/updateEmail` (using XMLHttpRequest or Fetch).",
+              "The `mailbox.thm` session cookie is included with the AJAX request in the victim's browser.",
+              "After receiving the AJAX request, mailbox.thm evaluates it and modifies the victim's settings if no CSRF defences exist."
+            ],
+            "ar": [
+              "تفتح الضحية جلسة محفوظة في ملفات تعريف ارتباط المتصفح وتسجل الدخول إلى `mailbox.thm`.",
+              "يغري المهاجم الضحية لفتح صفحة ويب ضارة بنص برمجي يمكنه إرسال استعلامات إلى `mailbox.thm`.",
+              "لتعديل تفضيلات إعادة توجيه البريد الإلكتروني للمستخدم، يقوم النص الضار على صفحة المهاجم بإجراء استدعاء AJAX إلى `mailbox.thm/api/updateEmail` (باستخدام XMLHttpRequest أو Fetch).",
+              "يتم تضمين ملف تعريف ارتباط جلسة `mailbox.thm` مع طلب AJAX في متصفح الضحية.",
+              "بعد تلقي طلب AJAX، يقوم mailbox.thm بتقييمه وتعديل إعدادات الضحية إذا لم تكن هناك دفاعات CSRF."
+            ]
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Flash-based CSRF",
+            "ar": "CSRF القائم على Flash"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The term \"Flash-based CSRF\" describes the technique of conducting a CSRF attack by taking advantage of flaws in Adobe Flash Player components. Internet applications with features like interactive content, video streaming, and intricate animations have been made possible with Flash. But over time, security flaws in Flash, particularly those that can be used to launch CSRF attacks, have become a major source of worry. As HTML5 technology advanced and security flaws multiplied, official support for Adobe Flash Player ceased on December 31, 2020.",
+            "ar": "يصف مصطلح \"CSRF القائم على Flash\" تقنية إجراء هجوم CSRF من خلال الاستفادة من العيوب في مكونات Adobe Flash Player. أصبحت تطبيقات الإنترنت ذات الميزات مثل المحتوى التفاعلي وبث الفيديو والرسوم المتحركة المعقدة ممكنة مع Flash. ولكن مع مرور الوقت، أصبحت العيوب الأمنية في Flash، خاصة تلك التي يمكن استخدامها لشن هجمات CSRF، مصدراً رئيسياً للقلق. مع تقدم تقنية HTML5 وتكاثر العيوب الأمنية، توقف الدعم الرسمي لـ Adobe Flash Player في 31 ديسمبر 2020."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Even though Flash is no longer supported, a talk about Flash-based cross-site request forgery threats is instructive, particularly for legacy systems that still rely on antiquated technologies. A malicious Flash file (.swf) posted on the attacker's website would typically send unauthorised requests to other websites to carry out Flash-based CSRF attacks.",
+            "ar": "على الرغم من أن Flash لم يعد مدعوماً، إلا أن الحديث عن تهديدات تزوير الطلبات عبر المواقع المستندة إلى Flash أمر تعليمي، خاصة للأنظمة القديمة التي لا تزال تعتمد على التقنيات العتيقة. عادةً ما يرسل ملف Flash ضار (.swf) منشور على موقع المهاجم طلبات غير مصرح بها إلى مواقع ويب أخرى لتنفيذ هجمات CSRF القائمة على Flash."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic31",
+          "size": "small"
+        }
+      ]
+    },
+    {
+      "id": "topic3",
+      "title": {
+        "en": "Practical CSRF Exploitation",
+        "ar": "الاستغلال العملي لـ CSRF"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "This technique preys on authenticated sessions and utilises a social engineering approach when a user may inadvertently perform operations on a different website while still logged in.",
+            "ar": "تفترس هذه التقنية الجلسات المصادق عليها وتستخدم نهج الهندسة الاجتماعية عندما قد يقوم المستخدم بإجراء عمليات عن غير قصد على موقع ويب مختلف أثناء تسجيل الدخول."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "html",
+          "title": {
+            "en": "Website Example",
+            "ar": "مثال على الموقع"
+          },
+          "code": "<!-- Website -->\n<a href=\"https://mybank.thm/transfer.php\" target=\"_blank\">Click Here</a>\n<!-- User visits attacker's website while authenticated -->"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "How it Works",
+            "ar": "كيف يعمل"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Now, you are already connected to the VM. Let's see how the attack works.",
+            "ar": "الآن، أنت متصل بالفعل بالجهاز الافتراضي. دعونا نرى كيف يعمل الهجوم."
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "The attached VM represents Josh's machine, who uses Chrome to check his mailbox (http://mailbox.thm:8081) and log into his bank account (http://mybank.thm:8080). Since he is a financial broker by profession, he deals with many financial transactions daily and keeps his accounts logged into the browser.",
+              "The attacker somehow learns that Josh uses mybank.thm:8080 for transactions, and his account is always logged in.",
+              "The attacker also had an account in the same bank, so he tried to log in and check for any vulnerabilities that he could use to get additional cash in his account.",
+              "You can also log in to Firefox in the attached VM or any other browser using the username GB82MYBANK5698 and password GB82MYBANK5698 to understand the attacker's perspective and check the source code and how the client-side scripts work.",
+              "While scanning, he found that no additional parameter was being sent from the bank app while transferring payment."
+            ],
+            "ar": [
+              "يمثل الجهاز الافتراضي المرفق جهاز Josh، الذي يستخدم Chrome للتحقق من صندوق بريده (http://mailbox.thm:8081) وتسجيل الدخول إلى حسابه المصرفي (http://mybank.thm:8080). نظراً لأنه وسيط مالي بالمهنة، فهو يتعامل مع العديد من المعاملات المالية يومياً ويحتفظ بحساباته مسجلة الدخول في المتصفح.",
+              "يتعلم المهاجم بطريقة ما أن Josh يستخدم mybank.thm:8080 للمعاملات، وأن حسابه دائماً مسجل الدخول.",
+              "كان لدى المهاجم أيضاً حساب في نفس البنك، لذلك حاول تسجيل الدخول والتحقق من أي ثغرات يمكنه استخدامها للحصول على نقود إضافية في حسابه.",
+              "يمكنك أيضاً تسجيل الدخول إلى Firefox في الجهاز الافتراضي المرفق أو أي متصفح آخر باستخدام اسم المستخدم GB82MYBANK5698 وكلمة المرور GB82MYBANK5698 لفهم وجهة نظر المهاجم والتحقق من الكود المصدري وكيف تعمل النصوص من جانب العميل.",
+              "أثناء المسح، وجد أنه لا يتم إرسال أي معامل إضافي من تطبيق البنك أثناء تحويل الدفع."
+            ]
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "php",
+          "title": {
+            "en": "PHP Form Example",
+            "ar": "مثال نموذج PHP"
+          },
+          "code": "<?php\n<form action=\"transfer.php\" method=\"post\">\n  <label for=\"to_account\">To Account</label>\n  <input type=\"text\" id=\"to_account\" name=\"to_account\" required>\n  \n  <label for=\"amount\">Amount</label>\n  <input type=\"number\" id=\"amount\" name=\"amount\" required>\n  <button type=\"submit\">Transfer</button>\n</form>"
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Here, the attacker can employ the hidden image technique by simply crafting an email and luring the victim to click on a link. The attacker only knows Josh's email address, so he launches a social engineering attack by sending the following email to him."
+            ],
+            "ar": [
+              "هنا، يمكن للمهاجم استخدام تقنية الصورة المخفية ببساطة عن طريق صياغة بريد إلكتروني وإغراء الضحية للنقر على رابط. يعرف المهاجم فقط عنوان البريد الإلكتروني لـ Josh، لذلك يشن هجوم هندسة اجتماعية عن طريق إرسال البريد الإلكتروني التالي إليه."
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic4",
+          "size": "large"
+        },
+        { "type": "hr" },
+        {
+          "type": "codeBlock",
+          "language": "html",
+          "title": {
+            "en": "Email Content",
+            "ar": "محتوى البريد الإلكتروني"
+          },
+          "code": "<a href=\"http://mybank.thm:8080/dashboard.php?to_account=GB82MYBANK5698&amount=1000\" target=\"_blank\"> Click Here to Redeem </a>"
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "To understand the victim's perspective, navigate to Josh's mailbox at the mailbox.thm:8081 to see a new email stating that he has won a trip to Dubai and to claim it, he has to click on a link directed to the MyBank vulnerable page without having CSRF protection.",
+              "Once you (in reality, the victim) click on the link, he will be redirected to the bank page, and the funds will be transferred automatically."
+            ],
+            "ar": [
+              "لفهم منظور الضحية، انتقل إلى صندوق بريد Josh على mailbox.thm:8081 لرؤية بريد إلكتروني جديد يفيد بأنه فاز برحلة إلى دبي وللمطالبة بها، يجب عليه النقر على رابط موجه إلى صفحة MyBank الضعيفة دون وجود حماية CSRF.",
+              "بمجرد النقر على الرابط (في الواقع، الضحية)، سيتم إعادة توجيهه إلى صفحة البنك، وسيتم تحويل الأموال تلقائياً."
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic41",
+          "size": "large"
+        },
+        { "type": "hr" },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What was the missing link?",
+            "ar": "ما هي الحلقة المفقودة؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "All the validations are correct and accurate; however, the server is not validating if the request comes from a legitimate user.",
+            "ar": "جميع عمليات التحقق صحيحة ودقيقة؛ ومع ذلك، لا يتحقق الخادم مما إذا كان الطلب يأتي من مستخدم شرعي."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Securing the Breach",
+            "ar": "تأمين الثغرة"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "From a pentester/red teamer perspective, it is vital to pentest each request and response parameter of the form.",
+              "From a secure coder perspective, it is important to ensure that each request submitted to the web server carries a unique token so that the server can identify if it is clicked through a valid source.",
+              "The bank IT team quickly identified the issue and added a CSRF token with each request submitted to the server."
+            ],
+            "ar": [
+              "من منظور مختبر الاختراق/الفريق الأحمر، من الضروري اختبار كل معامل طلب واستجابة للنموذج.",
+              "من منظور المبرمج الآمن، من المهم التأكد من أن كل طلب مقدم إلى خادم الويب يحمل رمزاً فريداً بحيث يمكن للخادم تحديد ما إذا تم النقر عليه من خلال مصدر صالح.",
+              "حدد فريق تكنولوجيا المعلومات في البنك المشكلة بسرعة وأضاف رمز CSRF مع كل طلب مقدم إلى الخادم."
+            ]
+          }
+        },
+        {
+          "type": "codeBlock",
+          "language": "php",
+          "title": {
+            "en": "Updated Form with CSRF Token",
+            "ar": "نموذج محدث برمز CSRF"
+          },
+          "code": "<form method=\"post\" action=\"\">\n  <label for=\"password\">Password:</label>\n  <input type=\"password\" id=\"password\" name=\"current_password\" required />\n  \n  <label for=\"confirm_password\">Confirm Password:</label>\n  <input type=\"password\" id=\"confirm_password\" name=\"confirm_password\" required />\n  <input type=\"hidden\" id=\"csrf_token\" name=\"csrf_token\" value=\"<?php echo $_COOKIE['csrf-token']; ?>\" />\n  \n  <button type=\"submit\" name=\"password_submit\">Update Password</button>\n</form>"
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "On the server side, the server will verify if each incoming request contains the unique token; otherwise, it will reject the request.",
+              "Open Josh's mailbox and navigate to the attacker's email with a green badge."
+            ],
+            "ar": [
+              "من جانب الخادم، سيتحقق الخادم من احتواء كل طلب وارد على الرمز الفريد؛ وإلا سيرفض الطلب.",
+              "افتح صندوق بريد Josh وانتقل إلى بريد المهاجم ذي الشارة الخضراء."
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic42",
+          "size": "large"
+        },
+        { "type": "hr" },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "When the user clicks on the link, it won't transfer the funds as the request is missing a unique CSRF token required to validate the request."
+            ],
+            "ar": [
+              "عندما ينقر المستخدم على الرابط، لن يتم تحويل الأموال لأن الطلب يفتقر إلى رمز CSRF فريد مطلوب للتحقق من صحة الطلب."
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "Topic43",
+          "size": "large"
+        },
+        { "type": "hr" }
+      ]
+    },
+    {
+      "id": "topic4",
+      "title": {
+        "en": "Basic CSRF - Hidden Link/Image Exploitation",
+        "ar": "CSRF الأساسي - استغلال الرابط/الصورة المخفية"
+      },
+      "elements": [
+        {
+          "type": "title",
+          "value": {
+            "en": "In this section, we describe:",
+            "ar": "في هذا القسم، نصف:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "Privilege escalation.",
+              "The types of vulnerabilities that can arise with access control.",
+              "How to prevent access control vulnerabilities."
+            ],
+            "ar": [
+              "تصعيد الامتيازات.",
+              "أنواع الثغرات التي يمكن أن تنشأ مع التحكم في الوصول.",
+              "كيفية منع ثغرات التحكم في الوصول."
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "isLab": true,
+          "value": {
+            "en": "If you're familiar with the basic concepts behind access control vulnerabilities and want to practice exploiting them on some realistic, deliberately vulnerable targets, you can access labs in this topic from this link",
+            "ar": "إذا كنت على دراية بالمفاهيم الأساسية وراء ثغرات التحكم في الوصول وتريد ممارسة استغلالها على بعض الأهداف الواقعية الضعيفة عمداً، يمكنك الوصول إلى المعامل في هذا الموضوع من هذا الرابط"
+          },
+          "link": "/AC-Vuln/AC_Vuln_labs",
+          "linkText": {
+            "en": "Go To Labs",
+            "ar": "اذهب إلى المعامل"
+          }
+        },
+        {
+          "type": "title",
+          "value": {
+            "en": "What is access control?",
+            "ar": "ما هو التحكم في الوصول؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Access control is the application of constraints on who or what is authorized to perform actions or access resources. In the context of web applications, access control is dependent on authentication and session management:",
+            "ar": "التحكم في الوصول هو تطبيق القيود على من أو ما هو مصرح له بأداء إجراءات أو الوصول إلى الموارد. في سياق تطبيقات الويب، يعتمد التحكم في الوصول على المصادقة وإدارة الجلسة:"
+          }
+        },
+        {
+          "type": "list",
+          "items": {
+            "en": [
+              "**Authentication** confirms that the user is who they say they are.",
+              "**Session management** identifies which subsequent HTTP requests are being made by that same user.",
+              "**Access control** determines whether the user is allowed to carry out the action that they are attempting to perform."
+            ],
+            "ar": [
+              "**المصادقة** تؤكد أن المستخدم هو من يدعي أنه.",
+              "**إدارة الجلسة** تحدد طلبات HTTP اللاحقة التي يقوم بها نفس المستخدم.",
+              "**التحكم في الوصول** يحدد ما إذا كان المستخدم مسموحاً له بتنفيذ الإجراء الذي يحاول القيام به."
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Broken access controls are common and often present a critical security vulnerability. Design and management of access controls is a complex and dynamic problem that applies business, organizational, and legal constraints to a technical implementation. Access control design decisions have to be made by humans so the potential for errors is high.",
+            "ar": "ضوابط الوصول المكسورة شائعة وغالباً ما تمثل ثغرة أمنية حرجة. يعد تصميم وإدارة ضوابط الوصول مشكلة معقدة وديناميكية تطبق قيود الأعمال والتنظيمية والقانونية على التنفيذ التقني. يجب اتخاذ قرارات تصميم التحكم في الوصول من قبل البشر، لذا فإن احتمال حدوث الأخطاء مرتفع."
+          }
+        },
+        {
+          "type": "note",
+          "value": {
+            "en": "You can Read more from this link 👉🏻 [Access control security models](https://portswigger.net/web-security/access-control/security-models)",
+            "ar": "يمكنك قراءة المزيد من هذا الرابط 👉🏻 [نماذج أمان التحكم في الوصول](https://portswigger.net/web-security/access-control/security-models)"
+          }
+        }
+      ]
+    }
+  ]
+}

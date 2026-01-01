@@ -76,7 +76,7 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
               el.size || 'medium'
             }`}>
             <img
-              src={el.srcKey || el.imageUrl || ''}
+              src={imageMap[el.srcKey] || el.srcKey || el.imageUrl || ''}
               alt={el.alt || 'visual'}
               className='cyber-curriculum__image'
             />
@@ -210,7 +210,7 @@ const CyberCurriculum = ({ topics, imageMap, labsLink, onLabClick }) => {
                 <li key={idx} className='cyber-curriculum__ordered-item'>
                   {item.subtitle && (
                     <strong
-                      className='cyber-curriculum__item-subtitle'
+                      className='cyber-curriculum__item-subtitle ms-1'
                       ar-data={item.subtitle.ar}
                       en-data={item.subtitle.en}>
                       {Lang === 'en' ? item.subtitle.en : item.subtitle.ar}

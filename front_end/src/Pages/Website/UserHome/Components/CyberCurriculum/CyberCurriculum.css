@@ -546,8 +546,9 @@
   content: counter(item);
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   width: 2rem;
   height: 2rem;
   display: flex;
@@ -579,6 +580,9 @@
   line-height: 1.7;
 }
 
+.cyber-curriculum__item-subtitle::after {
+  content: ': ';
+}
 .cyber-curriculum__nested-list {
   list-style: none;
   padding: 0;
