@@ -74,7 +74,7 @@ const Courses = () => {
     { en: 'Vulnerabilities', ar: 'الثغرات', icon: <FaBug /> },
     { en: 'Tools & Techniques', ar: 'الأدوات والتقنيات', icon: <FaTools /> },
     { en: 'My Courses', ar: 'دوراتي', icon: <FaUserGraduate /> },
-    { en: 'Fav Topics', ar: 'المواضيع المفضلة', icon: <FaHeart /> },
+    { en: 'Fav Topics', ar: ' المفضلة', icon: <FaHeart /> },
   ];
 
   const handleCategorySelect = (categoryEn) => {
